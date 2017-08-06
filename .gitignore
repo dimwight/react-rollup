@@ -1,0 +1,5 @@
+node_modules
+public/rollup*
+src/*.js
+src/*.js.map
+*.log

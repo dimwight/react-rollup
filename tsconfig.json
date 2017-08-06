@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": true,
+    "allowUnreachableCode": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "target": "esnext",
+    "module": "es2015"
+  }
+}
