@@ -1,5 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve';
-import cjs from 'rollup-plugin-commonjs';
+import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
@@ -9,7 +9,7 @@ export default {
   format: 'es',
   plugins: [
     resolve(),
-    cjs({
+    commonjs({
       include: 'node_modules/**',
       namedExports:{
         'node_modules/date-fns/index.js': [ 'format' ],
@@ -22,5 +22,10 @@ export default {
     replace({'process.env.NODE_ENV': JSON.stringify( 'development' )}),
     sourcemaps()
   ],
-  sourceMap: true
+  sourceMap: true,
+  // external: ['react-dom','react'],
+  // globals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM'
+  // }
 };
