@@ -1,8 +1,8 @@
-import * as React from 'react';
-import {render} from 'react-dom';
-import App from './welcome/Welcome';
+// import * as React from 'react';
+// import {render} from 'react-dom';
 import {myFormat} from './myFormat';
 import errorTest from './consoleError';
+// import App from './welcome/Welcome';
 
 function announceTime(){
   const time=new Date();
@@ -18,10 +18,10 @@ function announceTime(){
 
 errorTest();
 if(true)announceTime();
-else render(
-  <App />,
-  document.getElementById('app') as HTMLElement
-);
+// else render(
+//   <App />,
+//   document.getElementById('app') as HTMLElement
+// );
 
 
 // target: esnext
