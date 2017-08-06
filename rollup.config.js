@@ -1,27 +1,25 @@
+import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import cjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import replace from 'rollup-plugin-replace';
-import postcss from 'rollup-plugin-postcss';
 
 export default {
-  entry: 'src/main.js',
   dest: 'public/rollup.js',
+  entry: 'src/main.js',
   format: 'es',
-  sourceMap: true,
   plugins: [
-    resolve({
-      jsnext: true,
-      }
-    ),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify( 'production' )
+    babel({
+      // babelrc: false,
+      exclude: 'node_modules/**',
+      presets: [
+        // [ 'es2015', { modules: false } ],
+        // 'stage-0',
+        'react'
+      ]
+      // plugins: [ 'external-helpers' ]
     }),
-    sourcemaps(),
-    postcss({
-      // extract : 'true'
-    }),
-    commonjs({
+    cjs({
       include: 'node_modules/**',
       namedExports:{
         'node_modules/date-fns/index.js': [ 'format' ],
@@ -29,10 +27,11 @@ export default {
           'Component',
           'createElement',
         ],
-        'node_modules/react/react-dom.js':[
-            'render'
-          ],
         }
-    })
-  ]
+    }),
+    replace({'process.env.NODE_ENV': JSON.stringify( 'production' )}),
+    resolve(),
+    sourcemaps()
+  ],
+  sourceMap: true
 };
