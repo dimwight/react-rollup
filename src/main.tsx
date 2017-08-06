@@ -18,7 +18,6 @@ import App from './welcome/Welcome';
 //
 // errorTest();
 // if(false)announceTime();
-// else
 document.getElementById('pageTitle').innerText=document.title;
   ReactDOM.render(
   <App />,

@@ -1,24 +1,14 @@
-import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve';
 import cjs from 'rollup-plugin-commonjs';
-import sourcemaps from 'rollup-plugin-sourcemaps';
 import replace from 'rollup-plugin-replace';
+import sourcemaps from 'rollup-plugin-sourcemaps';
 
 export default {
   dest: 'public/rollup.js',
   entry: 'src/main.js',
   format: 'es',
   plugins: [
-    babel({
-      // babelrc: false,
-      exclude: 'node_modules/**',
-      presets: [
-        // [ 'es2015', { modules: false } ],
-        // 'stage-0',
-        'react'
-      ]
-      // plugins: [ 'external-helpers' ]
-    }),
+    resolve(),
     cjs({
       include: 'node_modules/**',
       namedExports:{
@@ -27,10 +17,9 @@ export default {
           'Component',
           'createElement',
         ],
-        }
+      }
     }),
-    replace({'process.env.NODE_ENV': JSON.stringify( 'production' )}),
-    resolve(),
+    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )}),
     sourcemaps()
   ],
   sourceMap: true
