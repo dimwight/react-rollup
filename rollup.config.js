@@ -6,8 +6,7 @@ const common = {
   format: 'iife',
   plugins: [
     resolve(),
-    commonjs(),
-    sourcemaps({
+    commonjs({
       namedExports:{
         'node_modules/date-fns/format': [ 'format' ],
         'node_modules/react/react.js':[
@@ -15,7 +14,8 @@ const common = {
           'createElement',
         ],
       }
-    })
+    }),
+    sourcemaps()
   ]
 };
 const includeLib = Object.assign({}, common, {
