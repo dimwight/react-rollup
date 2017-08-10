@@ -1,20 +1,11 @@
 {
   "compilerOptions": {
-    "suppressImplicitAnyIndexErrors": true,
-    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "strictNullChecks": false,
-    "preserveConstEnums": true,
     "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "removeComments": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "target": "esnext",
-    "module": "es2015"
+    "module": "es6",
+    "jsx": "react"
   }
 }
