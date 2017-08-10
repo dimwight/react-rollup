@@ -42,6 +42,6 @@ const excludeLib = Object.assign({}, includeLib, {
   }
 });
 
-const bundle = excludeLib;// includeLib|extractDate|excludeLib
+const bundle = includeLib;// includeLib|extractDate|excludeLib
 console.log('Bundling to '+bundle.dest);
 export default bundle;
