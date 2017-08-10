@@ -1,5 +1,6 @@
 node_modules
-public/rollup*
+public/*.js
+public/*.js.map
 src/**/*.js
 src/**/*.js.map
 *.log
