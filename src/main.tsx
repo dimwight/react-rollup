@@ -1,4 +1,5 @@
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import {render} from 'react-dom';
 import App from './welcome/Welcome';
 import myFormat from './myFormat';
 import errorTest from './consoleError';
@@ -17,9 +18,8 @@ function announceTime(){
 
 errorTest();
 if(true)announceTime();
-// else document.getElementById('pageTitle').innerText=document.title;
-//   ReactDOM.render(
-//   <App />,
-//   document.getElementById('app') as HTMLElement
-// );
+else document.getElementById('pageTitle').innerText=document.title;
+  render(<App />,
+  document.getElementById('app') as HTMLElement
+);
 

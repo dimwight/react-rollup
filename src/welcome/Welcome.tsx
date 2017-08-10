@@ -10,7 +10,7 @@ export default class Welcome extends React.Component<{}, {}> {
         </div>
         <p className="app-intro">
           Edited <code>{
-          // (document.title=top+this.constructor.name).replace(top,'')
+          (document.title=top+this.constructor.name).replace(top,'')
         }</code> for the last time?
         </p>
       </div>

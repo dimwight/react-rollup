@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016"
+    ],
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
     "alwaysStrict": true,
