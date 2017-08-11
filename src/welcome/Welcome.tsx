@@ -11,7 +11,7 @@ export default class Welcome extends React.Component<{}, {}> {
         <p className="app-intro">
           Edited <code>{
           (document.title=top+this.constructor.name).replace(top,'')
-        }</code> for the last time?
+        }</code> for the last time!
         </p>
       </div>
     );
