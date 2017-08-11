@@ -28,7 +28,7 @@ const includeLib = Object.assign({}, common, {
 });
 const extractDate= Object.assign({}, common, {
   entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/date.js',
+  dest: 'public/dateFormat.js',
   moduleName: 'extractDate',
 });
 const extractReact= Object.assign({}, common, {

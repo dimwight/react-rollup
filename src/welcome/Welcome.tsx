@@ -1,9 +1,8 @@
 import React from 'react';
-import {errorTest} from '../util/consoleError';
-
+import {errorTest} from '../util/Util';
 export class Welcome extends React.Component<{}, {}> {
   render() {
-    errorTest(this);
+    errorTest();
     const top=document.title+' : : ';
     return (
       <div className="app">

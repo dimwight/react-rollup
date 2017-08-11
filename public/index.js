@@ -13,7 +13,7 @@ function errorTest(msg) {
 
 class Welcome extends React.Component {
     render() {
-        errorTest(this);
+        errorTest();
         const top = document.title + ' : : ';
         return (React.createElement("div", { className: "app" },
             React.createElement("div", { className: "app-header" },

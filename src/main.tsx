@@ -1,10 +1,10 @@
 import React from 'react';
 import Dom from 'react-dom';
 import {Welcome} from './welcome/Welcome';
-import {announceTime} from './util/myFormat';
+import {tellTheTime} from './util/Util';
 
 if(false){
-  announceTime();
+  tellTheTime();
 }
 else {
   document.getElementById('pageTitle').innerText=document.title;
