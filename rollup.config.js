@@ -1,38 +1,60 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import sourcemaps from 'rollup-plugin-sourcemaps';
 import replace from 'rollup-plugin-replace';
-import postcss from 'rollup-plugin-postcss';
+import sourcemaps from 'rollup-plugin-sourcemaps';
 
-export default {
-  entry: 'src/main.js',
-  dest: 'public/rollup.js',
-  format: 'es',
-  sourceMap: true,
+const common = {
+  format: 'iife',
   plugins: [
-    resolve({
-      jsnext: true,
-      }
-    ),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify( 'production' )
-    }),
     sourcemaps(),
-    postcss({
-      // extract : 'true'
-    }),
+    resolve(),
     commonjs({
-      include: 'node_modules/**',
       namedExports:{
-        'node_modules/date-fns/index.js': [ 'format' ],
-        'node_modules/react/react.js':[
+        'node_modules/date-fns/format': [ 'format' ],
+        'node_modules/react/index.js':[
           'Component',
           'createElement',
         ],
-        'node_modules/react/react-dom.js':[
-            'render'
-          ],
-        }
-    })
+        'node_modules/react-dom/index.js':['render'],
+      }
+    }),
+    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
+const includeLib = Object.assign({}, common, {
+  entry: 'src/main.js',
+  dest: 'public/index.js',
+  sourceMap: true,
+});
+const extractDate= Object.assign({}, common, {
+  entry: 'node_modules/date-fns/format/index.js',
+  dest: 'public/dateFormat.js',
+  moduleName: 'extractDate',
+});
+const extractReact= Object.assign({}, common, {
+  entry: 'node_modules/react/dist/react.js',
+  dest: 'public/react.js',
+  moduleName: 'extractReact',
+});
+const extractReactDom= Object.assign({}, common, {
+  entry: 'node_modules/react-dom/dist/react-dom.js',
+  dest: 'public/react-dom.js',
+  moduleName: 'extractReactDom',
+});
+const excludeLib = Object.assign({}, includeLib, {
+  external: [
+    'date-fns/format',
+    'react',
+    'react-dom'
+  ],
+  globals: {
+    'date-fns/format': extractDate.moduleName,
+    'react':extractReact.moduleName,
+    'react-dom':extractReactDom.moduleName
+  }
+});
+
+const bundle = excludeLib;
+// includeLib|extractDate|extractReact|extractReactDom|excludeLib
+console.log('Bundling to '+bundle.dest);
+export default bundle;

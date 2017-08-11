@@ -1,3 +1,4 @@
 README for react-rollup
 
-- How can Rollup cope with React?
+- Can Rollup cope with React?
+- You bet!

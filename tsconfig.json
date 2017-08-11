@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
-    "suppressImplicitAnyIndexErrors": true,
-    "noImplicitAny": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016"
+    ],
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "strictNullChecks": false,
-    "removeComments": false,
-    "preserveConstEnums": true,
     "alwaysStrict": true,
-    "noUnusedLocals": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "target": "esnext",
-    "module": "es2015"
+    "module": "es6",
+    "target": "es2015",
+    "jsx": "react"
   }
 }
