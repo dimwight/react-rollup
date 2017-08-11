@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import replace from 'rollup-plugin-replace';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
 const common = {
@@ -9,12 +10,14 @@ const common = {
     commonjs({
       namedExports:{
         'node_modules/date-fns/format': [ 'format' ],
-        'node_modules/react/react.js':[
+        'node_modules/react/index.js':[
           'Component',
           'createElement',
         ],
+        'node_modules/react-dom/index.js':['render'],
       }
     }),
+    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )}),
     sourcemaps()
   ]
 };
