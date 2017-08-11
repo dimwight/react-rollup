@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectCodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <option name="RIGHT_MARGIN" value="90" />
+        <TypeScriptCodeStyleSettings>
+          <option name="SPACE_AFTER_TYPE_COLON" value="false" />
+          <option name="SPACE_AFTER_PROPERTY_COLON" value="false" />
+          <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+          <option name="SPACE_BEFORE_CLASS_LBRACE" value="false" />
+          <option name="REFORMAT_C_STYLE_COMMENTS" value="true" />
+          <option name="USE_DOUBLE_QUOTES" value="false" />
+          <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
+          <option name="IMPORTS_WRAP" value="2" />
+          <option name="SPACES_WITHIN_UNION_TYPES" value="false" />
+          <option name="SPACE_AROUND_ARROW_FUNCTION_OPERATOR" value="false" />
+          <option name="SPACE_BEFORE_ASYNC_ARROW_LPAREN" value="false" />
+          <option name="SPACES_WITHIN_OBJECT_TYPE_BRACES" value="false" />
+          <option name="BLANK_LINES_AROUND_FUNCTION" value="0" />
+        </TypeScriptCodeStyleSettings>
+        <codeStyleSettings language="Dart">
+          <option name="KEEP_LINE_BREAKS" value="false" />
+        </codeStyleSettings>
+        <codeStyleSettings language="JSON">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="2" />
+            <option name="TAB_SIZE" value="2" />
+            <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JavaScript">
+          <indentOptions>
+            <option name="INDENT_SIZE" value="2" />
+            <option name="CONTINUATION_INDENT_SIZE" value="2" />
+            <option name="TAB_SIZE" value="2" />
+            <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="TypeScript">
+          <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+          <option name="BLANK_LINES_AFTER_IMPORTS" value="0" />
+          <option name="BLANK_LINES_AROUND_CLASS" value="0" />
+          <option name="BLANK_LINES_AROUND_METHOD" value="0" />
+          <option name="BLANK_LINES_AROUND_METHOD_IN_INTERFACE" value="0" />
+          <option name="SPACE_AROUND_ASSIGNMENT_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_LOGICAL_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_EQUALITY_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_RELATIONAL_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_BITWISE_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_ADDITIVE_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_MULTIPLICATIVE_OPERATORS" value="false" />
+          <option name="SPACE_AROUND_SHIFT_OPERATORS" value="false" />
+          <option name="SPACE_AFTER_COMMA" value="false" />
+          <option name="SPACE_BEFORE_IF_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_WHILE_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_FOR_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false" />
+          <option name="SPACE_BEFORE_METHOD_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_IF_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_ELSE_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_WHILE_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_FOR_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_DO_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_SWITCH_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_TRY_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_CATCH_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_FINALLY_LBRACE" value="false" />
+          <option name="SPACE_BEFORE_ELSE_KEYWORD" value="false" />
+          <option name="SPACE_BEFORE_WHILE_KEYWORD" value="false" />
+          <option name="SPACE_BEFORE_CATCH_KEYWORD" value="false" />
+          <option name="SPACE_BEFORE_FINALLY_KEYWORD" value="false" />
+          <option name="SPACE_BEFORE_QUEST" value="false" />
+          <option name="SPACE_AFTER_QUEST" value="false" />
+          <option name="SPACE_BEFORE_COLON" value="false" />
+          <option name="SPACE_AFTER_COLON" value="false" />
+          <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
+          <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+          <indentOptions>
+            <option name="INDENT_SIZE" value="2" />
+            <option name="CONTINUATION_INDENT_SIZE" value="2" />
+            <option name="TAB_SIZE" value="2" />
+          </indentOptions>
+        </codeStyleSettings>
+      </value>
+    </option>
+    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
+  </component>
+</project>

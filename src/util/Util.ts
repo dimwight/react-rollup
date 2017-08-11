@@ -1,7 +1,7 @@
 import fn from 'date-fns/format';
 function format(time:Date,style:string){
   return fn(time,style);
-  return 'late afternoon';
+  return 'early evening';
 }
 export function tellTheTime(){
   const time=new Date();

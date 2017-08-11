@@ -12,7 +12,7 @@ export class Welcome extends React.Component<{}, {}> {
         <p className="app-intro">
           Edited <code>{
           (document.title=top+this.constructor.name).replace(top,'')
-        }</code>, not for the last time...
+        }</code>, perhaps for the last time?
         </p>
       </div>
     );

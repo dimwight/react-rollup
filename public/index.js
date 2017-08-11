@@ -21,7 +21,7 @@ class Welcome extends React.Component {
             React.createElement("p", { className: "app-intro" },
                 "Edited ",
                 React.createElement("code", null, (document.title = top + this.constructor.name).replace(top, '')),
-                ", not for the last time...")));
+                ", perhaps for the last time?")));
     }
 }
 
