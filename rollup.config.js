@@ -23,7 +23,7 @@ const common = {
 };
 const includeLib = Object.assign({}, common, {
   entry: 'src/main.js',
-  dest: 'public/main.js',
+  dest: 'public/index.js',
   sourceMap: true,
 });
 const extractDate= Object.assign({}, common, {

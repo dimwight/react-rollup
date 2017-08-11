@@ -1,7 +1,9 @@
 import React from 'react';
+import {errorTest} from '../util/consoleError';
 
-export default class Welcome extends React.Component<{}, {}> {
+export class Welcome extends React.Component<{}, {}> {
   render() {
+    errorTest(this);
     const top=document.title+' : : ';
     return (
       <div className="app">
@@ -11,7 +13,7 @@ export default class Welcome extends React.Component<{}, {}> {
         <p className="app-intro">
           Edited <code>{
           (document.title=top+this.constructor.name).replace(top,'')
-        }</code> for the last time!
+        }</code>, not for the last time...
         </p>
       </div>
     );
