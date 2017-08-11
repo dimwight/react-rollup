@@ -6,6 +6,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 const common = {
   format: 'iife',
   plugins: [
+    sourcemaps(),
     resolve(),
     commonjs({
       namedExports:{
@@ -17,13 +18,12 @@ const common = {
         'node_modules/react-dom/index.js':['render'],
       }
     }),
-    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )}),
-    sourcemaps()
+    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
 const includeLib = Object.assign({}, common, {
   entry: 'src/main.js',
-  dest: 'public/rollup.js',
+  dest: 'public/main.js',
   sourceMap: true,
 });
 const extractDate= Object.assign({}, common, {
@@ -32,19 +32,29 @@ const extractDate= Object.assign({}, common, {
   moduleName: 'extractDate',
 });
 const extractReact= Object.assign({}, common, {
-  entry: 'node_modules/react/react.js',
+  entry: 'node_modules/react/dist/react.js',
   dest: 'public/react.js',
   moduleName: 'extractReact',
+});
+const extractReactDom= Object.assign({}, common, {
+  entry: 'node_modules/react-dom/dist/react-dom.js',
+  dest: 'public/react-dom.js',
+  moduleName: 'extractReactDom',
 });
 const excludeLib = Object.assign({}, includeLib, {
   external: [
     'date-fns/format',
+    'react',
+    'react-dom'
   ],
   globals: {
-    'date-fns/format': extractDate.moduleName
+    'date-fns/format': extractDate.moduleName,
+    'react':extractReact.moduleName,
+    'react-dom':extractReactDom.moduleName
   }
 });
 
-const bundle = includeLib;// includeLib|extractDate|excludeLib
+const bundle = excludeLib;
+// includeLib|extractDate|extractReact|extractReactDom|excludeLib
 console.log('Bundling to '+bundle.dest);
 export default bundle;
