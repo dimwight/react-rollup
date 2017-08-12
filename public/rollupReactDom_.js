@@ -18757,4 +18757,4 @@ var index_1 = index.render;
 exports['default'] = index;
 exports.render = index_1;
 
-}((this.extractReactDom = this.extractReactDom || {})));
+}((this.ReactDOM= this.ReactDOM|| {})));
