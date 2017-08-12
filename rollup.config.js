@@ -45,7 +45,7 @@ const excludeLib = Object.assign({}, includeLib, {
   external: [
     'date-fns/format',
     'react',
-    // 'react-dom'
+    'react-dom'
   ],
   globals: {
     'date-fns/format': extractDate.moduleName,

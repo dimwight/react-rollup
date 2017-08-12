@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="Broken with extracted RD">
+    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rollup.config.js" afterPath="$PROJECT_DIR$/rollup.config.js" />
     </list>
@@ -23,8 +23,8 @@
       <file leaf-file-name="rollup.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rollup.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+            <state relative-caret-position="458">
+              <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -649,8 +649,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rollup.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        <state relative-caret-position="458">
+          <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
           <folding />
         </state>
       </provider>
