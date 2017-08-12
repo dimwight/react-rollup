@@ -21,40 +21,41 @@ const common = {
     replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
-const includeLib = Object.assign({}, common, {
+const o = Object;
+const libDateFormat= o.assign({}, common, {
+  entry: 'node_modules/date-fns/format/index.js',
+  dest: 'public/dateFormat.js',
+  moduleName: 'libDateFormat',
+});
+const libReact= o.assign({}, common, {
+  entry: 'node_modules/react/dist/react.js',
+  dest: 'public/react.js',
+  moduleName: 'libReact',
+});
+const libReactDom= o.assign({}, common, {
+  entry: 'node_modules/react-dom/dist/react-dom.js',
+  dest: 'public/react-dom.js',
+  moduleName: 'libReactDom',
+});
+const includeLibs = o.assign({}, common, {
   entry: 'src/main.js',
   dest: 'public/index.js',
   sourceMap: true,
 });
-const extractDate= Object.assign({}, common, {
-  entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/dateFormat.js',
-  moduleName: 'extractDate',
-});
-const extractReact= Object.assign({}, common, {
-  entry: 'node_modules/react/dist/react.js',
-  dest: 'public/react.js',
-  moduleName: 'extractReact',
-});
-const extractReactDom= Object.assign({}, common, {
-  entry: 'node_modules/react-dom/dist/react-dom.js',
-  dest: 'public/react-dom.js',
-  moduleName: 'extractReactDom',
-});
-const excludeLib = Object.assign({}, includeLib, {
+const excludeLibs = o.assign({}, includeLib, {
   external: [
     'date-fns/format',
     'react',
     // 'react-dom'
   ],
   globals: {
-    'date-fns/format': extractDate.moduleName,
-    'react':extractReact.moduleName,
-    'react-dom':extractReactDom.moduleName
+    'date-fns/format': libDateFormat.moduleName,
+    'react':libReact.moduleName,
+    'react-dom':libReactDom.moduleName
   }
 });
 
-const bundle = excludeLib;
-// includeLib|extractDate|extractReact|extractReactDom|excludeLib
+const bundle = excludeLibs;
+// libDateFormat|libReact|libReactDom|includeLibs|exclusions
 console.log('Bundling to '+bundle.dest);
 export default bundle;
