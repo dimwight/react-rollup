@@ -1,4 +1,5 @@
 import fn from 'date-fns/format';
+
 function format(time:Date,style:string){
   return fn(time,style);
   return 'early evening';

@@ -21,27 +21,29 @@ const common = {
     replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
-const libDateFormat= Object.assign({}, common, {
+
+const o = Object;
+const libDateFormat= o.assign({}, common, {
   entry: 'node_modules/date-fns/format/index.js',
   dest: 'public/rollupDateFormat.js',
   moduleName: 'libDateFormat',
 });
-const libReact= Object.assign({}, common, {
+const libReact= o.assign({}, common, {
   entry: 'node_modules/react/dist/react.js',
   dest: 'public/rollupReact.js',
   moduleName: 'React',
 });
-const libReactDom= Object.assign({}, common, {
+const libReactDom= o.assign({}, common, {
   entry: 'node_modules/react-dom/dist/react-dom.js',
   dest: 'public/rollupReactDom.js',
   moduleName: 'ReactDOM',
 });
-const includeLibs = Object.assign({}, common, {
+const includeLibs = o.assign({}, common, {
   entry: 'src/main.js',
   dest: 'public/index.js',
   sourceMap: true,
 });
-const excludeLibs = Object.assign({}, includeLibs, {
+const excludeLibs = o.assign({}, includeLibs, {
   external: [
     'date-fns/format',
     'react',
