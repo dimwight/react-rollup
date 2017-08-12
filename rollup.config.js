@@ -21,40 +21,40 @@ const common = {
     replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
-const includeLib = Object.assign({}, common, {
+const rollupDateFormat= Object.assign({}, common, {
+  entry: 'node_modules/date-fns/format/index.js',
+  dest: 'public/rollupDateFormat.js',
+  moduleName: 'rollupDateFormat',
+});
+const rollupReact= Object.assign({}, common, {
+  entry: 'node_modules/react/dist/react.js',
+  dest: 'public/rollupReact.js',
+  moduleName: 'rollupReact',
+});
+const rollupReactDom= Object.assign({}, common, {
+  entry: 'node_modules/react-dom/dist/react-dom.js',
+  dest: 'public/rollupReactDom.js',
+  moduleName: 'rollupReactDom',
+});
+const includeLibs = Object.assign({}, common, {
   entry: 'src/main.js',
   dest: 'public/index.js',
   sourceMap: true,
 });
-const extractDate= Object.assign({}, common, {
-  entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/dateFormat.js¦',
-  moduleName: 'extractDate',
-});
-const extractReact= Object.assign({}, common, {
-  entry: 'node_modules/react/dist/react.js',
-  dest: 'public/react.js',
-  moduleName: 'extractReact',
-});
-const extractReactDom= Object.assign({}, common, {
-  entry: 'node_modules/react-dom/dist/react-dom.js',
-  dest: 'public/react-dom.js',
-  moduleName: 'extractReactDom',
-});
-const excludeLib = Object.assign({}, includeLib, {
+const excludeLibs = Object.assign({}, includeLibs, {
   external: [
     'date-fns/format',
     'react',
     'react-dom'
   ],
   globals: {
-    'date-fns/format': extractDate.moduleName,
-    'react':extractReact.moduleName,
-    'react-dom':extractReactDom.moduleName
+    'date-fns/format': rollupDateFormat.moduleName,
+    'react':false?rollupReact.moduleName:'React',
+    'react-dom':false?rollupReactDom.moduleName:'ReactDOM'
   }
 });
 
-const bundle = excludeLib;
-// includeLib|extractDate|extractReact|extractReactDom|excludeLib
+const bundle = excludeLibs;
+// rollupDateFormat|rollupReact|rollupReactDom|includeLibs|excludeLibs
 console.log('Bundling to '+bundle.dest);
 export default bundle;

@@ -1,4 +1,4 @@
-var extractDate = (function () {
+var rollupDateFormat = (function () {
 'use strict';
 
 /**
