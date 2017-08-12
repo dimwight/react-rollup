@@ -1,4 +1,4 @@
-var extractReact = (function () {
+var React = (function () {
 'use strict';
 
 function commonjsRequire () {

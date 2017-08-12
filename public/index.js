@@ -30,5 +30,5 @@ class Welcome extends React.Component {
     Dom.render(React.createElement(Welcome, null), document.getElementById('app'));
 }
 
-}(React,ReactDOM,rollupDateFormat));
+}(React,ReactDOM,libDateFormat));
 //# sourceMappingURL=index.js.map

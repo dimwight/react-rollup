@@ -1,4 +1,4 @@
-var rollupDateFormat = (function () {
+var libDateFormat = (function () {
 'use strict';
 
 /**

@@ -21,20 +21,20 @@ const common = {
     replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
-const rollupDateFormat= Object.assign({}, common, {
+const libDateFormat= Object.assign({}, common, {
   entry: 'node_modules/date-fns/format/index.js',
   dest: 'public/rollupDateFormat.js',
-  moduleName: 'rollupDateFormat',
+  moduleName: 'libDateFormat',
 });
-const rollupReact= Object.assign({}, common, {
+const libReact= Object.assign({}, common, {
   entry: 'node_modules/react/dist/react.js',
   dest: 'public/rollupReact.js',
-  moduleName: 'rollupReact',
+  moduleName: 'React',
 });
-const rollupReactDom= Object.assign({}, common, {
+const libReactDom= Object.assign({}, common, {
   entry: 'node_modules/react-dom/dist/react-dom.js',
   dest: 'public/rollupReactDom.js',
-  moduleName: 'rollupReactDom',
+  moduleName: 'ReactDOM',
 });
 const includeLibs = Object.assign({}, common, {
   entry: 'src/main.js',
@@ -48,13 +48,13 @@ const excludeLibs = Object.assign({}, includeLibs, {
     'react-dom'
   ],
   globals: {
-    'date-fns/format': rollupDateFormat.moduleName,
-    'react':false?rollupReact.moduleName:'React',
-    'react-dom':false?rollupReactDom.moduleName:'ReactDOM'
+    'date-fns/format': libDateFormat.moduleName,
+    'react':libReact.moduleName,
+    'react-dom':libReactDom.moduleName
   }
 });
 
 const bundle = excludeLibs;
-// rollupDateFormat|rollupReact|rollupReactDom|includeLibs|excludeLibs
+// libDateFormat|libReact|libReactDom|includeLibs|excludeLibs
 console.log('Bundling to '+bundle.dest);
 export default bundle;
