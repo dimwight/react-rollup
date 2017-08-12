@@ -374,7 +374,8 @@
     <MESSAGE value="Working again with node_modules" />
     <MESSAGE value="Titivated filenames" />
     <MESSAGE value="Pinned down RD as last" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pinned down RD as last" />
+    <MESSAGE value="Pinned down RD at last" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pinned down RD at last" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
