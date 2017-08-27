@@ -1,7 +1,7 @@
 node_modules
+*.log
 src/**/*.js
 src/**/*.js.map
-*.log
 public/index.js
+public/index.js.map
 tool/**/*.js
-
