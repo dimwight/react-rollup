@@ -16,8 +16,8 @@ export function tellTheTime(){
   }
 }
 export function errorTest (msg?){
-  let err=new Error('Hell!');
-  console.log(`Created ${err} for ${msg}...`);
+  let err=new Error(msg);
+  console.log(`Created ${err}...`);
   if(false) throw err;
   else console.log(`..but didn't throw it.`);
 }

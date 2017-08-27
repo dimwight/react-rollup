@@ -11,7 +11,7 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "module": "es6",
-    "target": "esnext",
+    "target": "es5",
     "jsx": "react"
   }
 }

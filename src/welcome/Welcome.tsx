@@ -1,5 +1,5 @@
 import React from 'react';
-import {errorTest} from '../util/Util';
+import {errorTest} from '../util/Bits';
 
 export class Welcome extends React.Component<{}, {}> {
   render() {
