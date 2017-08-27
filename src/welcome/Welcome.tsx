@@ -1,9 +1,7 @@
 import React from 'react';
-import {errorTest} from '../util/Bits';
 
 export class Welcome extends React.Component<{}, {}> {
   render() {
-    errorTest();
     const top=document.title+' : : ';
     return (
       <div className="app">

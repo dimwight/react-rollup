@@ -39,11 +39,12 @@ const libReactDom= o.assign({}, common, {
   moduleName: 'ReactDOM',
 });
 const includeLibs = o.assign({}, common, {
-  entry: 'src/main.js',
+  entry: 'src/index.js',
   dest: 'public/index.js',
   sourceMap: true,
 });
 const excludeLibs = o.assign({}, includeLibs, {
+  format: 'es',
   external: [
     'date-fns/format',
     'react',
