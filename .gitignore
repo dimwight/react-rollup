@@ -1,6 +1,7 @@
 node_modules
-public/*.js.map
-src/*/*.js
-src/*/*.js.map
+src/**/*.js
+src/**/*.js.map
 *.log
 public/index.js
+tool/**/*.js
+
