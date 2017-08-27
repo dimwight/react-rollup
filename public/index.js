@@ -1,15 +1,5 @@
-(function (React,Dom,fn) {
-'use strict';
-
-React = React && 'default' in React ? React['default'] : React;
-Dom = Dom && 'default' in Dom ? Dom['default'] : Dom;
-fn = fn && 'default' in fn ? fn['default'] : fn;
-
-function errorTest(msg) {
-    var err = new Error(msg);
-    console.log("Created " + err + "...");
-    console.log("..but didn't throw it.");
-}
+import React from 'react';
+import Dom from 'react-dom';
 
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -27,7 +17,6 @@ var Welcome = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Welcome.prototype.render = function () {
-        errorTest();
         var top = document.title + ' : : ';
         return (React.createElement("div", { className: "app" },
             React.createElement("div", { className: "app-header" },
@@ -40,10 +29,10 @@ var Welcome = (function (_super) {
     return Welcome;
 }(React.Component));
 
+// import {errorTest} from './util/Bits';
 // import {tellTheTime} from './util/Time';
+// errorTest();
 // tellTheTime();
 document.getElementById('pageTitle').innerText = document.title;
 Dom.render(React.createElement(Welcome, null), document.getElementById('app'));
-
-}(React,ReactDOM,libDateFormat));
 //# sourceMappingURL=index.js.map
