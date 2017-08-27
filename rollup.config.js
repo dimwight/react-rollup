@@ -59,6 +59,6 @@ const excludeLibs = o.assign({}, includeLibs, {
 
 const bundle = excludeLibs;
 // libDateFormat|libReact|libReactDom|includeLibs|excludeLibs
-console.log('Bundling '+bundle.entry+' to '+bundle.dest);
+console.log('Bundling '+bundle.entry+' to '+bundle.dest+', format='+bundle.format)
 
 export default bundle;
