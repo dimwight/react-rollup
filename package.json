@@ -14,6 +14,7 @@
     "rollup-watch": "^4.0.0"
   },
   "scripts": {
+    "rewrite": "node tool/rewrite.js",
     "build": "rollup -c",
     "watch": "rollup -c -w"
   }

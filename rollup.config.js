@@ -18,7 +18,7 @@ const common = {
         'node_modules/react-dom/index.js':['render'],
       }
     }),
-    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
+    replace({'process.env.NODE_ENV': 'development'})
   ]
 };
 
@@ -54,7 +54,7 @@ const excludeLibs = o.assign({}, includeLibs, {
     'date-fns/format': libDateFormat.moduleName,
     'react':libReact.moduleName,
     'react-dom':libReactDom.moduleName
-  }
+  },
 });
 
 const bundle = excludeLibs;
