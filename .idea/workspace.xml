@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="rewrite __extends">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/build.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/build_launch.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/build_launch.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.js" afterPath="$PROJECT_DIR$/public/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tool/rewrite.ts" afterPath="$PROJECT_DIR$/tool/rewrite.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,38 +23,7 @@
     <favorites_list name="react-rollup" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rewrite.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tool/rewrite.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tool/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,18 +87,18 @@
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/util/Utili.ts" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/Issues.md" />
         <option value="$PROJECT_DIR$/src/util/Times.ts" />
         <option value="$PROJECT_DIR$/src/main.tsx" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/welcome/Welcome.tsx" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
-        <option value="$PROJECT_DIR$/src/welcome/Welcome.js" />
         <option value="$PROJECT_DIR$/rewrite.ts" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/tool/rewrite.ts" />
         <option value="$PROJECT_DIR$/tool/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/welcome/Welcome.tsx" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/tool/rewrite.ts" />
+        <option value="$PROJECT_DIR$/src/welcome/Welcome.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -216,13 +188,20 @@
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="tool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
+              <item name="Welcome.tsx" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="tool" type="462c0819:PsiDirectoryNode" />
-              <item name="rewrite.ts" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -266,7 +245,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.rewrite">
+  <component name="RunManager" selected="JavaScript Debug.build+launch">
     <configuration name="rewrite" type="js.build_tools.npm" factoryName="npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -277,9 +256,9 @@
       <envs />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="npm.rewrite" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.build+launch" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.launch" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.build+launch" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.launch" />
+      <item index="2" class="java.lang.String" itemvalue="npm.rewrite" />
       <item index="3" class="java.lang.String" itemvalue="npm.build" />
       <item index="4" class="java.lang.String" itemvalue="npm.watch" />
     </list>
@@ -298,16 +277,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="630" y="0" width="909" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22617681" sideWeight="0.6786297" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22617681" sideWeight="0.6786297" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39715537" sideWeight="0.50498754" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39715537" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
@@ -327,6 +305,474 @@
       <list>
         <option value="$PROJECT_DIR$/src/welcome/Welcome.js" />
         <option value="$PROJECT_DIR$/src/welcome/Welcome.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/main.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/main.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/components/Greeting.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/components/WhoToGreet.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/components/Greeting.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/components/WhoToGreet.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/components/App.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/src/components/App.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/historicalscheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.wrappers.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/currentthreadscheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/currentthreadscheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/defaultscheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/historicalscheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduleperiodicrecursive.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.recursive.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.periodic.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/virtualtimescheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/immediatescheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.periodic.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.wrappers.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.recursive.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/virtualtimescheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduleditem.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduleditem.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/immediatescheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduleperiodicrecursive.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/scheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/concurrency/defaultscheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/main.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/main.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/components/Greeting.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/components/WhoToGreet.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/components/Greeting.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/components/WhoToGreet.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/components/App.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/src/components/App.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/mockobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/mockdisposable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/subscription.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/recorded.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/mockobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/recorded.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/reactivetest.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/reactivetest.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/testscheduler.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/subscription.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/testscheduler.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/testing/mockdisposable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/replaysubject.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/subject.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/anonymoussubject.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/behaviorsubject.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/behaviorsubject.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/asyncsubject.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/replaysubject.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/anonymoussubject.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/subject.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/subjects/asyncsubject.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/isequal.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/errors.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/priorityqueue.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/bindcallback.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/isequal.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/bindcallback.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/errors.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/util.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/util.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/internal/priorityqueue.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/test/components/WhoToGreet.tests.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/test/components/WhoToGreet.tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/test/components/App.tests.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/test/components/App.tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/test/components/Greeting.tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-happypack/test/components/Greeting.tests.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/joins/plan.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/joins/pattern.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/joins/plan.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/joins/pattern.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/test/components/WhoToGreet.tests.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/test/components/WhoToGreet.tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/test/components/App.tests.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/test/components/App.tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/test/components/Greeting.tests.js" />
+        <option value="$PROJECT_DIR$/node_modules/ts-loader/examples/react-babel-karma-gulp-thread-loader/test/components/Greeting.tests.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/last.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/merge.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/interval.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sequenceequal.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromarray.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/filter.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/transduce.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/filter.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/multicast.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmap.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/reduce.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/toarray.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skip.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/subscribeon.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takewithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/window.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/interval.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/tomap.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/distinctuntilchanged.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/catch.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/throttle.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/for.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/tap.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/onerrorresumenextproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/create.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/startasync.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/if.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/repeat.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/share.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/combinelatestproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmaplatest.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/debounce.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/publishvalue.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sum.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/dowhile.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sum.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/minby.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/switch.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/single.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/switchfirst.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/retry.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/zipiterable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/windowwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/using.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/withlatestfrom.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/catchproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/expand.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/mergeconcat.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/count.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/expand.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/thendo.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/of.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/combinelatest.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/dematerialize.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/dowhile.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/join.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/let.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/delay.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/observeon.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/publish.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipuntil.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/create.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/of.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromeventpattern.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/generatewithabsolutetime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/isempty.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/jortsort.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timer.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelastwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/mergedelayerror.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/amb.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/groupby.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelast.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/start.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/publishvalue.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takeuntil.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/defaultifempty.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelastbufferwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/repeatproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/distinctuntilchanged.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/onerrorresumenext.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pairs.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/mergeall.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/asobservable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sharevalue.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/empty.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/start.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/isempty.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/materialize.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ignoreelements.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/forkjoinproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmapwithmaxconcurrent.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromnodecallback.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/throw.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatall.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/while.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/topromise.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/buffer.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/count.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/window.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/topromise.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/jortsortuntil.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/throw.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelastwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/just.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/empty.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/combinelatest.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/bufferwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/take.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/some.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/groupby.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmap.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/bufferwithcount.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sample.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/find.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sequenceequal.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelastbufferwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromevent.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/when.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ambproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/combinelatestproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/generatewithabsolutetime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timeout.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takewithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelastbuffer.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/frompromise.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromcallback.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timer.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipwhile.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/repeat.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/minby.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmaplatest.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/spawn.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/selectmanyobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pipe.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/elementat.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/groupbyuntil.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/partition.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/reduce.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/max.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/tap.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pairwise.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/publish.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ignoreelements.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/map.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/bufferwithtimeorcount.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/singleinstance.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/mergedelayerror.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromeventpattern.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skiplast.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timeout.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skip.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skiplast.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmapwithmaxconcurrent.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/catchproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/using.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sample.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/take.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/switch.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concat.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/never.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/debounce.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/forkjoinproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ambproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipuntil.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipuntilwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/toset.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takeuntil.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipwhile.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/selectmanyobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/materialize.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/never.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmapfirst.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/min.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skiplastwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/jortsortuntil.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/distinct.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ofobjectchanges.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/tomap.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/startwith.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/groupbyuntil.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ofarraychanges.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/replay.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatmap.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromevent.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/generatewithrelativetime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/toset.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/indexof.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/generate.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/case.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/frompromise.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/retrywhen.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/let.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/single.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/subscribeon.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sharereplay.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/zip.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/replay.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/and.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/bufferwithtimeorcount.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/amb.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/first.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromcallback.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concat.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/average.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromnodecallback.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/defaultifempty.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/every.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/join.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/last.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/manyselect.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/groupjoin.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/if.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/for.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/groupjoin.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/mergeall.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatall.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/maxby.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sharereplay.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pairs.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/startwith.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/retrywhen.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/spawn.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/flatmapfirst.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timeinterval.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/onerrorresumenextproto.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/share.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/map.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/windowwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/transduce.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/buffer.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/thendo.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takeuntilwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/catch.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/switchfirst.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/manyselect.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/windowwithtimeorcount.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/zip.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/finally.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/sharevalue.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/fromarray.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/distinct.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timeinterval.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takeuntilwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/dematerialize.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/bufferwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pairwise.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pipe.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelastbuffer.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/finally.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/toasync.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/bufferwithcount.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/defer.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skiplastwithtime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/skipuntilwithtime.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ofobjectchanges.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/range.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/startasync.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/generatewithrelativetime.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/throttle.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timestamp.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatmapobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takelast.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/elementat.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/jortsort.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/singleinstance.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/asobservable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/from.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/defer.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/generate.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/windowwithtimeorcount.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/merge.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/find.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/first.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/scan.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/publishlast.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/multicast.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/onerrorresumenext.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/includes.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/withlatestfrom.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/partition.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/min.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/findindex.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/case.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/mergeconcat.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/forkjoin.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/when.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takewhile.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/repeatproto.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/delaysubscription.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/scan.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/toarray.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatmap.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/findindex.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/maxby.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pluck.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/delay.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/windowwithcount.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/every.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/some.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/timestamp.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/from.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/concatmapobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/retry.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/average.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/indexof.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/pluck.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/forkjoin.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/and.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/zipiterable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/takewhile.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/ofarraychanges.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/includes.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/toasync.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/while.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/windowwithcount.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/just.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/delaysubscription.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/publishlast.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/observeon.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/max.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/observable/range.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/booleandisposable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/refcountdisposable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/booleandisposable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/compositedisposable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/disposable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/compositedisposable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/refcountdisposable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/disposables/disposable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/registerServiceWorker.js" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/App.test.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/index.js" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/App.test.js" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/index.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/App.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/registerServiceWorker.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts-ts/template/src/App.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/es6.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/anonymousobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/scheduledobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observer.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/es5.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/abstractobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/checkedobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/notification.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observer-lite.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/notification.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/scheduledobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/es6.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/abstractobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/checkedobserver.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/anonymousobservable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observer.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/es5.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observer-extras.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observer-lite.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/anonymousobservable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/anonymousobserver.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/observer-extras.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/connectableobservable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/groupedobservable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/groupedobservable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/linq/connectableobservable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/pausablebuffered.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/pausable.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/controlled.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/pauser.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/pauser.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/pausable.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/controlled.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/windowed.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/stopandwait.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/windowed.js" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/pausablebuffered.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/rx/ts/core/backpressure/stopandwait.js.map" />
         <option value="$PROJECT_DIR$/tool/rewrite.js" />
       </list>
     </option>
@@ -705,22 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tool/rewrite.js.map">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -740,14 +1170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tool/rewrite.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -756,26 +1178,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tool/rewrite.ts">
+    <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tool/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="30" lean-forward="true" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tool/rewrite.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="36" lean-forward="false" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tool/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
           <folding />
         </state>
       </provider>
