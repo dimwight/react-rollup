@@ -3,7 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import postcss from 'rollup-plugin-postcss';
-import image from 'rollup-plugin-image';
+import svg from 'rollup-plugin-svg';
 
 const common = {
   format: 'iife',
@@ -12,11 +12,12 @@ const common = {
       plugins: [],
       extract: true,
     }),
-    image(),
+    svg(),
     sourcemaps(),
     resolve(),
     commonjs({
       namedExports:{
+        'src/welcome/logo.svg': [ 'logo' ],
         'node_modules/date-fns/format': [ 'format' ],
         'node_modules/react/index.js':[
           'Component',
@@ -65,6 +66,6 @@ const excludeLibs = o.assign({}, includeLibs, {
 
 const bundle = excludeLibs;
 // libDateFormat|libReact|libReactDom|includeLibs|excludeLibs
-console.log('Bundling '+bundle.entry+' to '+bundle.dest+', format='+bundle.format)
+console.log('Bundling '+bundle.entry+' to '+bundle.dest+', format='+bundle.format);
 
 export default bundle;
