@@ -3,20 +3,16 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import postcss from 'rollup-plugin-postcss';
+import image from 'rollup-plugin-image';
 
 const common = {
   format: 'iife',
   plugins: [
     postcss({
-      plugins: [
-        // cssnext(),
-        // yourPostcssPlugin()
-      ],
-      //sourceMap: false, // default value
-      extract: true, // default value
-      extensions: ['.css', '.sss']  // default value
-      // parser: sugarss
+      plugins: [],
+      extract: true,
     }),
+    image(),
     sourcemaps(),
     resolve(),
     commonjs({
