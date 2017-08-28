@@ -10,7 +10,8 @@ import './main.css';
 
 
 // tellTheTime();
-document.getElementById('pageTitle').innerText=document.title;
+const title=document.getElementById('pageTitle');
+if(title!=null)title.innerText=document.title;
 Dom.render(<Welcome />,
   document.getElementById('app') as HTMLElement
 );
