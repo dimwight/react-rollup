@@ -1,10 +1,14 @@
 README for react-rollup
 
-- Can Rollup cope with React?
-- React yes, React-DOM no: 
-```
-<!-- script src="../node_modules/react/dist/react.js"></script-->
-<script src="rollupReact.js"></script >
-<script src="../node_modules/react-dom/dist/react-dom.js"></script>
-<!-- script src="rollupReactDom.js"></script -->```
-```
+Can Rollup cope with React?
+- Bundling React works fine, React-DOM less so. 
+- However `excludeLibs`  bundles without them, 
+which is the best solution anyway. 
+
+Even the goodies from `create-react-app` work a treat: 
+
+- CSS with `rollup-plugin-postcss > extract`
+- SVG with `svg.d.ts` and `rollup-plugin-svg`
+
+Next, [react/docs/../hello-world](https://facebook.github.io/react/docs/hello-world.html)
+at last? 

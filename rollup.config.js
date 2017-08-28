@@ -8,10 +8,7 @@ import svg from 'rollup-plugin-svg';
 const common = {
   format: 'iife',
   plugins: [
-    postcss({
-      plugins: [],
-      extract: true,
-    }),
+    postcss({extract: true,}),
     svg(),
     sourcemaps(),
     resolve(),
