@@ -5,3 +5,4 @@ src/**/*.js.map
 public/index.js
 public/index.js.map
 tool/**/*.js
+/.idea/workspace.xml
