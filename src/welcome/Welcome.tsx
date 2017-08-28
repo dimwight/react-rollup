@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './Welcome.css';
+console.log('');
 export class Welcome extends React.Component<{}, {}> {
   render() {
     const top=document.title+' : : ';
