@@ -18,7 +18,7 @@ const common = {
         'node_modules/react-dom/index.js':['render'],
       }
     }),
-    replace({'process.env.NODE_ENV': 'development'})
+    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
 

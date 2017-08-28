@@ -10,9 +10,9 @@ export class Welcome extends React.Component<{}, {}> {
           <h2>Welcome to react-rollup</h2>
         </div>
         <p className="app-intro">
-          Edited <code>{
+          Editing <code>{
           (document.title=top+this.constructor.name).replace(top,'')
-        }</code>, perhaps for the last time?
+        }</code> once again!
         </p>
       </div>
     );

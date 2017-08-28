@@ -13,9 +13,9 @@ class Welcome extends React.Component {
             React.createElement("div", { className: "app-header" },
                 React.createElement("h2", null, "Welcome to react-rollup")),
             React.createElement("p", { className: "app-intro" },
-                "Edited ",
+                "Editing ",
                 React.createElement("code", null, (document.title = top + this.constructor.name).replace(top, '')),
-                ", perhaps for the last time?")));
+                " once again!")));
     }
 }
 
