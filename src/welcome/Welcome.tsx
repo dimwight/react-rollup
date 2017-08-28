@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Welcome.css';
+import logo from './logo.svg';
 
 export class Welcome extends React.Component<{}, {}> {
   render() {
@@ -8,6 +9,7 @@ export class Welcome extends React.Component<{}, {}> {
     return (
       <div className="app">
         <div className="app-header">
+          <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to react-rollup</h2>
         </div>
         <p className="app-intro">

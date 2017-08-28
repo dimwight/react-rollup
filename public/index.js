@@ -4,8 +4,8 @@
 React = React && 'default' in React ? React['default'] : React;
 Dom = Dom && 'default' in Dom ? Dom['default'] : Dom;
 
-// import './Welcome.css';
-console.log('');
+console.log('Hi');
+let logo = require('./Welcome.css');
 class Welcome extends React.Component {
     render() {
         const top = document.title + ' : : ';
@@ -15,7 +15,7 @@ class Welcome extends React.Component {
             React.createElement("p", { className: "app-intro" },
                 "Editing ",
                 React.createElement("code", null, (document.title = top + this.constructor.name).replace(top, '')),
-                " once again!")));
+                " with CSS!")));
     }
 }
 

@@ -4,5 +4,6 @@ src/**/*.js
 src/**/*.js.map
 public/index.js
 public/index.js.map
+public/index.css
 tool/**/*.js
 /.idea/workspace.xml
