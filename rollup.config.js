@@ -44,7 +44,6 @@ const includeLibs = o.assign({}, common, {
   sourceMap: true,
 });
 const excludeLibs = o.assign({}, includeLibs, {
-  format: 'iife',
   external: [
     'date-fns/format',
     'react',

@@ -4,6 +4,8 @@
 React = React && 'default' in React ? React['default'] : React;
 Dom = Dom && 'default' in Dom ? Dom['default'] : Dom;
 
+// import './Welcome.css';
+console.log('');
 class Welcome extends React.Component {
     render() {
         const top = document.title + ' : : ';

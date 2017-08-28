@@ -8,10 +8,10 @@
       "es2015",
       "es2016"
     ],
-    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
-    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "alwaysStrict": true,
     "moduleResolution": "node",
     "module": "es6",
     "target": "esnext",
