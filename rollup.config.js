@@ -2,10 +2,21 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import sourcemaps from 'rollup-plugin-sourcemaps';
+import postcss from 'rollup-plugin-postcss';
 
 const common = {
   format: 'iife',
   plugins: [
+    postcss({
+      plugins: [
+        // cssnext(),
+        // yourPostcssPlugin()
+      ],
+      //sourceMap: false, // default value
+      extract: true, // default value
+      extensions: ['.css', '.sss']  // default value
+      // parser: sugarss
+    }),
     sourcemaps(),
     resolve(),
     commonjs({
@@ -24,7 +35,7 @@ const common = {
 
 const o = Object;
 const libDateFormat= o.assign({}, common, {
-  entry: 'node_modules/date-fns/format/index.js',
+  entry: 'node_modules/date-fns/format/main.js',
   dest: 'public/rollupDateFormat.js',
   moduleName: 'libDateFormat',
 });
@@ -39,7 +50,7 @@ const libReactDom= o.assign({}, common, {
   moduleName: 'ReactDOM',
 });
 const includeLibs = o.assign({}, common, {
-  entry: 'src/index.js',
+  entry: 'src/main.js',
   dest: 'public/index.js',
   sourceMap: true,
 });

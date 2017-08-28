@@ -1,6 +1,7 @@
 import React from 'react';
-// import './Welcome.css';
-console.log('');
+
+import './Welcome.css';
+
 export class Welcome extends React.Component<{}, {}> {
   render() {
     const top=document.title+' : : ';
@@ -12,7 +13,7 @@ export class Welcome extends React.Component<{}, {}> {
         <p className="app-intro">
           Editing <code>{
           (document.title=top+this.constructor.name).replace(top,'')
-        }</code> once again!
+        }</code> with CSS!
         </p>
       </div>
     );

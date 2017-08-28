@@ -4,7 +4,10 @@ import {Welcome} from './welcome/Welcome';
 // import {errorTest} from './util/Bits';
 // import {tellTheTime} from './util/Time';
 
+import './main.css';
+
 // errorTest();
+
 
 // tellTheTime();
 document.getElementById('pageTitle').innerText=document.title;
