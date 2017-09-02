@@ -1,13 +1,13 @@
-import * as hello from './hello/_exports';
+import * as hellos from './hellos/_exports';
 
 import './main.css';
 
 if(true){
-  hello.props();
+  hellos.props();
 }
 else if(true){
-  hello.clock();
+  hellos.clock();
 }
 else {
-  hello.hello();
+  hellos.hello();
 }
