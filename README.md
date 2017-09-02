@@ -1,6 +1,4 @@
-README for react-rollup
-
-Can Rollup cope with React?
+# Can Rollup cope with React?
 - Bundling React works fine, React-DOM less so. 
 - However `excludeLibs`  bundles without them, 
 which is the best solution anyway. 
