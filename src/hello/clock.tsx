@@ -13,6 +13,6 @@ function tick(){
   );
 }
 
-export function render(){
+export function clock(){
   setInterval(tick,2000)
 }

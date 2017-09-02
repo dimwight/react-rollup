@@ -26,7 +26,7 @@ function getGreeting(user?:FredOrWilma|Flintstone){
   return <h1>Hello {user?formatName(user):' sailor'}!</h1>
 }
 
-export function render(){
+export function hello(){
   ReactDOM.render(
     false?getGreeting(user.first as FredOrWilma)
       :<h1>Hello</h1>,

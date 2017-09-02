@@ -1,9 +1,7 @@
-import * as hello from './hello';
-import * as clock from './clock';
-import * as props from './props';
+import * as hello from './hello/_exports';
 
 import './main.css';
 
-if(true)props.render();
-else if(true)clock.render();
-else hello.render();
+if(true)hello.props();
+else if(true)hello.clock();
+else hello.hello();
