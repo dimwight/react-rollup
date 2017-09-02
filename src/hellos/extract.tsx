@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import {props} from './props';
 
 function formatDate(date) {
-  return date.toLocaleDateString();
+  return date.toLocaleTimeString();
 }
-
 function Comment(props) {
   return (
     <div className="Comment">
@@ -27,20 +26,21 @@ function Comment(props) {
   );
 }
 
-const comment = {
-  date: new Date(),
-  text: 'Event and data binding with no events and no binding!',
-  author: {
-    name: 'Superficial',
-    avatarUrl: 'http://superficial.sourceforge.net/Facets.jpg'
-  }
-};
 export function extract(){
+  const base={
+    date: new Date(),
+    text: 'Event and data binding with no events and no binding!',
+    author: {
+      name: 'Facets:',
+      avatarUrl: 'http://superficial.sourceforge.net/Facets.jpg'
+    }
+  },
+  src = Object.assign({},base,{
+    text:base.text.replace('!',' - just the data!'),
+  });
   ReactDOM.render(
-    <Comment
-      date={comment.date}
-      text={comment.text}
-      author={comment.author} />,
+    false?Comment(base)
+    :<Comment date={src.date} text={src.text} author={src.author}/>,
     document.getElementById('root')
   );
 }
