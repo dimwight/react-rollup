@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import * as hello from './hello';
 
 function Hello(bits) {
-  let names:[hello.FredOrWilma]=['Fred','Wilma'];
+  let names=['Fred','Wilma'];/*hello.FredOrWilma*/
   let known=false;
   let first=bits.first;
   if(!bits.first)first='that';

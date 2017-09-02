@@ -1,19 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-interface UserTwo{
+interface Named{
   first,
   last,
 }
-export interface Flintstone extends UserTwo{
+
+type FredOrWilma='Fred'|'Wilma';
+
+interface Flintstone extends Named{
   first:FredOrWilma,
   last:'Flintstone',
 }
-export type FredOrWilma='Fred'|'Wilma';
-function formatName(user:UserTwo|FredOrWilma){
+
+function untypedLiteral():Flintstone{
+  return {
+    first:'Wilma',
+    last:'Flintstone',
+  }
+}
+
+function typedVar():Flintstone{
+  const wilma:Flintstone={
+    first:'Wilma',
+    last:'Flintstone',
+  };
+  return wilma
+}
+
+function formatName(user:Named|FredOrWilma){
   if(typeof user=='string')return user;
   return user.first+' '+user.last;
 }
+
 export function getGreeting(user?:FredOrWilma|Flintstone){
   return false?para():
     user?<h1>Greetings to {formatName(user)}!</h1>
@@ -21,18 +40,12 @@ export function getGreeting(user?:FredOrWilma|Flintstone){
 }
 function para(){
   return (<p>
-    Hello there, {formatName(false?user():'Fred')}!
+    Hello there, {formatName(false?typedVar():'Fred')}!
   </p>);
-}
-function user():Flintstone{
-  return{
-    first:'Wilma',
-    last:'Flintstone',
-  }
 }
 export function hello(){
   ReactDOM.render(
-  getGreeting(user().first as FredOrWilma),
+  getGreeting(typedVar().first as FredOrWilma),
   document.getElementById('root'),
 );
 }
