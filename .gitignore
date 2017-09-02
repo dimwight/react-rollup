@@ -2,8 +2,7 @@ node_modules
 *.log
 src/**/*.js
 src/**/*.js.map
-public/*.js
-public/*.js.map
-public/*.css
+public
 tool/*.js
 /.idea/workspace.xml
+!/public/index.html

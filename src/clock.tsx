@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 function tick(){
   const element=(
     <div>
-      <h2>{new Date().toLocaleTimeString()}</h2>
+      <h2>Time now is {new Date().toLocaleTimeString()}</h2>
     </div>
   );
   ReactDOM.render(
@@ -14,5 +14,5 @@ function tick(){
 }
 
 export function start(){
-  setInterval(tick,5000)
+  setInterval(tick,2000)
 }
