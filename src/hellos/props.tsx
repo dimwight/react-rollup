@@ -21,7 +21,6 @@ function Three() {
     </div>
   );
 }
-
 export function props(){
   ReactDOM.render(true?<Three/>:<Hello first="Fred" />,
     document.getElementById('root'));
