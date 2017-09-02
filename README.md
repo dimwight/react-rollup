@@ -9,4 +9,5 @@ Even the goodies from `create-react-app` work a treat:
 - SVG with `svg.d.ts` and `rollup-plugin-svg`
 
 Now [react/docs/../hello-world](https://facebook.github.io/react/docs/hello-world.html)
-at last. 
+at last.
+- Also `_exports.ts`

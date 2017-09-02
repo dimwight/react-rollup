@@ -16,7 +16,8 @@ function formatName(user:UserTwo|FredOrWilma){
 }
 export function getGreeting(user?:FredOrWilma|Flintstone){
   return false?para():
-    <h1>Hello {user?formatName(user):' sailor'}!</h1>
+    user?<h1>Greetings to {formatName(user)}!</h1>
+      :<h1>Hello sailor!</h1>
 }
 function para(){
   return (<p>
