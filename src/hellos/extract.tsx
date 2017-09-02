@@ -1,25 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Avatar(props){
-  trace('Avatar',props);
-  return (
-    <img src={props.user.avatarUrl}alt={props.user.name}/>
-  );
-}
 function trace(top,props){
   console.log(top+': props='+JSON.stringify(props,null,1))
-}
-function UserInfo(props){
-  trace('UserInfo',props);
-  return (
-    <div>
-      <Avatar user={props.user}/>
-      <div>
-        {props.user.name}
-      </div>
-    </div>
-  );
 }
 function Text(props){
   trace('Text',props);
@@ -34,35 +17,53 @@ function Text(props){
 function formatDate(date){
   return date.toLocaleTimeString();
 }
-function DatedText(props){
-  trace('DatedText',props);
-  return (
-    <div>
-      <div>::{props.text}</div>
-      <div>{formatDate(props.date)}</div>
-    </div>
-  )
-}
 function Dated(props){
   trace('Dated',props);
   return (
     <div>{formatDate(props.date)}</div>
   )
 }
+function DatedText(props){
+  trace('DatedText',props);
+  return (
+    <div>
+      <div>Great! {props.text}</div>
+      <div>{formatDate(props.date)}</div>
+    </div>
+  )
+}
+function Avatar(props){
+  trace('Avatar',props);
+  return (
+    <img src={props.user.avatarUrl}alt={props.user.name}/>
+  );
+}
+function UserInfo(props){
+  trace('UserInfo',props);
+  return (
+    <div>
+      <Avatar user={props.user}/>
+      <div>
+        {props.user.name}
+      </div>
+    </div>
+  );
+}
 function Comment(props){
   trace('Comment',props);
-  return false?(
+  const author=props.author;
+  return true?(
     <div>
-      <UserInfo user={props.author}/>
+      <UserInfo user={author}/>
       <DatedText text={props.text} date={props.date}/>
     </div>
   ):(
-      <div>
-        <UserInfo user={props.author}/>
-        <Text text={props.text}/>
-        <Dated date={props.date}/>
-      </div>
-    );
+    <div>
+      <UserInfo user={props.author}/>
+      <Text text={props.text}/>
+      <Dated date={props.date}/>
+    </div>
+  );
 }
 export function extract(){
   const base={
