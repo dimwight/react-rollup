@@ -8,6 +8,8 @@
       "es2015",
       "es2016"
     ],
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
     "allowUnreachableCode": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
