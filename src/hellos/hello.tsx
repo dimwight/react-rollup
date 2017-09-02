@@ -5,33 +5,33 @@ interface UserTwo{
   first,
   last,
 }
-interface Flintstone extends UserTwo{
+export interface Flintstone extends UserTwo{
   first:FredOrWilma,
   last:'Flintstone',
 }
-type FredOrWilma='Fred'|'Wilma';
-
-export function hello(){
-  function formatName(user:UserTwo|FredOrWilma){
-    if(typeof user=='string')return user;
-    return user.first+' '+user.last;
-  }
-  const user:Flintstone={
+export type FredOrWilma='Fred'|'Wilma';
+function formatName(user:UserTwo|FredOrWilma){
+  if(typeof user=='string')return user;
+  return user.first+' '+user.last;
+}
+export function getGreeting(user?:FredOrWilma|Flintstone){
+  return false?para():
+    <h1>Hello {user?formatName(user):' sailor'}!</h1>
+}
+function para(){
+  return (<p>
+    Hello there, {formatName(false?user():'Fred')}!
+  </p>);
+}
+function user():Flintstone{
+  return{
     first:'Wilma',
     last:'Flintstone',
-  };
-  const para=(
-    <p>
-      Hello there, {formatName(false?user:'Fred')}!
-    </p>
-  );
-  function getGreeting(user?:FredOrWilma|Flintstone){
-    return true?para:
-      <h1>Hello {user?formatName(user):' sailor'}!</h1>
   }
+}
+export function hello(){
   ReactDOM.render(
-    true?getGreeting(user.first as FredOrWilma)
-      :<h1>Hello</h1>,
-    document.getElementById('root'),
-  );
+  getGreeting(user().first as FredOrWilma),
+  document.getElementById('root'),
+);
 }

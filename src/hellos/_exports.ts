@@ -1,4 +1,4 @@
-export * from './hello';
-export * from './clock';
-export * from './props';
+export {hello} from './hello';
+export {clock} from './clock';
+export {props} from './props';
 

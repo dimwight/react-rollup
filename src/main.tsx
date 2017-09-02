@@ -1,7 +1,7 @@
-import * as hello from './hellos/_exports';
+import * as hellos from './hellos/_exports';
 
 import './main.css';
 
-if(false) hello.props();
-else if(true) hello.hello();
-else if(true) hello.clock();
+if(true) hellos.props();
+else if(true) hellos.hello();
+else if(true) hellos.clock();

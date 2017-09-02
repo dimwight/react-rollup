@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {getGreeting} from './hello';
 
-function Hello(props) {
-  return <h1>Hello {props.name}</h1>;
+function Hello(bits) {
+  return <h1>Hello to {bits.first}</h1>;
 }
-export function props(){
-  ReactDOM.render(
-    <Hello name="Fred" />,
-    document.getElementById('root')
+function Three() {
+  return (
+    <div>
+      <Hello first="Fred" />
+      {getGreeting('Wilma')}
+      <Hello first="Barney" />
+    </div>
   );
+}
 
+export function props(){
+  ReactDOM.render(true?<Three/>:<Hello first="Fred" />,
+    document.getElementById('root'));
 }
