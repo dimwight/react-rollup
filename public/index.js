@@ -4,17 +4,6 @@
 React = React && 'default' in React ? React['default'] : React;
 ReactDOM = ReactDOM && 'default' in ReactDOM ? ReactDOM['default'] : ReactDOM;
 
-function tick() {
-    const element = (React.createElement("div", null,
-        React.createElement("h2", null,
-            "Time now is ",
-            new Date().toLocaleTimeString())));
-    ReactDOM.render(element, document.getElementById('root'));
-}
-function start() {
-    setInterval(tick, 2000);
-}
-
 const user = {
     first: 'Wilma',
     last: 'Flintstone',
@@ -28,8 +17,23 @@ const name = (React.createElement("p", null,
     "Hello, ",
     formatName(user),
     "!"));
-start();
-//# sourceMappingURL=main.js.map
+
+//# sourceMappingURL=hello.js.map
+
+//# sourceMappingURL=clock.js.map
+
+function render$2() {
+    function Welcome(props) {
+        return React.createElement("h1", null,
+            "Hello, ",
+            props.name);
+    }
+    const element = React.createElement(Welcome, { name: "Sara" });
+    ReactDOM.render(element, document.getElementById('root'));
+}
+//# sourceMappingURL=props.js.map
+
+render$2();
 
 }(React,ReactDOM));
 //# sourceMappingURL=index.js.map
