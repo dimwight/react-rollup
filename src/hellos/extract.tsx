@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function formatDate(date){
-  return date.toLocaleTimeString();
-}
 function Avatar(props){
   trace('Avatar',props);
   return (
-    <img className="Avatar"
-         src={props.user.avatarUrl}
-         alt={props.user.name}
-    />
+    <img src={props.user.avatarUrl}alt={props.user.name}/>
   );
 }
 function trace(top,props){
@@ -19,47 +13,69 @@ function trace(top,props){
 function UserInfo(props){
   trace('UserInfo',props);
   return (
-    <div className="UserInfo">
+    <div>
       <Avatar user={props.user}/>
-      <div className="UserInfo-name">
+      <div>
         {props.user.name}
       </div>
     </div>
   );
 }
-function Data(props){
-  trace('Data',props);
+function Text(props){
+  trace('Text',props);
+  const text=props.text;
+  return(
+    <div>{
+      false?text
+        :text.replace('Event and data binding with no events and no binding - j','J')
+    }</div>
+  )
+}
+function formatDate(date){
+  return date.toLocaleTimeString();
+}
+function DatedText(props){
+  trace('DatedText',props);
   return (
     <div>
-      <div className="Comment-text">
-        {props.text.replace('Event and data binding with no events and no binding - j','J')}
-      </div>
-      <div className="Comment-date">{formatDate(props.date)}</div>
+      <div>::{props.text}</div>
+      <div>{formatDate(props.date)}</div>
     </div>
+  )
+}
+function Dated(props){
+  trace('Dated',props);
+  return (
+    <div>{formatDate(props.date)}</div>
   )
 }
 function Comment(props){
   trace('Comment',props);
-  return (
-    <div className="Comment">
+  return false?(
+    <div>
       <UserInfo user={props.author}/>
-      <Data text={props.text} date={props.date}/>
+      <DatedText text={props.text} date={props.date}/>
     </div>
-  );
+  ):(
+      <div>
+        <UserInfo user={props.author}/>
+        <Text text={props.text}/>
+        <Dated date={props.date}/>
+      </div>
+    );
 }
-
 export function extract(){
   const base={
-      date:new Date(),
-      text:'Event and data binding with no events and no binding!',
-      author:{
-        name:'Facets:',
-        avatarUrl:'http://superficial.sourceforge.net/Facets.jpg',
-      },
+    date:new Date(),
+    text:'Event and data binding with no events and no binding!',
+    author:{
+      name:'Facets:',
+      avatarUrl:'http://superficial.sourceforge.net/Facets.jpg',
     },
-    src=Object.assign({},base,{
-      text:base.text.replace('!',' - just the data!'),
-    });
+  },
+  src=Object.assign({},base,{
+    text:base.text.replace('!',' - just the data!'),
+  });
   ReactDOM.render(
     false?Comment(base)
       :<Comment date={src.date} text={src.text} author={src.author}/>,
