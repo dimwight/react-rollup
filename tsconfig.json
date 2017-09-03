@@ -9,11 +9,11 @@
       "es2016"
     ],
     "noUnusedLocals": false,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "allowUnreachableCode": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "alwaysStrict": true,
+    "strict": false,
     "moduleResolution": "node",
     "module": "es6",
     "target": "esnext",

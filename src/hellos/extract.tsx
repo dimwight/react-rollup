@@ -21,6 +21,8 @@ function Dated(props){
   trace('Dated',props);
   return <div>{formatDate(props.date)}</div>
 }
+
+
 function Comment(props){
   trace('Comment',props);
   const comment=props.comment;
