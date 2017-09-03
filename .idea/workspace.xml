@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.js" afterPath="$PROJECT_DIR$/public/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hellos/extract.tsx" afterPath="$PROJECT_DIR$/src/hellos/extract.tsx" />
     </list>
@@ -28,12 +27,10 @@
       <file leaf-file-name="extract.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hellos/extract.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="69" column="14" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="14" />
+            <state relative-caret-position="403">
+              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#formatDate#0" expanded="false" />
-                <element signature="n#!!block;n#Dated#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -71,6 +68,8 @@
       <find>let</find>
       <find>Welcome</find>
       <find>name</find>
+      <find>Comment</find>
+      <find>Text</find>
     </findStrings>
     <replaceStrings>
       <replace>react</replace>
@@ -81,8 +80,8 @@
       <replace>console.log</replace>
       <replace>const</replace>
       <replace>Hello</replace>
-      <replace>`</replace>
       <replace>first</replace>
+      <replace>`</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Me\ts\react-rollup</dir>
@@ -95,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/main.js" />
         <option value="$PROJECT_DIR$/src/util/consoleError.ts" />
         <option value="$PROJECT_DIR$/src/util/myFormat.ts" />
         <option value="$PROJECT_DIR$/src/util/tellTheTime.ts" />
@@ -145,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/hellos/props.tsx" />
         <option value="$PROJECT_DIR$/src/main.tsx" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" />
         <option value="$PROJECT_DIR$/src/hellos/extract.tsx" />
       </list>
     </option>
@@ -560,7 +559,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Css?" />
     <MESSAGE value="CSS?" />
     <MESSAGE value="Using React distributions" />
     <MESSAGE value="Using React distributions or node_modules" />
@@ -585,7 +583,8 @@
     <MESSAGE value="Just the data!" />
     <MESSAGE value="DatedText" />
     <MESSAGE value="passing props??" />
-    <option name="LAST_COMMIT_MESSAGE" value="passing props??" />
+    <MESSAGE value="Frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frame" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -602,13 +601,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/util/Bits.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.git/info/exclude">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -762,6 +754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -875,14 +868,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="https://unpkg.com/react-dom@15.6.1/dist/react-dom.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hellos/extract.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="69" column="14" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="14" />
+        <state relative-caret-position="403">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="n#!!block;n#formatDate#0" expanded="false" />
-            <element signature="n#!!block;n#Dated#0" expanded="false" />
           </folding>
         </state>
       </provider>

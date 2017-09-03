@@ -9,7 +9,7 @@ function Text(props){
   const text=props.text;
   return(
     <div>{
-      false?text
+      props.full?text
         :text.replace('Event and data binding with no events and no binding - j','J')
     }</div>
   )
@@ -19,86 +19,83 @@ function formatDate(date){
 }
 function Dated(props){
   trace('Dated',props);
-  return (
-    <div>{formatDate(props.date)}</div>
-  )
+  return <div>{formatDate(props.date)}</div>
 }
-function DatedText(props){
-  trace('DatedText',props);
+function Comment(props){
+  trace('Comment',props);
   return (
     <div>
-      <div>Great! {props.text}</div>
+      <div>Commented: &lsquo;{props.text}&rsquo;</div>
       <div>{formatDate(props.date)}</div>
     </div>
   )
 }
-function Avatar(props){
-  trace('Avatar',props);
-  return (
-    <img src={props.user.avatarUrl} alt={props.user.name}/>
-  );
+function Image(props){
+  trace('Image',props);
+  const alt=props.alt;
+  return <img src={props.src} alt={alt} title={alt}/>;
 }
-function UserInfo(props){
-  trace('UserInfo',props);
-  return (
+function User(props){
+  trace('User',props);
+  const name=props.user.name,url=props.user.avatarUrl;
+  return url?(
     <div>
-      <Avatar user={props.user}/>
-      <div>
-        {props.user.name}
-      </div>
+      <Image src={url} alt={name}/>
+      <div>{name}</div>
     </div>
-  );
+  ):<div>{name} [No image]</div>;
 }
-function All(props){
-  trace('Comment',props);
-  const author=props.author,
-    comment=props.comment;
-  return false?(
+function AuthorComment(props){
+  trace('AuthorComment',props);
+  if(props.all)props=props.all;
+  const author=props.author,comment=props.comment,
+    text=comment.text,date=comment.date;
+  return author.name==='Facets'?(
     <div>
-      <UserInfo user={author}/>
-      <DatedText text={comment.text}
-         date={comment.date}/>
+      <User user={author}/>
+      <Comment text={text} date={date}/>
     </div>
   ):(
     <div>
-      <UserInfo user={author}/>
-      <Text text={comment.text}/>
-      <Dated date={comment.date}/>
+      <User user={author}/>
+      <Text text={text} full={false}/>
+      <Dated date={date}/>
     </div>
   );
 }
 function Frame(props){
+  trace('Frame',props);
   return <div>
-    <All author={props.base.author} comment={props.base.comment}/>
-    <All author={props.tweak.author} comment={props.tweak.comment}/>,
+    <AuthorComment all={props.above}/>
+    <p/>
+    <AuthorComment author={props.below.author} comment={props.below.comment}/>
   </div>
 }
-type name='Facets'|'Superficial'
-interface Author{
-  name:name,
-  avatarUrl:string
+type NameLike='Facets'|'Superficial'
+interface AuthorLike{
+  name:NameLike,
+  avatarUrl?:string
 }
-interface Comment{
+interface CommentLike{
   date:Date
   text:string
 }
-interface AuthorComment{
-  author:Author
-  comment:Comment
+interface AuthorCommentLike{
+  author:AuthorLike
+  comment:CommentLike
 }
 export function extract(){
   const url='http://superficial.sourceforge.net/Facets.jpg';
-  const base:AuthorComment={
+  const base:AuthorCommentLike={
     author:{
       name:'Facets',
-      avatarUrl: url,
     },
     comment:{
       date:new Date(),
       text:'Event and data binding with no events and no binding!',
     }
   },
-  tweak:AuthorComment={
+  tweak:AuthorCommentLike={
     comment:{
       date:new Date(),
       text:base.comment.text.replace('!',' - just the data!')
@@ -106,14 +103,12 @@ export function extract(){
     author:{
       name:'Superficial',
       avatarUrl:url,
-    } as Author
+    } as AuthorLike
   };
-  trace('base',base);
-  trace('tweak',tweak);
   ReactDOM.render(
     Frame({
-      base:base,
-      tweak:tweak
+      above:tweak,
+      below:base
     }),
     document.getElementById('root'),
   );
