@@ -29,7 +29,7 @@ const common = {
 
 const o = Object;
 const libDateFormat= o.assign({}, common, {
-  entry: 'node_modules/date-fns/format/main.js',
+  entry: 'node_modules/time-fns/format/main.js',
   dest: 'public/rollupDateFormat.js',
   moduleName: 'libDateFormat',
 });

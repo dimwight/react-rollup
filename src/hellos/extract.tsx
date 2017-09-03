@@ -18,8 +18,8 @@ function formatDate(date){
   return date.toLocaleTimeString();
 }
 function Dated(props){
-  trace('Dated',props);
-  return <div>{formatDate(props.date)}</div>
+  trace('Timed',props);
+  return <div>{formatDate(props.time)}</div>
 }
 
 
