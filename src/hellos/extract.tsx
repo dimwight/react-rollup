@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 function trace(top,thing){
-  console.log(top+': '+JSON.stringify(thing,null,1))
+  console.log((true?(top+': '):"")+JSON.stringify(thing,null,1))
 }
 function Text(props){
   trace('Text',props);
@@ -23,10 +23,11 @@ function Dated(props){
 }
 function Comment(props){
   trace('Comment',props);
+  const comment=props.comment;
   return (
     <div>
-      <div>Commented: &lsquo;{props.text}&rsquo;</div>
-      <div>{formatDate(props.date)}</div>
+      <div>Commented: &lsquo;{comment.text}&rsquo;</div>
+      <div>{formatDate(comment.date)}</div>
     </div>
   )
 }
@@ -49,13 +50,13 @@ function User(props){
 }
 function AuthorComment(props){
   trace('AuthorComment',props);
-  if(props.all)props=props.all;
+  if(props.authorComment)props=props.authorComment;
   const author:UserLike=props.author,comment:CommentLike=props.comment,
     text=comment.text,date=comment.date;
   return author.name==='Facets'?(
     <div>
-      <User user={author}/>
-      <Comment text={text} date={date}/>
+      <User user={author as UserLike}/>
+      <Comment comment={comment}/>
     </div>
   ):(
     <div>
@@ -67,12 +68,12 @@ function AuthorComment(props){
 }
 function Comments(props){
   trace('Comments',props);
-  const items=props.items as [AuthorCommentLike],
-    above=items[0],below=items[1];
+  const items=props.comments as [AuthorCommentLike],
+    first=items[0],second=items[1];
   return <div>
-    <AuthorComment author={above.author} comment={above.comment}/>
+    <AuthorComment author={first.author} comment={first.comment}/>
+    <AuthorComment authorComment={second}/>
     <p/>
-    <AuthorComment all={below}/>
   </div>
 }
 type NameLike='Facets'|'Superficial'
@@ -85,12 +86,14 @@ interface CommentLike{
   text:string
 }
 interface AuthorCommentLike{
+  type?:'AuthorComment'
   author:UserLike
   comment:CommentLike
 }
 export function extract(){
   const url='http://superficial.sourceforge.net/Facets.jpg';
-  const base:AuthorCommentLike={
+  const full:AuthorCommentLike={
+    type:'AuthorComment',
     author:{
       name:'Facets',
       avatarUrl:url,
@@ -100,18 +103,21 @@ export function extract(){
       text:'Event and data binding with no events and no binding!',
     }
   },
-  tweaks:AuthorCommentLike={
+  bare:AuthorCommentLike={
     comment:{
       date:new Date(),
-      text:base.comment.text.replace('!',' - just the data!')
+      text:full.comment.text.replace('!',' - just the data!')
     },
     author:{
       name:'Superficial',
-    } as UserLike
+    }
   };
   ReactDOM.render(
     Comments({
-      items:[base,tweaks]
+      comments:[
+        full,
+        bare,
+      ]
     }),
     document.getElementById('root'),
   );
