@@ -5,16 +5,18 @@ function trace(top,thing){
 }
 function Clocky(props){
   trace('Clocky',props);
-  return (<div>
+  return (<div>[Clocky]
       <h2>Time is {props.date.toLocaleTimeString()}</h2>
     </div>);
 }
 class Clock extends React.Component {
   render() {
     trace('Clock',this.props);
-    return (<div>
-        <h2>Time is {this.props.date.toLocaleTimeString()}</h2>
-        <h2>Time is {(this.props as Dated).date.toLocaleTimeString()}</h2>
+    return (<div>[Clock]
+        <h2>[this.props.<u>date</u>(TS2339)]
+          {this.props.date.toLocaleTimeString()}</h2>
+        <h2>[(this.props as Dated).date]
+          {(this.props as Dated).date.toLocaleTimeString()}</h2>
       </div>);
   }
 }
