@@ -7,19 +7,34 @@ function trace(top,thing){
 interface Timed{
   time:Date
 }
-class Clock extends React.Component<Timed>{
+class Clock extends React.Component<null,Timed>{
+  private timerID:number;
+  constructor(props) {
+    super(props);
+    this.state = {time: new Date()};
+  }
   render(){
-    trace('Clock',this.props);
+    trace('Clock',this.state);
     return (<div>
-      <h2>Typed time is {this.props.time.toLocaleTimeString()}!</h2>
+      <h2>Classy time is {this.state.time.toLocaleTimeString()}!</h2>
     </div>);
   }
-}
-function tick(){
-  ReactDOM.render(<Clock time={new Date()}/>,
-    document.getElementById('root'));
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      2000,
+    );
+  }
+  tick() {
+    this.setState({
+      time: new Date()
+    });
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
 }
 export function clock(){
-  if(false) setInterval(tick,2000);
-  else tick();
+  ReactDOM.render(<Clock />,
+    document.getElementById('root'));
 }
