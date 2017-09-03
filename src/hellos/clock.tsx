@@ -4,37 +4,55 @@ import ReactDOM from 'react-dom';
 function trace(top,thing){
   console.log((true?(top+': '):"")+JSON.stringify(thing,null,1));
 }
-interface Timed{
+interface ClockState{
   time:Date
+  seconds?
 }
-class Clock extends React.Component<null,Timed>{
+interface ClockProps{
+  increment?
+}
+class Clock extends React.Component<ClockProps,ClockState>{
   private timerID:number;
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state = {time: new Date()};
+    props.increment=2;
+    const time=new Date();
+    this.state={
+      time:time,
+      seconds:true?0:time.getSeconds(),
+    };
   }
   render(){
     trace('Clock',this.state);
     return (<div>
-      <h2>Classy time is {this.state.time.toLocaleTimeString()}!</h2>
+      <h2>Time is {this.state.time.toLocaleTimeString()},
+        counted {this.state.seconds} seconds</h2>
     </div>);
   }
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      2000,
+  componentDidMount(){
+    this.timerID=setInterval(
+      ()=>this.tick(),
+      this.props.increment*1000,
     );
   }
-  tick() {
-    this.setState({
-      time: new Date()
-    });
+  update(then,props){
+    return {
+      seconds:then.seconds+props.increment,
+      time:new Date(),
+    };
   }
-  componentWillUnmount() {
+  tick(){
+    this.setState(false?this.update
+    :(then,props)=>({
+        seconds:then.seconds+props.increment,
+        time:new Date(),
+      }));
+  }
+  componentWillUnmount(){
     clearInterval(this.timerID);
   }
 }
 export function clock(){
-  ReactDOM.render(<Clock />,
+  ReactDOM.render(<Clock/>,
     document.getElementById('root'));
 }

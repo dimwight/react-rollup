@@ -18,7 +18,7 @@ function formatDate(date){
   return date.toLocaleTimeString();
 }
 function Dated(props){
-  trace('Timed',props);
+  trace('ClockState',props);
   return <div>{formatDate(props.time)}</div>
 }
 
