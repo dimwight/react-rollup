@@ -37,10 +37,12 @@ function Image(props){
 }
 function User(props){
   trace('User',props);
-  const name=props.user.name,url=props.user.avatarUrl;
+  const user:UserLike=props.user;
+  const name:NameLike=user.name,url=user.avatarUrl;
   return url?(
     <div>
       <Image src={url} alt={name}/>
+
       <div>{name}</div>
     </div>
   ):<div>{name} [No image]</div>;
@@ -48,7 +50,7 @@ function User(props){
 function AuthorComment(props){
   trace('AuthorComment',props);
   if(props.all)props=props.all;
-  const author=props.author,comment=props.comment,
+  const author:UserLike=props.author,comment:CommentLike=props.comment,
     text=comment.text,date=comment.date;
   return author.name==='Facets'?(
     <div>
@@ -63,16 +65,18 @@ function AuthorComment(props){
     </div>
   );
 }
-function Frame(props){
-  trace('Frame',props);
+function Comments(props){
+  trace('Comments',props);
+  const items=props.items as [AuthorCommentLike],
+    above=items[0],below=items[1];
   return <div>
-    <AuthorComment all={props.above}/>
+    <AuthorComment author={above.author} comment={above.comment}/>
     <p/>
-    <AuthorComment author={props.below.author} comment={props.below.comment}/>
+    <AuthorComment all={below}/>
   </div>
 }
 type NameLike='Facets'|'Superficial'
-interface AuthorLike{
+interface UserLike{
   name:NameLike,
   avatarUrl?:string
 }
@@ -81,7 +85,7 @@ interface CommentLike{
   text:string
 }
 interface AuthorCommentLike{
-  author:AuthorLike
+  author:UserLike
   comment:CommentLike
 }
 export function extract(){
@@ -89,26 +93,25 @@ export function extract(){
   const base:AuthorCommentLike={
     author:{
       name:'Facets',
+      avatarUrl:url,
     },
     comment:{
       date:new Date(),
       text:'Event and data binding with no events and no binding!',
     }
   },
-  tweak:AuthorCommentLike={
+  tweaks:AuthorCommentLike={
     comment:{
       date:new Date(),
       text:base.comment.text.replace('!',' - just the data!')
     },
     author:{
       name:'Superficial',
-      avatarUrl:url,
-    } as AuthorLike
+    } as UserLike
   };
   ReactDOM.render(
-    Frame({
-      above:tweak,
-      below:base
+    Comments({
+      items:[base,tweaks]
     }),
     document.getElementById('root'),
   );
