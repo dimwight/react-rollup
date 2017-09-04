@@ -7,7 +7,7 @@ function trace(top,thing){
 interface Clocky{
   time?:Date
   seconds?
-  increment?
+  increment
 }
 function TimeWithSeconds(props:Clocky){
   trace('TimeWithSeconds',props);
@@ -18,11 +18,11 @@ class Clock extends React.Component<Clocky,Clocky>{
   private timerID:number;
   constructor(props){
     super(props);
-    props.increment=2;
     const time=new Date();
     this.state={
       time:time,
       seconds:true?0:time.getSeconds(),
+      increment:props.increment
     };
   }
   render(){
@@ -52,6 +52,21 @@ class Clock extends React.Component<Clocky,Clocky>{
   }
 }
 export function clock(){
-  ReactDOM.render(<Clock/>,
+  if(false)ReactDOM.render(<Clock increment={1}/>,
     document.getElementById('root'));
+  else {
+    function Three() {
+      return (
+        <div>
+          <Clock increment={1}/>
+          <Clock increment={2}/>
+          <Clock increment={3}/>
+        </div>
+      );
+    }
+    ReactDOM.render(
+      <Three />,
+      document.getElementById('root')
+    );
+  }
 }
