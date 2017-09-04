@@ -37,10 +37,10 @@ class Clock extends React.Component<Clocky,Clocky>{
   }
   render(){
     return false? TimeWithSeconds(this.state)
-      :this.display.render();
+      :false?new TimeWithSecondsDisplay(this.state).render()
+        :this.display.render();
   }
   componentDidMount(){
-
     this.timerID=setInterval(
       ()=>this.tick(),
       this.props.increment*1000,
