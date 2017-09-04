@@ -4,14 +4,17 @@ import ReactDOM from 'react-dom';
 function trace(top,thing){
   console.log((true?(top+': '):"")+JSON.stringify(thing,null,1));
 }
-interface ClockState{
-  time:Date
+interface Clocky{
+  time?:Date
   seconds?
-}
-interface ClockProps{
   increment?
 }
-class Clock extends React.Component<ClockProps,ClockState>{
+function TimeWithSeconds(props:Clocky){
+  trace('TimeWithSeconds',props);
+  return (<h2>Time is {props.time.toLocaleTimeString()},
+    counted {props.seconds} seconds</h2>);
+}
+class Clock extends React.Component<Clocky,Clocky>{
   private timerID:number;
   constructor(props){
     super(props);
@@ -23,11 +26,7 @@ class Clock extends React.Component<ClockProps,ClockState>{
     };
   }
   render(){
-    trace('Clock',this.state);
-    return (<div>
-      <h2>Time is {this.state.time.toLocaleTimeString()},
-        counted {this.state.seconds} seconds</h2>
-    </div>);
+    return TimeWithSeconds(this.state);
   }
   componentDidMount(){
     this.timerID=setInterval(
