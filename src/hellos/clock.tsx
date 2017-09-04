@@ -14,16 +14,17 @@ function TimeWithSeconds(props:Clocky){
   return (<h2>Time is {props.time.toLocaleTimeString()},
     counted {props.seconds} seconds</h2>);
 }
-class TimeWithSecondsClass extends React.Component<Clocky,Clocky>{
+class TimeWithSecondsDisplay extends React.Component<Clocky,Clocky>{
   render(){
     const props=this.props;
-    trace('TimeWithSeconds',props);
+    trace('TimeWithSecondsDisplay',props);
     return (<h2>Time is {props.time.toLocaleTimeString()},
       counted {props.seconds} seconds</h2>);
   }
 }
 class Clock extends React.Component<Clocky,Clocky>{
   private timerID:number;
+  private display:TimeWithSecondsDisplay;
   constructor(props){
     super(props);
     const time=new Date();
@@ -32,11 +33,14 @@ class Clock extends React.Component<Clocky,Clocky>{
       seconds:true?0:time.getSeconds(),
       increment:props.increment
     };
+    this.display=new TimeWithSecondsDisplay(this.state);
   }
   render(){
-    return TimeWithSeconds(this.state);
+    return false? TimeWithSeconds(this.state)
+      :this.display.render();
   }
   componentDidMount(){
+
     this.timerID=setInterval(
       ()=>this.tick(),
       this.props.increment*1000,
@@ -60,7 +64,7 @@ class Clock extends React.Component<Clocky,Clocky>{
   }
 }
 export function clock(){
-  if(false)ReactDOM.render(<Clock increment={1}/>,
+  if(true)ReactDOM.render(<Clock increment={1}/>,
     document.getElementById('root'));
   else {
     ReactDOM.render(
