@@ -27,8 +27,8 @@
       <file leaf-file-name="clock.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hellos/clock.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="57" column="18" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="18" />
+            <state relative-caret-position="675">
+              <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -533,7 +533,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="main to welcome" />
     <MESSAGE value="Flintstones" />
     <MESSAGE value="clock" />
     <MESSAGE value="props" />
@@ -558,7 +557,8 @@
     <MESSAGE value="Classy time!" />
     <MESSAGE value="Counting" />
     <MESSAGE value="TimeWithSeconds" />
-    <option name="LAST_COMMIT_MESSAGE" value="TimeWithSeconds" />
+    <MESSAGE value="Three" />
+    <option name="LAST_COMMIT_MESSAGE" value="Three" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,8 +841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hellos/clock.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="57" column="18" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="18" />
+        <state relative-caret-position="675">
+          <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

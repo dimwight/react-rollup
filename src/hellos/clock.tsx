@@ -14,6 +14,14 @@ function TimeWithSeconds(props:Clocky){
   return (<h2>Time is {props.time.toLocaleTimeString()},
     counted {props.seconds} seconds</h2>);
 }
+class TimeWithSecondsClass extends React.Component<Clocky,Clocky>{
+  render(){
+    const props=this.props;
+    trace('TimeWithSeconds',props);
+    return (<h2>Time is {props.time.toLocaleTimeString()},
+      counted {props.seconds} seconds</h2>);
+  }
+}
 class Clock extends React.Component<Clocky,Clocky>{
   private timerID:number;
   constructor(props){
@@ -55,17 +63,12 @@ export function clock(){
   if(false)ReactDOM.render(<Clock increment={1}/>,
     document.getElementById('root'));
   else {
-    function Three() {
-      return (
-        <div>
+    ReactDOM.render(
+      (<div>
           <Clock increment={1}/>
           <Clock increment={2}/>
           <Clock increment={3}/>
-        </div>
-      );
-    }
-    ReactDOM.render(
-      <Three />,
+        </div>),
       document.getElementById('root')
     );
   }
