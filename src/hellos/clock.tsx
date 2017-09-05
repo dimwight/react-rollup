@@ -14,17 +14,8 @@ function TimeWithSeconds(props:Clocky){
   return (<h2>Time is {props.time.toLocaleTimeString()},
     counted {props.seconds} seconds</h2>);
 }
-class TimeWithSecondsDisplay extends React.Component<Clocky,Clocky>{
-  render(){
-    const props=this.props;
-    trace('TimeWithSecondsDisplay',props);
-    return (<h2>Time is {props.time.toLocaleTimeString()},
-      counted {props.seconds} seconds</h2>);
-  }
-}
 class Clock extends React.Component<Clocky,Clocky>{
   private timerID:number;
-  private display:TimeWithSecondsDisplay;
   constructor(props){
     super(props);
     const time=new Date();
@@ -33,12 +24,9 @@ class Clock extends React.Component<Clocky,Clocky>{
       seconds:true?0:time.getSeconds(),
       increment:props.increment
     };
-    this.display=new TimeWithSecondsDisplay(this.state);
   }
   render(){
-    return false? TimeWithSeconds(this.state)
-      :false?new TimeWithSecondsDisplay(this.state).render()
-        :this.display.render();
+    return TimeWithSeconds(this.state);
   }
   componentDidMount(){
     this.timerID=setInterval(
