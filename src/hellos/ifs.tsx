@@ -62,13 +62,33 @@ class LoginControl extends React.Component<null,Logged>{
     );
   }
 }
-
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      {unreadMessages.length > 0?
+      <h2>You have {unreadMessages.length} unread messages.</h2>
+        :<h2>You have no unread messages.</h2>
+      }
+    </div>
+  );
+}
 export function ifs(){
-  ReactDOM.render(
+  if(false)ReactDOM.render(
     <div>
       <p><Greeting isLoggedIn={false}/></p>
       <p><Greeting isLoggedIn={true}/></p>
       <p><LoginControl/></p>
     </div>,
     document.getElementById('root'));
+  else{
+    const messages = ['React', 'Re: React', 'Re:Re: React'];
+    ReactDOM.render(
+      <div>
+        <p><Mailbox unreadMessages={messages.slice(0,0)}/></p>
+        <p><Mailbox unreadMessages={messages}/></p>
+      </div>,
+      document.getElementById('root')
+    );  }
+
 }
