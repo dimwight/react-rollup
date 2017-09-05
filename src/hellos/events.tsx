@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function ActionLink(){
-  function handleClick(e){
+function TriggerLink(){
+  function onClick(e){
     e.preventDefault();
     window.alert('Hi')
   }
   return (
-    <a href="#" onClick={handleClick}>
+    <a href="#" onClick={onClick}>
       Click me
     </a>
   );
@@ -19,13 +19,12 @@ class ToggleButton extends React.Component<Toggling,Toggling>{
   constructor(props){
     super(props);
     this.state={isSet:props.isSet};
-    this.onClick=this.onClick.bind(this);
   }
-  onClick(){
-    this.setState(then=>({
+  onClick=()=>this.setState(then=>{
+    return ({
       isSet:!then.isSet,
-    }));
-  }
+    });
+  });
   render(){
     return (
       <button onClick={this.onClick}>
@@ -34,26 +33,27 @@ class ToggleButton extends React.Component<Toggling,Toggling>{
     );
   }
 }
-class LoggingButton extends React.Component {
-  onClick = () => {
-    console.log(': this is:', this);
-    window.alert('this is:'+ this);
+interface Trigger{
+
+}
+class TriggerButton extends React.Component{
+  onClick=()=>{
+    window.alert('Gone!');
   };
-  render() {
+  render(){
     return (
-      <button onClick={this.onClick}>
-        Click me!
+      <button onClick={this.onClick} title="Click to go...">
+        Go
       </button>
     );
   }
 }
-
-ReactDOM.render(
-  <div>
-    <p>ActionLink <ActionLink/></p>
-    <p>ToggleButton <ToggleButton isSet={false}/></p>
-    <p>LoggingButton <LoggingButton/></p>
-  </div>,
-  document.getElementById('root'));
 export function events(){
+  ReactDOM.render(
+    <div>
+      <p>TriggerLink <TriggerLink/></p>
+      <p>ToggleButton <ToggleButton isSet={false}/></p>
+      <p>TriggerButton <TriggerButton/></p>
+    </div>,
+    document.getElementById('root'));
 }

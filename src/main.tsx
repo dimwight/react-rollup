@@ -2,7 +2,8 @@ import * as hellos from './hellos/_exports';
 
 import './main.css';
 
-if(true)hellos.events();
+if(true)hellos.ifs();
+else if(true)hellos.events();
 else if(true)hellos.clock();
 else if(true)hellos.extract();
 else if(false) hellos.hello();
