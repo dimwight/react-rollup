@@ -63,12 +63,15 @@ class LoginControl extends React.Component<null,Logged>{
   }
 }
 function Mailbox(props) {
-  const unreadMessages = props.unreadMessages;
+  const unread = props.unread;
+  Object.assign(props,{
+    top:'You have ',tail:' unread messages.'
+  });
   return (
     <div>
-      {unreadMessages.length > 0?
-      <h2>You have {unreadMessages.length} unread messages.</h2>
-        :<h2>You have no unread messages.</h2>
+      {unread.length > 0?
+      <h2>{props.top}{unread.length}{props.tail}</h2>
+        :<h2>{`${props.top} no ${props.tail}`}</h2>
       }
     </div>
   );
@@ -85,8 +88,8 @@ export function ifs(){
     const messages = ['React', 'Re: React', 'Re:Re: React'];
     ReactDOM.render(
       <div>
-        <p><Mailbox unreadMessages={messages.slice(0,0)}/></p>
-        <p><Mailbox unreadMessages={messages}/></p>
+        <p><Mailbox unread={messages}/></p>
+        <p><Mailbox unread={messages.slice(0,0)}/></p>
       </div>,
       document.getElementById('root')
     );  }

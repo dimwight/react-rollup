@@ -38,8 +38,8 @@
       <file leaf-file-name="ifs.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hellos/ifs.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+            <state relative-caret-position="131">
+              <caret line="60" column="12" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -59,7 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>React</find>
       <find>rollup-plugin-babel</find>
       <find>react-scripts-ts</find>
       <find>date-fns</find>
@@ -89,6 +88,7 @@
       <find>ToggleLike</find>
       <find>isToggleOn</find>
       <find>ActionLink</find>
+      <find>unreadMessages</find>
     </findStrings>
     <replaceStrings>
       <replace>react</replace>
@@ -108,6 +108,7 @@
       <replace>nature</replace>
       <replace>isSet</replace>
       <replace>TriggerLink</replace>
+      <replace>unread</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Me\ts\react-rollup</dir>
@@ -877,8 +878,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hellos/ifs.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        <state relative-caret-position="131">
+          <caret line="60" column="12" lean-forward="true" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
