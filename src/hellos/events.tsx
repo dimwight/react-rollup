@@ -34,9 +34,26 @@ class ToggleButton extends React.Component<Toggling,Toggling>{
     );
   }
 }
+class LoggingButton extends React.Component {
+  onClick = () => {
+    console.log(': this is:', this);
+    window.alert('this is:'+ this);
+  };
+  render() {
+    return (
+      <button onClick={this.onClick}>
+        Click me!
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <div>
+    <p>ActionLink <ActionLink/></p>
+    <p>ToggleButton <ToggleButton isSet={false}/></p>
+    <p>LoggingButton <LoggingButton/></p>
+  </div>,
+  document.getElementById('root'));
 export function events(){
-  ReactDOM.render(
-    false?<ActionLink/>
-      :<ToggleButton isSet={false}/>,
-    document.getElementById('root'));
 }
