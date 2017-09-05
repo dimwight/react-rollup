@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="TimeWithSeconds fn vs class?">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hellos/events.tsx" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/index.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hellos/clock.tsx" afterPath="$PROJECT_DIR$/src/hellos/clock.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hellos/_exports.ts" afterPath="$PROJECT_DIR$/src/hellos/_exports.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.tsx" afterPath="$PROJECT_DIR$/src/main.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,14 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="clock.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clock.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hellos/clock.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+            <state relative-caret-position="485">
+              <caret line="55" column="37" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="55" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="events.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hellos/events.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/rollupReact.js" />
         <option value="$PROJECT_DIR$/public/reactDom.js" />
         <option value="$PROJECT_DIR$/public/react-dom.js" />
         <option value="$PROJECT_DIR$/public/rollupReactDom_.js" />
@@ -141,20 +152,21 @@
         <option value="$PROJECT_DIR$/src/hello/hello.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/public/test.html" />
-        <option value="$PROJECT_DIR$/src/hellos/_exports.ts" />
         <option value="$PROJECT_DIR$/src/hellos/hello.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/props.tsx" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" />
         <option value="$PROJECT_DIR$/src/hellos/clock.js" />
         <option value="$PROJECT_DIR$/src/hellos/extract.tsx" />
-        <option value="$PROJECT_DIR$/src/main.tsx" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
         <option value="$PROJECT_DIR$/public/index.js" />
         <option value="$PROJECT_DIR$/src/hellos/clock.tsx" />
+        <option value="$PROJECT_DIR$/src/main.tsx" />
+        <option value="$PROJECT_DIR$/src/hellos/_exports.ts" />
+        <option value="$PROJECT_DIR$/src/hellos/events.tsx" />
       </list>
     </option>
   </component>
@@ -329,6 +341,30 @@
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hellos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hellos" type="462c0819:PsiDirectoryNode" />
+              <item name="events.tsx" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main.tsx" type="620a8d5e:NestingTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -352,19 +388,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Me\ts\react-rollup\src\hello" />
-      <recent name="C:\Users\Me\ts\react-rollup\src\welcome" />
-      <recent name="C:\Users\Me\ts\react-rollup" />
-      <recent name="C:\Users\Me\ts\react-rollup\public" />
-      <recent name="C:\Users\Me\ts\react-rollup\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Me\ts\react-rollup\src\hellos" />
       <recent name="C:\Users\Me\ts\react-rollup\src\welcome" />
       <recent name="C:\Users\Me\ts\react-rollup\src" />
       <recent name="C:\Users\Me\ts\react-rollup\public" />
       <recent name="C:\Users\Me\ts\react-rollup\tool" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Me\ts\react-rollup\src\hello" />
+      <recent name="C:\Users\Me\ts\react-rollup\src\welcome" />
+      <recent name="C:\Users\Me\ts\react-rollup" />
+      <recent name="C:\Users\Me\ts\react-rollup\public" />
+      <recent name="C:\Users\Me\ts\react-rollup\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -406,6 +442,7 @@
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15054946" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.6786297" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -415,7 +452,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25604397" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1305" y="91" width="586" height="843" />
@@ -463,6 +499,8 @@
         <option value="$PROJECT_DIR$/src/hellos/extract.js" />
         <option value="$PROJECT_DIR$/src/hellos/props.js" />
         <option value="$PROJECT_DIR$/src/hellos/clock.js" />
+        <option value="$PROJECT_DIR$/src/hellos/events.js" />
+        <option value="$PROJECT_DIR$/src/hellos/events.js.map" />
       </list>
     </option>
   </component>
@@ -498,7 +536,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="props" />
     <MESSAGE value="no tool" />
     <MESSAGE value="hello _exports" />
     <MESSAGE value="hellos" />
@@ -523,7 +560,8 @@
     <MESSAGE value="Three" />
     <MESSAGE value="Three as div" />
     <MESSAGE value="TimeWithSeconds fn vs class?" />
-    <option name="LAST_COMMIT_MESSAGE" value="TimeWithSeconds fn vs class?" />
+    <MESSAGE value="On to events" />
+    <option name="LAST_COMMIT_MESSAGE" value="On to events" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -540,13 +578,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.git/info/exclude">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react/react.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -673,13 +704,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/test.html" />
-    <entry file="file://$PROJECT_DIR$/src/hellos/_exports.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -784,13 +808,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Issues.md" />
-    <entry file="file://$PROJECT_DIR$/src/main.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/react-dom/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -799,13 +816,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hellos/_exports.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hellos/clock.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+        <state relative-caret-position="485">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="55" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hellos/events.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
