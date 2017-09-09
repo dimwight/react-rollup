@@ -14,13 +14,13 @@ const common = {
     resolve(),
     commonjs({
       namedExports:{
-        'src/welcome/logo.svg': [ 'logo' ],
-        'node_modules/date-fns/format': [ 'format' ],
         'node_modules/react/index.js':[
           'Component',
           'createElement',
         ],
         'node_modules/react-dom/index.js':['render'],
+        'src/welcome/logo.svg': [ 'logo' ],
+        'node_modules/date-fns/format': [ 'format' ],
       }
     }),
     replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
@@ -44,7 +44,7 @@ const libReactDom= o.assign({}, common, {
   moduleName: 'ReactDOM',
 });
 const includeLibs = o.assign({}, common, {
-  entry: 'src/main.js',
+  entry: 'src/thinking/main.js',
   dest: 'public/index.js',
   sourceMap: true,
 });
