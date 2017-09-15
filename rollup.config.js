@@ -43,8 +43,9 @@ const libReactDom= o.assign({}, common, {
   dest: 'public/rollupReactDom.js',
   moduleName: 'ReactDOM',
 });
+const entry = 'src/facets/main.js';
 const includeLibs = o.assign({}, common, {
-  entry: 'src/facets/main.js',
+  entry: entry,
   dest: 'public/index.js',
   sourceMap: true,
 });

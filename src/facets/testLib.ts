@@ -1,4 +1,4 @@
-import * as Facets from 'facets-js';
+import Facets from 'facets-js';
 
 function trace(text){
   console.info('App > ' +text);
@@ -22,7 +22,7 @@ function buildLayout(){
   trace('.buildLayout');
   core.attachFacet(TITLE_FIRST,update=>trace('Facet updating with '+update));
 }
-export function test(){
+export function buildSurface(){
   trace('Building surface');
   core.buildTargeterTree(newTargetTree());
   trace('Built targets, created targeters');
