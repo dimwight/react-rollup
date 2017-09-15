@@ -44,17 +44,19 @@ const libReactDom= o.assign({}, common, {
   moduleName: 'ReactDOM',
 });
 const includeLibs = o.assign({}, common, {
-  entry: 'src/thinking/main.js',
+  entry: 'src/facets/main.js',
   dest: 'public/index.js',
   sourceMap: true,
 });
 const excludeLibs = o.assign({}, includeLibs, {
   external: [
+    'facets-js',
     'date-fns/format',
     'react',
     'react-dom'
   ],
   globals: {
+    'facets-js': 'Facets',
     'date-fns/format': libDateFormat.moduleName,
     'react':libReact.moduleName,
     'react-dom':libReactDom.moduleName
