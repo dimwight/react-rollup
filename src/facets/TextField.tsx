@@ -39,20 +39,39 @@ class TextField extends React.Component<Faceted,Faceted>{
     return (<div>
         <form>
           <input type="text" size={this.props.size||20}
-           defaultValue={''}
-           value={this.state.text}
-           onKeyPress={this.onKeyPress}
-           onChange={this.onChange}
+                 defaultValue={''}
+                 value={this.state.text}
+                 onKeyPress={this.onKeyPress}
+                 onChange={this.onChange}
           /></form>
       </div>
     );
+  }
+}
+class TextLabel
+  extends React.Component<Faceted,Faceted>{
+  private rendered:boolean;
+  constructor(props){
+    super(props);
+    props.facets.attachFacet(props.title,this.facetUpdated);
+  }
+  facetUpdated=(update)=>{
+    const updated={text:update};
+    if(!this.rendered) this.state=updated;
+    else this.setState(false?then=>updated:updated);
+  };
+  render(){
+    this.rendered=true;
+    return <span>{this.state.text}</span>
   }
 }
 export function buildPage(first:Faceted,second:Faceted){
   ReactDOM.render(
     <div>
       <TextField title={first.title} facets={first.facets} size={first.size}/>
+      <TextLabel title={first.title} facets={first.facets}/>
       <TextField title={second.title} facets={second.facets} size={second.size}/>
+      <TextLabel title={second.title} facets={second.facets}/>
     </div>,
     document.getElementById('root'),
   );
