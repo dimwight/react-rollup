@@ -5,7 +5,7 @@ import * as field from './TextField';
 
 import './main.css';
 
-if(false)field.render();
+if(false)field.buildPage();
 else if(true)testReact.buildSurface();
 else if(false)testLib.buildSurface();
 else thinking.table();
