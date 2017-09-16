@@ -5,12 +5,12 @@ import Facets from 'facets-js';
 function trace(text){
   console.info('TextField > '+text);
 }
-export interface Textual{
+export interface Faceted{
   title?
   facets?:Facets.Facets
   text?
 }
-class TextFieldPair extends React.Component<Textual,Textual>{
+class TextFieldPair extends React.Component<Faceted,Faceted>{
   private rendered:boolean;
   constructor(props){
     super(props);
@@ -32,7 +32,7 @@ class TextFieldPair extends React.Component<Textual,Textual>{
     if(e.key==='Enter'){
       e.preventDefault();
       document.getElementById('output').innerText=this.state.text;
-      this.props.facets.updateTargetState(this.props.title,value+'!');
+      this.props.facets.updateTargetState(this.props.title,value);
     }
   };
   render(){
@@ -49,9 +49,12 @@ class TextFieldPair extends React.Component<Textual,Textual>{
     );
   }
 }
-export function render(props?){
+export function render(first:Faceted,second:Faceted){
   ReactDOM.render(
-    <TextFieldPair title={props.title} facets={props.facets}/>,
-    document.getElementById('root'),
+    <div>
+    <TextFieldPair title={first.title} facets={first.facets}/>
+    <TextFieldPair title={second.title} facets={second.facets}/>
+    </div>,
+  document.getElementById('root'),
   );
 }
