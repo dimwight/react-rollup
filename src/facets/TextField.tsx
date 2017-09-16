@@ -3,29 +3,26 @@ import ReactDOM from 'react-dom';
 import Facets from 'facets-js';
 
 function trace(text){
-  console.info('TextField > ' +text);
+  console.info('TextField > '+text);
 }
-export interface Textual {
+export interface Textual{
   title?
   facets?:Facets.Facets
   text?
 }
 class TextFieldPair extends React.Component<Textual,Textual>{
+  private rendered:boolean;
   constructor(props){
     super(props);
-    props.facets.attachFacet(props.title,this.facetUpdated)
-    this.state={};
+    this.state={text:'Hi'};
+    props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
-    window.alert(update);
-    this.setState(then=>{
-      return ({
-        text:update,
-      });
-    })
+    const updated={text:update};
+    if(!this.rendered) this.state=updated;
+    else this.setState(false?then=>updated:updated);
   };
   onChange=(e)=>{
-    window.alert(e.target.value);
     this.setState({
       text:e.target.value,
     })
@@ -35,17 +32,19 @@ class TextFieldPair extends React.Component<Textual,Textual>{
     if(e.key==='Enter'){
       e.preventDefault();
       document.getElementById('output').innerText=this.state.text;
+      this.props.facets.updateTargetState(this.props.title,value+'!');
     }
   };
-  render() {
+  render(){
+    this.rendered=true;
     return (<div>
-      <form><input type="text"
-         defaultValue={''}
-         value={this.state.text}
-         onKeyPress={this.onKeyPress}
-         onChange={this.onChange}
-      /></form>
-      <p id="output">Output</p>
+        <form><input type="text"
+                     defaultValue={''}
+                     value={this.state.text}
+                     onKeyPress={this.onKeyPress}
+                     onChange={this.onChange}
+        /></form>
+        <p id="output">Output</p>
       </div>
     );
   }
@@ -53,6 +52,6 @@ class TextFieldPair extends React.Component<Textual,Textual>{
 export function render(props?){
   ReactDOM.render(
     <TextFieldPair title={props.title} facets={props.facets}/>,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 }
