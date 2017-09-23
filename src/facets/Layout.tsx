@@ -8,6 +8,7 @@ function trace(text){
 interface Target{
   title:string
   facets?:Facets.Facets
+  state?:Facets.TargetState
 }
 export interface Textual extends Target{
   text?:string
@@ -17,20 +18,28 @@ export interface Indexing extends Target{
   indexables:string[]
   index?:number
 }
-class Dropdown extends React.Component<Indexing,Indexing>{
-  private rendered:boolean;
+class Facet<I extends Target,K extends Target> extends React.Component<Target,Target>{
+  protected rendered:boolean;
   constructor(props){
     super(props);
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
-    const readUpdate={index:update};
+    const updated=this.readUpdate(update);
     if(!this.rendered)
-      this.state=Object.assign({},this.props,readUpdate);
-    else this.setState(readUpdate);
+      this.state=Object.assign({},this.props,updated);
+    else this.setState(updated);
   };
+  protected readUpdate(update):{}{
+    return {state:update}
+  }
+}
+class Dropdown extends Facet<Indexing,Indexing>{
+  protected readUpdate(update){
+    return {index:update};
+  }
   onChange=(e)=>{
-    const indexables=this.props.indexables;
+    const indexables=(this.props as Indexing).indexables;
     const value=e.target.value;
     for(let at=0; at<indexables.length; at++){
       if(indexables[at]===value){
@@ -44,8 +53,9 @@ class Dropdown extends React.Component<Indexing,Indexing>{
   };
   render(){
     this.rendered=true;
-    const selected=this.props.indexables[this.state.index];
-    const options=this.props.indexables.map((item)=>{
+    const indexables=(this.props as Indexing).indexables;
+    const selected=indexables[(this.state as Indexing).index];
+    const options=indexables.map((item)=>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
     });
@@ -101,7 +111,7 @@ class TextLabel
     const readUpdate={text:update};
     if(!this.rendered)
       this.state=Object.assign({},this.props,readUpdate);
-    else this.setState(true?then=>readUpdate:readUpdate);
+    else this.setState(false?then=>readUpdate:readUpdate);
   };
   render(){
     this.rendered=true;
@@ -111,8 +121,9 @@ class TextLabel
     )
   }
 }
-export function buildTextual(facets:Facets.Facets,
-                             targets:{first:Textual,second:Textual}){
+export function buildTextual(
+    facets:Facets.Facets,
+    targets:{first:Textual,second:Textual}){
   const first=targets.first,second=targets.second;
   ReactDOM.render(
     <div>
@@ -124,8 +135,9 @@ export function buildTextual(facets:Facets.Facets,
     document.getElementById('root'),
   );
 }
-export function buildIndexing(facets:Facets.Facets,
-                              targets:{indexing:Indexing;index:Textual;indexed:Textual}){
+export function buildIndexing(
+    facets:Facets.Facets,
+    targets:{indexing:Indexing;index:Textual;indexed:Textual}){
   ReactDOM.render(
     <div>
       <Dropdown
