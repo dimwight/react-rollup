@@ -65,6 +65,11 @@ class TextLabel
     return <span>{this.state.text}</span>
   }
 }
+export function buildIndexing(
+  facets:Facets.Facets,
+  titles:{indexing:string;index:string;indexables:string[]}){
+  window.alert('Not implemented')
+}
 export function buildTextual(facets:Facets.Facets,first:Faceted,second:Faceted){
   ReactDOM.render(
     <div>
