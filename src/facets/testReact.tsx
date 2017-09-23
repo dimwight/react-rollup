@@ -40,12 +40,12 @@ function newIndexingTree():Facets.Target{
   index=facets.newTextualTarget(Titles.INDEX,{
     getText:(title)=>''+facets.getTargetState(Titles.INDEXING)
   }),
-  indexed=facets.newTextualTarget(Titles.INDEX,{
+  indexed=facets.newTextualTarget(Titles.INDEXED,{
     getText:(title)=>Titles.INDEXABLES[facets.getTargetState(Titles.INDEXING)as number]
   });
   return facets.newTargetsGroup('Indexing',indexing,index,indexed);
 }
-const test:Test=Test.Textual;
+const test:Test=Test.Indexing;
 function newTargetTree():Facets.Target{
   return test===Test.Textual?newTextualTree()
     :newIndexingTree();
@@ -57,7 +57,7 @@ function buildLayout(){
     second:{title:Titles.TEXTUAL_SECOND,cols:40}
   });
   else layout.buildIndexing(facets,{
-    indexing:{title:Titles.INDEXING},
+    indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
     index:{title:Titles.INDEX},
     indexed:{title:Titles.INDEXED}
   })

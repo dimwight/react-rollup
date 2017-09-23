@@ -6,12 +6,49 @@ function trace(text){
   console.info('TextField > '+text);
 }
 interface Target{
-  title?
+  title:string
   facets?:Facets.Facets
 }
 export interface Textual extends Target{
-  text?
-  cols?
+  text?:string
+  cols?:number
+}
+export interface Indexing extends Target{
+  indexables:string[]
+  index?:number
+}
+class Dropdown extends React.Component<Indexing,Indexing>{
+  private rendered:boolean;
+  constructor(props){
+    super(props);
+    props.facets.attachFacet(props.title,this.facetUpdated);
+  }
+  facetUpdated=(update)=>{
+    const readUpdate={index:update};
+    if(!this.rendered) 
+      this.state=Object.assign({},this.props,readUpdate);
+    else this.setState(readUpdate);
+  };
+  onChange=(e)=>{
+    this.setState({
+      index:e.target.value,
+    })
+  };
+  render(){
+    this.rendered=true;
+    const options=this.props.indexables.map((item)=>{
+      return (<option>item</option>)
+    })
+    return (<div>
+        <form><span className={'caption'}>{this.props.title}</span>&nbsp;
+          <input type="select"
+            value={this.state.indexables[this.state.index]}
+           {...options}
+            onChange={this.onChange}
+          /></form>
+      </div>
+    );
+  }
 }
 class TextField extends React.Component<Textual,Textual>{
   private rendered:boolean;
@@ -20,9 +57,10 @@ class TextField extends React.Component<Textual,Textual>{
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
-    const updated={text:update};
-    if(!this.rendered) this.state=updated;
-    else this.setState(false?then=>updated:updated);
+    const readUpdate={text:update};
+    if(!this.rendered)
+      this.state=Object.assign({},this.props,readUpdate);
+    else this.setState(false?then=>readUpdate:readUpdate);
   };
   onChange=(e)=>{
     this.setState({
@@ -41,7 +79,6 @@ class TextField extends React.Component<Textual,Textual>{
     return (<div>
         <form><span className={'caption'}>{this.props.title}</span>&nbsp;
           <input type="text" size={this.props.cols||20}
-                 defaultValue={''}
                  value={this.state.text}
                  onKeyPress={this.onKeyPress}
                  onChange={this.onChange}
@@ -58,9 +95,10 @@ class TextLabel
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
-    const updated={text:update};
-    if(!this.rendered) this.state=updated;
-    else this.setState(false?then=>updated:updated);
+    const readUpdate={text:update};
+    if(!this.rendered)
+      this.state=Object.assign({},this.props,readUpdate);
+    else this.setState(false?then=>readUpdate:readUpdate);
   };
   render(){
     this.rendered=true;
@@ -73,26 +111,29 @@ class TextLabel
 export function buildTextual(
   facets:Facets.Facets,
   targets:{first:Textual,second:Textual}){
+  const first=targets.first,second=targets.second;
   ReactDOM.render(
     <div>
-      <TextField title={targets.first.title} facets={facets} cols={targets.first.cols}/>
-      <TextLabel title={targets.first.title} facets={facets}/>
-      <TextField title={targets.second.title} facets={facets} cols={targets.second.cols}/>
-      <TextLabel title={targets.second.title} facets={facets}/>
+      <TextField title={first.title} facets={facets} cols={first.cols}/>
+      <TextLabel title={first.title} facets={facets}/>
+      <TextField title={second.title} facets={facets} cols={second.cols}/>
+      <TextLabel title={second.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );
 }
 export function buildIndexing(
   facets:Facets.Facets,
-  targets:{indexing:Textual;index:Textual;indexed:Textual}){
+  targets:{indexing:Indexing;index:Textual;indexed:Textual}){
   ReactDOM.render(
     <div>
-      <TextField title={targets.indexing.title} facets={facets}/>
-      <TextLabel title={targets.index.title} facets={facets}/>
+      <Dropdown
+        title={targets.indexing.title}
+        indexables={targets.indexing.indexables}
+        facets={facets}/>
+      <TextLabel title={targets.index.title} facets={facets}/><br/>
       <TextLabel title={targets.indexed.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );
-  window.alert('Not implemented for '+targets.indexing.title);
 }
