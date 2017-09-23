@@ -18,7 +18,7 @@ export interface Indexing extends Target{
   indexables:string[]
   index?:number
 }
-class Facet<I extends Target,K extends Target> extends React.Component<Target,Target>{
+class Facet<I extends Target,K extends Target> extends React.Component<I,K>{
   protected rendered:boolean;
   constructor(props){
     super(props);
@@ -27,7 +27,7 @@ class Facet<I extends Target,K extends Target> extends React.Component<Target,Ta
   facetUpdated=(update)=>{
     const updated=this.readUpdate(update);
     if(!this.rendered)
-      this.state=Object.assign({},this.props,updated);
+      this.state=Object.assign({}as K,this.props as I,updated);
     else this.setState(updated);
   };
   protected readUpdate(update):{}{
@@ -63,18 +63,7 @@ class Dropdown extends Facet<Indexing,Indexing>{
       <select onChange={this.onChange}>{options}</select></div>);
   }
 }
-class TextField extends React.Component<Textual,Textual>{
-  private rendered:boolean;
-  constructor(props){
-    super(props);
-    props.facets.attachFacet(props.title,this.facetUpdated);
-  }
-  facetUpdated=(update)=>{
-    const readUpdate={text:update};
-    if(!this.rendered)
-      this.state=Object.assign({},this.props,readUpdate);
-    else this.setState(false?then=>readUpdate:readUpdate);
-  };
+class TextField extends Facet<Textual,Textual>{
   onChange=(e)=>{
     this.setState({
       text:e.target.value,
@@ -87,6 +76,9 @@ class TextField extends React.Component<Textual,Textual>{
       this.props.facets.updateTargetState(this.props.title,value);
     }
   };
+  protected readUpdate(update):{}{
+    return {text:update}
+  }
   render(){
     this.rendered=true;
     return (<div>

@@ -7,7 +7,7 @@ function trace(text){
 }
 const facets:Facets.Facets=Facets.newInstance(true);
 
-enum Test{Textual,Indexing}
+enum Test{Textual,Indexing,All}
 
 namespace Titles{
   export const TEXTUAL_FIRST='First',TEXTUAL_SECOND='Second',
@@ -56,11 +56,18 @@ function buildLayout(){
     first:{title:Titles.TEXTUAL_FIRST},
     second:{title:Titles.TEXTUAL_SECOND,cols:40}
   });
-  else layout.buildIndexing(facets,{
+  else if(test===Test.Indexing)layout.buildIndexing(facets,{
     indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
     index:{title:Titles.INDEX},
     indexed:{title:Titles.INDEXED}
   })
+  // else layout.buildAll(facets,{
+  //     first:{title:Titles.TEXTUAL_FIRST},
+  //     second:{title:Titles.TEXTUAL_SECOND,cols:40},
+  //     indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
+  //     index:{title:Titles.INDEX},
+  //     indexed:{title:Titles.INDEXED}
+  //   })
 }
 export function buildSurface(){
   trace('Building surface');
