@@ -70,15 +70,15 @@ export {Facets};
      *
      * @param {string} title identifies the target or its targeter
      * @param {Facets.TextualCoupler} coupler connects the target to client code
-     * @returns textual {Facets.Target}
+     * @returns textual {Facets.Textual}
      */
     newTextualTarget(title:string,coupler:TextualCoupler):Target;
     newTogglingTarget(title: string, c: TogglingCoupler): Target;
     /**
      *
      * @param {string} title for the target
-     * @param {Facets.Target} members of the group
-     * @returns group of {Facets.Target}s
+     * @param {Facets.Textual} members of the group
+     * @returns group of {Facets.Textual}s
      */
     newTargetsGroup(title:string,...members:Target[]):Target;
     /**

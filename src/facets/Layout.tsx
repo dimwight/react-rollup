@@ -5,13 +5,15 @@ import Facets from 'facets-js';
 function trace(text){
   console.info('TextField > '+text);
 }
-export interface Faceted{
+interface Target{
   title?
   facets?:Facets.Facets
-  text?
-  size?
 }
-class TextField extends React.Component<Faceted,Faceted>{
+export interface Textual extends Target{
+  text?
+  cols?
+}
+class TextField extends React.Component<Textual,Textual>{
   private rendered:boolean;
   constructor(props){
     super(props);
@@ -37,8 +39,8 @@ class TextField extends React.Component<Faceted,Faceted>{
   render(){
     this.rendered=true;
     return (<div>
-        <form>
-          <input type="text" size={this.props.size||20}
+        <form><span className={'caption'}>{this.props.title}</span>&nbsp;
+          <input type="text" size={this.props.cols||20}
                  defaultValue={''}
                  value={this.state.text}
                  onKeyPress={this.onKeyPress}
@@ -49,7 +51,7 @@ class TextField extends React.Component<Faceted,Faceted>{
   }
 }
 class TextLabel
-  extends React.Component<Faceted,Faceted>{
+  extends React.Component<Textual,Textual>{
   private rendered:boolean;
   constructor(props){
     super(props);
@@ -62,22 +64,35 @@ class TextLabel
   };
   render(){
     this.rendered=true;
-    return <span>{this.state.text}</span>
+    return (<span>
+      <span className={'caption'}>{this.props.title}</span>
+      &nbsp;{this.state.text}</span>
+    )
   }
 }
-export function buildIndexing(
+export function buildTextual(
   facets:Facets.Facets,
-  titles:{indexing:string;index:string;indexables:string[]}){
-  window.alert('Not implemented')
-}
-export function buildTextual(facets:Facets.Facets,first:Faceted,second:Faceted){
+  targets:{first:Textual,second:Textual}){
   ReactDOM.render(
     <div>
-      <TextField title={first.title} facets={facets} size={first.size}/>
-      <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} size={second.size}/>
-      <TextLabel title={second.title} facets={facets}/>
+      <TextField title={targets.first.title} facets={facets} cols={targets.first.cols}/>
+      <TextLabel title={targets.first.title} facets={facets}/>
+      <TextField title={targets.second.title} facets={facets} cols={targets.second.cols}/>
+      <TextLabel title={targets.second.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );
+}
+export function buildIndexing(
+  facets:Facets.Facets,
+  targets:{indexing:Textual;index:Textual;indexed:Textual}){
+  ReactDOM.render(
+    <div>
+      <TextField title={targets.indexing.title} facets={facets}/>
+      <TextLabel title={targets.index.title} facets={facets}/>
+      <TextLabel title={targets.indexed.title} facets={facets}/>
+    </div>,
+    document.getElementById('root'),
+  );
+  window.alert('Not implemented for '+targets.indexing.title);
 }

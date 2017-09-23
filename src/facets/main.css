@@ -3,4 +3,8 @@ body {
   padding: 5px;
   font-family: Calibri,serif;
 }
+.caption{
+  font-weight: bold;
+  /*font-style: italic;*/
+}
 
