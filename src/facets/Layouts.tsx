@@ -65,7 +65,7 @@ class TextLabel
     return <span>{this.state.text}</span>
   }
 }
-export function buildTextualPage(facets:Facets.Facets,first:Faceted,second:Faceted){
+export function buildTextual(facets:Facets.Facets,first:Faceted,second:Faceted){
   ReactDOM.render(
     <div>
       <TextField title={first.title} facets={facets} size={first.size}/>
