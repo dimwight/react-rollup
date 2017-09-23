@@ -65,13 +65,13 @@ class TextLabel
     return <span>{this.state.text}</span>
   }
 }
-export function buildPage(first:Faceted,second:Faceted){
+export function buildTextualPage(facets:Facets.Facets,first:Faceted,second:Faceted){
   ReactDOM.render(
     <div>
-      <TextField title={first.title} facets={first.facets} size={first.size}/>
-      <TextLabel title={first.title} facets={first.facets}/>
-      <TextField title={second.title} facets={second.facets} size={second.size}/>
-      <TextLabel title={second.title} facets={second.facets}/>
+      <TextField title={first.title} facets={facets} size={first.size}/>
+      <TextLabel title={first.title} facets={facets}/>
+      <TextField title={second.title} facets={facets} size={second.size}/>
+      <TextLabel title={second.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );

@@ -23,9 +23,9 @@ function newTargetTree():Facets.Target{
 }
 function buildLayout(){
   trace('.buildLayout');
-  fields.buildPage(
-    {title:TITLE_FIRST,facets:facets},
-    {title:TITLE_SECOND,facets:facets,size:40},
+  fields.buildTextualPage(facets,
+    {title:TITLE_FIRST},
+    {title:TITLE_SECOND,size:40},
   );
 }
 export function buildSurface(){
