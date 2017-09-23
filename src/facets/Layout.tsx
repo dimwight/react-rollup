@@ -25,29 +25,32 @@ class Dropdown extends React.Component<Indexing,Indexing>{
   }
   facetUpdated=(update)=>{
     const readUpdate={index:update};
-    if(!this.rendered) 
+    if(!this.rendered)
       this.state=Object.assign({},this.props,readUpdate);
     else this.setState(readUpdate);
   };
   onChange=(e)=>{
-    this.setState({
-      index:e.target.value,
-    })
+    const indexables=this.props.indexables;
+    const value=e.target.value;
+    for(let at=0; at<indexables.length; at++){
+      if(indexables[at]===value){
+        this.setState(then=>{
+          this.props.facets.updateTargetState(this.props.title,at);
+          return {index:at};
+        });
+        break;
+      }
+    }
   };
   render(){
     this.rendered=true;
+    const selected=this.props.indexables[this.state.index];
     const options=this.props.indexables.map((item)=>{
-      return (<option>item</option>)
-    })
-    return (<div>
-        <form><span className={'caption'}>{this.props.title}</span>&nbsp;
-          <input type="select"
-            value={this.state.indexables[this.state.index]}
-           {...options}
-            onChange={this.onChange}
-          /></form>
-      </div>
-    );
+      return item===selected?<option selected>{item}</option>
+        :<option>{item}</option>
+    });
+    return (<div><span className={'caption'}>{this.props.title}</span>&nbsp;
+      <select onChange={this.onChange}>{options}</select></div>);
   }
 }
 class TextField extends React.Component<Textual,Textual>{
@@ -98,19 +101,18 @@ class TextLabel
     const readUpdate={text:update};
     if(!this.rendered)
       this.state=Object.assign({},this.props,readUpdate);
-    else this.setState(false?then=>readUpdate:readUpdate);
+    else this.setState(true?then=>readUpdate:readUpdate);
   };
   render(){
     this.rendered=true;
     return (<span>
       <span className={'caption'}>{this.props.title}</span>
-      &nbsp;{this.state.text}</span>
+        &nbsp;{this.state.text}</span>
     )
   }
 }
-export function buildTextual(
-  facets:Facets.Facets,
-  targets:{first:Textual,second:Textual}){
+export function buildTextual(facets:Facets.Facets,
+                             targets:{first:Textual,second:Textual}){
   const first=targets.first,second=targets.second;
   ReactDOM.render(
     <div>
@@ -122,9 +124,8 @@ export function buildTextual(
     document.getElementById('root'),
   );
 }
-export function buildIndexing(
-  facets:Facets.Facets,
-  targets:{indexing:Indexing;index:Textual;indexed:Textual}){
+export function buildIndexing(facets:Facets.Facets,
+                              targets:{indexing:Indexing;index:Textual;indexed:Textual}){
   ReactDOM.render(
     <div>
       <Dropdown
