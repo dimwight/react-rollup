@@ -8,7 +8,7 @@ function trace(text){
 interface Target{
   title:string
   facets?:Facets.Facets
-  state?:Facets.TargetState
+  state?:Facets.SimpleState
 }
 export interface Textual extends Target{
   text?:string
@@ -92,25 +92,16 @@ class TextField extends Facet<Textual,Textual>{
     );
   }
 }
-class TextLabel
-  extends React.Component<Textual,Textual>{
-  private rendered:boolean;
-  constructor(props){
-    super(props);
-    props.facets.attachFacet(props.title,this.facetUpdated);
-  }
-  facetUpdated=(update)=>{
-    const readUpdate={text:update};
-    if(!this.rendered)
-      this.state=Object.assign({},this.props,readUpdate);
-    else this.setState(false?then=>readUpdate:readUpdate);
-  };
+class TextLabel extends Facet<Textual,Textual>{
   render(){
     this.rendered=true;
     return (<span>
       <span className={'caption'}>{this.props.title}</span>
         &nbsp;{this.state.text}</span>
     )
+  }
+  protected readUpdate(update):{}{
+    return {text:update}
   }
 }
 export function buildTextual(

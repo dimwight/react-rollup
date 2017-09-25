@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.d.ts" afterPath="$PROJECT_DIR$/index.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
     </list>
@@ -31,9 +32,15 @@
       <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="1026">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+              <folding>
+                <element signature="n#!!doc;n#Target#0" expanded="false" />
+                <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
+                <element signature="n#!!doc;n#passText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+                <element signature="n#!!doc;n#getText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+                <element signature="n#!!doc;n#isValidText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +48,8 @@
       <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+            <state relative-caret-position="19">
+              <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -53,8 +60,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+            <state relative-caret-position="250">
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -190,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/facets/Layouts.js" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/facets/main.css" />
-        <option value="$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts" />
         <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
+        <option value="$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts" />
         <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
       </list>
     </option>
@@ -338,6 +345,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -355,42 +373,6 @@
               <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="hellos" type="cbb8eebc:String" user="hellos" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facets" type="462c0819:PsiDirectoryNode" />
-              <item name="Layout.tsx" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facets" type="462c0819:PsiDirectoryNode" />
-              <item name="testReact.tsx" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -415,19 +397,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Me\ts\react-rollup\public" />
-      <recent name="C:\Users\Me\ts\react-rollup" />
-      <recent name="C:\Users\Me\ts\react-rollup\src\facets" />
-      <recent name="C:\Users\Me\ts\react-rollup\src" />
-      <recent name="C:\Users\Me\ts\react-rollup\node_modules\@types" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Me\ts\react-rollup\public" />
       <recent name="C:\Users\Me\ts\react-rollup\src\facets" />
       <recent name="C:\Users\Me\ts\react-rollup\src\thinking" />
       <recent name="C:\Users\Me\ts\react-rollup\src" />
       <recent name="C:\Users\Me\ts\react-rollup\src\hello" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Me\ts\react-rollup" />
+      <recent name="C:\Users\Me\ts\react-rollup\public" />
+      <recent name="C:\Users\Me\ts\react-rollup\src\facets" />
+      <recent name="C:\Users\Me\ts\react-rollup\src" />
+      <recent name="C:\Users\Me\ts\react-rollup\node_modules\@types" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -464,18 +446,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="469" y="0" width="922" height="1043" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15054946" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.5480059" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.53846157" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.4519941" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.46153846" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25604397" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -512,6 +493,84 @@
         <option value="$PROJECT_DIR$/src/facets/main.js" />
         <option value="$PROJECT_DIR$/src/facets/testReact.js" />
         <option value="$PROJECT_DIR$/src/facets/testReact.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Objects.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Util.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Tracer.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Identified.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Times.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Util.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Titled.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Tracer.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/NumberPolicy.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Titled.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Debug.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Identified.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Times.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/NumberPolicy.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Objects.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Debug.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STarget.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/NotifyingCore.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SFrameTarget.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STextual.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SFacet.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/Facetable.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargeterCore.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SRetargetable.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/Notifying.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargetCoupler.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/Notifying.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SNumeric.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargetCore.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STrigger.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STarget.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/NotifyingType.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SToggling.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/EmptyTarget.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SNumeric.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargetCoupler.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/EmptyTarget.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/Notifiable.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SIndexing.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SIndexing.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SToggling.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/Notifiable.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STargeter.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STextual.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/Facetable.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SRetargetable.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STrigger.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargeterCore.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SFrameTarget.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/NotifyingType.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STargeter.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargetCore.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/NotifyingCore.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SFacet.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingTarget.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SSelection.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SSelection.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SelectingFrame.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingTarget.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrameTargeter.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrameTargeter.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SelectingFrame.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Facets.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Globals.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Facets.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Globals.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SimpleSurface.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SurfaceCore.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SimpleSurface.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SurfaceCore.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SimpleTitles.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SelectingSurface.js" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SelectingTitles.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SelectingSurface.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SimpleTitles.js.map" />
+        <option value="$PROJECT_DIR$/../facets-js/in/fjs/SelectingTitles.js" />
       </list>
     </option>
   </component>
@@ -547,7 +606,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Classy time!" />
     <MESSAGE value="Counting" />
     <MESSAGE value="TimeWithSeconds" />
     <MESSAGE value="Three" />
@@ -572,7 +630,8 @@
     <MESSAGE value="Dropdown" />
     <MESSAGE value="Dropdown works" />
     <MESSAGE value="indexables?" />
-    <option name="LAST_COMMIT_MESSAGE" value="indexables?" />
+    <MESSAGE value="indexables!" />
+    <option name="LAST_COMMIT_MESSAGE" value="indexables!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,13 +648,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/welcome/logo.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -705,13 +757,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/main.js.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/main.js">
@@ -844,6 +896,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -882,28 +935,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+        <state relative-caret-position="250">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Facets.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc;n#Target#0" expanded="false" />
+            <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
+            <element signature="n#!!doc;n#passText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+            <element signature="n#!!doc;n#getText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+            <element signature="n#!!doc;n#isValidText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+        <state relative-caret-position="19">
+          <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

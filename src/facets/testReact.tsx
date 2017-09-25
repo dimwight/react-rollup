@@ -30,12 +30,13 @@ function newTextualTree():Facets.Target{
     second=facets.newTextualTarget(Titles.TEXTUAL_SECOND,{
       passText:'Some text for '+Titles.TEXTUAL_SECOND,
     });
-  return facets.newTargetsGroup('Textuals',first,second);
+  return facets.newTargetGroup('Textuals',first,second);
 }
 function newIndexingTree():Facets.Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
       passIndex:0,
       passIndexables:Titles.INDEXABLES,
+      getFacetIndexables: (title)=> Titles.INDEXABLES
     }),
   index=facets.newTextualTarget(Titles.INDEX,{
     getText:(title)=>''+facets.getTargetState(Titles.INDEXING)
@@ -43,7 +44,7 @@ function newIndexingTree():Facets.Target{
   indexed=facets.newTextualTarget(Titles.INDEXED,{
     getText:(title)=>Titles.INDEXABLES[facets.getTargetState(Titles.INDEXING)as number]
   });
-  return facets.newTargetsGroup('Indexing',indexing,index,indexed);
+  return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
 const test:Test=Test.Indexing;
 function newTargetTree():Facets.Target{
