@@ -104,6 +104,31 @@ class TextLabel extends Facet<Textual,Textual>{
     return {text:update}
   }
 }
+
+export function buildAll(
+  facets:Facets.Facets,
+  targets:{
+  first:Textual;
+  second:Textual;
+  indexing:Indexing;
+  index:Textual;
+  indexed:Textual}){
+  const first=targets.first,second=targets.second;
+  ReactDOM.render(
+    <div>
+      <TextField title={first.title} facets={facets} cols={first.cols}/>
+      <TextLabel title={first.title} facets={facets}/>
+      <TextField title={second.title} facets={facets} cols={second.cols}/>
+      <TextLabel title={second.title} facets={facets}/>
+      <TextField title={first.title} facets={facets} cols={first.cols}/>
+      <TextLabel title={first.title} facets={facets}/>
+      <TextField title={second.title} facets={facets} cols={second.cols}/>
+      <TextLabel title={second.title} facets={facets}/>
+    </div>,
+    document.getElementById('root'),
+  );
+}
+
 export function buildTextual(
     facets:Facets.Facets,
     targets:{first:Textual,second:Textual}){

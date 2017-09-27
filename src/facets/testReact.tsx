@@ -46,11 +46,12 @@ function newIndexingTree():Facets.Target{
   });
   return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
-const test:Test=Test.Indexing;
+const test:Test=true?null:Test.Indexing;
 function newTargetTree():Facets.Target{
   return test===Test.Textual?newTextualTree()
     :newIndexingTree();
 }
+
 function buildLayout(){
   trace('.buildLayout');
   if(test===Test.Textual)layout.buildTextual(facets,{
@@ -62,13 +63,13 @@ function buildLayout(){
     index:{title:Titles.INDEX},
     indexed:{title:Titles.INDEXED}
   })
-  // else layout.buildAll(facets,{
-  //     first:{title:Titles.TEXTUAL_FIRST},
-  //     second:{title:Titles.TEXTUAL_SECOND,cols:40},
-  //     indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
-  //     index:{title:Titles.INDEX},
-  //     indexed:{title:Titles.INDEXED}
-  //   })
+  else layout.buildAll(facets,{
+      first:{title:Titles.TEXTUAL_FIRST},
+      second:{title:Titles.TEXTUAL_SECOND,cols:40},
+      indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
+      index:{title:Titles.INDEX},
+      indexed:{title:Titles.INDEXED}
+    })
 }
 export function buildSurface(){
   trace('Building surface');
