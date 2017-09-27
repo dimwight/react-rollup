@@ -34,10 +34,10 @@ function newTextualTree():Facets.Target{
 }
 function newIndexingTree():Facets.Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
-      passIndex:0,
-      passIndexables:Titles.INDEXABLES,
-      getFacetIndexables: (title)=> Titles.INDEXABLES
-    }),
+    passIndex:0,
+    getUiSelectables:(title)=> Titles.INDEXABLES,
+    getIndexables: (title)=> Titles.INDEXABLES
+  }),
   index=facets.newTextualTarget(Titles.INDEX,{
     getText:(title)=>''+facets.getTargetState(Titles.INDEXING)
   }),

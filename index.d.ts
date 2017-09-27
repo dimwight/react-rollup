@@ -39,31 +39,108 @@ export interface TextualCoupler extends TargetCoupler{
   */
   isValidText?:(title:string,text:string)=>boolean;
 }
+/**
+ Connects a toggling (boolean) target with client code.
+ */
 interface TogglingCoupler extends TargetCoupler {
+  /**
+   Sets initial state of the toggling.
+   */
   passSet: boolean;
 }
-interface IndexingCoupler extends TargetCoupler{
-  passIndexables:any[];
-  passIndex:number;
-  getFacetIndexables: (title: string) => string[];
+/**
+ Connects a numeric target with client code.
+ */
+interface NumericCoupler extends TargetCoupler {
+  /**
+   Sets initial state of the numeric.
+   */
+  passValue: number;
+  /**
+   Sets minimum state of the numeric.
+   */
+  min: number;
+  /**
+   Sets maximum state of the numeric.
+   */
+  max: number;
 }
+/**
+ Connects an indexing (list-type) target with client code.
+ */
+interface IndexingCoupler extends TargetCoupler{
+  /**
+   Sets initial state of the indexing (the index into its contents).
+   */
+  passIndex:number;
+  /**
+   * Get the contents to be indexed
+   * @param {string} title identifies the Target
+   * @returns {any[]}
+   */
+  getIndexables: (title: string) => any[];
+  /**
+   * Get the strings to represent the contents in the UI
+   * @param {string} title identifies the Target
+   * @returns {string[]}
+   */
+  getUiSelectables: (title: string) => string[];
+}
+/**
+ * Current values exposed by the indexing
+ */
 interface IndexingState {
-  indexables: string[];
+  /**
+   * As last created by IndexingCoupler.getUiSelectables
+   */
+  uiSelectables: string[];
+  /**
+   * The result of the current index into the indexables.
+   */
   indexed: any;
 }
-interface IndexingFrameProxy {
+/**
+ * Enables definition and communication with a Target that wraps
+ * content selected with an indexing.
+ */
+interface SelectingFramePolicy {
+  /**
+   * Will be the title of the wrapping Target.
+   */
   title: string;
+  /**
+   * Will be the title of the wrapped indexing.
+   */
   indexingTitle: string;
-  content: any[];
-  newFacetIndexables: (indexables: any[]) => string[];
-  newEditElements: (indexed: any) => any[];
+  /**
+   * Ccontent array to be selected.
+   */
+  selectables: Array<any>;
+  /**
+   * Supply strings to expose the content in the UI.
+   * @param {any[]} content supplied by getContent
+   * @returns {string[]}
+   */
+  newFacetIndexables: (content: any[]) => string[];
+  /**
+   * Create Targets exposing the selected content
+   * @param indexed selected with the indexing
+   * @returns {Target[]}
+   */
+  newEditTargets: (indexed: any) => Target[];
+  /**
+   * Optionally supply Targets exposing the content array.
+   * @returns {Target[]}
+   */
+  newFrameTargets?: () => Target[];
+  /**
+   * The wrapping Target
+   */
   frame?: Target;
+  /**
+   * Equivalent of IndexingState.indexed
+   */
   getIndexedContent?: any;
-}
-interface NumericCoupler extends TargetCoupler {
-  passValue?: number;
-  min: number;
-  max: number;
 }
 /**
 * Constructs a new Superficial application core.
@@ -75,7 +152,6 @@ export function newInstance(trace:boolean):Facets;
 * A Superficial application core.
 */
 interface Facets{
-  updatedTarget(target:any,coupler:TargetCoupler):void;
   /**
    *
    * @param {string} title identifies the target or its targeter
@@ -90,16 +166,17 @@ interface Facets{
    * @param {Facets.Target} members of the group
    * @returns group of {Facets.Target}s
    */
+  newNumericTarget(title: string, coupler: NumericCoupler): Target;
+  newTriggerTarget(title: string, coupler: TargetCoupler): Target;
+  newTargetGroup(title:string,...members:Target[]):Target;
   newIndexingTarget(title:string,coupler:IndexingCoupler):Target;
   getIndexingState(title: string): IndexingState;
-  buildIndexingFrame(proxy: IndexingFrameProxy): void;
-  newNumericTarget(title: string, coupler: NumericCoupler): Target;
-  newTargetGroup(title:string,...members:Target[]):Target;
+  buildSelectingFrame(policy: SelectingFramePolicy): void;
   /**
    * Constructs a tree of targeters using the initial target tree.
    * @param {Facets.Target} targets the root of the target tree
    */
-  buildTargeterTree(targets:Target):void;
+  buildTargeterTree(targetTree:Target):void;
   /**
    * Attach an internal facet to the targeter with the target title passed.
    * @param {string} title identifies the targeter

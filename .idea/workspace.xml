@@ -7,7 +7,6 @@
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.d.ts" afterPath="$PROJECT_DIR$/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="2652">
+              <caret line="174" column="5" lean-forward="false" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc;n#Target#0" expanded="false" />
                 <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+            <state relative-caret-position="155">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -60,7 +59,7 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="1751">
               <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -352,10 +351,47 @@
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+              <item name="facets-js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="facets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="facets" type="462c0819:PsiDirectoryNode" />
+              <item name="testReact.tsx" type="620a8d5e:NestingTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -378,7 +414,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,18 +481,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="469" y="0" width="922" height="1043" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15054946" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.53846157" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.53846157" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.46153846" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25604397" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.46153846" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -547,13 +583,11 @@
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargetCore.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/NotifyingCore.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SFacet.js" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingTarget.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SSelection.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SSelection.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SelectingFrame.js" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingTarget.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrameTargeter.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrameTargeter.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SelectingFrame.js.map" />
@@ -606,7 +640,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Counting" />
     <MESSAGE value="TimeWithSeconds" />
     <MESSAGE value="Three" />
     <MESSAGE value="Three as div" />
@@ -631,7 +664,8 @@
     <MESSAGE value="Dropdown works" />
     <MESSAGE value="indexables?" />
     <MESSAGE value="indexables!" />
-    <option name="LAST_COMMIT_MESSAGE" value="indexables!" />
+    <MESSAGE value="1-42" />
+    <option name="LAST_COMMIT_MESSAGE" value="1-42" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -937,7 +971,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="1751">
           <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -945,18 +979,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Facets.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Facets.d.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="2652">
+          <caret line="174" column="5" lean-forward="false" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc;n#Target#0" expanded="false" />
             <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
@@ -969,8 +996,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+        <state relative-caret-position="155">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
