@@ -46,7 +46,7 @@ function newIndexingTree():Facets.Target{
   });
   return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
-const test:Test=true?null:Test.Indexing;
+const test:Test=false?Test.Textual:Test.Indexing;
 function newTargetTree():Facets.Target{
   return test===Test.Textual?newTextualTree()
     :newIndexingTree();

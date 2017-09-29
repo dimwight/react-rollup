@@ -4,10 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="buildLayout">
+    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.d.ts" afterPath="$PROJECT_DIR$/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,14 +31,15 @@
       <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="167" column="30" lean-forward="true" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
+            <state relative-caret-position="2873">
+              <caret line="169" column="30" lean-forward="false" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
               <folding>
-                <element signature="n#!!doc;n#Target#0" expanded="false" />
-                <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
-                <element signature="n#!!doc;n#passText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-                <element signature="n#!!doc;n#getText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-                <element signature="n#!!doc;n#isValidText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+                <marker date="1506704304497" expanded="true" signature="18:43" ph="/** For passing simple state in and out of a {Facets}. ...*/" />
+                <marker date="1506704304497" expanded="true" signature="4638:4669" ph="/** Constructs a tree of targeters using the initial target tree. ...*/" />
+                <marker date="1506704304497" expanded="true" signature="4638:5529" ph="..." />
+                <marker date="1506704304497" expanded="true" signature="4717:4944" ph="/** Attach an internal facet to the targeter with the target title passed. ...*/" />
+                <marker date="1506704304497" expanded="true" signature="5020:5180" ph="/** Update the state of the target identified. ...*/" />
+                <marker date="1506704304497" expanded="true" signature="5242:5390" ph="/** Obtain the the state of the target identified. ...*/" />
               </folding>
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="22" />
+            <state relative-caret-position="168">
+              <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -60,8 +60,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="2176">
+              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -345,6 +345,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="hellos" type="cbb8eebc:String" user="hellos" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -381,29 +404,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="facets" type="462c0819:PsiDirectoryNode" />
               <item name="testReact.tsx" type="620a8d5e:NestingTreeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="react-rollup" type="cbb8eebc:String" user="react-rollup" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="hellos" type="cbb8eebc:String" user="hellos" />
             </path>
           </expand>
           <select />
@@ -482,13 +482,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.53846157" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25604397" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.46153846" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25604397" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -578,14 +578,10 @@
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/TargetCore.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/NotifyingCore.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/SFacet.js" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SSelection.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js.map" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SSelection.js" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SelectingFrame.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrameTargeter.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrameTargeter.js" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/SelectingFrame.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Facets.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Globals.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Facets.js" />
@@ -635,7 +631,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Three" />
     <MESSAGE value="Three as div" />
     <MESSAGE value="TimeWithSeconds fn vs class?" />
     <MESSAGE value="On to events" />
@@ -660,7 +655,8 @@
     <MESSAGE value="indexables!" />
     <MESSAGE value="1-42" />
     <MESSAGE value="1-45" />
-    <option name="LAST_COMMIT_MESSAGE" value="1-45" />
+    <MESSAGE value="layout.buildAll" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout.buildAll" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -960,22 +956,23 @@
     <entry file="file://$PROJECT_DIR$/Facets.d.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="167" column="30" lean-forward="true" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
+        <state relative-caret-position="2873">
+          <caret line="169" column="30" lean-forward="false" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
           <folding>
-            <element signature="n#!!doc;n#Target#0" expanded="false" />
-            <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#passText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#getText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#isValidText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
+            <marker date="1506704304497" expanded="true" signature="18:43" ph="/** For passing simple state in and out of a {Facets}. ...*/" />
+            <marker date="1506704304497" expanded="true" signature="4638:4669" ph="/** Constructs a tree of targeters using the initial target tree. ...*/" />
+            <marker date="1506704304497" expanded="true" signature="4638:5529" ph="..." />
+            <marker date="1506704304497" expanded="true" signature="4717:4944" ph="/** Attach an internal facet to the targeter with the target title passed. ...*/" />
+            <marker date="1506704304497" expanded="true" signature="5020:5180" ph="/** Update the state of the target identified. ...*/" />
+            <marker date="1506704304497" expanded="true" signature="5242:5390" ph="/** Obtain the the state of the target identified. ...*/" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="2176">
+          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -986,14 +983,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="1847" column="12" lean-forward="false" selection-start-line="1847" selection-start-column="12" selection-end-line="1847" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="22" />
+        <state relative-caret-position="168">
+          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
