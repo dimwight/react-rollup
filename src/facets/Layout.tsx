@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Facets from 'facets-js';
+import * as test from './testReact';
+
 
 function trace(text){
   console.info('TextField > '+text);
@@ -105,36 +107,8 @@ class TextLabel extends Facet<Textual,Textual>{
   }
 }
 
-export function buildAll(
-  facets:Facets.Facets,
-  targets:{
-  first:Textual;
-  second:Textual;
-  indexing:Indexing;
-  index:Textual;
-  indexed:Textual}){
-  const first=targets.first,second=targets.second;
-  ReactDOM.render(
-    <div>
-      <TextField title={first.title} facets={facets} cols={first.cols}/>
-      <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} cols={second.cols}/>
-      <TextLabel title={second.title} facets={facets}/>
-      <Dropdown
-        title={targets.indexing.title}
-        indexables={targets.indexing.indexables}
-        facets={facets}/>
-      <TextLabel title={targets.index.title} facets={facets}/><br/>
-      <TextLabel title={targets.indexed.title} facets={facets}/>
-   </div>,
-    document.getElementById('root'),
-  );
-}
-
-export function buildTextual(
-    facets:Facets.Facets,
-    targets:{first:Textual,second:Textual}){
-  const first=targets.first,second=targets.second;
+export function buildTextual(facets:Facets.Facets,test:test.Textual){
+  const first=test.first,second=test.second;
   ReactDOM.render(
     <div>
       <TextField title={first.title} facets={facets} cols={first.cols}/>
@@ -145,17 +119,34 @@ export function buildTextual(
     document.getElementById('root'),
   );
 }
-export function buildIndexing(
-    facets:Facets.Facets,
-    targets:{indexing:Indexing;index:Textual;indexed:Textual}){
+export function buildIndexing(facets:Facets.Facets,test:test.Indexing){
   ReactDOM.render(
     <div>
       <Dropdown
-        title={targets.indexing.title}
-        indexables={targets.indexing.indexables}
+        title={test.indexing.title}
+        indexables={test.indexing.indexables}
         facets={facets}/>
-      <TextLabel title={targets.index.title} facets={facets}/><br/>
-      <TextLabel title={targets.indexed.title} facets={facets}/>
+      <TextLabel title={test.index.title} facets={facets}/><br/>
+      <TextLabel title={test.indexed.title} facets={facets}/>
+    </div>,
+    document.getElementById('root'),
+  );
+}
+export function buildAll(facets:Facets.Facets,textuals:test.Textual,
+                         indexing:test.Indexing){
+  const first=textuals.first,second=textuals.second;
+  ReactDOM.render(
+    <div>
+      <TextField title={first.title} facets={facets} cols={first.cols}/>
+      <TextLabel title={first.title} facets={facets}/>
+      <TextField title={second.title} facets={facets} cols={second.cols}/>
+      <TextLabel title={second.title} facets={facets}/>
+      <Dropdown
+        title={indexing.indexing.title}
+        indexables={indexing.indexing.indexables}
+        facets={facets}/>
+      <TextLabel title={indexing.index.title} facets={facets}/><br/>
+      <TextLabel title={indexing.indexed.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );

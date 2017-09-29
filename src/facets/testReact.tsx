@@ -53,24 +53,29 @@ function newTargetTree():Facets.Target{
     :facets.newTargetGroup('Indexing',newTextualTree(),newIndexingTree());
 }
 
+export interface Textual{
+  first:layout.Textual,
+  second:layout.Textual
+}
+export interface Indexing{
+  indexing:layout.Indexing,
+  index:layout.Textual,
+  indexed:layout.Textual
+}
+const textual:Textual={
+  first:{title:Titles.TEXTUAL_FIRST},
+  second:{title:Titles.TEXTUAL_SECOND,cols:40}
+};
+const indexing:Indexing={
+  indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
+  index:{title:Titles.INDEX},
+  indexed:{title:Titles.INDEXED}
+};
 function buildLayout(){
   trace('.buildLayout');
-  if(test===Test.Textual)layout.buildTextual(facets,{
-    first:{title:Titles.TEXTUAL_FIRST},
-    second:{title:Titles.TEXTUAL_SECOND,cols:40}
-  });
-  else if(test===Test.Indexing)layout.buildIndexing(facets,{
-    indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
-    index:{title:Titles.INDEX},
-    indexed:{title:Titles.INDEXED}
-  })
-  else layout.buildAll(facets,{
-      first:{title:Titles.TEXTUAL_FIRST},
-      second:{title:Titles.TEXTUAL_SECOND,cols:40},
-      indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
-      index:{title:Titles.INDEX},
-      indexed:{title:Titles.INDEXED}
-    })
+  if(test===Test.Textual) layout.buildTextual(facets,textual);
+  else if(test===Test.Indexing) layout.buildIndexing(facets,indexing)
+  else layout.buildAll(facets,textual,indexing)
 }
 export function buildSurface(){
   trace('Building surface');
