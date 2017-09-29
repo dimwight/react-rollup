@@ -120,11 +120,13 @@ export function buildAll(
       <TextLabel title={first.title} facets={facets}/>
       <TextField title={second.title} facets={facets} cols={second.cols}/>
       <TextLabel title={second.title} facets={facets}/>
-      <TextField title={first.title} facets={facets} cols={first.cols}/>
-      <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} cols={second.cols}/>
-      <TextLabel title={second.title} facets={facets}/>
-    </div>,
+      <Dropdown
+        title={targets.indexing.title}
+        indexables={targets.indexing.indexables}
+        facets={facets}/>
+      <TextLabel title={targets.index.title} facets={facets}/><br/>
+      <TextLabel title={targets.indexed.title} facets={facets}/>
+   </div>,
     document.getElementById('root'),
   );
 }

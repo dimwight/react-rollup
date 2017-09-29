@@ -46,10 +46,11 @@ function newIndexingTree():Facets.Target{
   });
   return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
-const test:Test=false?Test.Textual:Test.Indexing;
+const test:Test=true?null:Test.Indexing;
 function newTargetTree():Facets.Target{
   return test===Test.Textual?newTextualTree()
-    :newIndexingTree();
+    :test===Test.Indexing?newIndexingTree()
+    :facets.newTargetGroup('Indexing',newTextualTree(),newIndexingTree());
 }
 
 function buildLayout(){
