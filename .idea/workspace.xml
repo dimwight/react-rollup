@@ -4,9 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
+    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="SearchBar">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rollup.config.js" afterPath="$PROJECT_DIR$/rollup.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Bits.ts" afterPath="$PROJECT_DIR$/src/util/Bits.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,18 +32,29 @@
       <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="81" column="15" lean-forward="false" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="15" />
+            <state relative-caret-position="434">
+              <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="37" />
               <folding>
+                <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#Product#0" expanded="false" />
                 <element signature="n#!!block;n#Products#0" expanded="false" />
-                <element signature="e#186#677#0" expanded="false" />
+                <element signature="e#229#720#0" expanded="false" />
                 <element signature="n#!!block;n#RowProps#0" expanded="false" />
                 <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
                 <element signature="n#CategoryRow#0" expanded="false" />
                 <element signature="n#Row#0" expanded="false" />
                 <element signature="n#Table#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rollup.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rollup.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hello.tsx" />
         <option value="$PROJECT_DIR$/src/main.css" />
         <option value="$PROJECT_DIR$/src/props.tsx" />
         <option value="$PROJECT_DIR$/src/hello/exports.ts" />
@@ -174,8 +186,9 @@
         <option value="$PROJECT_DIR$/src/hellos/extract.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/ifs.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/main.ts" />
-        <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/src/thinking/main.ts" />
+        <option value="$PROJECT_DIR$/src/util/Bits.ts" />
+        <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
       </list>
     </option>
@@ -338,7 +351,19 @@
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="index.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hellos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
@@ -359,6 +384,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="thinking" type="462c0819:PsiDirectoryNode" />
               <item name="table.tsx" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Bits.ts" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
@@ -444,7 +482,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.watch">
+  <component name="RunManager" selected="JavaScript Debug.launch">
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.build+launch" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.launch" />
@@ -474,12 +512,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.46824226" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -623,7 +661,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="TextField" />
     <MESSAGE value="TextField working" />
     <MESSAGE value="2xTextField working" />
     <MESSAGE value="TextField size" />
@@ -648,7 +685,8 @@
     <MESSAGE value="hellos.extract" />
     <MESSAGE value="hellos.ifs" />
     <MESSAGE value="thinking" />
-    <option name="LAST_COMMIT_MESSAGE" value="thinking" />
+    <MESSAGE value="SearchBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="SearchBar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -656,16 +694,15 @@
         <breakpoints-dialog />
       </breakpoints-dialog>
       <default-breakpoints>
-        <breakpoint enabled="true" type="javascript-exception">
+        <breakpoint type="javascript-exception">
           <properties uncaughtOnly="true" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tool/rewrite.ts" />
     <entry file="file://$PROJECT_DIR$/tool/tsconfig.json" />
     <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.tsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -877,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -918,24 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hellos/extract.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hellos/ifs.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -976,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rollup.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/welcome/main.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1000,14 +1003,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hellos/ifs.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-643">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hellos/extract.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="111" column="17" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Bits.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="81" column="15" lean-forward="false" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="15" />
+        <state relative-caret-position="434">
+          <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="37" />
           <folding>
+            <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#Product#0" expanded="false" />
             <element signature="n#!!block;n#Products#0" expanded="false" />
-            <element signature="e#186#677#0" expanded="false" />
+            <element signature="e#229#720#0" expanded="false" />
             <element signature="n#!!block;n#RowProps#0" expanded="false" />
             <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
             <element signature="n#CategoryRow#0" expanded="false" />

@@ -1,5 +1,9 @@
 import fn from 'date-fns/format';
 
+export function traceThing(top,thing){
+  console.log((true?(top+': '):"")+JSON.stringify(thing,null,1))
+}
+
 function format(time:Date,style:string){
   return fn(time,style);
   return 'early evening';

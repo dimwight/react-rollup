@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {traceThing} from '../Util/Bits';
+
 interface Product{
   category
   price
@@ -9,6 +11,7 @@ interface Product{
 interface Products{
   products:[Product]
 }
+
 const PRODUCTS = [
   {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
   {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
@@ -17,6 +20,7 @@ const PRODUCTS = [
   {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
   {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ] as [Product];
+
 interface RowProps{
   product:Product
 }
@@ -85,7 +89,7 @@ class SearchBar extends React.Component<SearchBarProps> {
   };
   handleInStockChange=(e)=>{
     this.props.onInStockChange(e.target.checked);
-  }
+  };
   render() {
     return (
       <form>
@@ -113,25 +117,26 @@ class FilterableTable extends React.Component<Products,FilterState> {
     }
   }
   handleFilterTextChange=(filterText)=>{
-    window.alert(filterText);
+    window.alert('handleFilterTextChange');
     this.setState({
       filterText: filterText
     });
   };
   handleInStockChange=(inStockOnly)=>{
-    window.alert(inStockOnly);
+    window.alert('handleInStockChange');
     this.setState({
       inStockOnly: inStockOnly
     })
-  }
+  };
   render() {
     const props:SearchBarProps={
       filterText:this.state.filterText,
       inStockOnly:this.state.inStockOnly,
       onFilterTextChange:this.handleFilterTextChange,
-      onInStockChange:this.handleFilterTextChange
-  }
-  return (
+      onInStockChange:this.handleInStockChange
+    };
+    if(false)traceThing('SearchBarProps',this.state);
+    return (
       <div>
         <SearchBar{...props} />
         <Table products={this.props.products} />

@@ -52,13 +52,11 @@ const includeLibs = o.assign({}, common, {
 const excludeLibs = o.assign({}, includeLibs, {
   external: [
     'facets-js',
-    'date-fns/format',
     'react',
     'react-dom'
   ],
   globals: {
     'facets-js': 'Facets',
-    'date-fns/format': libDateFormat.moduleName,
     'react':libReact.moduleName,
     'react-dom':libReactDom.moduleName
   },
