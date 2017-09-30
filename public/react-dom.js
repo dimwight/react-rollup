@@ -10677,7 +10677,7 @@ function roundFloat(val) {
   return Math.floor(val * n) / n;
 }
 
-// Flow type definition of console.table is too strict right now, see
+// Flow type definition of console.renderTable is too strict right now, see
 // https://github.com/facebook/flow/pull/2353 for updates
 function consoleTable(table) {
   console.table(table);
@@ -16732,7 +16732,7 @@ if ("development" !== 'production') {
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intd
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-incaption
       // No special behavior since these rules fall back to "in body" mode for
-      // all except special table nodes which cause bad parsing behavior anyway.
+      // all except special renderTable nodes which cause bad parsing behavior anyway.
 
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intr
       case 'tr':
@@ -17640,8 +17640,8 @@ var dummyNode = ExecutionEnvironment.canUseDOM ? document.createElement('div') :
 var shouldWrap = {};
 
 var selectWrap = [1, '<select multiple="true">', '</select>'];
-var tableWrap = [1, '<table>', '</table>'];
-var trWrap = [3, '<table><tbody><tr>', '</tr></tbody></table>'];
+var tableWrap = [1, '<renderTable>', '</renderTable>'];
+var trWrap = [3, '<renderTable><tbody><tr>', '</tr></tbody></renderTable>'];
 
 var svgWrap = [1, '<svg xmlns="http://www.w3.org/2000/svg">', '</svg>'];
 
@@ -17649,10 +17649,10 @@ var markupWrap = {
   '*': [1, '?<div>', '</div>'],
 
   'area': [1, '<map>', '</map>'],
-  'col': [2, '<table><tbody></tbody><colgroup>', '</colgroup></table>'],
+  'col': [2, '<renderTable><tbody></tbody><colgroup>', '</colgroup></renderTable>'],
   'legend': [1, '<fieldset>', '</fieldset>'],
   'param': [1, '<object>', '</object>'],
-  'tr': [2, '<table><tbody>', '</tbody></table>'],
+  'tr': [2, '<renderTable><tbody>', '</tbody></renderTable>'],
 
   'optgroup': selectWrap,
   'option': selectWrap,

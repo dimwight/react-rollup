@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/hellos/main.tsx" afterPath="$PROJECT_DIR$/src/hellos/main.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/thinking/_exports.ts" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/thinking/main.tsx" afterPath="$PROJECT_DIR$/src/thinking/main.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.css" afterPath="$PROJECT_DIR$/public/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/react-dom.js" afterPath="$PROJECT_DIR$/public/react-dom.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rollup.config.js" afterPath="$PROJECT_DIR$/rollup.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hellos/extract.tsx" afterPath="$PROJECT_DIR$/src/hellos/extract.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,33 +55,19 @@
       <file leaf-file-name="rollup.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rollup.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+            <state relative-caret-position="46">
+              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hellos/main.ts">
+      <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="extract.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hellos/extract.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="77">
+              <caret line="80" column="35" lean-forward="true" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/clock.tsx" />
         <option value="$PROJECT_DIR$/src/hello.tsx" />
         <option value="$PROJECT_DIR$/src/main.css" />
         <option value="$PROJECT_DIR$/src/props.tsx" />
@@ -183,14 +170,12 @@
         <option value="$PROJECT_DIR$/src/hellos/events.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/if.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/_exports.ts" />
-        <option value="$PROJECT_DIR$/src/hellos/ifs.tsx" />
         <option value="$PROJECT_DIR$/src/main.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/main.tsx" />
         <option value="$PROJECT_DIR$/src/thinking/_exports.ts" />
         <option value="$PROJECT_DIR$/src/thinking/main.css" />
         <option value="unpkg.com/react-dom@15.6.1/dist/react-dom.min.js" />
         <option value="$PROJECT_DIR$/src/thinking/main.tsx" />
-        <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/src/facets/main.tsx" />
         <option value="$PROJECT_DIR$/src/facets/_exports.ts" />
         <option value="$PROJECT_DIR$/src/facets/test.ts" />
@@ -212,9 +197,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/welcome/main.tsx" />
-        <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/src/hellos/extract.tsx" />
+        <option value="$PROJECT_DIR$/src/hellos/ifs.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/main.ts" />
+        <option value="$PROJECT_DIR$/rollup.config.js" />
+        <option value="$PROJECT_DIR$/src/thinking/main.ts" />
+        <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
       </list>
     </option>
   </component>
@@ -382,35 +370,21 @@
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hellos" type="462c0819:PsiDirectoryNode" />
+              <item name="thinking" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hellos" type="462c0819:PsiDirectoryNode" />
-              <item name="_exports.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hellos" type="462c0819:PsiDirectoryNode" />
-              <item name="extract.tsx" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hellos" type="462c0819:PsiDirectoryNode" />
-              <item name="ifs.tsx" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hellos" type="462c0819:PsiDirectoryNode" />
+              <item name="thinking" type="462c0819:PsiDirectoryNode" />
               <item name="main.ts" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="thinking" type="462c0819:PsiDirectoryNode" />
+              <item name="table.tsx" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -662,8 +636,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="thinking?" />
-    <MESSAGE value="thinking" />
     <MESSAGE value="facets tests" />
     <MESSAGE value="TextField" />
     <MESSAGE value="TextField working" />
@@ -687,7 +659,9 @@
     <MESSAGE value="SimpleSurface" />
     <MESSAGE value="Welcome?" />
     <MESSAGE value="Welcome!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Welcome!" />
+    <MESSAGE value="hellos.extract" />
+    <MESSAGE value="hellos.ifs" />
+    <option name="LAST_COMMIT_MESSAGE" value="hellos.ifs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -815,28 +789,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/thinking/main.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/_exports.ts" />
-    <entry file="file://$PROJECT_DIR$/src/thinking/_exports.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testLib.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -974,14 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/react-dom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17865" column="4" lean-forward="false" selection-start-line="17865" selection-start-column="4" selection-end-line="17865" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/welcome/main.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -998,26 +943,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rollup.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hellos/ifs.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1032,13 +961,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hellos/ifs.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hellos/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        <state relative-caret-position="136">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thinking/_exports.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/react-dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="17865" column="4" lean-forward="false" selection-start-line="17865" selection-start-column="4" selection-end-line="17865" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thinking/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="80" column="35" lean-forward="true" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

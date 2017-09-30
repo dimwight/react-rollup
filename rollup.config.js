@@ -43,7 +43,7 @@ const libReactDom= o.assign({}, common, {
   dest: 'public/rollupReactDom.js',
   moduleName: 'ReactDOM',
 });
-const entry = 'src/hellos/main.js';
+const entry = 'src/thinking/main.js';
 const includeLibs = o.assign({}, common, {
   entry: entry,
   dest: 'public/index.js',
