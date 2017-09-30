@@ -117,13 +117,13 @@ class FilterableTable extends React.Component<Products,FilterState> {
     }
   }
   handleFilterTextChange=(filterText)=>{
-    window.alert('handleFilterTextChange');
+    if(false)window.alert('handleFilterTextChange');
     this.setState({
       filterText: filterText
     });
   };
   handleInStockChange=(inStockOnly)=>{
-    window.alert('handleInStockChange');
+    if(false)window.alert('handleInStockChange');
     this.setState({
       inStockOnly: inStockOnly
     })
@@ -135,7 +135,7 @@ class FilterableTable extends React.Component<Products,FilterState> {
       onFilterTextChange:this.handleFilterTextChange,
       onInStockChange:this.handleInStockChange
     };
-    if(false)traceThing('SearchBarProps',this.state);
+    if(true)traceThing('SearchBarProps',this.state);
     return (
       <div>
         <SearchBar{...props} />
