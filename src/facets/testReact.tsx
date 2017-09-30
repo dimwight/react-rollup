@@ -1,13 +1,9 @@
 import React from 'react';
 import Facets from 'facets-js';
 import * as layout from './Layout';
-
 function trace(text){
   console.info('App > '+text);
 }
-const facets:Facets.Facets=Facets.newInstance(true);
-
-
 namespace Titles{
   export const TEXTUAL_FIRST='First',TEXTUAL_SECOND='Second',
   INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
@@ -17,7 +13,7 @@ namespace Titles{
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-
+const facets:Facets.Facets=Facets.newInstance(true);
 abstract class SurfaceCore{
   buildSurface(){
     trace('Building surface');
@@ -30,7 +26,6 @@ abstract class SurfaceCore{
   abstract newTargetTree():Facets.Target;
   abstract buildLayout();
 }
-
 export interface Textual{
   first:layout.Textual,
   second:layout.Textual
@@ -40,7 +35,6 @@ export interface Indexing{
   index:layout.Textual,
   indexed:layout.Textual
 }
-enum Test{Textual,Indexing,All}
 const textual:Textual={
   first:{title:Titles.TEXTUAL_FIRST},
   second:{title:Titles.TEXTUAL_SECOND,cols:40},
@@ -50,7 +44,7 @@ const indexing:Indexing={
   index:{title:Titles.INDEX},
   indexed:{title:Titles.INDEXED},
 };
-const newTextualTree=function():Facets.Target{
+function newTextualTree():Facets.Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
       passText:'Some text for '+Titles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
@@ -63,7 +57,7 @@ const newTextualTree=function():Facets.Target{
     });
   return facets.newTargetGroup('Textuals',first,second);
 }
-const newIndexingTree=function():Facets.Target{
+function newIndexingTree():Facets.Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
       passIndex:0,
       getUiSelectables:(title)=> Titles.INDEXABLES,
@@ -77,12 +71,17 @@ const newIndexingTree=function():Facets.Target{
     });
   return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
-const newAllTree=function():Facets.Target{
+function newAllTree():Facets.Target{
   return facets.newTargetGroup('Indexing',
     newTextualTree(),newIndexingTree());
-};
+}
+enum Test{Textual,Indexing,All}
 class SimpleSurface extends SurfaceCore{
-  readonly test:Test=true?null:Test.Indexing;
+  readonly test:Test;
+  constructor(test){
+    super();
+    this.test=test;
+  }
   newTargetTree():Facets.Target{
     const textual=newTextualTree,indexing=newIndexingTree,all=newAllTree;
     return this.test===Test.Textual?textual()
@@ -91,12 +90,12 @@ class SimpleSurface extends SurfaceCore{
   buildLayout(){
     trace('.buildLayout');
     if(this.test===Test.Textual) layout.buildTextual(facets,textual);
-    else if(this.test===Test.Indexing) layout.buildIndexing(facets,indexing)
-    else layout.buildAll(facets,textual,indexing)
+    else if(this.test===Test.Indexing) layout.buildIndexing(facets,indexing);
+    else layout.buildAll(facets,textual,indexing);
   }
 }
 export function buildSurface(){
- new SimpleSurface().buildSurface();
+ new SimpleSurface(Test.All).buildSurface();
 }
 
 
