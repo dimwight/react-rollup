@@ -77,15 +77,16 @@ const newIndexingTree=function():Facets.Target{
     });
   return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
-
+const newAllTree=function():Facets.Target{
+  return facets.newTargetGroup('Indexing',
+    newTextualTree(),newIndexingTree());
+};
 class SimpleSurface extends SurfaceCore{
   readonly test:Test=true?null:Test.Indexing;
   newTargetTree():Facets.Target{
-    const textual=newTextualTree,indexing=newIndexingTree,
-      all=facets.newTargetGroup('Indexing',
-      textual(),indexing());
+    const textual=newTextualTree,indexing=newIndexingTree,all=newAllTree;
     return this.test===Test.Textual?textual()
-      :this.test===Test.Indexing?indexing(): all;
+      :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
     trace('.buildLayout');
