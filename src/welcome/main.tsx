@@ -12,6 +12,6 @@ import './main.css';
 const title=document.getElementById('pageTitle');
 if(title!=null)title.innerText=document.title;
 ReactDOM.render(<Welcome />,
-  document.getElementById('app') as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 
