@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 interface Product{
   category
   price
@@ -18,20 +17,19 @@ const PRODUCTS = [
   {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
   {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ] as [Product];
-
-interface ProductRowProps{
+interface RowProps{
   product:Product
 }
-interface ProductCategoryRowProps{
+interface CategoryRowProps{
   category
   key
 }
-class ProductCategoryRow extends React.Component<ProductCategoryRowProps> {
+class CategoryRow extends React.Component<CategoryRowProps> {
   render() {
     return <tr><th colSpan={2}>{this.props.category}</th></tr>;
   }
 }
-class ProductRow extends React.Component<ProductRowProps> {
+class Row extends React.Component<RowProps> {
   render() {
     var name = this.props.product.stocked ?
       this.props.product.name :
@@ -46,17 +44,16 @@ class ProductRow extends React.Component<ProductRowProps> {
     );
   }
 }
-
-class ProductTable extends React.Component<Products> {
+class Table extends React.Component<Products> {
   render() {
     var rows = [];
     var lastCategory = null;
     this.props.products.forEach(function(product) {
       if (product.category !== lastCategory) {
-        rows.push(<ProductCategoryRow category={product.category}
-                                      key={product.category} />);
+        rows.push(<CategoryRow category={product.category}
+                               key={product.category} />);
       }
-      rows.push(<ProductRow product={product} key={product.name} />);
+      rows.push(<Row product={product} key={product.name} />);
       lastCategory = product.category;
     });
     return (
@@ -72,33 +69,79 @@ class ProductTable extends React.Component<Products> {
     );
   }
 }
-class SearchBar extends React.Component {
+interface SearchBarProps{
+  filterText:string
+  inStockOnly:boolean
+  onFilterTextChange:(string)=>void
+  onInStockChange:(boolean)=>void
+}
+interface FilterState{
+  filterText:string
+  inStockOnly:boolean
+}
+class SearchBar extends React.Component<SearchBarProps> {
+  handleFilterTextChange=(e)=>{
+    this.props.onFilterTextChange(e.target.value);
+  };
+  handleInStockChange=(e)=>{
+    this.props.onInStockChange(e.target.checked);
+  }
   render() {
     return (
       <form>
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search..."
+         value={this.props.filterText}
+         onChange={this.handleFilterTextChange}
+        />
         <p>
-          <input type="checkbox" />
-          {' '}
+          <input type="checkbox"
+           checked={this.props.inStockOnly}
+           onChange={this.handleInStockChange}
+          />
           Only show products in stock
         </p>
       </form>
     );
   }
 }
-class FilterableProductTable extends React.Component<Products> {
+class FilterableTable extends React.Component<Products,FilterState> {
+  constructor(props){
+    super(props);
+    this.state={
+      filterText:'filterText',
+      inStockOnly:false
+    }
+  }
+  handleFilterTextChange=(filterText)=>{
+    window.alert(filterText);
+    this.setState({
+      filterText: filterText
+    });
+  };
+  handleInStockChange=(inStockOnly)=>{
+    window.alert(inStockOnly);
+    this.setState({
+      inStockOnly: inStockOnly
+    })
+  }
   render() {
-    return (
+    const props:SearchBarProps={
+      filterText:this.state.filterText,
+      inStockOnly:this.state.inStockOnly,
+      onFilterTextChange:this.handleFilterTextChange,
+      onInStockChange:this.handleFilterTextChange
+  }
+  return (
       <div>
-        <SearchBar />
-        <ProductTable products={this.props.products} />
+        <SearchBar{...props} />
+        <Table products={this.props.products} />
       </div>
     );
   }
 }
 export function renderTable(){
   ReactDOM.render(
-    <FilterableProductTable products={PRODUCTS} />,
+    <FilterableTable products={PRODUCTS} />,
     document.getElementById('root')
   );
 }
