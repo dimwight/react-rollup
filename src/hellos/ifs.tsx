@@ -64,14 +64,12 @@ class LoginControl extends React.Component<null,Logged>{
 }
 function Mailbox(props) {
   const unread = props.unread;
-  Object.assign(props,{
-    top:'You have ',tail:' unread messages.'
-  });
+  const top='You have ',tail=' unread messages.';
   return (
     <div>
       {unread.length > 0?
-      <h2>{props.top}{unread.length}{props.tail}</h2>
-        :<h2>{`${props.top} no ${props.tail}`}</h2>
+      <h2>{top}{unread.length}{tail}</h2>
+        :<h2>{`${top} no ${tail}`}</h2>
       }
     </div>
   );
