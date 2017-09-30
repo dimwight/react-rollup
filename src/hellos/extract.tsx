@@ -17,19 +17,19 @@ function Text(props){
 function formatDate(date){
   return date.toLocaleTimeString();
 }
-function Dated(props){
+function Dated(props:Dated){
   trace('Clocky',props);
-  return <div>{formatDate(props.time)}</div>
+  return <div>{formatDate(props.date)}</div>
 }
 
 
 function Comment(props){
   trace('Comment',props);
-  const comment=props.comment;
+  const comment:CommentLike=props.comment;
   return (
     <div>
       <div>Commented: &lsquo;{comment.text}&rsquo;</div>
-      <div>{formatDate(comment.date)}</div>
+      <div>{formatDate((comment as Dated).date)}</div>
     </div>
   )
 }
@@ -45,7 +45,6 @@ function User(props){
   return url?(
     <div>
       <Image src={url} alt={name}/>
-
       <div>{name}</div>
     </div>
   ):<div>{name} [No image]</div>;
@@ -53,12 +52,12 @@ function User(props){
 function AuthorComment(props){
   trace('AuthorComment',props);
   if(props.authorComment)props=props.authorComment;
-  const author:UserLike=props.author,comment:CommentLike=props.comment,
+  const author=props.author,comment=props.comment,
     text=comment.text,date=comment.date;
   return author.name==='Facets'?(
     <div>
       <User user={author as UserLike}/>
-      <Comment comment={comment}/>
+      <Comment comment={comment as CommentLike}/>
     </div>
   ):(
     <div>
@@ -83,7 +82,10 @@ interface UserLike{
   name:NameLike,
   avatarUrl?:string
 }
-interface CommentLike{
+interface Dated{
+  date:Date
+}
+interface CommentLike extends Dated{
   date:Date
   text:string
 }
