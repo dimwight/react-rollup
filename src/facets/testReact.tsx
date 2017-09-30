@@ -7,7 +7,6 @@ function trace(text){
 }
 const facets:Facets.Facets=Facets.newInstance(true);
 
-enum Test{Textual,Indexing,All}
 
 namespace Titles{
   export const TEXTUAL_FIRST='First',TEXTUAL_SECOND='Second',
@@ -19,7 +18,39 @@ namespace Titles{
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
 
-function newTextualTree():Facets.Target{
+abstract class SurfaceCore{
+  buildSurface(){
+    trace('Building surface');
+    facets.buildTargeterTree(this.newTargetTree());
+    trace('Built targets, created targeters');
+    this.buildLayout();
+    trace('Attached and laid out facets');
+    trace('Surface built');
+  }
+  abstract newTargetTree():Facets.Target;
+  abstract buildLayout();
+}
+
+export interface Textual{
+  first:layout.Textual,
+  second:layout.Textual
+}
+export interface Indexing{
+  indexing:layout.Indexing,
+  index:layout.Textual,
+  indexed:layout.Textual
+}
+enum Test{Textual,Indexing,All}
+const textual:Textual={
+  first:{title:Titles.TEXTUAL_FIRST},
+  second:{title:Titles.TEXTUAL_SECOND,cols:40},
+};
+const indexing:Indexing={
+  indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
+  index:{title:Titles.INDEX},
+  indexed:{title:Titles.INDEXED},
+};
+const newTextualTree=function():Facets.Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
       passText:'Some text for '+Titles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
@@ -32,57 +63,40 @@ function newTextualTree():Facets.Target{
     });
   return facets.newTargetGroup('Textuals',first,second);
 }
-function newIndexingTree():Facets.Target{
+const newIndexingTree=function():Facets.Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
-    passIndex:0,
-    getUiSelectables:(title)=> Titles.INDEXABLES,
-    getIndexables: (title)=> Titles.INDEXABLES
-  }),
-  index=facets.newTextualTarget(Titles.INDEX,{
-    getText:(title)=>''+facets.getTargetState(Titles.INDEXING)
-  }),
-  indexed=facets.newTextualTarget(Titles.INDEXED,{
-    getText:(title)=>Titles.INDEXABLES[facets.getTargetState(Titles.INDEXING)as number]
-  });
+      passIndex:0,
+      getUiSelectables:(title)=> Titles.INDEXABLES,
+      getIndexables: (title)=> Titles.INDEXABLES,
+    }),
+    index=facets.newTextualTarget(Titles.INDEX,{
+      getText:(title)=>''+facets.getTargetState(Titles.INDEXING),
+    }),
+    indexed=facets.newTextualTarget(Titles.INDEXED,{
+      getText:(title)=>Titles.INDEXABLES[facets.getTargetState(Titles.INDEXING)as number],
+    });
   return facets.newTargetGroup('Indexing',indexing,index,indexed);
 }
-const test:Test=true?null:Test.Indexing;
-function newTargetTree():Facets.Target{
-  return test===Test.Textual?newTextualTree()
-    :test===Test.Indexing?newIndexingTree()
-    :facets.newTargetGroup('Indexing',newTextualTree(),newIndexingTree());
-}
 
-export interface Textual{
-  first:layout.Textual,
-  second:layout.Textual
-}
-export interface Indexing{
-  indexing:layout.Indexing,
-  index:layout.Textual,
-  indexed:layout.Textual
-}
-const textual:Textual={
-  first:{title:Titles.TEXTUAL_FIRST},
-  second:{title:Titles.TEXTUAL_SECOND,cols:40}
-};
-const indexing:Indexing={
-  indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
-  index:{title:Titles.INDEX},
-  indexed:{title:Titles.INDEXED}
-};
-function buildLayout(){
-  trace('.buildLayout');
-  if(test===Test.Textual) layout.buildTextual(facets,textual);
-  else if(test===Test.Indexing) layout.buildIndexing(facets,indexing)
-  else layout.buildAll(facets,textual,indexing)
+class SimpleSurface extends SurfaceCore{
+  readonly test:Test=true?null:Test.Indexing;
+  newTargetTree():Facets.Target{
+    const textual=newTextualTree,indexing=newIndexingTree,
+      all=facets.newTargetGroup('Indexing',
+      textual(),indexing());
+    return this.test===Test.Textual?textual()
+      :this.test===Test.Indexing?indexing(): all;
+  }
+  buildLayout(){
+    trace('.buildLayout');
+    if(this.test===Test.Textual) layout.buildTextual(facets,textual);
+    else if(this.test===Test.Indexing) layout.buildIndexing(facets,indexing)
+    else layout.buildAll(facets,textual,indexing)
+  }
 }
 export function buildSurface(){
-  trace('Building surface');
-  facets.buildTargeterTree(newTargetTree());
-  trace('Built targets, created targeters');
-  buildLayout();
-  trace('Attached and laid out facets');
-  trace('Surface built');
+ new SimpleSurface().buildSurface();
 }
+
+
 
