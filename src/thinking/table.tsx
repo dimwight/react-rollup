@@ -21,6 +21,9 @@ const PRODUCTS = [
   {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ] as [Product];
 
+type BooleanFn=(boolean)=>void
+type StringFn=(string)=>void
+
 interface RowProps{
   product:Product
 }
@@ -73,34 +76,40 @@ class Table extends React.Component<Products> {
     );
   }
 }
+
 interface SearchBarProps{
-  filterText:string
-  inStockOnly:boolean
-  onFilterTextChange:(string)=>void
-  onInStockChange:(boolean)=>void
+  filter:string
+  inStock:boolean
+  onFilterChange:StringFn
+  onInStockChange:BooleanFn
 }
 interface FilterState{
-  filterText:string
-  inStockOnly:boolean
+  filter:string
+  inStock:boolean
 }
 class SearchBar extends React.Component<SearchBarProps> {
-  handleFilterTextChange=(e)=>{
-    this.props.onFilterTextChange(e.target.value);
+  onFilterClick=()=>{
+    if(this.props.filter===filterHint)
+      this.props.onFilterChange('');
   };
-  handleInStockChange=(e)=>{
+  onFilterChange=(e)=>{
+    this.props.onFilterChange(e.target.value);
+  };
+  onInStockChange=(e)=>{
     this.props.onInStockChange(e.target.checked);
   };
   render() {
     return (
       <form>
-        <input type="text" placeholder="Search..."
-         value={this.props.filterText}
-         onChange={this.handleFilterTextChange}
+        <input type="text"
+          value={this.props.filter}
+          onChange={this.onFilterChange}
+          onMouseDown={this.onFilterClick}
         />
         <p>
           <input type="checkbox"
-           checked={this.props.inStockOnly}
-           onChange={this.handleInStockChange}
+           checked={this.props.inStock}
+           onChange={this.onInStockChange}
           />
           Only show products in stock
         </p>
@@ -108,34 +117,33 @@ class SearchBar extends React.Component<SearchBarProps> {
     );
   }
 }
+const filterHint='Search...';
 class FilterableTable extends React.Component<Products,FilterState> {
   constructor(props){
     super(props);
     this.state={
-      filterText:'filterText',
-      inStockOnly:false
+      filter: filterHint,
+      inStock:false
     }
   }
-  handleFilterTextChange=(filterText)=>{
-    if(false)window.alert('handleFilterTextChange');
+  onFilterChange=(filter:string)=>{
     this.setState({
-      filterText: filterText
+      filter: filter
     });
   };
-  handleInStockChange=(inStockOnly)=>{
-    if(false)window.alert('handleInStockChange');
+  onInStockChange=(inStock:boolean)=>{
     this.setState({
-      inStockOnly: inStockOnly
+      inStock: inStock
     })
   };
   render() {
     const props:SearchBarProps={
-      filterText:this.state.filterText,
-      inStockOnly:this.state.inStockOnly,
-      onFilterTextChange:this.handleFilterTextChange,
-      onInStockChange:this.handleInStockChange
+      filter:this.state.filter,
+      inStock:this.state.inStock,
+      onFilterChange:this.onFilterChange,
+      onInStockChange:this.onInStockChange
     };
-    if(true)traceThing('SearchBarProps',this.state);
+    traceThing('SearchBarProps',props);
     return (
       <div>
         <SearchBar{...props} />

@@ -4,11 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="SearchBar">
+    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rollup.config.js" afterPath="$PROJECT_DIR$/rollup.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Bits.ts" afterPath="$PROJECT_DIR$/src/util/Bits.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="37" />
+            <state relative-caret-position="54">
+              <caret line="90" column="15" lean-forward="false" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="15" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#Product#0" expanded="false" />
@@ -71,9 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>extract</find>
-      <find>react</find>
-      <find>react.js</find>
       <find>lib</find>
       <find>rollupDate</find>
       <find>extractReactDom</find>
@@ -101,6 +96,9 @@
       <find>Target_&lt;ReactLike&gt;</find>
       <find>formatDate</find>
       <find>Dated</find>
+      <find>ilterText</find>
+      <find>handle</find>
+      <find>inStockOnly</find>
     </findStrings>
     <replaceStrings>
       <replace>react</replace>
@@ -127,6 +125,9 @@
       <replace>=</replace>
       <replace>readUpdate</replace>
       <replace>Target_</replace>
+      <replace>ilter</replace>
+      <replace>on</replace>
+      <replace>inStock</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Me\ts\react-rollup</dir>
@@ -363,12 +364,6 @@
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hellos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="thinking" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,32 +379,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="thinking" type="462c0819:PsiDirectoryNode" />
               <item name="table.tsx" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="Bits.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="welcome" type="462c0819:PsiDirectoryNode" />
-              <item name="main.tsx" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -512,12 +481,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.46824226" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -661,7 +630,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="TextField working" />
     <MESSAGE value="2xTextField working" />
     <MESSAGE value="TextField size" />
     <MESSAGE value="TextLabel" />
@@ -686,7 +654,8 @@
     <MESSAGE value="hellos.ifs" />
     <MESSAGE value="thinking" />
     <MESSAGE value="SearchBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="SearchBar" />
+    <MESSAGE value="handleInStockChange" />
+    <option name="LAST_COMMIT_MESSAGE" value="handleInStockChange" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1047,8 +1016,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="125" column="37" lean-forward="false" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="37" />
+        <state relative-caret-position="54">
+          <caret line="90" column="15" lean-forward="false" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="15" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#Product#0" expanded="false" />
