@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {traceThing} from '../Util/Bits';
+import * as tf from '../widget/TextField'
 
 interface Product{
   category
@@ -20,9 +21,6 @@ const PRODUCTS = [
   {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
   {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ] as [Product];
-
-type BooleanFn=(boolean)=>void
-type StringFn=(string)=>void
 
 interface RowProps{
   product:Product
@@ -76,65 +74,14 @@ class Table extends React.Component<Products> {
     );
   }
 }
-interface TextFieldProps{
-  hint:string
-  startText:string
-  onEnter:StringFn
-  cols?:number
-}
-interface TextFieldState{
-  text:string
-}
-class TextField extends React.Component<TextFieldProps,TextFieldState> {
-  private readonly hint:string;
-  constructor(props){
-    super(props);
-    this.hint=props.hint;
-    this.state={
-      text:props.startText||this.hint||''
-    }
-  }
-  setText=(set:string)=>{
-    this.setState({
-      text:set,
-    })
-  }
-  onClick=()=>{
-    if(this.hint&&this.state.text===this.hint)
-      this.setText('');
-  };
-  onChange=(e)=>{
-    this.setText(e.target.value)
-  };
-  onKeyPress=(e)=>{
-    const value=e.target.value;
-    if(e.key==='Enter'){
-      e.preventDefault();
-      this.props.onEnter(this.state.text);
-    }
-  };
-  render() {
-    return (
-      <div>
-        <input type="text"
-               size={this.props.cols||20}
-               value={this.state.text}
-               onKeyPress={this.onKeyPress}
-               onChange={this.onChange}
-               onMouseDown={this.onClick}
-        />
-      </div>
-    );
-  }
-}
 
 interface FilterState{
   filter:string
   inStock:boolean
 }
 interface SearchBarProps extends FilterState{
-  onInStockChange:BooleanFn
-  onFilterChange:StringFn
+  onInStockChange:tf.BooleanFn
+  onFilterChange:tf.StringFn
 }
 class SearchBar extends React.Component<SearchBarProps> {
   onCheckBoxChange=(e)=>{
@@ -143,7 +90,7 @@ class SearchBar extends React.Component<SearchBarProps> {
   render() {
     return (
       <div>
-        <TextField
+        <tf.TextField
           hint={'Search...'}
           startText={this.props.filter}
           onEnter={this.props.onFilterChange}
