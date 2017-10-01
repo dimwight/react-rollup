@@ -76,53 +76,87 @@ class Table extends React.Component<Products> {
     );
   }
 }
-
-interface SearchBarProps{
-  filter:string
-  inStock:boolean
-  onFilterChange:StringFn
-  onInStockChange:BooleanFn
+interface TextFieldProps{
+  hint:string
+  startText:string
+  onEnter:StringFn
+  cols?:number
 }
+interface TextFieldState{
+  text:string
+}
+class TextField extends React.Component<TextFieldProps,TextFieldState> {
+  constructor(props){
+    super(props)
+  }
+  onClick=()=>{
+    const hint=this.props.hint;
+    if(hint&&this.props.startText===hint)
+      this.onChange('');
+  };
+  onChange=(e)=>{
+    this.setState({
+      text:e.target.value,
+    })
+  };
+  onKeyPress=(e)=>{
+    const value=e.target.value;
+    if(e.key==='Enter'){
+      e.preventDefault();
+      this.props.onEnter(this.state.text);
+    }
+  };
+  render() {
+    return (
+      <div>
+        <input type="text"
+               size={this.props.cols||20}
+               value={this.state.text}
+               onKeyPress={this.onKeyPress}
+               onChange={this.onChange}
+               onMouseDown={this.onClick}
+        />
+      </div>
+    );
+  }
+
+}
+
 interface FilterState{
   filter:string
   inStock:boolean
 }
+interface SearchBarProps extends FilterState{
+  onInStockChange:BooleanFn
+  onFilterChange:StringFn
+}
 class SearchBar extends React.Component<SearchBarProps> {
-  onFilterClick=()=>{
-    if(this.props.filter===filterHint)
-      this.props.onFilterChange('');
-  };
-  onFilterChange=(e)=>{
-    this.props.onFilterChange(e.target.value);
-  };
   onInStockChange=(e)=>{
     this.props.onInStockChange(e.target.checked);
   };
   render() {
     return (
-      <form>
-        <input type="text"
-          value={this.props.filter}
-          onChange={this.onFilterChange}
-          onMouseDown={this.onFilterClick}
+      <div>
+        <TextField
+          hint={'Search...'}
+          startText={this.props.filter}
+          onEnter={this.props.onFilterChange}
         />
-        <p>
-          <input type="checkbox"
-           checked={this.props.inStock}
-           onChange={this.onInStockChange}
-          />
-          Only show products in stock
+        <p><input
+          type="checkbox"
+          checked={this.props.inStock}
+          onChange={this.onInStockChange}
+        />Only show products in stock
         </p>
-      </form>
+      </div>
     );
   }
 }
-const filterHint='Search...';
 class FilterableTable extends React.Component<Products,FilterState> {
   constructor(props){
     super(props);
     this.state={
-      filter: filterHint,
+      filter: '',
       inStock:false
     }
   }
