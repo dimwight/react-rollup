@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Facets.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Facets.js" afterPath="$PROJECT_DIR$/src/facets/Facets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/main.ts" afterPath="$PROJECT_DIR$/src/facets/main.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Facets.tsx" afterPath="$PROJECT_DIR$/src/facets/Facets.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widget/TextField.tsx" afterPath="$PROJECT_DIR$/src/widget/TextField.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,32 +30,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
+      <file leaf-file-name="Facets.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/facets/Facets.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="91" column="44" lean-forward="false" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+            <state relative-caret-position="522">
+              <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <element signature="n#!!block;n#trace#0" expanded="false" />
+                <element signature="n#Facet#0" expanded="false" />
+                <element signature="n#TextLabel#0" expanded="false" />
+                <element signature="n#!!block;n#buildAll#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Facets.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/facets/Facets.tsx">
+      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="81" column="32" lean-forward="false" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+            <state relative-caret-position="661">
+              <caret line="97" column="32" lean-forward="false" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#trace#0" expanded="false" />
-                <element signature="n#Facet#0" expanded="false" />
-                <element signature="n#Dropdown#0" expanded="false" />
-                <element signature="n#TextLabel#0" expanded="false" />
-                <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-                <element signature="n#!!block;n#buildAll#0" expanded="false" />
+                <element signature="n#SurfaceCore#0" expanded="false" />
+                <element signature="e#1237#1369#0" expanded="false" />
+                <element signature="n#!!block;n#newTextualTree#0" expanded="false" />
+                <element signature="e#1982#2110#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rollup.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rollup.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#145#195#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextField.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widget/TextField.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hello/exports.ts" />
         <option value="$PROJECT_DIR$/src/hello/clock.tsx" />
         <option value="$PROJECT_DIR$/src/hello/_exports.ts" />
         <option value="$PROJECT_DIR$/src/hello/props.tsx" />
@@ -189,13 +213,14 @@
         <option value="$PROJECT_DIR$/src/util/Bits.ts" />
         <option value="$PROJECT_DIR$/src/widget/_exports.ts" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
         <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/src/facets/testLib.ts" />
-        <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/src/facets/main.ts" />
-        <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
         <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
+        <option value="$PROJECT_DIR$/rollup.config.js" />
+        <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
+        <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
+        <option value="$PROJECT_DIR$/src/facets/Facets.tsx" />
       </list>
     </option>
   </component>
@@ -388,6 +413,19 @@
               <item name="facets" type="462c0819:PsiDirectoryNode" />
               <item name="testReact.tsx" type="620a8d5e:NestingTreeNode" />
             </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="TextField.tsx" type="620a8d5e:NestingTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -481,9 +519,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="469" y="0" width="922" height="1043" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15054946" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.5317578" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25791857" sideWeight="0.5317578" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -641,7 +680,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="indexables?" />
     <MESSAGE value="indexables!" />
     <MESSAGE value="1-42" />
     <MESSAGE value="1-45" />
@@ -666,7 +704,8 @@
     <MESSAGE value="RegExp" />
     <MESSAGE value="categoryRow" />
     <MESSAGE value="rollup.config.js simplified" />
-    <option name="LAST_COMMIT_MESSAGE" value="rollup.config.js simplified" />
+    <MESSAGE value="Facets.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Facets.tsx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -942,22 +981,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/TextField.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="75" column="11" lean-forward="false" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1506878202306" expanded="false" signature="2601:2638" ph="..." />
-            <marker date="1506878202306" expanded="false" signature="2683:2740" ph="..." />
+            <marker date="1506881304127" expanded="false" signature="2606:2643" ph="..." />
+            <marker date="1506881304127" expanded="false" signature="2688:2745" ph="..." />
           </folding>
         </state>
       </provider>
@@ -986,17 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rollup.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-            <element signature="e#145#195#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testLib.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1015,27 +1035,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#145#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widget/TextField.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="91" column="44" lean-forward="false" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+        <state relative-caret-position="661">
+          <caret line="97" column="32" lean-forward="false" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <element signature="n#!!block;n#trace#0" expanded="false" />
+            <element signature="n#SurfaceCore#0" expanded="false" />
+            <element signature="e#1237#1369#0" expanded="false" />
+            <element signature="n#!!block;n#newTextualTree#0" expanded="false" />
+            <element signature="e#1982#2110#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Facets.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="81" column="32" lean-forward="false" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+        <state relative-caret-position="522">
+          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#trace#0" expanded="false" />
             <element signature="n#Facet#0" expanded="false" />
-            <element signature="n#Dropdown#0" expanded="false" />
             <element signature="n#TextLabel#0" expanded="false" />
-            <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
             <element signature="n#!!block;n#buildAll#0" expanded="false" />
           </folding>
         </state>

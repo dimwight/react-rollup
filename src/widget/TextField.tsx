@@ -11,7 +11,7 @@ interface TextFieldProps{
 interface TextFieldState{
   text:string
 }
-export class TextField extends React.Component<TextFieldProps,TextFieldState> {
+export class SmartTextField extends React.Component<TextFieldProps,TextFieldState> {
   private readonly hint:string;
   constructor(props){
     super(props);
@@ -44,7 +44,7 @@ export class TextField extends React.Component<TextFieldProps,TextFieldState> {
   };
   render() {
     return (
-      <div>
+      <span>
         <input type="text"
          size={this.props.cols||20}
          value={this.state.text}
@@ -53,7 +53,7 @@ export class TextField extends React.Component<TextFieldProps,TextFieldState> {
          onChange={this.onChange}
          onMouseDown={this.onClick}
         />
-      </div>
+      </span>
     );
   }
 }

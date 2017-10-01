@@ -95,7 +95,7 @@ class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
- new SimpleSurface(Test.Textual).buildSurface();
+ new SimpleSurface(Test.Indexing).buildSurface();
 }
 
 

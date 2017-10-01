@@ -4,7 +4,7 @@ import {traceThing} from '../Util/Bits';
 import {
   StringFn,
   BooleanFn,
-  TextField,
+  SmartTextField,
 } from '../widget/_exports'
 
 interface Product{
@@ -123,7 +123,7 @@ class SearchBar extends React.Component<SearchBarProps> {
     if(false)traceThing('SearchBar',this.props);
     return (
       <div>
-        <TextField
+        <SmartTextField
           hint={'Search...'}
           startText={this.props.filter}
           onEnter={this.props.onFilterChange}

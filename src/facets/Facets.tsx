@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Facets from 'facets-js';
 import * as test from './testReact';
-import {TextField} from '../widget/_exports';
+import {SmartTextField} from '../widget/_exports';
 
 function trace(text){
-  console.info('TextFieldFacet > '+text);
+  console.info('TextField > '+text);
 }
 interface Target{
   title:string
@@ -61,11 +61,15 @@ class Dropdown extends Facet<Indexing,Indexing>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
     });
-    return (<div><span className={'caption'}>{this.props.title}</span>&nbsp;
-      <select onChange={this.onChange}>{options}</select></div>);
+    return (<span><span className={'caption'}>{this.props.title}</span>&nbsp;
+      <select
+        onChange={this.onChange}
+      >
+        {options}
+        </select></span>);
   }
 }
-class TextFieldFacet extends Facet<Textual,Textual>{
+class TextField extends Facet<Textual,Textual>{
   onFieldEnter=(text)=>{
      this.props.facets.updateTargetState(this.props.title,text);
   };
@@ -76,7 +80,7 @@ class TextFieldFacet extends Facet<Textual,Textual>{
     this.rendered=true;
     return (<div>
         <span className={'caption'}>{this.props.title}</span>&nbsp;
-        <TextField
+        <SmartTextField
           startText={this.state.text}
           onEnter={this.onFieldEnter}
           cols={this.props.cols}
@@ -102,9 +106,9 @@ export function buildTextual(facets:Facets.Facets,test:test.Textual){
   const first=test.first,second=test.second;
   ReactDOM.render(
     <div>
-      <TextFieldFacet title={first.title} facets={facets} cols={first.cols}/>
+      <TextField title={first.title} facets={facets} cols={first.cols}/>
       <TextLabel title={first.title} facets={facets}/>
-      <TextFieldFacet title={second.title} facets={facets} cols={second.cols}/>
+      <TextField title={second.title} facets={facets} cols={second.cols}/>
       <TextLabel title={second.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
@@ -116,7 +120,7 @@ export function buildIndexing(facets:Facets.Facets,test:test.Indexing){
       <Dropdown
         title={test.indexing.title}
         indexables={test.indexing.indexables}
-        facets={facets}/>
+        facets={facets}/><br/>
       <TextLabel title={test.index.title} facets={facets}/><br/>
       <TextLabel title={test.indexed.title} facets={facets}/>
     </div>,
@@ -128,9 +132,9 @@ export function buildAll(facets:Facets.Facets,textuals:test.Textual,
   const first=textuals.first,second=textuals.second;
   ReactDOM.render(
     <div>
-      <TextFieldFacet title={first.title} facets={facets} cols={first.cols}/>
+      <TextField title={first.title} facets={facets} cols={first.cols}/>
       <TextLabel title={first.title} facets={facets}/>
-      <TextFieldFacet title={second.title} facets={facets} cols={second.cols}/>
+      <TextField title={second.title} facets={facets} cols={second.cols}/>
       <TextLabel title={second.title} facets={facets}/>
       <Dropdown
         title={indexing.indexing.title}
