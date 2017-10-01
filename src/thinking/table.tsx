@@ -86,12 +86,16 @@ interface TextFieldState{
   text:string
 }
 class TextField extends React.Component<TextFieldProps,TextFieldState> {
+  private readonly hint:string;
   constructor(props){
-    super(props)
+    super(props);
+    this.hint=props.hint;
+    this.state={
+      text:props.startText||this.hint||''
+    }
   }
   onClick=()=>{
-    const hint=this.props.hint;
-    if(hint&&this.props.startText===hint)
+    if(this.hint&&this.props.startText===this.hint)
       this.onChange('');
   };
   onChange=(e)=>{
