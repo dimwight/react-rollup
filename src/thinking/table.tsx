@@ -18,12 +18,12 @@ interface Products{
 }
 
 const PRODUCTS = [
-  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+  {category: 'Sporting Goods', price: 49.99, stocked: true, name: 'Football'},
+  {category: 'Sporting Goods', price: 9.99, stocked: true, name: 'Baseball'},
+  {category: 'Sporting Goods', price: 29.99, stocked: false, name: 'Basketball'},
+  {category: 'Electronics', price: 99.99, stocked: true, name: 'iPod Touch'},
+  {category: 'Electronics', price: 399.99, stocked: false, name: 'iPhone 5'},
+  {category: 'Electronics', price: 199.99, stocked: true, name: 'Nexus 7'}
 ] as [Product];
 
 interface RowProps{
@@ -92,7 +92,7 @@ class SearchBar extends React.Component<SearchBarProps> {
     this.props.onInStockChange(e.target.checked);
   };
   render() {
-    traceThing('SearchBar',this.props);
+    if(false)traceThing('SearchBar',this.props);
     return (
       <div>
         <TextField
@@ -119,7 +119,7 @@ class FilterableTable extends React.Component<Products,FilterState> {
     }
   }
   onFilterChange=(filter:string)=>{
-    window.alert(filter);
+    // window.alert(filter);
     this.setState({
       filter: filter
     });
@@ -130,12 +130,16 @@ class FilterableTable extends React.Component<Products,FilterState> {
     })
   };
   render() {
-    const all=this.props.products;
     const show=[]as[Product];
-    all.forEach((p)=>{
-      show.push(p);
+    this.props.products.forEach((p:Product)=>{
+      const filter=this.state.filter;
+      var exclude=filter&&!new RegExp(filter).test(p.name);
+      traceThing('FilterableTable',[
+        filter,
+        p.name
+      ]);
+      if(!exclude)show.push(p);
     });
-    traceThing('FilterableTable',show)
     return (
       <div>
         <SearchBar

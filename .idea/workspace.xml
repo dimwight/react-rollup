@@ -30,18 +30,17 @@
       <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="28" />
+            <state relative-caret-position="450">
+              <caret line="135" column="37" lean-forward="false" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#RowProps#0" expanded="false" />
-                <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
-                <element signature="n#CategoryRow#0" expanded="false" />
-                <element signature="n#Row#0" expanded="false" />
-                <element signature="n#Table#0" expanded="false" />
-                <element signature="n#!!block;n#FilterState#0" expanded="false" />
-                <element signature="n#!!block;n#SearchBarProps#0" expanded="false" />
-                <element signature="n#SearchBar#0" expanded="false" />
+                <marker date="1506873380563" expanded="false" signature="811:832" ph="..." />
+                <marker date="1506873380563" expanded="false" signature="859:879" ph="..." />
+                <marker date="1506873380563" expanded="false" signature="940:1024" ph="{...}" />
+                <marker date="1506873380563" expanded="false" signature="1069:1361" ph="{...}" />
+                <marker date="1506873380563" expanded="false" signature="1408:1999" ph="{...}" />
+                <marker date="1506873380563" expanded="false" signature="2022:2059" ph="..." />
+                <marker date="1506873380563" expanded="false" signature="2104:2161" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,7 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lib</find>
       <find>rollupDate</find>
       <find>extractReactDom</find>
       <find>facets.util.Util.printOut</find>
@@ -99,6 +97,7 @@
       <find>ilterText</find>
       <find>handle</find>
       <find>inStockOnly</find>
+      <find>', s</find>
     </findStrings>
     <replaceStrings>
       <replace>react</replace>
@@ -128,6 +127,7 @@
       <replace>ilter</replace>
       <replace>on</replace>
       <replace>inStock</replace>
+      <replace>, s</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Me\ts\react-rollup</dir>
@@ -514,11 +514,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.46824226" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -667,7 +667,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Indexing tree" />
     <MESSAGE value="Caption .css" />
     <MESSAGE value="Dropdown" />
     <MESSAGE value="Dropdown works" />
@@ -692,7 +691,8 @@
     <MESSAGE value="widget" />
     <MESSAGE value="_exports.ts" />
     <MESSAGE value="react.min" />
-    <option name="LAST_COMMIT_MESSAGE" value="react.min" />
+    <MESSAGE value="show=[]as[Product]" />
+    <option name="LAST_COMMIT_MESSAGE" value="show=[]as[Product]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1025,7 +1025,7 @@
         <state relative-caret-position="221">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1040,18 +1040,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="28" />
+        <state relative-caret-position="450">
+          <caret line="135" column="37" lean-forward="false" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="n#!!block;n#RowProps#0" expanded="false" />
-            <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
-            <element signature="n#CategoryRow#0" expanded="false" />
-            <element signature="n#Row#0" expanded="false" />
-            <element signature="n#Table#0" expanded="false" />
-            <element signature="n#!!block;n#FilterState#0" expanded="false" />
-            <element signature="n#!!block;n#SearchBarProps#0" expanded="false" />
-            <element signature="n#SearchBar#0" expanded="false" />
+            <marker date="1506873380563" expanded="false" signature="811:832" ph="..." />
+            <marker date="1506873380563" expanded="false" signature="859:879" ph="..." />
+            <marker date="1506873380563" expanded="false" signature="940:1024" ph="{...}" />
+            <marker date="1506873380563" expanded="false" signature="1069:1361" ph="{...}" />
+            <marker date="1506873380563" expanded="false" signature="1408:1999" ph="{...}" />
+            <marker date="1506873380563" expanded="false" signature="2022:2059" ph="..." />
+            <marker date="1506873380563" expanded="false" signature="2104:2161" ph="..." />
           </folding>
         </state>
       </provider>
