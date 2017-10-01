@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {traceThing} from '../Util/Bits';
-import {TextField,StringFn,BooleanFn} from '../widget/_exports'
+import {
+  StringFn,
+  BooleanFn,
+  TextField,
+} from '../widget/_exports'
 
 interface Product{
   category
@@ -88,6 +92,7 @@ class SearchBar extends React.Component<SearchBarProps> {
     this.props.onInStockChange(e.target.checked);
   };
   render() {
+    traceThing('SearchBar',this.props);
     return (
       <div>
         <TextField
@@ -125,16 +130,13 @@ class FilterableTable extends React.Component<Products,FilterState> {
     })
   };
   render() {
-    const props:SearchBarProps={
-      filter:this.state.filter,
-      inStock:this.state.inStock,
-      onFilterChange:this.onFilterChange,
-      onInStockChange:this.onInStockChange
-    };
-    traceThing('SearchBarProps',props);
     return (
       <div>
-        <SearchBar{...props} />
+        <SearchBar
+          onInStockChange={this.onInStockChange}
+          onFilterChange={this.onFilterChange}
+          filter={this.state.filter}
+          inStock={this.state.inStock}/>
         <Table products={this.props.products} />
       </div>
     );
