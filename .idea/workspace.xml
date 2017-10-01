@@ -26,60 +26,34 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.6747253">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="411">
-                  <caret line="144" column="28" lean-forward="false" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                    <element signature="e#229#720#0" expanded="false" />
-                    <element signature="n#CategoryRow#0" expanded="false" />
-                    <element signature="n#Row#0" expanded="false" />
-                    <element signature="n#Table#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="rollup.config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/rollup.config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="578">
-                  <caret line="39" column="3" lean-forward="false" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="159">
-                  <caret line="87" column="55" lean-forward="false" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-                  <folding>
-                    <element signature="n#!!block;n#trace#0" expanded="false" />
-                    <element signature="n#Facet#0" expanded="false" />
-                    <element signature="n#Dropdown#0" expanded="false" />
-                    <element signature="n#TextLabel#0" expanded="false" />
-                    <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-                    <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-                    <element signature="n#!!block;n#buildAll#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="173" column="4" lean-forward="true" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#229#720#0" expanded="false" />
+                <element signature="n#CategoryRow#0" expanded="false" />
+                <element signature="n#Row#0" expanded="false" />
+                <element signature="n#Table#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rollup.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rollup.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="39" column="3" lean-forward="false" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -486,7 +460,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.launch">
+  <component name="RunManager" selected="npm.watch">
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.build+launch" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.launch" />
@@ -516,7 +490,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17802198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791857" sideWeight="0.46824226" order="3" side_tool="true" content_ui="tabs" />
@@ -989,6 +963,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="111" column="17" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,8 +1000,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="144" column="28" lean-forward="false" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+        <state relative-caret-position="250">
+          <caret line="173" column="4" lean-forward="true" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#229#720#0" expanded="false" />

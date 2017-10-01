@@ -94,14 +94,17 @@ class TextField extends React.Component<TextFieldProps,TextFieldState> {
       text:props.startText||this.hint||''
     }
   }
+  setText=(set:string)=>{
+    this.setState({
+      text:set,
+    })
+  }
   onClick=()=>{
-    if(this.hint&&this.props.startText===this.hint)
-      this.onChange('');
+    if(this.hint&&this.state.text===this.hint)
+      this.setText('');
   };
   onChange=(e)=>{
-    this.setState({
-      text:e.target.value,
-    })
+    this.setText(e.target.value)
   };
   onKeyPress=(e)=>{
     const value=e.target.value;
@@ -123,7 +126,6 @@ class TextField extends React.Component<TextFieldProps,TextFieldState> {
       </div>
     );
   }
-
 }
 
 interface FilterState{
@@ -135,7 +137,7 @@ interface SearchBarProps extends FilterState{
   onFilterChange:StringFn
 }
 class SearchBar extends React.Component<SearchBarProps> {
-  onInStockChange=(e)=>{
+  onCheckBoxChange=(e)=>{
     this.props.onInStockChange(e.target.checked);
   };
   render() {
@@ -149,7 +151,7 @@ class SearchBar extends React.Component<SearchBarProps> {
         <p><input
           type="checkbox"
           checked={this.props.inStock}
-          onChange={this.onInStockChange}
+          onChange={this.onCheckBoxChange}
         />Only show products in stock
         </p>
       </div>
@@ -165,6 +167,7 @@ class FilterableTable extends React.Component<Products,FilterState> {
     }
   }
   onFilterChange=(filter:string)=>{
+    window.alert(filter)
     this.setState({
       filter: filter
     });
