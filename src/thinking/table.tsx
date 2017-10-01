@@ -38,6 +38,9 @@ class CategoryRow extends React.Component<CategoryRowProps> {
     return <tr><th colSpan={2}>{this.props.category}</th></tr>;
   }
 }
+function categoryRow(props:CategoryRowProps){
+  return <tr><th colSpan={2}>{props.category}</th></tr>;
+}
 class Row extends React.Component<RowProps> {
   render() {
     var name = this.props.product.stocked ?
@@ -57,13 +60,19 @@ class Table extends React.Component<Products> {
   render() {
     var rows = [];
     var lastCategory = null;
-    this.props.products.forEach(function(product) {
-      if (product.category !== lastCategory) {
-        rows.push(<CategoryRow category={product.category}
-                               key={product.category} />);
+    this.props.products.forEach((product)=>{
+      const category=product.category;
+      if (category !== lastCategory) {
+        rows.push(false?<CategoryRow category={category}
+                               key={category} />
+        :categoryRow({
+            category:category,
+            key:category
+          }));
+
       }
       rows.push(<Row product={product} key={product.name} />);
-      lastCategory = product.category;
+      lastCategory = category;
     });
     return (
       <table>
@@ -119,7 +128,6 @@ class FilterableTable extends React.Component<Products,FilterState> {
     }
   }
   onFilterChange=(filter:string)=>{
-    // window.alert(filter);
     this.setState({
       filter: filter
     });
@@ -131,14 +139,16 @@ class FilterableTable extends React.Component<Products,FilterState> {
   };
   render() {
     const show=[]as[Product];
-    this.props.products.forEach((p:Product)=>{
-      const filter=this.state.filter;
-      var exclude=filter&&!new RegExp(filter).test(p.name);
+    this.props.products.forEach((product:Product)=>{
+      const filter=this.state.filter,inStock=this.state.inStock;
+      var exclude=filter&&!new RegExp(filter,'i').test(product.name)
+        ||inStock&&!product.stocked;
       traceThing('FilterableTable',[
         filter,
-        p.name
+        inStock,
+        product.name
       ]);
-      if(!exclude)show.push(p);
+      if(!exclude)show.push(product);
     });
     return (
       <div>

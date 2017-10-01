@@ -3,9 +3,9 @@ import {StringFn} from './_exports'
 // import {traceThing} from '../Util/Bits';
 
 interface TextFieldProps{
-  hint:string
   startText:string
   onEnter:StringFn
+  hint?:string
   cols?:number
 }
 interface TextFieldState{
@@ -36,7 +36,7 @@ export class TextField extends React.Component<TextFieldProps,TextFieldState> {
     if(e.key==='Enter'){
       e.preventDefault();
       const text=this.state.text;
-      if(text)this.props.onEnter(text);
+      this.props.onEnter(text);
     }
   };
   onKeyDown=(e)=>{
