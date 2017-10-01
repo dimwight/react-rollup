@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widget/TextField.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widget/_exports.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widget/TextField.tsx" afterPath="$PROJECT_DIR$/src/widget/TextField.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,15 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            <state relative-caret-position="51">
+              <caret line="3" column="36" lean-forward="false" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#Product#0" expanded="false" />
-                <element signature="e#271#762#0" expanded="false" />
+                <element signature="e#293#784#0" expanded="false" />
                 <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
                 <element signature="n#CategoryRow#0" expanded="false" />
                 <element signature="n#Row#0" expanded="false" />
@@ -46,14 +46,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="_exports.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/widget/_exports.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TextField.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widget/TextField.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/props.tsx" />
         <option value="$PROJECT_DIR$/src/hello/exports.ts" />
         <option value="$PROJECT_DIR$/src/hello/clock.tsx" />
         <option value="$PROJECT_DIR$/src/hello/_exports.ts" />
@@ -200,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/thinking/main.ts" />
         <option value="$PROJECT_DIR$/src/util/Bits.ts" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
+        <option value="$PROJECT_DIR$/src/widget/_exports.ts" />
         <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
         <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
       </list>
@@ -409,6 +417,13 @@
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="_exports.ts" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
@@ -633,6 +648,8 @@
         <option value="$PROJECT_DIR$/src/hellos/_exports.js.map" />
         <option value="$PROJECT_DIR$/src/widget/TextField.js.map" />
         <option value="$PROJECT_DIR$/src/widget/TextField.js" />
+        <option value="$PROJECT_DIR$/src/widget/_exports.js" />
+        <option value="$PROJECT_DIR$/src/widget/_exports.js.map" />
       </list>
     </option>
   </component>
@@ -668,7 +685,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="TextLabel" />
     <MESSAGE value="Indexing?" />
     <MESSAGE value="Layouts,Titles" />
     <MESSAGE value="Indexing tree" />
@@ -693,7 +709,8 @@
     <MESSAGE value="handleInStockChange" />
     <MESSAGE value="onFilterClick" />
     <MESSAGE value="TextField" />
-    <option name="LAST_COMMIT_MESSAGE" value="TextField" />
+    <MESSAGE value="widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="widget" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,13 +727,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/welcome/Welcome.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.html" />
     <entry file="file://$PROJECT_DIR$/public/test.html" />
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -933,6 +943,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,27 +1039,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widget/TextField.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="51">
+          <caret line="3" column="36" lean-forward="false" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#Product#0" expanded="false" />
-            <element signature="e#271#762#0" expanded="false" />
+            <element signature="e#293#784#0" expanded="false" />
             <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
             <element signature="n#CategoryRow#0" expanded="false" />
             <element signature="n#Row#0" expanded="false" />
             <element signature="n#Table#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widget/_exports.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,8 +1,7 @@
 import React from 'react';
-import {traceThing} from '../Util/Bits';
+import {StringFn} from './_exports'
+// import {traceThing} from '../Util/Bits';
 
-export type BooleanFn=(boolean)=>void
-export type StringFn=(string)=>void
 interface TextFieldProps{
   hint:string
   startText:string
@@ -34,21 +33,25 @@ export class TextField extends React.Component<TextFieldProps,TextFieldState> {
     this.setText(e.target.value)
   };
   onKeyPress=(e)=>{
-    const value=e.target.value;
     if(e.key==='Enter'){
       e.preventDefault();
-      this.props.onEnter(this.state.text);
+      const text=this.state.text;
+      if(text)this.props.onEnter(text);
     }
+  };
+  onKeyDown=(e)=>{
+    if(e.keyCode===27)this.setText(this.props.startText)
   };
   render() {
     return (
       <div>
         <input type="text"
-               size={this.props.cols||20}
-               value={this.state.text}
-               onKeyPress={this.onKeyPress}
-               onChange={this.onChange}
-               onMouseDown={this.onClick}
+         size={this.props.cols||20}
+         value={this.state.text}
+         onKeyPress={this.onKeyPress}
+         onKeyDown={this.onKeyDown}
+         onChange={this.onChange}
+         onMouseDown={this.onClick}
         />
       </div>
     );
