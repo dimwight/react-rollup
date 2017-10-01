@@ -1,6 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import replace from 'rollup-plugin-replace';
+// import replace from 'rollup-plugin-replace';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import postcss from 'rollup-plugin-postcss';
 import svg from 'rollup-plugin-svg';
@@ -13,7 +13,6 @@ const common = {
     sourcemaps(),
     resolve(),
     commonjs(),
-    // replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
 
