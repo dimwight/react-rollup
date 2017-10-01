@@ -28,6 +28,7 @@ const PRODUCTS = [
 
 interface RowProps{
   product:Product
+  key
 }
 interface CategoryRowProps{
   category
@@ -38,7 +39,7 @@ class CategoryRow extends React.Component<CategoryRowProps> {
     return <tr><th colSpan={2}>{this.props.category}</th></tr>;
   }
 }
-function categoryRow(props:CategoryRowProps){
+function categoryRowCode(props:CategoryRowProps){
   return <tr><th colSpan={2}>{props.category}</th></tr>;
 }
 class Row extends React.Component<RowProps> {
@@ -56,6 +57,20 @@ class Row extends React.Component<RowProps> {
     );
   }
 }
+function rowCode(props:RowProps){
+  var name = props.product.stocked ?
+    props.product.name :
+    <span style={{color: 'red'}}>
+        {props.product.name}
+      </span>;
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{props.product.price}</td>
+    </tr>
+  );
+}
+
 class Table extends React.Component<Products> {
   render() {
     var rows = [];
@@ -65,13 +80,17 @@ class Table extends React.Component<Products> {
       if (category !== lastCategory) {
         rows.push(false?<CategoryRow category={category}
                                key={category} />
-        :categoryRow({
+        :categoryRowCode({
             category:category,
             key:category
           }));
 
       }
-      rows.push(<Row product={product} key={product.name} />);
+      rows.push(false?<Row product={product} key={product.name} />
+        :rowCode({
+          product:product,
+          key:product.name
+        }));
       lastCategory = category;
     });
     return (

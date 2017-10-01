@@ -12,44 +12,16 @@ const common = {
     svg(),
     sourcemaps(),
     resolve(),
-    commonjs({
-      namedExports:{
-        'node_modules/react/index.js':[
-          'Component',
-          'createElement',
-        ],
-        'node_modules/react-dom/index.js':['render'],
-        'src/welcome/logo.svg': [ 'logo' ],
-        'node_modules/date-fns/format': [ 'format' ],
-      }
-    }),
-    replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
+    commonjs(),
+    // replace({'process.env.NODE_ENV': JSON.stringify( 'development' )})
   ]
 };
 
-const o = Object;
-const libDateFormat= o.assign({}, common, {
-  entry: 'node_modules/time-fns/format/main.js',
-  dest: 'public/rollupDateFormat.js',
-  moduleName: 'libDateFormat',
-});
-const libReact= o.assign({}, common, {
-  entry: 'node_modules/react/dist/react.js',
-  dest: 'public/rollupReact.js',
-  moduleName: 'React',
-});
-const libReactDom= o.assign({}, common, {
-  entry: 'node_modules/react-dom/dist/react-dom.js',
-  dest: 'public/rollupReactDom.js',
-  moduleName: 'ReactDOM',
-});
-const entry = 'src/thinking/main.js';
-const includeLibs = o.assign({}, common, {
+const entry = 'src/facets/main.js';
+const main = Object.assign({}, common, {
   entry: entry,
   dest: 'public/index.js',
   sourceMap: true,
-});
-const excludeLibs = o.assign({}, includeLibs, {
   external: [
     'facets-js',
     'react',
@@ -57,13 +29,12 @@ const excludeLibs = o.assign({}, includeLibs, {
   ],
   globals: {
     'facets-js': 'Facets',
-    'react':libReact.moduleName,
-    'react-dom':libReactDom.moduleName
+    'react':'React',
+    'react-dom':'ReactDOM'
   },
 });
 
-const bundle = excludeLibs;
-// libDateFormat|libReact|libReactDom|includeLibs|excludeLibs
+const bundle = main;
 console.log('Bundling '+bundle.entry+' to '+bundle.dest+', format='+bundle.format);
 
 export default bundle;

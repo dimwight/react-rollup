@@ -12,11 +12,10 @@ function newTargetTree():Facets.Target{
   const coupler:Facets.TextualCoupler={
     passText:text,
     targetStateUpdated : (title) => trace("coupler.stateUpdated: title=" + title),
-    updateInterim:()=>false,
   };
   const first:Facets.Target=core.newTextualTarget(TITLE_FIRST,coupler),
     second:Facets.Target=core.newTextualTarget(TITLE_SECOND,coupler);
-  return core.newTargetsGroup('Textuals',first,second);
+  return core.newTargetGroup('Textuals',first,second);
 }
 function buildLayout(){
   trace('.buildLayout');
@@ -31,6 +30,6 @@ export function buildSurface(){
   trace('Surface built');
   core.updateTargetState(TITLE_FIRST,'Some updated text');
   if(typeof document!=='undefined')
-    document.getElementById('pageTitle').innerText=document.title;
+    document.write('Passed test');
 }
 
