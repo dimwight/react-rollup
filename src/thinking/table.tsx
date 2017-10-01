@@ -130,6 +130,12 @@ class FilterableTable extends React.Component<Products,FilterState> {
     })
   };
   render() {
+    const all=this.props.products;
+    const show=[]as[Product];
+    all.forEach((p)=>{
+      show.push(p);
+    });
+    traceThing('FilterableTable',show)
     return (
       <div>
         <SearchBar
@@ -137,7 +143,7 @@ class FilterableTable extends React.Component<Products,FilterState> {
           onFilterChange={this.onFilterChange}
           filter={this.state.filter}
           inStock={this.state.inStock}/>
-        <Table products={this.props.products} />
+        <Table products={show} />
       </div>
     );
   }

@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widget/_exports.ts" afterPath="$PROJECT_DIR$/src/widget/_exports.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,30 +27,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="table.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="table.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="250">
+              <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="28" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#Product#0" expanded="false" />
-                <element signature="e#304#795#0" expanded="false" />
+                <element signature="n#!!block;n#RowProps#0" expanded="false" />
                 <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
                 <element signature="n#CategoryRow#0" expanded="false" />
                 <element signature="n#Row#0" expanded="false" />
                 <element signature="n#Table#0" expanded="false" />
+                <element signature="n#!!block;n#FilterState#0" expanded="false" />
+                <element signature="n#!!block;n#SearchBarProps#0" expanded="false" />
+                <element signature="n#SearchBar#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="54" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -199,8 +189,8 @@
         <option value="$PROJECT_DIR$/rollup.config.js" />
         <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
         <option value="$PROJECT_DIR$/src/widget/_exports.ts" />
-        <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
       </list>
     </option>
   </component>
@@ -677,7 +667,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Layouts,Titles" />
     <MESSAGE value="Indexing tree" />
     <MESSAGE value="Caption .css" />
     <MESSAGE value="Dropdown" />
@@ -702,7 +691,8 @@
     <MESSAGE value="TextField" />
     <MESSAGE value="widget" />
     <MESSAGE value="_exports.ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="_exports.ts" />
+    <MESSAGE value="react.min" />
+    <option name="LAST_COMMIT_MESSAGE" value="react.min" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1040,27 +1030,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="n#!!block;n#Product#0" expanded="false" />
-            <element signature="e#304#795#0" expanded="false" />
-            <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
-            <element signature="n#CategoryRow#0" expanded="false" />
-            <element signature="n#Row#0" expanded="false" />
-            <element signature="n#Table#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="n#!!block;n#RowProps#0" expanded="false" />
+            <element signature="n#!!block;n#CategoryRowProps#0" expanded="false" />
+            <element signature="n#CategoryRow#0" expanded="false" />
+            <element signature="n#Row#0" expanded="false" />
+            <element signature="n#Table#0" expanded="false" />
+            <element signature="n#!!block;n#FilterState#0" expanded="false" />
+            <element signature="n#!!block;n#SearchBarProps#0" expanded="false" />
+            <element signature="n#SearchBar#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
