@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Facets from 'facets-js';
 import * as test from './testReact';
-
+import {TextField} from '../widget/_exports';
 
 function trace(text){
-  console.info('TextField > '+text);
+  console.info('TextFieldFacet > '+text);
 }
 interface Target{
   title:string
@@ -65,18 +65,9 @@ class Dropdown extends Facet<Indexing,Indexing>{
       <select onChange={this.onChange}>{options}</select></div>);
   }
 }
-class TextField extends Facet<Textual,Textual>{
-  onChange=(e)=>{
-    this.setState({
-      text:e.target.value,
-    })
-  };
-  onKeyPress=(e)=>{
-    const value=e.target.value;
-    if(e.key==='Enter'){
-      e.preventDefault();
-      this.props.facets.updateTargetState(this.props.title,value);
-    }
+class TextFieldFacet extends Facet<Textual,Textual>{
+  onFieldEnter=(text)=>{
+     this.props.facets.updateTargetState(this.props.title,text);
   };
   protected readUpdate(update):{}{
     return {text:update}
@@ -84,12 +75,12 @@ class TextField extends Facet<Textual,Textual>{
   render(){
     this.rendered=true;
     return (<div>
-        <form><span className={'caption'}>{this.props.title}</span>&nbsp;
-          <input type="text" size={this.props.cols||20}
-                 value={this.state.text}
-                 onKeyPress={this.onKeyPress}
-                 onChange={this.onChange}
-          /></form>
+        <span className={'caption'}>{this.props.title}</span>&nbsp;
+        <TextField
+          startText={this.state.text}
+          onEnter={this.onFieldEnter}
+          cols={this.props.cols}
+        />
       </div>
     );
   }
@@ -111,9 +102,9 @@ export function buildTextual(facets:Facets.Facets,test:test.Textual){
   const first=test.first,second=test.second;
   ReactDOM.render(
     <div>
-      <TextField title={first.title} facets={facets} cols={first.cols}/>
+      <TextFieldFacet title={first.title} facets={facets} cols={first.cols}/>
       <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} cols={second.cols}/>
+      <TextFieldFacet title={second.title} facets={facets} cols={second.cols}/>
       <TextLabel title={second.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
@@ -137,9 +128,9 @@ export function buildAll(facets:Facets.Facets,textuals:test.Textual,
   const first=textuals.first,second=textuals.second;
   ReactDOM.render(
     <div>
-      <TextField title={first.title} facets={facets} cols={first.cols}/>
+      <TextFieldFacet title={first.title} facets={facets} cols={first.cols}/>
       <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} cols={second.cols}/>
+      <TextFieldFacet title={second.title} facets={facets} cols={second.cols}/>
       <TextLabel title={second.title} facets={facets}/>
       <Dropdown
         title={indexing.indexing.title}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Facets from 'facets-js';
-import * as layout from './Layout';
+import * as layout from './Facets';
 function trace(text){
   console.info('App > '+text);
 }
@@ -95,7 +95,7 @@ class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
- new SimpleSurface(Test.All).buildSurface();
+ new SimpleSurface(Test.Textual).buildSurface();
 }
 
 
