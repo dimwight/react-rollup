@@ -1,8 +1,8 @@
 import React from 'react';
 import Facets from 'facets-js';
-import * as layout from './Facets';
+import * as layout from './Layout';
 function trace(text){
-  console.info('App > '+text);
+  if(facets.doTrace)console.info('App > '+text);
 }
 namespace Titles{
   export const TEXTUAL_FIRST='First',TEXTUAL_SECOND='Second',
@@ -13,7 +13,7 @@ namespace Titles{
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-const facets:Facets.Facets=Facets.newInstance(true);
+const facets:Facets.Facets=Facets.newInstance(false);
 abstract class SurfaceCore{
   buildSurface(){
     trace('Building surface');
@@ -26,20 +26,28 @@ abstract class SurfaceCore{
   abstract newTargetTree():Facets.Target;
   abstract buildLayout();
 }
-export interface Textual{
-  first:layout.Textual,
-  second:layout.Textual
+export interface TextualTest{
+  first:layout.TextualValues,
+  second:layout.TextualValues
 }
-export interface Indexing{
-  indexing:layout.Indexing,
-  index:layout.Textual,
-  indexed:layout.Textual
+export interface TogglingTest{
+  toggling:layout.TogglingValues,
+  second:layout.TextualValues
 }
-const textual:Textual={
+export interface IndexingTest{
+  indexing:layout.IndexingValues,
+  index:layout.TextualValues,
+  indexed:layout.TextualValues
+}
+const textual:TextualTest={
   first:{title:Titles.TEXTUAL_FIRST},
   second:{title:Titles.TEXTUAL_SECOND,cols:40},
 };
-const indexing:Indexing={
+const toggling:TogglingTest={
+  toggling:{title:Titles.TEXTUAL_FIRST},
+  second:{title:Titles.TOGGLED,cols:40},
+};
+const indexing:IndexingTest={
   indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
   index:{title:Titles.INDEX},
   indexed:{title:Titles.INDEXED},
@@ -55,7 +63,7 @@ function newTextualTree():Facets.Target{
     second=facets.newTextualTarget(Titles.TEXTUAL_SECOND,{
       passText:'Some text for '+Titles.TEXTUAL_SECOND,
     });
-  return facets.newTargetGroup('Textuals',first,second);
+  return facets.newTargetGroup('TextualTest',first,second);
 }
 function newIndexingTree():Facets.Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
@@ -69,33 +77,38 @@ function newIndexingTree():Facets.Target{
     indexed=facets.newTextualTarget(Titles.INDEXED,{
       getText:(title)=>Titles.INDEXABLES[facets.getTargetState(Titles.INDEXING)as number],
     });
-  return facets.newTargetGroup('Indexing',indexing,index,indexed);
+  return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
+}
+function newTogglingTree(){
+  return facets.newTogglingTarget(Titles.TOGGLING,{
+    passSet:Titles.TOGGLE_START
+  });
 }
 function newAllTree():Facets.Target{
-  return facets.newTargetGroup('Indexing',
+  return facets.newTargetGroup('AllTest',
     newTextualTree(),newIndexingTree());
 }
-enum Test{Textual,Indexing,All}
-class SimpleSurface extends SurfaceCore{
+export enum Test{Textual,Toggling,Indexing,All}
+export class SimpleSurface extends SurfaceCore{
   readonly test:Test;
   constructor(test){
     super();
     this.test=test;
   }
   newTargetTree():Facets.Target{
-    const textual=newTextualTree,indexing=newIndexingTree,all=newAllTree;
+    const textual=newTextualTree,indexing=newIndexingTree,
+      toggling=newTogglingTree,all=newAllTree;
     return this.test===Test.Textual?textual()
-      :this.test===Test.Indexing?indexing(): all();
+      :this.test===Test.Toggling?toggling()
+        :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
     trace('.buildLayout');
     if(this.test===Test.Textual) layout.buildTextual(facets,textual);
     else if(this.test===Test.Indexing) layout.buildIndexing(facets,indexing);
+    else if(this.test===Test.Toggling) layout.buildToggling(facets,toggling);
     else layout.buildAll(facets,textual,indexing);
   }
-}
-export function buildSurface(){
- new SimpleSurface(Test.Indexing).buildSurface();
 }
 
 

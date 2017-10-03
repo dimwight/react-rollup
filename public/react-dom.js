@@ -1188,9 +1188,9 @@ function getTargetInstForInputEventPolyfill(topLevelType, targetInst, nativeEven
     // helpful for us so just check activeElement instead.
     //
     // 99% of the time, keydown and keyup aren't necessary. IE8 fails to fire
-    // propertychange on the first input event after setting `value` from a
+    // propertychange on the toggling input event after setting `value` from a
     // script and fires only keydown, keypress, keyup. Catching keyup usually
-    // gets it and catching keydown lets us fire an event for the first
+    // gets it and catching keydown lets us fire an event for the toggling
     // keystroke if user does a key repeat (it'll be a little delayed: right
     // before the second keystroke). Other input methods (e.g., paste) seem to
     // fire selectionchange normally.
@@ -1399,7 +1399,7 @@ function replaceDelimitedText(openingComment, closingComment, stringText) {
     }
   } else {
     if (stringText) {
-      // Set the text content of the first node after the opening comment, and
+      // Set the text content of the toggling node after the opening comment, and
       // remove all following nodes up until the closing comment.
       setTextContent(nodeAfterComment, stringText);
       removeDelimitedText(parentNode, nodeAfterComment, closingComment);
@@ -1575,7 +1575,7 @@ function insertTreeChildren(tree) {
 var insertTreeBefore = createMicrosoftUnsafeLocalFunction(function (parentNode, tree, referenceNode) {
   // DocumentFragments aren't actually part of the DOM after insertion so
   // appending children won't update the DOM. We need to ensure the fragment
-  // is properly populated first, breaking out of our lazy approach for just
+  // is properly populated toggling, breaking out of our lazy approach for just
   // this level. Also, some <object> plugins (like Flash Player) will read
   // <param> nodes immediately upon insertion into the DOM, so <object>
   // must also be populated prior to insertion into the DOM.
@@ -2987,9 +2987,9 @@ function executeDispatchesInOrder(event, simulated) {
 
 /**
  * Standard/simple iteration through an event's collected dispatches, but stops
- * at the first dispatch execution returning true, and returns that id.
+ * at the toggling dispatch execution returning true, and returns that id.
  *
- * @return {?string} id of the first dispatch execution who's listener returns
+ * @return {?string} id of the toggling dispatch execution who's listener returns
  * true, or null if no listener returned true.
  */
 function executeDispatchesInOrderStopAtTrueImpl(event) {
@@ -4221,7 +4221,7 @@ function instantiateChild(childInstances, child, name, selfDebugID) {
       ReactComponentTreeHook = _dereq_(133);
     }
     if (!keyUnique) {
-      "development" !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
+      "development" !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the toggling child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
     }
   }
   if (child != null && keyUnique) {
@@ -6072,10 +6072,10 @@ ReactDOMComponent.Mixin = {
       }
     }
     if (newlineEatingTags[this._tag] && ret.charAt(0) === '\n') {
-      // text/html ignores the first character in these tags if it's a newline
+      // text/html ignores the toggling character in these tags if it's a newline
       // Prefer to break application/xml over text/html (for now) by adding
       // a newline specifically to get eaten by the parser. (Alternately for
-      // textareas, replacing "^\n" with "\r\n" doesn't get eaten, and the first
+      // textareas, replacing "^\n" with "\r\n" doesn't get eaten, and the toggling
       // \r is normalized out by HTMLTextAreaElement#value.)
       // See: <http://www.w3.org/TR/html-polyglot/#newlines-in-textarea-and-pre>
       // See: <http://www.w3.org/TR/html5/syntax.html#element-restrictions>
@@ -6596,7 +6596,7 @@ function getInstanceFromNode(node) {
  * DOM node.
  */
 function getNodeFromInstance(inst) {
-  // Without this first invariant, passing a non-DOM-component triggers the next
+  // Without this toggling invariant, passing a non-DOM-component triggers the next
   // invariant for a missing parent, which is super confusing.
   !(inst._hostNode !== undefined) ? "development" !== 'production' ? invariant(false, 'getNodeFromInstance: Invalid argument.') : _prodInvariant('33') : void 0;
 
@@ -8904,7 +8904,7 @@ var ReactErrorUtils = {
   invokeGuardedCallbackWithCatch: invokeGuardedCallback,
 
   /**
-   * During execution of guarded functions we will capture the first error which
+   * During execution of guarded functions we will capture the toggling error which
    * we will rethrow to be handled by the top level error handler.
    */
   rethrowCaughtError: function () {
@@ -9587,7 +9587,7 @@ var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
 var instancesByReactRootID = {};
 
 /**
- * Finds the index of the first character
+ * Finds the index of the toggling character
  * that's not common between the two given strings.
  *
  * @return {number} the index of the character where the strings diverge
@@ -9795,7 +9795,7 @@ TopLevelWrapper.isReactTopLevelWrapper = true;
  *     </div>
  *   </div>
  *
- * Inside of `container`, the first element rendered is the "reactRoot".
+ * Inside of `container`, the toggling element rendered is the "reactRoot".
  */
 var ReactMount = {
   TopLevelWrapper: TopLevelWrapper,
@@ -9849,7 +9849,7 @@ var ReactMount = {
     // verify that that's the case.
     "development" !== 'production' ? warning(ReactCurrentOwner.current == null, '_renderNewRootComponent(): Render methods should be a pure function ' + 'of props and state; triggering nested component updates from ' + 'render is not allowed. If necessary, trigger nested updates in ' + 'componentDidUpdate. Check the render method of %s.', ReactCurrentOwner.current && ReactCurrentOwner.current.getName() || 'ReactCompositeComponent') : void 0;
 
-    !isValidContainer(container) ? "development" !== 'production' ? invariant(false, '_registerComponent(...): Target container is not a DOM element.') : _prodInvariant('37') : void 0;
+    !isValidContainer(container) ? "development" !== 'production' ? invariant(false, '_registerComponent(...): TargetValues container is not a DOM element.') : _prodInvariant('37') : void 0;
 
     ReactBrowserEventEmitter.ensureScrollValueMonitoring();
     var componentInstance = instantiateReactComponent(nextElement, false);
@@ -9931,7 +9931,7 @@ var ReactMount = {
         var rootElementSibling = reactRootElement;
         while (rootElementSibling) {
           if (internalGetID(rootElementSibling)) {
-            "development" !== 'production' ? warning(false, 'render(): Target node has markup rendered by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-rendered markup.') : void 0;
+            "development" !== 'production' ? warning(false, 'render(): TargetValues node has markup rendered by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-rendered markup.') : void 0;
             break;
           }
           rootElementSibling = rootElementSibling.nextSibling;
@@ -9979,7 +9979,7 @@ var ReactMount = {
     // render but we still don't expect to be in a render call here.)
     "development" !== 'production' ? warning(ReactCurrentOwner.current == null, 'unmountComponentAtNode(): Render methods should be a pure function ' + 'of props and state; triggering nested component updates from render ' + 'is not allowed. If necessary, trigger nested updates in ' + 'componentDidUpdate. Check the render method of %s.', ReactCurrentOwner.current && ReactCurrentOwner.current.getName() || 'ReactCompositeComponent') : void 0;
 
-    !isValidContainer(container) ? "development" !== 'production' ? invariant(false, 'unmountComponentAtNode(...): Target container is not a DOM element.') : _prodInvariant('40') : void 0;
+    !isValidContainer(container) ? "development" !== 'production' ? invariant(false, 'unmountComponentAtNode(...): TargetValues container is not a DOM element.') : _prodInvariant('40') : void 0;
 
     if ("development" !== 'production') {
       "development" !== 'production' ? warning(!nodeIsRenderedByOtherInstance(container), "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.') : void 0;
@@ -10006,7 +10006,7 @@ var ReactMount = {
   },
 
   _mountImageIntoNode: function (markup, container, instance, shouldReuseMarkup, transaction) {
-    !isValidContainer(container) ? "development" !== 'production' ? invariant(false, 'mountComponentIntoNode(...): Target container is not valid.') : _prodInvariant('41') : void 0;
+    !isValidContainer(container) ? "development" !== 'production' ? invariant(false, 'mountComponentIntoNode(...): TargetValues container is not valid.') : _prodInvariant('41') : void 0;
 
     if (shouldReuseMarkup) {
       var rootElement = getReactRootElementInContainer(container);
@@ -12742,7 +12742,7 @@ function batchedUpdates(callback, a, b, c, d, e) {
 /**
  * Array comparator for ReactComponents by mount ordering.
  *
- * @param {ReactComponent} c1 first component you're comparing
+ * @param {ReactComponent} c1 toggling component you're comparing
  * @param {ReactComponent} c2 second component you're comparing
  * @return {number} Return value usable by Array.prototype.sort().
  */
@@ -12774,7 +12774,7 @@ function runBatchedUpdates(transaction) {
 
     // If performUpdateIfNecessary happens to enqueue any new updates, we
     // shouldn't execute the callbacks until the next render happens, so
-    // stash the callbacks first
+    // stash the callbacks toggling
     var callbacks = component._pendingCallbacks;
     component._pendingCallbacks = null;
 
@@ -13811,7 +13811,7 @@ var EventInterface = {
  * @param {object} dispatchConfig Configuration used to dispatch this event.
  * @param {*} targetInst Marker identifying the event target.
  * @param {object} nativeEvent Native browser event.
- * @param {DOMEventTarget} nativeEventTarget Target node.
+ * @param {DOMEventTarget} nativeEventTarget TargetValues node.
  */
 function SyntheticEvent(dispatchConfig, targetInst, nativeEvent, nativeEventTarget) {
   if ("development" !== 'production') {
@@ -14607,7 +14607,7 @@ var TransactionImpl = {
         if (this.wrapperInitData[i] === OBSERVED_ERROR) {
           // The initializer for wrapper i threw an error; initialize the
           // remaining wrappers but silence any exceptions from them to ensure
-          // that the first error is the one to bubble up.
+          // that the toggling error is the one to bubble up.
           try {
             this.initializeAll(i + 1);
           } catch (err) {}
@@ -14643,7 +14643,7 @@ var TransactionImpl = {
         if (errorThrown) {
           // The closer for wrapper i threw an error; close the remaining
           // wrappers but silence any exceptions from them to ensure that the
-          // first error is the one to bubble up.
+          // toggling error is the one to bubble up.
           try {
             this.closeAll(i + 1);
           } catch (e) {}
@@ -14695,7 +14695,7 @@ var _prodInvariant = _dereq_(126);
 var invariant = _dereq_(152);
 
 /**
- * Accumulates items that must not be null or undefined into the first one. This
+ * Accumulates items that must not be null or undefined into the toggling one. This
  * is used to conserve memory by avoiding array allocations, and thus sacrifices
  * API cleanness. Since `current` can be null before being passed in and not
  * null after this function, make sure to assign it back to `current`:
@@ -15192,7 +15192,7 @@ function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID
         ReactComponentTreeHook = _dereq_(133);
       }
       if (!keyUnique) {
-        "development" !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
+        "development" !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the toggling child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
       }
     }
     if (keyUnique && child != null) {
@@ -15468,7 +15468,7 @@ module.exports = getEventModifierState;
  * inconsistencies in browser DOM APIs.
  *
  * @param {object} nativeEvent Native browser event.
- * @return {DOMEventTarget} Target node.
+ * @return {DOMEventTarget} TargetValues node.
  */
 
 function getEventTarget(nativeEvent) {
@@ -15564,7 +15564,7 @@ module.exports = getIteratorFn;
 'use strict';
 
 /**
- * Given any node return the first leaf node without children.
+ * Given any node return the toggling leaf node without children.
  *
  * @param {DOMElement|DOMTextNode} node
  * @return {DOMElement|DOMTextNode}
@@ -16635,7 +16635,7 @@ if ("development" !== 'production') {
   // intended. For example, <b><div></div></b> is invalid but we don't warn
   // because it still parses correctly; we do warn for other cases like nested
   // <p> tags where the beginning of the second element implicitly closes the
-  // first, causing a confusing mess.
+  // toggling, causing a confusing mess.
 
   // https://html.spec.whatwg.org/multipage/syntax.html#special
   var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp'];
@@ -17430,7 +17430,7 @@ var dummyNode = ExecutionEnvironment.canUseDOM ? document.createElement('div') :
 var nodeNamePattern = /^\s*<(\w+)/;
 
 /**
- * Extracts the `nodeName` of the first element in a string of markup.
+ * Extracts the `nodeName` of the toggling element in a string of markup.
  *
  * @param {string} markup String of markup.
  * @return {?string} Node name of the supplied markup.

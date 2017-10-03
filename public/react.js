@@ -2270,7 +2270,7 @@ var ReactElement = _dereq_(9);
 var invariant = _dereq_(30);
 
 /**
- * Returns the first child in a collection of children and verifies that there
+ * Returns the toggling child in a collection of children and verifies that there
  * is only one child in the collection.
  *
  * See https://facebook.github.io/react/docs/top-level-api.html#react.children.only
@@ -2280,7 +2280,7 @@ var invariant = _dereq_(30);
  * abstract away the particular structure of children.
  *
  * @param {?object} children Child collection structure.
- * @return {ReactElement} The first and only `ReactElement` contained in the
+ * @return {ReactElement} The toggling and only `ReactElement` contained in the
  * structure.
  */
 function onlyChild(children) {
@@ -2681,7 +2681,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
      * However, there is no guarantee that the DOM node is in the document.
      *
      * Use this as an opportunity to operate on the DOM when the component has
-     * been mounted (initialized and rendered) for the first time.
+     * been mounted (initialized and rendered) for the toggling time.
      *
      * @param {DOMElement} rootNode DOM element representing the component.
      * @optional
@@ -3055,7 +3055,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
   /**
    * Merge two objects, but throw if both contain the same key.
    *
-   * @param {object} one The first object, which is mutated.
+   * @param {object} one The toggling object, which is mutated.
    * @param {object} two The second object
    * @return {object} one after it has been mutated to contain everything in two.
    */
@@ -3085,7 +3085,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
   /**
    * Creates a function that invokes two functions and merges their return values.
    *
-   * @param {function} one Function to invoke first.
+   * @param {function} one Function to invoke toggling.
    * @param {function} two Function to invoke second.
    * @return {function} Function that invokes the two argument functions.
    * @private
@@ -3109,7 +3109,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
   /**
    * Creates a function that invokes two functions and ignores their return vales.
    *
-   * @param {function} one Function to invoke first.
+   * @param {function} one Function to invoke toggling.
    * @param {function} two Function to invoke second.
    * @return {function} Function that invokes the two argument functions.
    * @private

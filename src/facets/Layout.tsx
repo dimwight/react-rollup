@@ -3,24 +3,29 @@ import ReactDOM from 'react-dom';
 import Facets from 'facets-js';
 import * as test from './testReact';
 import {SmartTextField} from '../widget/_exports';
+import {traceThing} from '../Util/Bits';
 
 function trace(text){
-  console.info('TextField > '+text);
+  console.info('TextualField > '+text);
 }
-interface Target{
+interface TargetValues{
   title:string
   facets?:Facets.Facets
   state?:Facets.SimpleState
+  live?:boolean
 }
-export interface Textual extends Target{
+export interface TextualValues extends TargetValues{
   text?:string
   cols?:number
 }
-export interface Indexing extends Target{
+export interface TogglingValues extends TargetValues{
+  set?:boolean
+}
+export interface IndexingValues extends TargetValues{
   indexables:string[]
   index?:number
 }
-class Facet<I extends Target,K extends Target> extends React.Component<I,K>{
+class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   protected rendered:boolean;
   constructor(props){
     super(props);
@@ -36,12 +41,12 @@ class Facet<I extends Target,K extends Target> extends React.Component<I,K>{
     return {state:update}
   }
 }
-class Dropdown extends Facet<Indexing,Indexing>{
+class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
     return {index:update};
   }
   onChange=(e)=>{
-    const indexables=(this.props as Indexing).indexables;
+    const indexables=(this.props as IndexingValues).indexables;
     const value=e.target.value;
     for(let at=0; at<indexables.length; at++){
       if(indexables[at]===value){
@@ -55,8 +60,8 @@ class Dropdown extends Facet<Indexing,Indexing>{
   };
   render(){
     this.rendered=true;
-    const indexables=(this.props as Indexing).indexables;
-    const selected=indexables[(this.state as Indexing).index];
+    const indexables=(this.props as IndexingValues).indexables;
+    const selected=indexables[(this.state as IndexingValues).index];
     const options=indexables.map((item)=>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
@@ -69,7 +74,7 @@ class Dropdown extends Facet<Indexing,Indexing>{
         </select></span>);
   }
 }
-class TextField extends Facet<Textual,Textual>{
+class TextualField extends Facet<TextualValues,TextualValues>{
   onFieldEnter=(text)=>{
      this.props.facets.updateTargetState(this.props.title,text);
   };
@@ -89,7 +94,7 @@ class TextField extends Facet<Textual,Textual>{
     );
   }
 }
-class TextLabel extends Facet<Textual,Textual>{
+class TextualLabel extends Facet<TextualValues,TextualValues>{
   render(){
     this.rendered=true;
     return (<span>
@@ -102,46 +107,63 @@ class TextLabel extends Facet<Textual,Textual>{
   }
 }
 
-export function buildTextual(facets:Facets.Facets,test:test.Textual){
+export function buildTextual(facets:Facets.Facets,test:test.TextualTest){
   const first=test.first,second=test.second;
   ReactDOM.render(
     <div>
-      <TextField title={first.title} facets={facets} cols={first.cols}/>
-      <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} cols={second.cols}/>
-      <TextLabel title={second.title} facets={facets}/>
+      <TextualField title={first.title} facets={facets} cols={first.cols}/>
+      <TextualLabel title={first.title} facets={facets}/>
+      <TextualField title={second.title} facets={facets} cols={second.cols}/>
+      <TextualLabel title={second.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );
 }
-export function buildIndexing(facets:Facets.Facets,test:test.Indexing){
+export function buildToggling(facets:Facets.Facets,test:test.TogglingTest){
+  traceThing('buildToggling',test);
+  const toggling=test.toggling;
   ReactDOM.render(
     <div>
-      <Dropdown
+      <p>{toggling.title}
+      <input
+        type="checkbox"
+        checked={toggling.set}
+        onChange={window.alert}
+      />
+      </p>
+    </div>,
+    document.getElementById('root'),
+  );
+
+}
+export function buildIndexing(facets:Facets.Facets,test:test.IndexingTest){
+  ReactDOM.render(
+    <div>
+      <IndexingDropdown
         title={test.indexing.title}
         indexables={test.indexing.indexables}
         facets={facets}/><br/>
-      <TextLabel title={test.index.title} facets={facets}/><br/>
-      <TextLabel title={test.indexed.title} facets={facets}/>
+      <TextualLabel title={test.index.title} facets={facets}/><br/>
+      <TextualLabel title={test.indexed.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );
 }
-export function buildAll(facets:Facets.Facets,textuals:test.Textual,
-                         indexing:test.Indexing){
+export function buildAll(facets:Facets.Facets,textuals:test.TextualTest,
+                         indexing:test.IndexingTest){
   const first=textuals.first,second=textuals.second;
   ReactDOM.render(
     <div>
-      <TextField title={first.title} facets={facets} cols={first.cols}/>
-      <TextLabel title={first.title} facets={facets}/>
-      <TextField title={second.title} facets={facets} cols={second.cols}/>
-      <TextLabel title={second.title} facets={facets}/>
-      <Dropdown
+      <TextualField title={first.title} facets={facets} cols={first.cols}/>
+      <TextualLabel title={first.title} facets={facets}/>
+      <TextualField title={second.title} facets={facets} cols={second.cols}/>
+      <TextualLabel title={second.title} facets={facets}/>
+      <IndexingDropdown
         title={indexing.indexing.title}
         indexables={indexing.indexing.indexables}
         facets={facets}/>
-      <TextLabel title={indexing.index.title} facets={facets}/><br/>
-      <TextLabel title={indexing.indexed.title} facets={facets}/>
+      <TextualLabel title={indexing.index.title} facets={facets}/><br/>
+      <TextualLabel title={indexing.indexed.title} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );

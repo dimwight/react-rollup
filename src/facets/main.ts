@@ -1,8 +1,8 @@
 import * as testLib from './testLib';
-import * as testReact from './testReact';
+import {SimpleSurface,Test} from './testReact';
 
 import './main.css';
 
 if(false)testLib.buildSurface();
-else testReact.buildSurface();
+else new SimpleSurface(Test.Toggling).buildSurface();
 
