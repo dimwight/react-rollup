@@ -14,9 +14,6 @@ export class Layout{
     else buildAll(facets);
   }
 }
-function trace(text){
-  console.info('TextualField > '+text);
-}
 interface TargetValues{
   title:string
   facets?:Facets
@@ -35,14 +32,13 @@ interface IndexingValues extends TargetValues{
   index?:number
 }
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
-  protected didMount:boolean;
+  private didMount:boolean;
   constructor(props){
     super(props);
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
     const updated=this.readUpdate(update);
-    traceThing('facetUpdated',[this.didMount])
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props as I,updated);
     else this.setState(updated);
@@ -55,6 +51,9 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
   }
 }
 class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
+  protected readUpdate(update):{}{
+    return {set:update}
+  }
   onChange=(e)=>{
     const set=e.target.checked;
     this.props.facets.updateTargetState(this.props.title,
@@ -73,9 +72,6 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
         />
       </p>
     </span>)
-  }
-  protected readUpdate(update):{}{
-    return {set:update}
   }
 }
 class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
@@ -96,68 +92,68 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
     }
   };
   render(){
-    const indexables=(this.props as IndexingValues).selectables;
-    const selected=indexables[(this.state as IndexingValues).index];
-    const options=indexables.map((item)=>{
+    const indexables=(this.props as IndexingValues).selectables,
+      selected=indexables[(this.state as IndexingValues).index],
+      options=indexables.map((item)=>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
     });
-    return (<span><span className={'caption'}>{this.props.title}</span>&nbsp;
+    return (<span>
+      <span className={'caption'}>{this.props.title}</span>&nbsp;
       <select
         onChange={this.onChange}
-      >
-        {options}
-        </select></span>);
+      >{options}</select>
+    </span>);
   }
 }
 class TextualField extends Facet<TextualValues,TextualValues>{
-  onFieldEnter=(text)=>{
-     this.props.facets.updateTargetState(this.props.title,text);
-  };
   protected readUpdate(update):{}{
     return {text:update}
   }
+  onFieldEnter=(text)=>{
+     this.props.facets.updateTargetState(this.props.title,text);
+  };
   render(){
-    return (<div>
+    return (<span>
         <span className={'caption'}>{this.props.title}</span>&nbsp;
         <SmartTextField
           startText={this.state.text}
           onEnter={this.onFieldEnter}
           cols={this.props.cols}
         />
-      </div>
+      </span>
     );
   }
 }
 class TextualLabel extends Facet<TextualValues,TextualValues>{
+  protected readUpdate(update):{}{
+    return {text:update}
+  }
   render(){
     return (<span>
       <span className={'caption'}>{this.props.title}</span>
         &nbsp;{this.state.text}
         </span>)
   }
-  protected readUpdate(update):{}{
-    return {text:update}
-  }
 }
 function buildTextual(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
   ReactDOM.render(
     <div>
-      <TextualField title={first} facets={facets}/>
-      <TextualLabel title={first} facets={facets}/>
-      <TextualField title={second} facets={facets} cols={40}/>
-      <TextualLabel title={second} facets={facets}/>
+      <div><TextualField title={first} facets={facets}/></div>
+      <div><TextualLabel title={first} facets={facets}/></div>
+      <div><TextualField title={second} facets={facets} cols={40}/></div>
+      <div><TextualLabel title={second} facets={facets}/></div>
     </div>,
     document.getElementById('root'),
   );
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
-    <div>
+    <span>
       <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
       <TextualLabel title={Titles.TOGGLED} facets={facets}/>
-    </div>,
+    </span>,
     document.getElementById('root'),
   );
 
@@ -165,14 +161,14 @@ function buildToggling(facets:Facets){
 function buildIndexing(facets:Facets){
   const indexing=Titles.INDEXING;
   ReactDOM.render(
-    <div>
-      <IndexingDropdown
+    <span>
+      <div><IndexingDropdown
         title={indexing}
         selectables={facets.getIndexingState(indexing).uiSelectables}
-        facets={facets}/><br/>
-      <TextualLabel title={Titles.INDEX} facets={facets}/><br/>
+        facets={facets}/></div>
+      <div><TextualLabel title={Titles.INDEX} facets={facets}/></div>
       <TextualLabel title={Titles.INDEXED} facets={facets}/>
-    </div>,
+    </span>,
     document.getElementById('root'),
   );
 }
@@ -181,21 +177,23 @@ function buildAll(facets:Facets){
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
     <div className={'spaced'}>
-      <TextualField title={first} facets={facets} />
-      <TextualLabel title={first} facets={facets}/>
-      <TextualField title={second} facets={facets} cols={40}/>
-      <TextualLabel title={second} facets={facets}/>
+      <div><TextualField title={first} facets={facets}/></div>
+      <div><TextualLabel title={first} facets={facets}/></div>
+      <div><TextualField title={second} facets={facets} cols={40}/></div>
+      <div><TextualLabel title={second} facets={facets}/></div>
     </div>
       <div className={'spaced'}>
-        <div><IndexingDropdown
+        <IndexingDropdown
           title={indexing}
           selectables={facets.getIndexingState(indexing).uiSelectables}
           facets={facets}/>
+      <div><TextualLabel title={Titles.INDEX} facets={facets}/></div>
+      <div><TextualLabel title={Titles.INDEXED} facets={facets}/></div>
       </div>
-      <div>
-        <TextualLabel title={Titles.INDEX} facets={facets}/>
-        <TextualLabel title={Titles.INDEXED} facets={facets}/>
-      </div></div>
+      <div className={'spaced'}>
+      <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
+      <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+    </div>
     </div>,
     document.getElementById('root'),
   );

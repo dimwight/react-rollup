@@ -9,7 +9,7 @@ export namespace Titles{
   INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
   INDEX='Index',INDEXED='Indexed',INDEX_START=0,
   INDEXABLES=[TEXTUAL_FIRST,TEXTUAL_SECOND],
-  TOGGLING='Click to toggle live',TOGGLED='Toggle state',
+  TOGGLING='Click to toggle',TOGGLED='Toggle state',
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
@@ -55,8 +55,8 @@ function newIndexingTree():Target{
   return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
 function newAllTree():Target{
-  return facets.newTargetGroup('AllTest',
-    newTextualTree(),newIndexingTree());
+  const members=[newTextualTree(),newIndexingTree(),newTogglingTree()];
+  return facets.newTargetGroup('AllTest',...members);
 }
 abstract class SurfaceCore{
   buildSurface(){
@@ -86,7 +86,7 @@ class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.Toggling).buildSurface();
+  new SimpleSurface(Test.All).buildSurface();
 }
 
 
