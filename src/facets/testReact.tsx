@@ -1,6 +1,6 @@
 import React from 'react';
-import Facets from 'facets-js';
-import * as layout from './Layout';
+import {Facets,Target,newInstance} from 'facets-js';
+import {Layout} from './Layout';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
@@ -13,7 +13,7 @@ export namespace Titles{
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-const facets:Facets.Facets=Facets.newInstance(false);
+const facets:Facets=newInstance(false);
 abstract class SurfaceCore{
   buildSurface(){
     trace('Building surface');
@@ -23,10 +23,10 @@ abstract class SurfaceCore{
     trace('Attached and laid out facets');
     trace('Surface built');
   }
-  abstract newTargetTree():Facets.Target;
+  abstract newTargetTree():Target;
   abstract buildLayout();
 }
-function newTextualTree():Facets.Target{
+function newTextualTree():Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
       passText:'Some text for '+Titles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
@@ -39,7 +39,7 @@ function newTextualTree():Facets.Target{
     });
   return facets.newTargetGroup('TextualTest',first,second);
 }
-function newIndexingTree():Facets.Target{
+function newIndexingTree():Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
       passIndex:0,
       getUiSelectables:(title)=> Titles.INDEXABLES,
@@ -58,7 +58,7 @@ function newTogglingTree(){
     passSet:Titles.TOGGLE_START
   });
 }
-function newAllTree():Facets.Target{
+function newAllTree():Target{
   return facets.newTargetGroup('AllTest',
     newTextualTree(),newIndexingTree());
 }
@@ -69,7 +69,7 @@ export class SimpleSurface extends SurfaceCore{
     super();
     this.test=test;
   }
-  newTargetTree():Facets.Target{
+  newTargetTree():Target{
     const textual=newTextualTree,indexing=newIndexingTree,
       toggling=newTogglingTree,all=newAllTree;
     return this.test===Test.Textual?textual()
@@ -77,15 +77,11 @@ export class SimpleSurface extends SurfaceCore{
         :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
-    trace('.buildLayout');
-    if(this.test===Test.Textual) layout.buildTextual(facets);
-    else if(this.test===Test.Indexing) layout.buildIndexing(facets);
-    else if(this.test===Test.Toggling) layout.buildToggling(facets);
-    else layout.buildAll(facets);
+    new Layout(this.test).build(facets);
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.Toggling).buildSurface();
+  new SimpleSurface(Test.All).buildSurface();
 }
 
 

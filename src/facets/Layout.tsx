@@ -1,18 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Facets from 'facets-js';
-import * as test from './testReact';
+import {Facets,SimpleState} from 'facets-js';
 import {SmartTextField} from '../widget/_exports';
+import {Titles,Test} from './testReact';
 import {traceThing} from '../Util/Bits';
-import {Titles} from './testReact';
+import './Layout.css';
+
+export class Layout{
+  readonly test:Test;
+  constructor(test:Test){
+    this.test=test;
+  }
+  build(facets:Facets){
+    if(this.test===Test.Textual) buildTextual(facets);
+    else if(this.test===Test.Indexing) buildIndexing(facets);
+    else if(this.test===Test.Toggling) buildToggling(facets);
+    else buildAll(facets);
+  }
+}
 
 function trace(text){
   console.info('TextualField > '+text);
 }
 interface TargetValues{
   title:string
-  facets?:Facets.Facets
-  state?:Facets.SimpleState
+  facets?:Facets
+  state?:SimpleState
   live?:boolean
 }
 export interface TextualValues extends TargetValues{
@@ -108,7 +121,7 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
   }
 }
 
-export function buildTextual(facets:Facets.Facets){
+export function buildTextual(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
   ReactDOM.render(
     <div>
@@ -120,7 +133,7 @@ export function buildTextual(facets:Facets.Facets){
     document.getElementById('root'),
   );
 }
-export function buildIndexing(facets:Facets.Facets){
+export function buildIndexing(facets:Facets){
   const indexing=Titles.INDEXING;
   ReactDOM.render(
     <div>
@@ -134,8 +147,7 @@ export function buildIndexing(facets:Facets.Facets){
     document.getElementById('root'),
   );
 }
-export function buildToggling(facets:Facets.Facets){
-  traceThing('buildToggling',test);
+export function buildToggling(facets:Facets){
   const toggling=Titles.TOGGLING;
   ReactDOM.render(
     <div>
@@ -151,7 +163,7 @@ export function buildToggling(facets:Facets.Facets){
   );
 
 }
-export function buildAll(facets:Facets.Facets){
+export function buildAll(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND,
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
