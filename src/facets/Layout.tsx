@@ -36,6 +36,9 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
   constructor(props){
     super(props);
     props.facets.attachFacet(props.title,this.facetUpdated);
+    traceThing(props.title,{
+      live:props.facets.isTargetLive(props.title)
+    })
   }
   facetUpdated=(update)=>{
     const updated=this.readUpdate(update);

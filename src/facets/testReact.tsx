@@ -55,8 +55,8 @@ function newIndexingTree():Target{
   return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
 function newAllTree():Target{
-  const members=[newTextualTree(),newIndexingTree(),newTogglingTree()];
-  return facets.newTargetGroup('AllTest',...members);
+  return facets.newTargetGroup('AllTest',
+    newTextualTree(),newIndexingTree(),newTogglingTree());
 }
 abstract class SurfaceCore{
   buildSurface(){
@@ -82,6 +82,10 @@ class SimpleSurface extends SurfaceCore{
         :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
+    [Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING]
+      .forEach((title)=>{
+        facets.setTargetLive(title,false)
+      });
     new Layout(this.test).build(facets);
   }
 }
