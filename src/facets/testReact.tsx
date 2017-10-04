@@ -63,11 +63,9 @@ function newAllTree():Target{
     newTextualTree(),newIndexingTree());
 }
 export enum Test{Textual,Toggling,Indexing,All}
-export class SimpleSurface extends SurfaceCore{
-  readonly test:Test;
-  constructor(test){
+class SimpleSurface extends SurfaceCore{
+  constructor(private test:Test){
     super();
-    this.test=test;
   }
   newTargetTree():Target{
     const textual=newTextualTree,indexing=newIndexingTree,
@@ -81,7 +79,7 @@ export class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.All).buildSurface();
+  new SimpleSurface(Test.Toggling).buildSurface();
 }
 
 

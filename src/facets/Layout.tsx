@@ -7,10 +7,7 @@ import {traceThing} from '../Util/Bits';
 import './Layout.css';
 
 export class Layout{
-  readonly test:Test;
-  constructor(test:Test){
-    this.test=test;
-  }
+  constructor(private test:Test){}
   build(facets:Facets){
     if(this.test===Test.Textual) buildTextual(facets);
     else if(this.test===Test.Indexing) buildIndexing(facets);
@@ -108,13 +105,39 @@ class TextualField extends Facet<TextualValues,TextualValues>{
     );
   }
 }
+class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
+  render(){
+    return (<span>
+      <p>{this.props.title}
+        <input
+          type="checkbox"
+          checked={this.state.set}
+          onChange={window.alert}
+        />
+      </p>
+    </span>)
+  }
+  protected readUpdate(update):{}{
+    return {set:update}
+  }
+}
+export function buildToggling(facets:Facets){
+  const toggling=Titles.TOGGLING;
+  ReactDOM.render(
+    <div>
+      <TogglingCheckbox title={toggling} facets={facets}/>
+    </div>,
+    document.getElementById('root'),
+  );
+
+}
 class TextualLabel extends Facet<TextualValues,TextualValues>{
   render(){
     this.rendered=true;
-    return (<div>
+    return (<span>
       <span className={'caption'}>{this.props.title}</span>
-        &nbsp;{this.state.text}</div>
-    )
+        &nbsp;{this.state.text}
+        </span>)
   }
   protected readUpdate(update):{}{
     return {text:update}
@@ -146,22 +169,6 @@ export function buildIndexing(facets:Facets){
     </div>,
     document.getElementById('root'),
   );
-}
-export function buildToggling(facets:Facets){
-  const toggling=Titles.TOGGLING;
-  ReactDOM.render(
-    <div>
-      <p>{toggling}
-        <input
-          type="checkbox"
-          checked={facets.getTargetState(toggling)as boolean}
-          onChange={window.alert}
-        />
-      </p>
-    </div>,
-    document.getElementById('root'),
-  );
-
 }
 export function buildAll(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND,
