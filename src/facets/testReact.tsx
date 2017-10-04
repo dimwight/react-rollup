@@ -13,19 +13,8 @@ export namespace Titles{
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
+export enum Test{Textual,Toggling,Indexing,All}
 const facets:Facets=newInstance(false);
-abstract class SurfaceCore{
-  buildSurface(){
-    trace('Building surface');
-    facets.buildTargeterTree(this.newTargetTree());
-    trace('Built targets, created targeters');
-    this.buildLayout();
-    trace('Attached and laid out facets');
-    trace('Surface built');
-  }
-  abstract newTargetTree():Target;
-  abstract buildLayout();
-}
 function newTextualTree():Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
       passText:'Some text for '+Titles.TEXTUAL_FIRST,
@@ -38,6 +27,18 @@ function newTextualTree():Target{
       passText:'Some text for '+Titles.TEXTUAL_SECOND,
     });
   return facets.newTargetGroup('TextualTest',first,second);
+}
+function newTogglingTree(){
+  const toggling=facets.newTogglingTarget(Titles.TOGGLING,{
+    passSet:Titles.TOGGLE_START
+  }),
+  toggled=facets.newTextualTarget(Titles.TOGGLED,{
+    getText:(title)=>{
+      const set:boolean=facets.getTargetState(Titles.TOGGLING)as boolean;
+      return `Toggling is ${set?'':'not'} set`
+    }
+  });
+  return facets.newTargetGroup('TogglingTest',toggling,toggled);
 }
 function newIndexingTree():Target{
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
@@ -53,16 +54,22 @@ function newIndexingTree():Target{
     });
   return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
-function newTogglingTree(){
-  return facets.newTogglingTarget(Titles.TOGGLING,{
-    passSet:Titles.TOGGLE_START
-  });
-}
 function newAllTree():Target{
   return facets.newTargetGroup('AllTest',
     newTextualTree(),newIndexingTree());
 }
-export enum Test{Textual,Toggling,Indexing,All}
+abstract class SurfaceCore{
+  buildSurface(){
+    trace('Building surface');
+    facets.buildTargeterTree(this.newTargetTree());
+    trace('Built targets, created targeters');
+    this.buildLayout();
+    trace('Attached and laid out facets');
+    trace('Surface built');
+  }
+  abstract newTargetTree():Target;
+  abstract buildLayout();
+}
 class SimpleSurface extends SurfaceCore{
   constructor(private test:Test){
     super();

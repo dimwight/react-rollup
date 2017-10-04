@@ -5,7 +5,6 @@ import {SmartTextField} from '../widget/_exports';
 import {Titles,Test} from './testReact';
 import {traceThing} from '../Util/Bits';
 import './Layout.css';
-
 export class Layout{
   constructor(private test:Test){}
   build(facets:Facets){
@@ -15,7 +14,6 @@ export class Layout{
     else buildAll(facets);
   }
 }
-
 function trace(text){
   console.info('TextualField > '+text);
 }
@@ -25,14 +23,14 @@ interface TargetValues{
   state?:SimpleState
   live?:boolean
 }
-export interface TextualValues extends TargetValues{
+interface TextualValues extends TargetValues{
   text?:string
   cols?:number
 }
-export interface TogglingValues extends TargetValues{
+interface TogglingValues extends TargetValues{
   set?:boolean
 }
-export interface IndexingValues extends TargetValues{
+interface IndexingValues extends TargetValues{
   selectables:string[]
   index?:number
 }
@@ -121,16 +119,6 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
     return {set:update}
   }
 }
-export function buildToggling(facets:Facets){
-  const toggling=Titles.TOGGLING;
-  ReactDOM.render(
-    <div>
-      <TogglingCheckbox title={toggling} facets={facets}/>
-    </div>,
-    document.getElementById('root'),
-  );
-
-}
 class TextualLabel extends Facet<TextualValues,TextualValues>{
   render(){
     this.rendered=true;
@@ -143,8 +131,7 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
     return {text:update}
   }
 }
-
-export function buildTextual(facets:Facets){
+function buildTextual(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
   ReactDOM.render(
     <div>
@@ -156,7 +143,17 @@ export function buildTextual(facets:Facets){
     document.getElementById('root'),
   );
 }
-export function buildIndexing(facets:Facets){
+function buildToggling(facets:Facets){
+  ReactDOM.render(
+    <div>
+      <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
+      <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+    </div>,
+    document.getElementById('root'),
+  );
+
+}
+function buildIndexing(facets:Facets){
   const indexing=Titles.INDEXING;
   ReactDOM.render(
     <div>
@@ -170,7 +167,7 @@ export function buildIndexing(facets:Facets){
     document.getElementById('root'),
   );
 }
-export function buildAll(facets:Facets){
+function buildAll(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND,
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
