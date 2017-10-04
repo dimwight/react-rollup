@@ -2681,7 +2681,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
      * However, there is no guarantee that the DOM node is in the document.
      *
      * Use this as an opportunity to operate on the DOM when the component has
-     * been mounted (initialized and rendered) for the toggling time.
+     * been mounted (initialized and didMount) for the toggling time.
      *
      * @param {DOMElement} rootNode DOM element representing the component.
      * @optional

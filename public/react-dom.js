@@ -1678,7 +1678,7 @@ function checkMask(value, bitmask) {
 var DOMPropertyInjection = {
   /**
    * Mapping from normalized, camelcased property names to a configuration that
-   * specifies how the associated DOM property should be accessed or rendered.
+   * specifies how the associated DOM property should be accessed or didMount.
    */
   MUST_USE_PROPERTY: 0x1,
   HAS_BOOLEAN_VALUE: 0x4,
@@ -4261,7 +4261,7 @@ var ReactChildReconciler = {
   },
 
   /**
-   * Updates the rendered children and returns a new set of children.
+   * Updates the didMount children and returns a new set of children.
    *
    * @param {?object} prevChildren Previously initialized set of children.
    * @param {?object} nextChildren Flat child element maps.
@@ -4317,7 +4317,7 @@ var ReactChildReconciler = {
   },
 
   /**
-   * Unmounts all rendered children. This should be used to clean up children
+   * Unmounts all didMount children. This should be used to clean up children
    * when this component is unmounted.
    *
    * @param {?object} renderedChildren Previously initialized set of children.
@@ -5480,7 +5480,7 @@ function getDeclarationErrorAddendum(internalInstance) {
     if (owner) {
       var name = owner.getName();
       if (name) {
-        return ' This DOM node was rendered by `' + name + '`.';
+        return ' This DOM node was didMount by `' + name + '`.';
       }
     }
   }
@@ -5670,7 +5670,7 @@ function trapBubbledEventsLocal() {
   // the state of the tree to be corrupted, `node` here can be null.
   !inst._rootNodeID ? "development" !== 'production' ? invariant(false, 'Must be mounted to trap events') : _prodInvariant('63') : void 0;
   var node = getNode(inst);
-  !node ? "development" !== 'production' ? invariant(false, 'trapBubbledEvent(...): Requires node to be rendered.') : _prodInvariant('64') : void 0;
+  !node ? "development" !== 'production' ? invariant(false, 'trapBubbledEvent(...): Requires node to be didMount.') : _prodInvariant('64') : void 0;
 
   switch (inst._tag) {
     case 'iframe':
@@ -5743,7 +5743,7 @@ var voidElementTags = _assign({
   menuitem: true
 }, omittedCloseTags);
 
-// We accept any tag to be rendered but since this gets injected into arbitrary
+// We accept any tag to be didMount but since this gets injected into arbitrary
 // HTML, we want to make sure that it's a safe tag.
 // http://www.w3.org/TR/REC-xml/#NT-Name
 
@@ -6484,7 +6484,7 @@ function getRenderedHostOrTextFromComponent(component) {
 }
 
 /**
- * Populate `_hostNode` on the rendered host/text component with the given
+ * Populate `_hostNode` on the didMount host/text component with the given
  * DOM node. The passed `inst` can be a composite.
  */
 function precacheNode(inst, node) {
@@ -6580,7 +6580,7 @@ function getClosestInstanceFromNode(node) {
 
 /**
  * Given a DOM node, return the ReactDOMComponent or ReactDOMTextComponent
- * instance, or null if the node was not rendered by this React.
+ * instance, or null if the node was not didMount by this React.
  */
 function getInstanceFromNode(node) {
   var inst = getClosestInstanceFromNode(node);
@@ -6816,11 +6816,11 @@ function isControlled(props) {
  * If `checked` or `value` are not supplied (or null/undefined), user actions
  * that affect the checked state or value will trigger updates to the element.
  *
- * If they are supplied (and not null/undefined), the rendered element will not
+ * If they are supplied (and not null/undefined), the didMount element will not
  * trigger updates to the element. Instead, the props must change in order for
- * the rendered element to be updated.
+ * the didMount element to be updated.
  *
- * The rendered element will be initialized as unchecked (or `defaultChecked`)
+ * The didMount element will be initialized as unchecked (or `defaultChecked`)
  * with an empty value (or `defaultValue`).
  *
  * @see http://www.w3.org/TR/2012/WD-html5-20121025/the-input-element.html
@@ -7036,8 +7036,8 @@ function _handleChange(event) {
       if (otherNode === rootNode || otherNode.form !== rootNode.form) {
         continue;
       }
-      // This will throw if radio buttons rendered by different copies of React
-      // and the same name are rendered into the same form (same as #1939).
+      // This will throw if radio buttons didMount by different copies of React
+      // and the same name are didMount into the same form (same as #1939).
       // That's probably okay; we don't support it just as we don't support
       // mixing React radio buttons with non-React ones.
       var otherInstance = ReactDOMComponentTree.getInstanceFromNode(otherNode);
@@ -7422,11 +7422,11 @@ function updateOptions(inst, multiple, propValue) {
  * stringable. If `multiple` is true, the prop must be an array of stringables.
  *
  * If `value` is not supplied (or null/undefined), user actions that change the
- * selected option will trigger updates to the rendered options.
+ * selected option will trigger updates to the didMount options.
  *
- * If it is supplied (and not null/undefined), the rendered options will not
+ * If it is supplied (and not null/undefined), the didMount options will not
  * update in response to user actions. Instead, the `value` prop must change in
- * order for the rendered options to update.
+ * order for the didMount options to update.
  *
  * If `defaultValue` is provided, any options with the supplied values will be
  * selected.
@@ -7912,11 +7912,11 @@ function forceUpdateIfMounted() {
  * If `value` is not supplied (or null/undefined), user actions that affect the
  * value will trigger updates to the element.
  *
- * If `value` is supplied (and not null/undefined), the rendered element will
+ * If `value` is supplied (and not null/undefined), the didMount element will
  * not trigger updates to the element. Instead, the `value` prop must change in
- * order for the rendered element to be updated.
+ * order for the didMount element to be updated.
  *
- * The rendered element will be initialized with an empty value, the prop
+ * The didMount element will be initialized with an empty value, the prop
  * `defaultValue` if specified, or the children content (deprecated).
  */
 var ReactDOMTextarea = {
@@ -9166,7 +9166,7 @@ var ReactHostComponentInjection = {
     genericComponentClass = componentClass;
   },
   // This accepts a text component class that takes the text string to be
-  // rendered as props.
+  // didMount as props.
   injectTextComponentClass: function (componentClass) {
     textComponentClass = componentClass;
   }
@@ -9698,13 +9698,13 @@ function unmountComponentFromNode(instance, container, safely) {
 }
 
 /**
- * True if the supplied DOM node has a direct React-rendered child that is
+ * True if the supplied DOM node has a direct React-didMount child that is
  * not a React root element. Useful for warning in `render`,
  * `unmountComponentAtNode`, etc.
  *
  * @param {?DOMElement} node The candidate DOM node.
  * @return {boolean} True if the DOM element contains a direct child that was
- * rendered by React but is not a root element.
+ * didMount by React but is not a root element.
  * @internal
  */
 function hasNonRootReactChild(container) {
@@ -9717,10 +9717,10 @@ function hasNonRootReactChild(container) {
 
 /**
  * True if the supplied DOM node is a React DOM element and
- * it has been rendered by another copy of React.
+ * it has been didMount by another copy of React.
  *
  * @param {?DOMElement} node The candidate DOM node.
- * @return {boolean} True if the DOM has been rendered by another copy of React
+ * @return {boolean} True if the DOM has been didMount by another copy of React
  * @internal
  */
 function nodeIsRenderedByOtherInstance(container) {
@@ -9795,7 +9795,7 @@ TopLevelWrapper.isReactTopLevelWrapper = true;
  *     </div>
  *   </div>
  *
- * Inside of `container`, the toggling element rendered is the "reactRoot".
+ * Inside of `container`, the toggling element didMount is the "reactRoot".
  */
 var ReactMount = {
   TopLevelWrapper: TopLevelWrapper,
@@ -9810,7 +9810,7 @@ var ReactMount = {
    * ensuring that the apparent scroll position of its `container` does not
    * change.
    *
-   * @param {DOMElement} container The `container` being rendered into.
+   * @param {DOMElement} container The `container` being didMount into.
    * @param {function} renderCallback This must be called once to do the render.
    */
   scrollMonitor: function (container, renderCallback) {
@@ -9869,7 +9869,7 @@ var ReactMount = {
   /**
    * Renders a React component into the DOM in the supplied `container`.
    *
-   * If the React component was previously rendered into `container`, this will
+   * If the React component was previously didMount into `container`, this will
    * perform an update on it and only mutate the DOM as necessary to reflect the
    * latest React component.
    *
@@ -9877,7 +9877,7 @@ var ReactMount = {
    * @param {ReactElement} nextElement Component element to render.
    * @param {DOMElement} container DOM element to render into.
    * @param {?function} callback function triggered on completion
-   * @return {ReactComponent} Component instance rendered in `container`.
+   * @return {ReactComponent} Component instance didMount in `container`.
    */
   renderSubtreeIntoContainer: function (parentComponent, nextElement, container, callback) {
     !(parentComponent != null && ReactInstanceMap.has(parentComponent)) ? "development" !== 'production' ? invariant(false, 'parentComponent must be a valid React Component') : _prodInvariant('38') : void 0;
@@ -9925,13 +9925,13 @@ var ReactMount = {
     var containerHasNonRootReactChild = hasNonRootReactChild(container);
 
     if ("development" !== 'production') {
-      "development" !== 'production' ? warning(!containerHasNonRootReactChild, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
+      "development" !== 'production' ? warning(!containerHasNonRootReactChild, 'render(...): Replacing React-didMount children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
 
       if (!containerHasReactMarkup || reactRootElement.nextSibling) {
         var rootElementSibling = reactRootElement;
         while (rootElementSibling) {
           if (internalGetID(rootElementSibling)) {
-            "development" !== 'production' ? warning(false, 'render(): TargetValues node has markup rendered by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-rendered markup.') : void 0;
+            "development" !== 'production' ? warning(false, 'render(): TargetValues node has markup didMount by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-didMount markup.') : void 0;
             break;
           }
           rootElementSibling = rootElementSibling.nextSibling;
@@ -9951,21 +9951,21 @@ var ReactMount = {
    * Renders a React component into the DOM in the supplied `container`.
    * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.render
    *
-   * If the React component was previously rendered into `container`, this will
+   * If the React component was previously didMount into `container`, this will
    * perform an update on it and only mutate the DOM as necessary to reflect the
    * latest React component.
    *
    * @param {ReactElement} nextElement Component element to render.
    * @param {DOMElement} container DOM element to render into.
    * @param {?function} callback function triggered on completion
-   * @return {ReactComponent} Component instance rendered in `container`.
+   * @return {ReactComponent} Component instance didMount in `container`.
    */
   render: function (nextElement, container, callback) {
     return ReactMount._renderSubtreeIntoContainer(null, nextElement, container, callback);
   },
 
   /**
-   * Unmounts and destroys the React component rendered in the `container`.
+   * Unmounts and destroys the React component didMount in the `container`.
    * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode
    *
    * @param {DOMElement} container DOM element containing a React component.
@@ -9982,12 +9982,12 @@ var ReactMount = {
     !isValidContainer(container) ? "development" !== 'production' ? invariant(false, 'unmountComponentAtNode(...): TargetValues container is not a DOM element.') : _prodInvariant('40') : void 0;
 
     if ("development" !== 'production') {
-      "development" !== 'production' ? warning(!nodeIsRenderedByOtherInstance(container), "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.') : void 0;
+      "development" !== 'production' ? warning(!nodeIsRenderedByOtherInstance(container), "unmountComponentAtNode(): The node you're attempting to unmount " + 'was didMount by another copy of React.') : void 0;
     }
 
     var prevComponent = getTopLevelWrapperInContainer(container);
     if (!prevComponent) {
-      // Check if the node being unmounted was rendered by React, but isn't a
+      // Check if the node being unmounted was didMount by React, but isn't a
       // root node.
       var containerHasNonRootReactChild = hasNonRootReactChild(container);
 
@@ -9995,7 +9995,7 @@ var ReactMount = {
       var isContainerReactRoot = container.nodeType === 1 && container.hasAttribute(ROOT_ATTR_NAME);
 
       if ("development" !== 'production') {
-        "development" !== 'production' ? warning(!containerHasNonRootReactChild, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
+        "development" !== 'production' ? warning(!containerHasNonRootReactChild, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was didMount by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
       }
 
       return false;
@@ -10043,7 +10043,7 @@ var ReactMount = {
         var diffIndex = firstDifferenceIndex(normalizedMarkup, rootMarkup);
         var difference = ' (client) ' + normalizedMarkup.substring(diffIndex - 20, diffIndex + 20) + '\n (server) ' + rootMarkup.substring(diffIndex - 20, diffIndex + 20);
 
-        !(container.nodeType !== DOC_NODE_TYPE) ? "development" !== 'production' ? invariant(false, 'You\'re trying to render a component to the document using server rendering but the checksum was invalid. This usually means you rendered a different component type or props on the client from the one on the server, or your render() methods are impure. React cannot handle this case due to cross-browser quirks by rendering at the document root. You should look for environment dependent code in your components and ensure the props are the same client and server side:\n%s', difference) : _prodInvariant('42', difference) : void 0;
+        !(container.nodeType !== DOC_NODE_TYPE) ? "development" !== 'production' ? invariant(false, 'You\'re trying to render a component to the document using server rendering but the checksum was invalid. This usually means you didMount a different component type or props on the client from the one on the server, or your render() methods are impure. React cannot handle this case due to cross-browser quirks by rendering at the document root. You should look for environment dependent code in your components and ensure the props are the same client and server side:\n%s', difference) : _prodInvariant('42', difference) : void 0;
 
         if ("development" !== 'production') {
           "development" !== 'production' ? warning(false, 'React attempted to reuse markup in a container but the ' + 'checksum was invalid. This generally means that you are ' + 'using server rendering and the markup generated on the ' + 'server was not what the client was expecting. React injected ' + 'new markup to compensate which works but you have lost many ' + 'of the benefits of server rendering. Instead, figure out ' + 'why the markup being generated is different on the client ' + 'or server:\n%s', difference) : void 0;
@@ -10103,7 +10103,7 @@ var flattenChildren = _dereq_(109);
 var invariant = _dereq_(152);
 
 /**
- * Make an update for markup to be rendered and inserted at a supplied index.
+ * Make an update for markup to be didMount and inserted at a supplied index.
  *
  * @param {string} markup Markup that renders into an element.
  * @param {number} toIndex Destination index.
@@ -10325,14 +10325,14 @@ var ReactMultiChild = {
     },
 
     /**
-     * Replaces any rendered children with a text content string.
+     * Replaces any didMount children with a text content string.
      *
      * @param {string} nextContent String of content.
      * @internal
      */
     updateTextContent: function (nextContent) {
       var prevChildren = this._renderedChildren;
-      // Remove any rendered children.
+      // Remove any didMount children.
       ReactChildReconciler.unmountChildren(prevChildren, false);
       for (var name in prevChildren) {
         if (prevChildren.hasOwnProperty(name)) {
@@ -10345,14 +10345,14 @@ var ReactMultiChild = {
     },
 
     /**
-     * Replaces any rendered children with a markup string.
+     * Replaces any didMount children with a markup string.
      *
      * @param {string} nextMarkup String of markup.
      * @internal
      */
     updateMarkup: function (nextMarkup) {
       var prevChildren = this._renderedChildren;
-      // Remove any rendered children.
+      // Remove any didMount children.
       ReactChildReconciler.unmountChildren(prevChildren, false);
       for (var name in prevChildren) {
         if (prevChildren.hasOwnProperty(name)) {
@@ -10364,7 +10364,7 @@ var ReactMultiChild = {
     },
 
     /**
-     * Updates the rendered children with new children.
+     * Updates the didMount children with new children.
      *
      * @param {?object} nextNestedChildrenElements Nested child element maps.
      * @param {ReactReconcileTransaction} transaction
@@ -10438,7 +10438,7 @@ var ReactMultiChild = {
     },
 
     /**
-     * Unmounts all rendered children. This should be used to clean up children
+     * Unmounts all didMount children. This should be used to clean up children
      * when this component is unmounted. It does not actually perform any
      * backend operations.
      *
@@ -10505,7 +10505,7 @@ var ReactMultiChild = {
     },
 
     /**
-     * Unmounts a rendered child.
+     * Unmounts a didMount child.
      *
      * NOTE: This is part of `updateChildren` and is here for readability.
      *
@@ -10900,7 +10900,7 @@ function getWasted() {
       }
     });
 
-    // Find composite components that rendered in this batch.
+    // Find composite components that didMount in this batch.
     // These are potential candidates for being wasted renders.
     var renderedCompositeIDs = {};
     measurements.forEach(function (measurement) {
@@ -10937,7 +10937,7 @@ function getWasted() {
 
       var nextParentID = instanceID;
       while (nextParentID) {
-        // Any parents rendered during this batch are considered wasted
+        // Any parents didMount during this batch are considered wasted
         // unless we previously marked them as dirty.
         var isWasted = renderedCompositeIDs[nextParentID] && !isDefinitelyNotWastedByID[nextParentID];
         if (isWasted) {
@@ -11460,7 +11460,7 @@ var ReactReconciler = {
     var prevElement = internalInstance._currentElement;
 
     if (nextElement === prevElement && context === internalInstance._context) {
-      // Since elements are immutable after the owner is rendered,
+      // Since elements are immutable after the owner is didMount,
       // we can do a cheap identity compare here to determine if this is a
       // superfluous reconcile. It's possible for state to be mutable but such
       // change should trigger an update of the owner which would recreate
@@ -11944,7 +11944,7 @@ var ReactShallowRenderer = function () {
     injectDefaults();
 
     !React.isValidElement(element) ? "development" !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Invalid component element.%s', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : _prodInvariant('12', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : void 0;
-    !(typeof element.type !== 'string') ? "development" !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Shallow rendering works only with custom components, not primitives (%s). Instead of calling `.render(el)` and inspecting the rendered output, look at `el.props` directly instead.', element.type) : _prodInvariant('13', element.type) : void 0;
+    !(typeof element.type !== 'string') ? "development" !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Shallow rendering works only with custom components, not primitives (%s). Instead of calling `.render(el)` and inspecting the didMount output, look at `el.props` directly instead.', element.type) : _prodInvariant('13', element.type) : void 0;
 
     if (!context) {
       context = emptyObject;
@@ -12149,7 +12149,7 @@ var ReactTestUtils = {
   },
 
   /**
-   * Finds all instance of components in the rendered tree that are DOM
+   * Finds all instance of components in the didMount tree that are DOM
    * components with the class name matching `className`.
    * @return {array} an array of all the matches.
    */
@@ -12190,7 +12190,7 @@ var ReactTestUtils = {
   },
 
   /**
-   * Finds all instance of components in the rendered tree that are DOM
+   * Finds all instance of components in the didMount tree that are DOM
    * components with the tag name matching `tagName`.
    * @return {array} an array of all the matches.
    */
@@ -15112,7 +15112,7 @@ var invariant = _dereq_(152);
 var warning = _dereq_(159);
 
 /**
- * Returns the DOM node rendered by this element.
+ * Returns the DOM node didMount by this element.
  *
  * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode
  *
@@ -17441,14 +17441,14 @@ function getNodeName(markup) {
 }
 
 /**
- * Creates an array containing the nodes rendered from the supplied markup. The
+ * Creates an array containing the nodes didMount from the supplied markup. The
  * optionally supplied `handleScript` function will be invoked once for each
- * <script> element that is rendered. If no `handleScript` function is supplied,
- * an exception is thrown if any <script> elements are rendered.
+ * <script> element that is didMount. If no `handleScript` function is supplied,
+ * an exception is thrown if any <script> elements are didMount.
  *
  * @param {string} markup A string of valid HTML markup.
- * @param {?function} handleScript Invoked once for each rendered <script>.
- * @return {array<DOMElement|DOMTextNode>} An array of rendered nodes.
+ * @param {?function} handleScript Invoked once for each didMount <script>.
+ * @return {array<DOMElement|DOMTextNode>} An array of didMount nodes.
  */
 function createNodesFromMarkup(markup, handleScript) {
   var node = dummyNode;
@@ -17469,7 +17469,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
   var scripts = node.getElementsByTagName('script');
   if (scripts.length) {
-    !handleScript ? "development" !== 'production' ? invariant(false, 'createNodesFromMarkup(...): Unexpected <script> element rendered.') : invariant(false) : void 0;
+    !handleScript ? "development" !== 'production' ? invariant(false, 'createNodesFromMarkup(...): Unexpected <script> element didMount.') : invariant(false) : void 0;
     createArrayFromMixed(scripts).forEach(handleScript);
   }
 

@@ -35,19 +35,47 @@ interface IndexingValues extends TargetValues{
   index?:number
 }
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
-  protected rendered:boolean;
+  protected didMount:boolean;
   constructor(props){
     super(props);
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
     const updated=this.readUpdate(update);
-    if(!this.rendered)
+    traceThing('facetUpdated',[this.didMount])
+    if(!this.didMount)
       this.state=Object.assign({}as K,this.props as I,updated);
     else this.setState(updated);
   };
+  componentDidMount(){
+    this.didMount=true;
+  }
   protected readUpdate(update):{}{
     return {state:update}
+  }
+}
+class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
+  onChange=(e)=>{
+    const set=e.target.checked;
+    this.props.facets.updateTargetState(this.props.title,
+      set);
+    this.setState({
+      set:set
+    })
+  };
+  render(){
+    return (<span>
+      <p>{this.props.title}
+        <input
+          type="checkbox"
+          onChange={this.onChange}
+          checked={this.state.set}
+        />
+      </p>
+    </span>)
+  }
+  protected readUpdate(update):{}{
+    return {set:update}
   }
 }
 class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
@@ -68,7 +96,6 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
     }
   };
   render(){
-    this.rendered=true;
     const indexables=(this.props as IndexingValues).selectables;
     const selected=indexables[(this.state as IndexingValues).index];
     const options=indexables.map((item)=>{
@@ -91,7 +118,6 @@ class TextualField extends Facet<TextualValues,TextualValues>{
     return {text:update}
   }
   render(){
-    this.rendered=true;
     return (<div>
         <span className={'caption'}>{this.props.title}</span>&nbsp;
         <SmartTextField
@@ -103,25 +129,8 @@ class TextualField extends Facet<TextualValues,TextualValues>{
     );
   }
 }
-class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
-  render(){
-    return (<span>
-      <p>{this.props.title}
-        <input
-          type="checkbox"
-          checked={this.state.set}
-          onChange={window.alert}
-        />
-      </p>
-    </span>)
-  }
-  protected readUpdate(update):{}{
-    return {set:update}
-  }
-}
 class TextualLabel extends Facet<TextualValues,TextualValues>{
   render(){
-    this.rendered=true;
     return (<span>
       <span className={'caption'}>{this.props.title}</span>
         &nbsp;{this.state.text}
