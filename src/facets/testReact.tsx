@@ -4,7 +4,7 @@ import * as layout from './Layout';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
-namespace Titles{
+export namespace Titles{
   export const TEXTUAL_FIRST='First',TEXTUAL_SECOND='Second',
   INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
   INDEX='Index',INDEXED='Indexed',INDEX_START=0,
@@ -26,32 +26,6 @@ abstract class SurfaceCore{
   abstract newTargetTree():Facets.Target;
   abstract buildLayout();
 }
-export interface TextualTest{
-  first:string,
-  second:string
-}
-export interface TogglingTest{
-  toggling:string,
-  second:string
-}
-export interface IndexingTest{
-  indexing:string,
-  index:string,
-  indexed:string
-}
-const textual:TextualTest={
-  first:Titles.TEXTUAL_FIRST,
-  second:Titles.TEXTUAL_SECOND,
-};
-const toggling:TogglingTest={
-  toggling:Titles.TOGGLING,
-  second:Titles.TOGGLED,
-};
-const indexing:IndexingTest={
-  indexing:Titles.INDEXING,
-  index:Titles.INDEX,
-  indexed:Titles.INDEXED,
-};
 function newTextualTree():Facets.Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
       passText:'Some text for '+Titles.TEXTUAL_FIRST,
@@ -104,10 +78,10 @@ export class SimpleSurface extends SurfaceCore{
   }
   buildLayout(){
     trace('.buildLayout');
-    if(this.test===Test.Textual) layout.buildTextual(facets,textual);
-    else if(this.test===Test.Indexing) layout.buildIndexing(facets,indexing);
-    else if(this.test===Test.Toggling) layout.buildToggling(facets,toggling);
-    else layout.buildAll(facets,textual,indexing);
+    if(this.test===Test.Textual) layout.buildTextual(facets);
+    else if(this.test===Test.Indexing) layout.buildIndexing(facets);
+    else if(this.test===Test.Toggling) layout.buildToggling(facets);
+    else layout.buildAll(facets);
   }
 }
 export function buildSurface(){
