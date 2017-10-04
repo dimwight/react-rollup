@@ -27,30 +27,30 @@ abstract class SurfaceCore{
   abstract buildLayout();
 }
 export interface TextualTest{
-  first:layout.TextualValues,
-  second:layout.TextualValues
+  first:string,
+  second:string
 }
 export interface TogglingTest{
-  toggling:layout.TogglingValues,
-  second:layout.TextualValues
+  toggling:string,
+  second:string
 }
 export interface IndexingTest{
-  indexing:layout.IndexingValues,
-  index:layout.TextualValues,
-  indexed:layout.TextualValues
+  indexing:string,
+  index:string,
+  indexed:string
 }
 const textual:TextualTest={
-  first:{title:Titles.TEXTUAL_FIRST},
-  second:{title:Titles.TEXTUAL_SECOND,cols:40},
+  first:Titles.TEXTUAL_FIRST,
+  second:Titles.TEXTUAL_SECOND,
 };
 const toggling:TogglingTest={
-  toggling:{title:Titles.TEXTUAL_FIRST},
-  second:{title:Titles.TOGGLED,cols:40},
+  toggling:Titles.TOGGLING,
+  second:Titles.TOGGLED,
 };
 const indexing:IndexingTest={
-  indexing:{title:Titles.INDEXING,indexables:Titles.INDEXABLES},
-  index:{title:Titles.INDEX},
-  indexed:{title:Titles.INDEXED},
+  indexing:Titles.INDEXING,
+  index:Titles.INDEX,
+  indexed:Titles.INDEXED,
 };
 function newTextualTree():Facets.Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
@@ -109,6 +109,9 @@ export class SimpleSurface extends SurfaceCore{
     else if(this.test===Test.Toggling) layout.buildToggling(facets,toggling);
     else layout.buildAll(facets,textual,indexing);
   }
+}
+export function buildSurface(){
+  new SimpleSurface(Test.All).buildSurface();
 }
 
 

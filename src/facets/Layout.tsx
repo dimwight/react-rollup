@@ -22,7 +22,7 @@ export interface TogglingValues extends TargetValues{
   set?:boolean
 }
 export interface IndexingValues extends TargetValues{
-  indexables:string[]
+  selectables:string[]
   index?:number
 }
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
@@ -46,7 +46,7 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
     return {index:update};
   }
   onChange=(e)=>{
-    const indexables=(this.props as IndexingValues).indexables;
+    const indexables=(this.props as IndexingValues).selectables;
     const value=e.target.value;
     for(let at=0; at<indexables.length; at++){
       if(indexables[at]===value){
@@ -60,7 +60,7 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
   };
   render(){
     this.rendered=true;
-    const indexables=(this.props as IndexingValues).indexables;
+    const indexables=(this.props as IndexingValues).selectables;
     const selected=indexables[(this.state as IndexingValues).index];
     const options=indexables.map((item)=>{
       return item===selected?<option selected>{item}</option>
@@ -111,10 +111,24 @@ export function buildTextual(facets:Facets.Facets,test:test.TextualTest){
   const first=test.first,second=test.second;
   ReactDOM.render(
     <div>
-      <TextualField title={first.title} facets={facets} cols={first.cols}/>
-      <TextualLabel title={first.title} facets={facets}/>
-      <TextualField title={second.title} facets={facets} cols={second.cols}/>
-      <TextualLabel title={second.title} facets={facets}/>
+      <TextualField title={first} facets={facets}/>
+      <TextualLabel title={first} facets={facets}/>
+      <TextualField title={second} facets={facets} cols={40}/>
+      <TextualLabel title={second} facets={facets}/>
+    </div>,
+    document.getElementById('root'),
+  );
+}
+export function buildIndexing(facets:Facets.Facets,test:test.IndexingTest){
+  const title=test.indexing;
+  ReactDOM.render(
+    <div>
+      <IndexingDropdown
+        title={title}
+        selectables={facets.getIndexingState(title).uiSelectables}
+        facets={facets}/><br/>
+      <TextualLabel title={test.index} facets={facets}/><br/>
+      <TextualLabel title={test.indexed} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );
@@ -124,46 +138,33 @@ export function buildToggling(facets:Facets.Facets,test:test.TogglingTest){
   const toggling=test.toggling;
   ReactDOM.render(
     <div>
-      <p>{toggling.title}
-      <input
-        type="checkbox"
-        checked={toggling.set}
-        onChange={window.alert}
-      />
+      <p>{toggling}
+        <input
+          type="checkbox"
+          checked={facets.getTargetState(toggling)as boolean}
+          onChange={window.alert}
+        />
       </p>
     </div>,
     document.getElementById('root'),
   );
 
 }
-export function buildIndexing(facets:Facets.Facets,test:test.IndexingTest){
-  ReactDOM.render(
-    <div>
-      <IndexingDropdown
-        title={test.indexing.title}
-        indexables={test.indexing.indexables}
-        facets={facets}/><br/>
-      <TextualLabel title={test.index.title} facets={facets}/><br/>
-      <TextualLabel title={test.indexed.title} facets={facets}/>
-    </div>,
-    document.getElementById('root'),
-  );
-}
 export function buildAll(facets:Facets.Facets,textuals:test.TextualTest,
                          indexing:test.IndexingTest){
   const first=textuals.first,second=textuals.second;
   ReactDOM.render(
     <div>
-      <TextualField title={first.title} facets={facets} cols={first.cols}/>
-      <TextualLabel title={first.title} facets={facets}/>
-      <TextualField title={second.title} facets={facets} cols={second.cols}/>
-      <TextualLabel title={second.title} facets={facets}/>
+      <TextualField title={first} facets={facets} />
+      <TextualLabel title={first} facets={facets}/>
+      <TextualField title={second} facets={facets} cols={40}/>
+      <TextualLabel title={second} facets={facets}/>
       <IndexingDropdown
-        title={indexing.indexing.title}
-        indexables={indexing.indexing.indexables}
+        title={indexing.indexing}
+        selectables={facets.getIndexingState(indexing.indexing).uiSelectables}
         facets={facets}/>
-      <TextualLabel title={indexing.index.title} facets={facets}/><br/>
-      <TextualLabel title={indexing.indexed.title} facets={facets}/>
+      <TextualLabel title={indexing.index} facets={facets}/><br/>
+      <TextualLabel title={indexing.indexed} facets={facets}/>
     </div>,
     document.getElementById('root'),
   );

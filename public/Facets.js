@@ -773,7 +773,7 @@ class SIndexing extends TargetCore {
         this.coupler = coupler;
     }
     /**
-     * The first index into the <code>indexables</code>.
+     * The first index into the <code>selectables</code>.
      * @return {number}
      */
     index() {
@@ -788,7 +788,7 @@ class SIndexing extends TargetCore {
     indexables() {
         let indexables = this.coupler.getIndexables(this);
         if (indexables == null || indexables.length === 0)
-            throw Object.defineProperty(new Error("Null or empty indexables in " + this), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.lang.IllegalStateException', 'java.lang.Object', 'java.lang.RuntimeException', 'java.lang.Exception'] });
+            throw Object.defineProperty(new Error("Null or empty selectables in " + this), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.lang.IllegalStateException', 'java.lang.Object', 'java.lang.RuntimeException', 'java.lang.Exception'] });
         else
             return indexables;
     }
@@ -796,7 +796,7 @@ class SIndexing extends TargetCore {
         return this.coupler.getFacetIndexables(this);
     }
     /**
-     * Sets a single index into the <code>indexables</code>.
+     * Sets a single index into the <code>selectables</code>.
      * @param {number} index
      */
     setIndex(index) {

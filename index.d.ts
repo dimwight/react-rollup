@@ -95,7 +95,7 @@ interface IndexingState {
    */
   uiSelectables: string[];
   /**
-   * The result of the current index into the indexables.
+   * The result of the current index into the selectables.
    */
   indexed: any;
 }
