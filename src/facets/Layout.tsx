@@ -42,13 +42,17 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     })
   }
   facetUpdated=(update)=>{
-    const read=this.readUpdate(update);
+    const read:{}=this.readUpdate(update);
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props as I,read);
     else this.setState(read);
   };
   componentDidMount(){
     this.didMount=true;
+    const props=this.props;
+    traceThing(props.title,{
+      state:props.state
+    })
   }
   protected readUpdate(update):{}{
     return {state:update}
