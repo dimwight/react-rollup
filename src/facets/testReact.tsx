@@ -1,5 +1,10 @@
 import React from 'react';
-import {Facets,Target,newInstance} from 'facets-js';
+import {
+  Facets,
+  Target,
+  newInstance,
+  TargetCoupler,
+} from 'facets-js';
 import {Layout} from './Layout';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
@@ -10,10 +15,11 @@ export namespace Titles{
   INDEX='Index',INDEXED='Indexed',INDEX_START=0,
   INDEXABLES=[TEXTUAL_FIRST,TEXTUAL_SECOND],
   TOGGLING='Click to toggle',TOGGLED='Toggle state',
+  TRIGGER='Click Me!',TRIGGEREDS='Button presses',
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-export enum Test{Textual,Toggling,Indexing,All}
+export enum Test{Textual,Toggling,Indexing,Trigger,All}
 const facets:Facets=newInstance(false);
 function newTextualTree():Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
@@ -28,7 +34,7 @@ function newTextualTree():Target{
     });
   return facets.newTargetGroup('TextualTest',first,second);
 }
-function newTogglingTree(){
+function newTogglingTest(){
   const toggling=facets.newTogglingTarget(Titles.TOGGLING,{
     passSet:Titles.TOGGLE_START
   }),
@@ -40,7 +46,7 @@ function newTogglingTree(){
   });
   return facets.newTargetGroup('TogglingTest',toggling,toggled);
 }
-function newIndexingTree():Target{
+function newIndexingTest(){
   const indexing=facets.newIndexingTarget(Titles.INDEXING,{
       passIndex:0,
       getUiSelectables:(title)=> Titles.INDEXABLES,
@@ -54,9 +60,23 @@ function newIndexingTree():Target{
     });
   return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
-function newAllTree():Target{
+function newTriggerTest(){
+  let triggers:number=0;
+  const trigger=facets.newTriggerTarget(Titles.TRIGGER,{
+    targetStateUpdated:(title)=>{
+      triggers++
+    }
+  }),
+  triggered=facets.newTextualTarget(Titles.TRIGGEREDS,{
+    getText:(title)=>{
+      return triggers.toString()
+    }
+  });
+  return facets.newTargetGroup('TriggerTest',trigger,triggered);
+}
+function newAllTest(){
   return facets.newTargetGroup('AllTest',
-    newTextualTree(),newIndexingTree(),newTogglingTree());
+    newTextualTree(),newIndexingTest(),newTogglingTest(),newTriggerTest());
 }
 abstract class SurfaceCore{
   buildSurface(){
@@ -74,9 +94,9 @@ class SimpleSurface extends SurfaceCore{
   constructor(private test:Test){
     super();
   }
-  newTargetTree():Target{
-    const textual=newTextualTree,indexing=newIndexingTree,
-      toggling=newTogglingTree,all=newAllTree;
+  newTargetTree(){
+    const textual=newTextualTree,indexing=newIndexingTest,
+      toggling=newTogglingTest,trigger=newTriggerTest(),all=newAllTest;
     return this.test===Test.Textual?textual()
       :this.test===Test.Toggling?toggling()
         :this.test===Test.Indexing?indexing(): all();
