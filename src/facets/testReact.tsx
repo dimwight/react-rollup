@@ -102,7 +102,7 @@ class SimpleSurface extends SurfaceCore{
         :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
-    [Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING]
+    [Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER]
       .forEach((title)=>{
         facets.setTargetLive(title,false)
       });
@@ -110,7 +110,7 @@ class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.All).buildSurface();
+  new SimpleSurface(Test.Trigger).buildSurface();
 }
 
 

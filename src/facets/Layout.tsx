@@ -11,6 +11,7 @@ export class Layout{
     if(this.test===Test.Textual) buildTextual(facets);
     else if(this.test===Test.Indexing) buildIndexing(facets);
     else if(this.test===Test.Toggling) buildToggling(facets);
+    else if(this.test===Test.Trigger) buildTrigger(facets);
     else buildAll(facets);
   }
 }
@@ -41,10 +42,10 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     })
   }
   facetUpdated=(update)=>{
-    const updated=this.readUpdate(update);
+    const read=this.readUpdate(update);
     if(!this.didMount)
-      this.state=Object.assign({}as K,this.props as I,updated);
-    else this.setState(updated);
+      this.state=Object.assign({}as K,this.props as I,read);
+    else this.setState(read);
   };
   componentDidMount(){
     this.didMount=true;
@@ -135,8 +136,21 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
   render(){
     return (<span>
       <span className={'caption'}>{this.props.title}</span>
-        &nbsp;{this.state.text}
+      &nbsp;{this.state.text}
         </span>)
+  }
+}
+class TriggerButton extends Facet<TargetValues,TargetValues>{
+  protected readUpdate(update):{}{
+    return {}
+  }
+  onClick=()=>{
+    this.props.facets.updateTargetState(this.props.title,'No state!');
+  };
+  render(){
+    return (<button onClick={this.onClick}>
+      {this.props.title}
+    </button>)
   }
 }
 function buildTextual(facets:Facets){
@@ -150,6 +164,15 @@ function buildTextual(facets:Facets){
     </div>,
     document.getElementById('root'),
   );
+}
+function buildTrigger(facets:Facets){
+  ReactDOM.render(
+    <div>
+      <div><TriggerButton title={Titles.TRIGGER} facets={facets}/></div>
+      <div><TextualLabel title={Titles.TRIGGEREDS} facets={facets}/></div>
+    </div>,
+    document.getElementById('root'),
+  )
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
