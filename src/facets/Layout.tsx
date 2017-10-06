@@ -32,6 +32,16 @@ interface IndexingValues extends TargetValues{
   selectables:string[]
   index?:number
 }
+interface CaptionValues{
+  text:string
+  disabled:boolean
+}
+class Caption extends React.Component<CaptionValues>{
+  render(){
+    return (<span className={this.props.disabled?'captionDisabled':'caption'}>
+    {this.props.text}&nbsp;</span>)
+  }
+}
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
   constructor(props){
@@ -69,14 +79,13 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   };
   render(){
     return (<span>
-      <p>{this.props.title}
+      <Caption text={this.props.title} disabled={!this.state.live}/>
         <input
           type="checkbox"
           onChange={this.onChange}
           checked={this.state.set}
           disabled={!this.state.live}
         />
-      </p>
     </span>)
   }
 }
@@ -105,7 +114,7 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
         :<option>{item}</option>
     });
     return (<span>
-      <span className={this.state.live?'caption':'captionDisabled'}>{this.props.title}</span>&nbsp;
+      <Caption text={this.props.title} disabled={!this.state.live}/>
       <select
         disabled={!this.state.live}
         onChange={this.onChange}
@@ -122,7 +131,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   };
   render(){
     return (<span>
-        <span className={this.state.live?'caption':'captionDisabled'}>{this.props.title}</span>&nbsp;
+        <Caption text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
           startText={this.state.text}
           onEnter={this.onFieldEnter}
@@ -139,7 +148,7 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
   }
   render(){
     return (<span>
-      <span className={'caption'}>{this.props.title}</span>
+      <Caption text={this.props.title} disabled={!this.state.live}/>
       &nbsp;{this.state.text}
         </span>)
   }
@@ -223,7 +232,7 @@ function buildAll(facets:Facets){
       <div><TextualLabel title={Titles.INDEXED} facets={facets}/></div>
       </div>
       <div className={'spaced'}>
-      <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
+      <div><TogglingCheckbox title={Titles.TOGGLING} facets={facets}/></div>
       <TextualLabel title={Titles.TOGGLED} facets={facets}/>
     </div>
     </div>,
