@@ -127,6 +127,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
           startText={this.state.text}
           onEnter={this.onFieldEnter}
           cols={this.props.cols}
+          disabled={!this.state.live}
         />
       </span>
     );

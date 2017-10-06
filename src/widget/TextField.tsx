@@ -5,11 +5,13 @@ import {StringFn} from './_exports'
 interface TextFieldProps{
   startText:string
   onEnter:StringFn
+  disabled:boolean
   hint?:string
   cols?:number
 }
 interface TextFieldState{
   text:string
+  disabled:boolean
 }
 export class SmartTextField extends React.Component<TextFieldProps,TextFieldState> {
   private readonly hint:string;
@@ -17,7 +19,8 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     super(props);
     this.hint=props.hint;
     this.state={
-      text:props.startText||this.hint||''
+      text:props.startText||this.hint||'',
+      disabled:props.disabled
     }
   }
   setText=(set:string)=>{
@@ -52,6 +55,7 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
          onKeyDown={this.onKeyDown}
          onChange={this.onChange}
          onMouseDown={this.onClick}
+         disabled={this.state.disabled}
         />
       </span>
     );

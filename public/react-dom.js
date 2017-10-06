@@ -4052,9 +4052,9 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
   },
 
   /**
-   * Sets whether or not any created callbacks should be enabled.
+   * Sets whether or not any created callbacks should be disabled.
    *
-   * @param {boolean} enabled True if callbacks should be enabled.
+   * @param {boolean} enabled True if callbacks should be disabled.
    */
   setEnabled: function (enabled) {
     if (ReactBrowserEventEmitter.ReactEventListener) {
@@ -4063,7 +4063,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
   },
 
   /**
-   * @return {boolean} True if callbacks are enabled.
+   * @return {boolean} True if callbacks are disabled.
    */
   isEnabled: function () {
     return !!(ReactBrowserEventEmitter.ReactEventListener && ReactBrowserEventEmitter.ReactEventListener.isEnabled());
@@ -11230,7 +11230,7 @@ var SELECTION_RESTORATION = {
  */
 var EVENT_SUPPRESSION = {
   /**
-   * @return {boolean} The enabled status of `ReactBrowserEventEmitter` before
+   * @return {boolean} The disabled status of `ReactBrowserEventEmitter` before
    * the reconciliation.
    */
   initialize: function () {
@@ -17559,7 +17559,7 @@ module.exports = emptyObject;
 
 function focusNode(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
-  // not enabled, or of a type that does not accept the focus." for all kinds of
+  // not disabled, or of a type that does not accept the focus." for all kinds of
   // reasons that are too expensive and fragile to test.
   try {
     node.focus();
