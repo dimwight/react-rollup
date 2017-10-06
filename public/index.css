@@ -9,8 +9,8 @@ span.caption{
 }
 span.captionDisabled{
   font-weight: bold;
-  font-fill: red;
-  font-style: italic;
+  color: darkgray;
+  /*font-style: italic;*/
 }
 div.spaced{
   margin-top: 10px;
