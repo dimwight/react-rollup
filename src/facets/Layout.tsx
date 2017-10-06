@@ -37,22 +37,19 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
   constructor(props){
     super(props);
     props.facets.attachFacet(props.title,this.facetUpdated);
-    traceThing(props.title,{
-      live:props.facets.isTargetLive(props.title)
-    })
   }
   facetUpdated=(update)=>{
-    const read:{}=this.readUpdate(update);
+    const stateWithLive:{}=Object.assign({},this.readUpdate(update),{
+      live:this.props.facets.isTargetLive(this.props.title)
+    });
     if(!this.didMount)
-      this.state=Object.assign({}as K,this.props as I,read);
-    else this.setState(read);
+      this.state=Object.assign({}as K,this.props,stateWithLive,);
+    else this.setState(stateWithLive);
   };
   componentDidMount(){
     this.didMount=true;
     const props=this.props;
-    traceThing(props.title,{
-      state:props.state
-    })
+    traceThing(props.title+'.componentDidMount',this.state)
   }
   protected readUpdate(update):{}{
     return {state:update}

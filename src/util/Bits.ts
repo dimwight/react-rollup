@@ -1,7 +1,9 @@
 import fn from 'date-fns/format';
 
 export function traceThing(top,thing){
-  console.log((true?(top+': '):"")+JSON.stringify(thing,null,1))
+  console.log((true?(top+': '):"")+JSON.stringify(thing,false?null:(key,value)=>{
+    return true&&key==='facets'?'[facets]':value;
+  },1))
 }
 
 function format(time:Date,style:string){
