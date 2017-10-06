@@ -7,6 +7,11 @@ span.caption{
   font-weight: bold;
   /*font-style: italic;*/
 }
+span.captionDisabled{
+  font-weight: bold;
+  font-fill: red;
+  font-style: italic;
+}
 div.spaced{
   margin-top: 10px;
   margin-bottom: 10px;

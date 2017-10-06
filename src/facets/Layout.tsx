@@ -105,7 +105,7 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
         :<option>{item}</option>
     });
     return (<span>
-      <span className={'caption'}>{this.props.title}</span>&nbsp;
+      <span className={this.state.live?'caption':'captionDisabled'}>{this.props.title}</span>&nbsp;
       <select
         disabled={!this.state.live}
         onChange={this.onChange}
@@ -122,7 +122,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   };
   render(){
     return (<span>
-        <span className={'caption'}>{this.props.title}</span>&nbsp;
+        <span className={this.state.live?'caption':'captionDisabled'}>{this.props.title}</span>&nbsp;
         <SmartTextField
           startText={this.state.text}
           onEnter={this.onFieldEnter}
