@@ -102,7 +102,7 @@ class SimpleSurface extends SurfaceCore{
         :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
-    [Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER]
+    [Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
       .forEach((title)=>{
         facets.setTargetLive(title,false)
       });

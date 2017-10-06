@@ -74,6 +74,7 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
           type="checkbox"
           onChange={this.onChange}
           checked={this.state.set}
+          disabled={!this.state.live}
         />
       </p>
     </span>)
@@ -106,6 +107,7 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
     return (<span>
       <span className={'caption'}>{this.props.title}</span>&nbsp;
       <select
+        disabled={!this.state.live}
         onChange={this.onChange}
       >{options}</select>
     </span>);
@@ -149,8 +151,10 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
     this.props.facets.updateTargetState(this.props.title,'No state!');
   };
   render(){
-    return (<button onClick={this.onClick}>
-      {this.props.title}
+    return (<button
+      onClick={this.onClick}
+      disabled={!this.state.live}
+    >{this.props.title}
     </button>)
   }
 }
