@@ -29,7 +29,7 @@ interface TogglingValues extends TargetValues{
   set?:boolean
 }
 interface IndexingValues extends TargetValues{
-  selectables:string[]
+  selectables?:string[]
   index?:number
 }
 interface LabelValues{
@@ -57,13 +57,13 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
-    const stateWithLive:{}=Object.assign({},this.readUpdate(update),{
+    const updateWithLive:{}=Object.assign({},this.readUpdate(update),{
       live:this.props.facets.isTargetLive(this.props.title)
     });
     if(!this.didMount)
-      this.state=Object.assign({}as K,this.props,stateWithLive,);
-    else this.setState(stateWithLive);
-    traceThing(this.props.title+'.facetUpdated',stateWithLive)
+      this.state=Object.assign({}as K,this.props,updateWithLive,);
+    else this.setState(updateWithLive);
+    traceThing(this.props.title+'.facetUpdated',updateWithLive)
   };
   componentDidMount(){
     this.didMount=true;
@@ -98,13 +98,13 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
 }
 class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
-    return {index:update};
+    const selectables=this.props.facets.getIndexingState(this.props.title).uiSelectables
+    return {index:update,selectables:selectables};
   }
   onChange=(e)=>{
-    const indexables=(this.props as IndexingValues).selectables;
-    const value=e.target.value;
-    for(let at=0; at<indexables.length; at++){
-      if(indexables[at]===value){
+    const value=e.target.value,selectables=this.state.selectables;
+    for(let at=0; at<selectables.length; at++){
+      if(selectables[at]===value){
         this.setState(then=>{
           this.props.facets.updateTargetState(this.props.title,at);
           return {index:at};
@@ -114,9 +114,9 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
     }
   };
   render(){
-    const indexables=(this.props as IndexingValues).selectables,
-      selected=indexables[(this.state as IndexingValues).index],
-      options=indexables.map((item)=>{
+    const selectables=this.state.selectables,
+      selected=selectables[(this.state as IndexingValues).index],
+      options=selectables.map((item)=>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
     });
@@ -217,10 +217,10 @@ function buildIndexing(facets:Facets){
 }
 function buildTrigger(facets:Facets){
   ReactDOM.render(
-    <div>
-      <div><TriggerButton title={Titles.TRIGGER} facets={facets}/></div>
-      <div><TextualLabel title={Titles.TRIGGEREDS} facets={facets}/></div>
-    </div>,
+    <Panel>
+      <TriggerButton title={Titles.TRIGGER} facets={facets}/>
+      <TextualLabel title={Titles.TRIGGEREDS} facets={facets}/>
+    </Panel>,
     document.getElementById('root'),
   )
 }
@@ -233,20 +233,17 @@ function Panel(props){
     </div>
 }
 function buildAll(facets:Facets){
-  const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND,
+  const textual1=Titles.TEXTUAL_FIRST,textual2=Titles.TEXTUAL_SECOND,
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
     <Panel>
-      <TextualField title={first} facets={facets}/>
-      <TextualLabel title={first} facets={facets}/>
-      <TextualField title={second} facets={facets} cols={40}/>
-      <TextualLabel title={second} facets={facets}/>
+      <TextualField title={textual1} facets={facets}/>
+      <TextualLabel title={textual1} facets={facets}/>
+      <TextualField title={textual2} facets={facets} cols={40}/>
+      <TextualLabel title={textual2} facets={facets}/>
     </Panel>
     <Panel>
-      <IndexingDropdown
-        title={indexing}
-        selectables={facets.getIndexingState(indexing).uiSelectables}
-        facets={facets}/>
+      <IndexingDropdown title={indexing} facets={facets}/>
       <TextualLabel title={Titles.INDEX} facets={facets}/>
       <TextualLabel title={Titles.INDEXED} facets={facets}/>
     </Panel>
