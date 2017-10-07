@@ -182,21 +182,21 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
 function buildTextual(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
   ReactDOM.render(
-    <div>
-      <div><TextualField title={first} facets={facets}/></div>
-      <div><TextualLabel title={first} facets={facets}/></div>
-      <div><TextualField title={second} facets={facets} cols={40}/></div>
-      <div><TextualLabel title={second} facets={facets}/></div>
-    </div>,
+    <Panel>
+      <TextualField title={first} facets={facets}/>
+      <TextualLabel title={first} facets={facets}/>
+      <TextualField title={second} facets={facets} cols={40}/>
+      <TextualLabel title={second} facets={facets}/>
+    </Panel>,
     document.getElementById('root'),
   );
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
-    <span>
+    <Panel>
       <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
-      <div><TextualLabel title={Titles.TOGGLED} facets={facets}/></div>
-    </span>,
+      <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+    </Panel>,
     document.getElementById('root'),
   );
 
@@ -204,14 +204,14 @@ function buildToggling(facets:Facets){
 function buildIndexing(facets:Facets){
   const indexing=Titles.INDEXING;
   ReactDOM.render(
-    <span>
-      <div><IndexingDropdown
+    <Panel>
+      <IndexingDropdown
         title={indexing}
         selectables={facets.getIndexingState(indexing).uiSelectables}
-        facets={facets}/></div>
-      <div><TextualLabel title={Titles.INDEX} facets={facets}/></div>
+        facets={facets}/>
+      <TextualLabel title={Titles.INDEX} facets={facets}/>
       <TextualLabel title={Titles.INDEXED} facets={facets}/>
-    </span>,
+    </Panel>,
     document.getElementById('root'),
   );
 }

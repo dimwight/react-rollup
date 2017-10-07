@@ -31,8 +31,8 @@
       <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            <state relative-caret-position="731">
+              <caret line="117" column="32" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
               <folding>
                 <element signature="n#!!block;n#trace#0" expanded="false" />
                 <element signature="n#Titles#0" expanded="false" />
@@ -63,8 +63,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="219" column="10" lean-forward="false" selection-start-line="219" selection-start-column="10" selection-end-line="219" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="181" column="36" lean-forward="false" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
               <folding>
                 <element signature="n#Layout#0" expanded="false" />
                 <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -118,22 +118,18 @@
                 <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
                 <element signature="e#4933#5041#0" expanded="false" />
                 <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-                <element signature="e#5175#5455#0" expanded="false" />
                 <element signature="n#!!block;n#buildToggling#0" expanded="false" />
-                <element signature="e#5563#5719#0" expanded="false" />
                 <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-                <element signature="e#5862#6167#0" expanded="false" />
-                <element signature="e#5875#6024#0" expanded="false" />
-                <element signature="e#5880#6018#0" expanded="false" />
+                <element signature="n#!!block;n#buildTrigger#0" expanded="false" />
                 <element signature="n#!!block;n#Panel#0" expanded="false" />
-                <element signature="e#6533#6568#0" expanded="false" />
-                <element signature="e#6580#6631#0" expanded="false" />
+                <element signature="e#6464#6499#0" expanded="false" />
+                <element signature="e#6511#6562#0" expanded="false" />
                 <element signature="n#!!block;n#buildAll#0" expanded="false" />
-                <element signature="e#6786#7564#0" expanded="false" />
-                <element signature="e#6796#7046#0" expanded="false" />
-                <element signature="e#7051#7250#0" expanded="false" />
-                <element signature="e#7255#7402#0" expanded="false" />
-                <element signature="e#7407#7553#0" expanded="false" />
+                <element signature="e#6717#7495#0" expanded="false" />
+                <element signature="e#6727#6977#0" expanded="false" />
+                <element signature="e#6982#7181#0" expanded="false" />
+                <element signature="e#7186#7333#0" expanded="false" />
+                <element signature="e#7338#7484#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -274,8 +270,8 @@
         <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
         <option value="$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts" />
         <option value="$PROJECT_DIR$/src/facets/Layout.css" />
-        <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
         <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
+        <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
       </list>
     </option>
   </component>
@@ -767,7 +763,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="RegExp" />
     <MESSAGE value="categoryRow" />
     <MESSAGE value="rollup.config.js simplified" />
     <MESSAGE value="Facets.tsx" />
@@ -792,7 +787,8 @@
     <MESSAGE value="newTogglingTest" />
     <MESSAGE value="newTriggerTest" />
     <MESSAGE value="Group" />
-    <option name="LAST_COMMIT_MESSAGE" value="Group" />
+    <MESSAGE value="Panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Panel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1128,8 +1124,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        <state relative-caret-position="731">
+          <caret line="117" column="32" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
           <folding>
             <element signature="n#!!block;n#trace#0" expanded="false" />
             <element signature="n#Titles#0" expanded="false" />
@@ -1158,8 +1154,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="219" column="10" lean-forward="false" selection-start-line="219" selection-start-column="10" selection-end-line="219" selection-end-column="10" />
+        <state relative-caret-position="255">
+          <caret line="181" column="36" lean-forward="false" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
           <folding>
             <element signature="n#Layout#0" expanded="false" />
             <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -1213,22 +1209,18 @@
             <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
             <element signature="e#4933#5041#0" expanded="false" />
             <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-            <element signature="e#5175#5455#0" expanded="false" />
             <element signature="n#!!block;n#buildToggling#0" expanded="false" />
-            <element signature="e#5563#5719#0" expanded="false" />
             <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-            <element signature="e#5862#6167#0" expanded="false" />
-            <element signature="e#5875#6024#0" expanded="false" />
-            <element signature="e#5880#6018#0" expanded="false" />
+            <element signature="n#!!block;n#buildTrigger#0" expanded="false" />
             <element signature="n#!!block;n#Panel#0" expanded="false" />
-            <element signature="e#6533#6568#0" expanded="false" />
-            <element signature="e#6580#6631#0" expanded="false" />
+            <element signature="e#6464#6499#0" expanded="false" />
+            <element signature="e#6511#6562#0" expanded="false" />
             <element signature="n#!!block;n#buildAll#0" expanded="false" />
-            <element signature="e#6786#7564#0" expanded="false" />
-            <element signature="e#6796#7046#0" expanded="false" />
-            <element signature="e#7051#7250#0" expanded="false" />
-            <element signature="e#7255#7402#0" expanded="false" />
-            <element signature="e#7407#7553#0" expanded="false" />
+            <element signature="e#6717#7495#0" expanded="false" />
+            <element signature="e#6727#6977#0" expanded="false" />
+            <element signature="e#6982#7181#0" expanded="false" />
+            <element signature="e#7186#7333#0" expanded="false" />
+            <element signature="e#7338#7484#0" expanded="false" />
           </folding>
         </state>
       </provider>
