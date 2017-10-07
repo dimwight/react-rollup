@@ -225,8 +225,11 @@ function buildTrigger(facets:Facets){
   )
 }
 function Group(props){
+  const children=props.children.map((child)=>{
+    return <div>{child}</div>
+  });
   return <div className={'group'}>
-    {props.children}
+    {children}
     </div>
 }
 function buildAll(facets:Facets){
@@ -234,10 +237,10 @@ function buildAll(facets:Facets){
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
     <Group>
-      <div><TextualField title={first} facets={facets}/></div>
-      <div><TextualLabel title={first} facets={facets}/></div>
-      <div><TextualField title={second} facets={facets} cols={40}/></div>
-      <div><TextualLabel title={second} facets={facets}/></div>
+      <TextualField title={first} facets={facets}/>
+      <TextualLabel title={first} facets={facets}/>
+      <TextualField title={second} facets={facets} cols={40}/>
+      <TextualLabel title={second} facets={facets}/>
     </Group>
       <div className={'group'}>
         <IndexingDropdown

@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.css" afterPath="$PROJECT_DIR$/public/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.css" afterPath="$PROJECT_DIR$/src/facets/Layout.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,8 +62,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="226" column="14" lean-forward="false" selection-start-line="226" selection-start-column="9" selection-end-line="226" selection-end-column="14" />
+            <state relative-caret-position="156">
+              <caret line="229" column="5" lean-forward="true" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
               <folding>
                 <element signature="n#Layout#0" expanded="false" />
                 <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -562,7 +559,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.watch">
+  <component name="RunManager" selected="JavaScript Debug.launch">
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.build+launch" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.launch" />
@@ -737,7 +734,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="show=[]as[Product]" />
     <MESSAGE value="RegExp" />
     <MESSAGE value="categoryRow" />
     <MESSAGE value="rollup.config.js simplified" />
@@ -762,7 +758,8 @@
     <MESSAGE value="textDisabled" />
     <MESSAGE value="newTogglingTest" />
     <MESSAGE value="newTriggerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="newTriggerTest" />
+    <MESSAGE value="Group" />
+    <option name="LAST_COMMIT_MESSAGE" value="Group" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1128,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="226" column="14" lean-forward="false" selection-start-line="226" selection-start-column="9" selection-end-line="226" selection-end-column="14" />
+        <state relative-caret-position="156">
+          <caret line="229" column="5" lean-forward="true" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
           <folding>
             <element signature="n#Layout#0" expanded="false" />
             <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
