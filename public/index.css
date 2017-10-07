@@ -13,7 +13,7 @@ body {
 .textDisabled{
   color: darkgray;
 }
-div.spaced{
-  margin-top: 10px;
-  margin-bottom: 10px;
+div.group{
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

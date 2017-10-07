@@ -63,11 +63,10 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props,stateWithLive,);
     else this.setState(stateWithLive);
+    traceThing(this.props.title+'.facetUpdated',stateWithLive)
   };
   componentDidMount(){
     this.didMount=true;
-    const props=this.props;
-    traceThing(props.title+'.componentDidMount',this.state)
   }
   protected readUpdate(update):{}{
     return {state:update}
@@ -192,15 +191,6 @@ function buildTextual(facets:Facets){
     document.getElementById('root'),
   );
 }
-function buildTrigger(facets:Facets){
-  ReactDOM.render(
-    <div>
-      <div><TriggerButton title={Titles.TRIGGER} facets={facets}/></div>
-      <div><TextualLabel title={Titles.TRIGGEREDS} facets={facets}/></div>
-    </div>,
-    document.getElementById('root'),
-  )
-}
 function buildToggling(facets:Facets){
   ReactDOM.render(
     <span>
@@ -225,17 +215,31 @@ function buildIndexing(facets:Facets){
     document.getElementById('root'),
   );
 }
+function buildTrigger(facets:Facets){
+  ReactDOM.render(
+    <div>
+      <div><TriggerButton title={Titles.TRIGGER} facets={facets}/></div>
+      <div><TextualLabel title={Titles.TRIGGEREDS} facets={facets}/></div>
+    </div>,
+    document.getElementById('root'),
+  )
+}
+function Group(props){
+  return <div className={'group'}>
+    {props.children}
+    </div>
+}
 function buildAll(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND,
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
-    <div className={'spaced'}>
+    <Group>
       <div><TextualField title={first} facets={facets}/></div>
       <div><TextualLabel title={first} facets={facets}/></div>
       <div><TextualField title={second} facets={facets} cols={40}/></div>
       <div><TextualLabel title={second} facets={facets}/></div>
-    </div>
-      <div className={'spaced'}>
+    </Group>
+      <div className={'group'}>
         <IndexingDropdown
           title={indexing}
           selectables={facets.getIndexingState(indexing).uiSelectables}
@@ -243,9 +247,13 @@ function buildAll(facets:Facets){
       <div><TextualLabel title={Titles.INDEX} facets={facets}/></div>
       <div><TextualLabel title={Titles.INDEXED} facets={facets}/></div>
       </div>
-      <div className={'spaced'}>
+      <div className={'group'}>
       <div><TogglingCheckbox title={Titles.TOGGLING} facets={facets}/></div>
       <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+    </div>
+    <div className={'group'}>
+      <div><TriggerButton title={Titles.TRIGGER} facets={facets}/></div>
+      <div><TextualLabel title={Titles.TRIGGEREDS} facets={facets}/></div>
     </div>
     </div>,
     document.getElementById('root'),

@@ -66,14 +66,14 @@ function newTriggerTest(){
   let triggers:number=0;
   const trigger=facets.newTriggerTarget(Titles.TRIGGER,{
     targetStateUpdated:(title)=>{
-      triggers++
+      if(++triggers>4)facets.setTargetLive(title,false);
     }
   }),
   triggered=facets.newTextualTarget(Titles.TRIGGEREDS,{
     getText:(title)=>{
-      if(triggers>4)
-        facets.setTargetLive(Titles.TRIGGER,false);
-      return triggers.toString()
+      const count=triggers.toString();
+      return !facets.isTargetLive(Titles.TRIGGER)?
+        `No more than ${count}!`:count
     }
   });
   return facets.newTargetGroup('TriggerTest',trigger,triggered);
@@ -101,9 +101,7 @@ class SimpleSurface extends SurfaceCore{
   newTargetTree(){
     const textual=newTextualTree,indexing=newIndexingTest,
       toggling=newTogglingTest,trigger=newTriggerTest(),all=newAllTest;
-    return this.test===Test.Textual?textual()
-      :this.test===Test.Toggling?toggling()
-        :this.test===Test.Indexing?indexing(): all();
+    return all();
   }
   buildLayout(){
     if(false)[Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
@@ -117,7 +115,7 @@ class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.Trigger).buildSurface();
+  new SimpleSurface(Test.All).buildSurface();
 }
 
 
