@@ -14,7 +14,7 @@ export namespace Titles{
   INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
   INDEX='Index',INDEXED='Indexed',INDEX_START=0,
   INDEXABLES=[TEXTUAL_FIRST,TEXTUAL_SECOND],
-  TOGGLING='Click to toggle',TOGGLED='Toggle state',
+  TOGGLING='Click to toggle',TOGGLED='Toggling state',
   TRIGGER='Click Me!',TRIGGEREDS='Button presses',
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
@@ -43,8 +43,7 @@ function newTogglingTest(){
   }as TogglingCoupler),
   toggled=facets.newTextualTarget(Titles.TOGGLED,{
     getText:(title)=>{
-      const set:boolean=facets.getTargetState(Titles.TOGGLING)as boolean;
-      return `Toggling is ${set?'':'not'} set`
+      return facets.getTargetState(Titles.TOGGLING)as boolean?'Set':'Not set'
     }
   });
   return facets.newTargetGroup('TogglingTest',toggling,toggled);
@@ -109,8 +108,9 @@ class SimpleSurface extends SurfaceCore{
       .forEach((title)=>{
         facets.setTargetLive(title,false)
       });
-    if(this.test===Test.Toggling)facets.setTargetLive(Titles.TOGGLED,
-      facets.getTargetState(Titles.TOGGLING)as boolean)
+    if(this.test===Test.Toggling||this.test===Test.All)
+      facets.setTargetLive(Titles.TOGGLED,
+      facets.getTargetState(Titles.TOGGLING)as boolean);
     new Layout(this.test).build(facets);
   }
 }
