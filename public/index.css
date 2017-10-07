@@ -13,7 +13,11 @@ body {
 .textDisabled{
   color: darkgray;
 }
-div.group{
-  margin-top: 15px;
+.panelRubric{
+  font-size: larger;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+div.panel{
   margin-bottom: 15px;
 }
