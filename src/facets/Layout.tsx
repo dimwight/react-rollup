@@ -32,13 +32,21 @@ interface IndexingValues extends TargetValues{
   selectables:string[]
   index?:number
 }
-interface CaptionValues{
+interface LabelValues{
   text:string
   disabled:boolean
 }
-class Caption extends React.Component<CaptionValues>{
+class LabelText extends React.Component<LabelValues>{
   render(){
-    return (<span className={this.props.disabled?'captionDisabled':'caption'}>
+    return (<span className={this.props.disabled?'textDisabled':''}>
+    {this.props.text}&nbsp;</span>)
+  }
+}
+class LabelRubric extends React.Component<LabelValues>{
+  render(){
+    return (<span className={
+      (this.props.disabled?'captionDisabled':'caption')
+    }>
     {this.props.text}&nbsp;</span>)
   }
 }
@@ -79,7 +87,7 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   };
   render(){
     return (<span>
-      <Caption text={this.props.title} disabled={!this.state.live}/>
+      <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <input
           type="checkbox"
           onChange={this.onChange}
@@ -113,10 +121,12 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
     });
+    const disabled=!this.state.live;
     return (<span>
-      <Caption text={this.props.title} disabled={!this.state.live}/>
+      <LabelRubric text={this.props.title} disabled={disabled}/>
       <select
-        disabled={!this.state.live}
+        className={disabled?'textDisabled':''}
+        disabled={disabled}
         onChange={this.onChange}
       >{options}</select>
     </span>);
@@ -131,7 +141,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   };
   render(){
     return (<span>
-        <Caption text={this.props.title} disabled={!this.state.live}/>
+        <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
           startText={this.state.text}
           onEnter={this.onFieldEnter}
@@ -147,9 +157,11 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
     return {text:update}
   }
   render(){
+    const disabled=!this.state.live;
     return (<span>
-      <Caption text={this.props.title} disabled={!this.state.live}/>
-      &nbsp;{this.state.text}
+      <LabelRubric text={this.props.title} disabled={disabled}/>
+      &nbsp;
+      <LabelText text={this.state.text} disabled={disabled}/>
         </span>)
   }
 }

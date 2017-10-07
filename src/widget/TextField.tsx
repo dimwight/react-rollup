@@ -49,6 +49,7 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     return (
       <span>
         <input type="text"
+         className={this.state.disabled?'textDisabled':''}
          size={this.props.cols||20}
          value={this.state.text}
          onKeyPress={this.onKeyPress}

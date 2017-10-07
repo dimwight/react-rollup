@@ -3,12 +3,16 @@ body {
   padding: 5px;
   font-family: Calibri,serif;
 }
-span.caption{
+.caption{
   font-weight: bold;
   /*font-style: italic;*/
 }
-span.captionDisabled{
+.captionDisabled{
   font-weight: bold;
+  color: darkgray;
+  /*font-style: italic;*/
+}
+.textDisabled{
   color: darkgray;
   /*font-style: italic;*/
 }
