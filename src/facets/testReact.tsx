@@ -104,7 +104,7 @@ class SimpleSurface extends SurfaceCore{
     return all();
   }
   buildLayout(){
-    if(false)[Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
+    if(true)[Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
       .forEach((title)=>{
         facets.setTargetLive(title,false)
       });

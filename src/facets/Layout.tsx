@@ -21,24 +21,6 @@ interface TargetValues{
   state?:SimpleState
   live?:boolean
 }
-interface TextualValues extends TargetValues{
-  text?:string
-  cols?:number
-}
-interface TogglingValues extends TargetValues{
-  set?:boolean
-}
-interface IndexingValues extends TargetValues{
-  selectables?:string[]
-  index?:number
-}
-interface LabelValues{
-  text:string
-  disabled:boolean
-  target?:string
-  style?:any
-  classes?:string
-}
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
   constructor(props){
@@ -61,19 +43,35 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     return {state:update}
   }
 }
+interface TextualValues extends TargetValues{
+  text?:string
+  cols?:number
+}
+interface TogglingValues extends TargetValues{
+  set?:boolean
+}
+interface IndexingValues extends TargetValues{
+  selectables?:string[]
+  index?:number
+}
+interface LabelValues{
+  text:string
+  disabled:boolean
+  target?:string
+  style?:any
+  classes?:string
+}
 function LabelRubric (props:LabelValues){
   const htmlFor=props.target,text=props.text,
-    className=props.classes+(props.disabled?'captionDisabled':'caption');
+    className=(props.disabled?'rubricDisabled':'rubric');
   return htmlFor?<label htmlFor={htmlFor} className={className}>
       {text}&nbsp;</label>
     :<span className={className}>
       {text}&nbsp;</span>
 }
-function PanelRubric (props:LabelValues){
-  const text=props.text,
-    className=props.classes+(props.disabled?'captionDisabled':'caption');
-  return <div className={className}>
-      {text}&nbsp;</div>
+function LabelText (props:LabelValues){
+  return (<span className={props.disabled?'textDisabled':''}>
+    {props.text}&nbsp;</span>)
 }
 class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   protected readUpdate(update):{}{
@@ -145,7 +143,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
      this.props.facets.updateTargetState(this.props.title,text);
   };
   render(){
-    return (<span>
+    return (<div  className={'textualField'}>
         <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
           startText={this.state.text}
@@ -153,7 +151,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
           cols={this.props.cols}
           disabled={!this.state.live}
         />
-      </span>
+      </div>
     );
   }
 }
@@ -163,11 +161,11 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
   }
   render(){
     const disabled=!this.state.live;
-    return (<span>
+    return (<div>
       <LabelRubric text={this.props.title} disabled={disabled}/>
       &nbsp;
       <LabelText text={this.state.text} disabled={disabled}/>
-        </span>)
+        </div>)
   }
 }
 class TriggerButton extends Facet<TargetValues,TargetValues>{
@@ -185,19 +183,18 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
     </button>)
   }
 }
-function LabelText (props:LabelValues){
-    return (<span className={props.disabled?'textDisabled':''}>
-    {props.text}&nbsp;</span>)
+function PanelRubric (props:LabelValues){
+  const text=props.text,
+    className=props.classes+' '+(props.disabled?'rubricDisabled':'rubric');
+  return <div className={className}>
+    {text}&nbsp;</div>
 }
 function Panel(props){
   const children=props.children.map((child)=>{
-    return <div>{child}</div>
+    return <div className={'panelMount'}>{child}</div>
   });
-  const fontLarge={
-
-  };
   return <div className={'panel'}>
-    <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric '}/>
+    <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric'}/>
     {children}
   </div>
 }

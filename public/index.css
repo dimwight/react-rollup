@@ -1,23 +1,27 @@
 body {
   margin: 0;
-  padding: 5px;
+  padding: 10px;
   font-family: Calibri,serif;
 }
-.caption{
+.rubric{
   font-weight: bold;
 }
-.captionDisabled{
+.rubricDisabled{
   font-weight: bold;
   color: darkgray;
 }
 .textDisabled{
   color: darkgray;
 }
+.textualField{
+  font-style: normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .panelRubric{
   font-size: larger;
   font-style: italic;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 div.panel{
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px;}
