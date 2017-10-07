@@ -35,6 +35,7 @@ interface IndexingValues extends TargetValues{
 interface LabelValues{
   text:string
   disabled:boolean
+  target?:string
 }
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
@@ -58,6 +59,12 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     return {state:update}
   }
 }
+function LabelRubric (props:LabelValues){
+  return (<label
+    htmlFor={props.target}
+    className={(props.disabled?'captionDisabled':'caption')
+  }>{props.text}&nbsp;</label>)
+}
 class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   protected readUpdate(update):{}{
     return {set:update}
@@ -72,8 +79,9 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   };
   render(){
     return (<span>
-      <LabelRubric text={this.props.title} disabled={!this.state.live}/>
+      <LabelRubric text={this.props.title} disabled={!this.state.live} target={this.props.title}/>
         <input
+          id={this.props.title}
           type="checkbox"
           onChange={this.onChange}
           checked={this.state.set}
@@ -170,11 +178,6 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
 function LabelText (props:LabelValues){
     return (<span className={props.disabled?'textDisabled':''}>
     {props.text}&nbsp;</span>)
-}
-function LabelRubric (props:LabelValues){
-  return (<span className={
-    (props.disabled?'captionDisabled':'caption')
-  }>{props.text}&nbsp;</span>)
 }
 function Panel(props){
   const children=props.children.map((child)=>{
