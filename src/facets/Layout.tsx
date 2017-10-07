@@ -224,7 +224,7 @@ function buildTrigger(facets:Facets){
     document.getElementById('root'),
   )
 }
-function Group(props){
+function Panel(props){
   const children=props.children.map((child)=>{
     return <div>{child}</div>
   });
@@ -236,28 +236,28 @@ function buildAll(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND,
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
-    <Group>
+    <Panel>
       <TextualField title={first} facets={facets}/>
       <TextualLabel title={first} facets={facets}/>
       <TextualField title={second} facets={facets} cols={40}/>
       <TextualLabel title={second} facets={facets}/>
-    </Group>
-      <div className={'group'}>
-        <IndexingDropdown
-          title={indexing}
-          selectables={facets.getIndexingState(indexing).uiSelectables}
-          facets={facets}/>
-      <div><TextualLabel title={Titles.INDEX} facets={facets}/></div>
-      <div><TextualLabel title={Titles.INDEXED} facets={facets}/></div>
-      </div>
-      <div className={'group'}>
-      <div><TogglingCheckbox title={Titles.TOGGLING} facets={facets}/></div>
+    </Panel>
+    <Panel>
+      <IndexingDropdown
+        title={indexing}
+        selectables={facets.getIndexingState(indexing).uiSelectables}
+        facets={facets}/>
+      <TextualLabel title={Titles.INDEX} facets={facets}/>
+      <TextualLabel title={Titles.INDEXED} facets={facets}/>
+    </Panel>
+    <Panel>
+      <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
       <TextualLabel title={Titles.TOGGLED} facets={facets}/>
-    </div>
-    <div className={'group'}>
-      <div><TriggerButton title={Titles.TRIGGER} facets={facets}/></div>
-      <div><TextualLabel title={Titles.TRIGGEREDS} facets={facets}/></div>
-    </div>
+    </Panel>
+    <Panel>
+      <TriggerButton title={Titles.TRIGGER} facets={facets}/>
+      <TextualLabel title={Titles.TRIGGEREDS} facets={facets}/>
+    </Panel>
     </div>,
     document.getElementById('root'),
   );
