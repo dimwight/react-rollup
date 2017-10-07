@@ -116,31 +116,33 @@
       <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="136">
+              <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="23" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#trace#0" expanded="false" />
+                <element signature="n#Titles#0" expanded="false" />
                 <element signature="n#Test#0" expanded="false" />
                 <element signature="n#!!block;n#newTextualTree#0" expanded="false" />
                 <element signature="e#829#1056#0" expanded="false" />
                 <element signature="e#925#1049#0" expanded="false" />
                 <element signature="e#1116#1178#0" expanded="false" />
+                <element signature="n#!!block;n#newTogglingTest#0" expanded="false" />
+                <element signature="e#1329#1489#0" expanded="false" />
+                <element signature="e#1396#1485#0" expanded="false" />
+                <element signature="e#1559#1671#0" expanded="false" />
+                <element signature="e#1582#1667#0" expanded="false" />
                 <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
                 <element signature="e#1827#1955#0" expanded="false" />
                 <element signature="e#2005#2078#0" expanded="false" />
                 <element signature="e#2132#2230#0" expanded="false" />
-                <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
-                <element signature="e#2413#2475#0" expanded="false" />
-                <element signature="e#2447#2471#0" expanded="false" />
-                <element signature="e#2532#2599#0" expanded="false" />
-                <element signature="e#2555#2595#0" expanded="false" />
                 <element signature="n#!!block;n#newAllTest#0" expanded="false" />
                 <element signature="n#SurfaceCore#0" expanded="false" />
                 <element signature="n#!!block;n#buildSurface#0;n#SurfaceCore#0" expanded="false" />
+                <element signature="n#SimpleSurface#0" expanded="false" />
                 <element signature="n#!!block;n#constructor#0;n#SimpleSurface#0" expanded="false" />
                 <element signature="n#!!block;n#newTargetTree#0;n#SimpleSurface#0" expanded="false" />
-                <element signature="e#3682#3733#0" expanded="false" />
+                <element signature="n#!!block;n#buildLayout#0;n#SimpleSurface#0" expanded="false" />
+                <element signature="e#3755#3806#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1196,31 +1198,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="23" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#trace#0" expanded="false" />
+            <element signature="n#Titles#0" expanded="false" />
             <element signature="n#Test#0" expanded="false" />
             <element signature="n#!!block;n#newTextualTree#0" expanded="false" />
             <element signature="e#829#1056#0" expanded="false" />
             <element signature="e#925#1049#0" expanded="false" />
             <element signature="e#1116#1178#0" expanded="false" />
+            <element signature="n#!!block;n#newTogglingTest#0" expanded="false" />
+            <element signature="e#1329#1489#0" expanded="false" />
+            <element signature="e#1396#1485#0" expanded="false" />
+            <element signature="e#1559#1671#0" expanded="false" />
+            <element signature="e#1582#1667#0" expanded="false" />
             <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
             <element signature="e#1827#1955#0" expanded="false" />
             <element signature="e#2005#2078#0" expanded="false" />
             <element signature="e#2132#2230#0" expanded="false" />
-            <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
-            <element signature="e#2413#2475#0" expanded="false" />
-            <element signature="e#2447#2471#0" expanded="false" />
-            <element signature="e#2532#2599#0" expanded="false" />
-            <element signature="e#2555#2595#0" expanded="false" />
             <element signature="n#!!block;n#newAllTest#0" expanded="false" />
             <element signature="n#SurfaceCore#0" expanded="false" />
             <element signature="n#!!block;n#buildSurface#0;n#SurfaceCore#0" expanded="false" />
+            <element signature="n#SimpleSurface#0" expanded="false" />
             <element signature="n#!!block;n#constructor#0;n#SimpleSurface#0" expanded="false" />
             <element signature="n#!!block;n#newTargetTree#0;n#SimpleSurface#0" expanded="false" />
-            <element signature="e#3682#3733#0" expanded="false" />
+            <element signature="n#!!block;n#buildLayout#0;n#SimpleSurface#0" expanded="false" />
+            <element signature="e#3755#3806#0" expanded="false" />
           </folding>
         </state>
       </provider>

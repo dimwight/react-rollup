@@ -71,6 +71,8 @@ function newTriggerTest(){
   }),
   triggered=facets.newTextualTarget(Titles.TRIGGEREDS,{
     getText:(title)=>{
+      if(triggers>4)
+        facets.setTargetLive(Titles.TRIGGER,false);
       return triggers.toString()
     }
   });
@@ -115,7 +117,7 @@ class SimpleSurface extends SurfaceCore{
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.Toggling).buildSurface();
+  new SimpleSurface(Test.Trigger).buildSurface();
 }
 
 
