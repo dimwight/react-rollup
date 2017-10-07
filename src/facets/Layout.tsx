@@ -36,12 +36,6 @@ interface LabelValues{
   text:string
   disabled:boolean
 }
-class LabelText extends React.Component<LabelValues>{
-  render(){
-    return (<span className={this.props.disabled?'textDisabled':''}>
-    {this.props.text}&nbsp;</span>)
-  }
-}
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
   constructor(props){
@@ -90,8 +84,10 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
 }
 class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
-    const selectables=this.props.facets.getIndexingState(this.props.title).uiSelectables
-    return {index:update,selectables:selectables};
+    return {
+      index:update,
+      selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
+    }
   }
   onChange=(e)=>{
     const value=e.target.value,selectables=this.state.selectables;
@@ -171,27 +167,31 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
     </button>)
   }
 }
-class LabelRubric extends React.Component<LabelValues>{
-  render(){
-    return (<span className={
-      (this.props.disabled?'captionDisabled':'caption')
-    }>
-    {this.props.text}&nbsp;</span>)
-  }
+function LabelText (props:LabelValues){
+    return (<span className={props.disabled?'textDisabled':''}>
+    {props.text}&nbsp;</span>)
+}
+function LabelRubric (props:LabelValues){
+  return (<span className={
+    (props.disabled?'captionDisabled':'caption')
+  }>{props.text}&nbsp;</span>)
 }
 function Panel(props){
   const children=props.children.map((child)=>{
     return <div>{child}</div>
   });
+  const fontLarge={
+
+  };
   return <div className={'group'}>
-    <LabelRubric text={props.text} disabled={false}/>
+    <LabelRubric text={props.rubric} disabled={false}/>
     {children}
   </div>
 }
 function buildTextual(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
   ReactDOM.render(
-    <Panel text={Test.Textual}>
+    <Panel rubric={Test.Textual}>
       <TextualField title={first} facets={facets}/>
       <TextualLabel title={first} facets={facets}/>
       <TextualField title={second} facets={facets} cols={40}/>
@@ -237,22 +237,22 @@ function buildAll(facets:Facets){
   const textual1=Titles.TEXTUAL_FIRST,textual2=Titles.TEXTUAL_SECOND,
     indexing=Titles.INDEXING;
   ReactDOM.render(<div>
-    <Panel text={Test.Textual}>
+    <Panel rubric={Test.Textual}>
       <TextualField title={textual1} facets={facets}/>
       <TextualLabel title={textual1} facets={facets}/>
       <TextualField title={textual2} facets={facets} cols={40}/>
       <TextualLabel title={textual2} facets={facets}/>
     </Panel>
-    <Panel text={Test.Indexing}>
+    <Panel rubric={Test.Indexing}>
       <IndexingDropdown title={indexing} facets={facets}/>
       <TextualLabel title={Titles.INDEX} facets={facets}/>
       <TextualLabel title={Titles.INDEXED} facets={facets}/>
     </Panel>
-    <Panel text={Test.Toggling}>
+    <Panel rubric={Test.Toggling}>
       <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
       <TextualLabel title={Titles.TOGGLED} facets={facets}/>
     </Panel>
-    <Panel text={Test.Trigger}>
+    <Panel rubric={Test.Trigger}>
       <TriggerButton title={Titles.TRIGGER} facets={facets}/>
       <TextualLabel title={Titles.TRIGGEREDS} facets={facets}/>
     </Panel>
