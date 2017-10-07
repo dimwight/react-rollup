@@ -42,14 +42,6 @@ class LabelText extends React.Component<LabelValues>{
     {this.props.text}&nbsp;</span>)
   }
 }
-class LabelRubric extends React.Component<LabelValues>{
-  render(){
-    return (<span className={
-      (this.props.disabled?'captionDisabled':'caption')
-    }>
-    {this.props.text}&nbsp;</span>)
-  }
-}
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
   constructor(props){
@@ -179,10 +171,27 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
     </button>)
   }
 }
+class LabelRubric extends React.Component<LabelValues>{
+  render(){
+    return (<span className={
+      (this.props.disabled?'captionDisabled':'caption')
+    }>
+    {this.props.text}&nbsp;</span>)
+  }
+}
+function Panel(props){
+  const children=props.children.map((child)=>{
+    return <div>{child}</div>
+  });
+  return <div className={'group'}>
+    <LabelRubric text={Test.Textual.toString()} disabled={false}/>
+    {children}
+  </div>
+}
 function buildTextual(facets:Facets){
   const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
   ReactDOM.render(
-    <Panel>
+    <Panel >
       <TextualField title={first} facets={facets}/>
       <TextualLabel title={first} facets={facets}/>
       <TextualField title={second} facets={facets} cols={40}/>
@@ -223,14 +232,6 @@ function buildTrigger(facets:Facets){
     </Panel>,
     document.getElementById('root'),
   )
-}
-function Panel(props){
-  const children=props.children.map((child)=>{
-    return <div>{child}</div>
-  });
-  return <div className={'group'}>
-    {children}
-    </div>
 }
 function buildAll(facets:Facets){
   const textual1=Titles.TEXTUAL_FIRST,textual2=Titles.TEXTUAL_SECOND,

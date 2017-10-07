@@ -19,7 +19,7 @@ export namespace Titles{
   TOGGLE_START=false,
   NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-export enum Test{Textual,Toggling,Indexing,Trigger,All}
+export enum Test{Textual='Textual',Toggling='Toggling',Indexing='Indexing',Trigger='Trigger',All='All'}
 const facets:Facets=newInstance(false);
 function newTextualTree():Target{
   const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
