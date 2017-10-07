@@ -205,7 +205,7 @@ function buildToggling(facets:Facets){
   ReactDOM.render(
     <span>
       <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
-      <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+      <div><TextualLabel title={Titles.TOGGLED} facets={facets}/></div>
     </span>,
     document.getElementById('root'),
   );

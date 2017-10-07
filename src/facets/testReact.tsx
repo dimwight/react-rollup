@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   Facets,
-  Target,
   newInstance,
-  TargetCoupler,
+  Target,
+  TogglingCoupler
 } from 'facets-js';
 import {Layout} from './Layout';
 function trace(text){
@@ -36,8 +36,11 @@ function newTextualTree():Target{
 }
 function newTogglingTest(){
   const toggling=facets.newTogglingTarget(Titles.TOGGLING,{
-    passSet:Titles.TOGGLE_START
-  }),
+    passSet:Titles.TOGGLE_START,
+    targetStateUpdated:(title)=>{
+      facets.setTargetLive(Titles.TOGGLED,facets.getTargetState(title)as boolean)
+    }
+  }as TogglingCoupler),
   toggled=facets.newTextualTarget(Titles.TOGGLED,{
     getText:(title)=>{
       const set:boolean=facets.getTargetState(Titles.TOGGLING)as boolean;
@@ -102,15 +105,17 @@ class SimpleSurface extends SurfaceCore{
         :this.test===Test.Indexing?indexing(): all();
   }
   buildLayout(){
-    [Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
+    if(false)[Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
       .forEach((title)=>{
         facets.setTargetLive(title,false)
       });
+    if(this.test===Test.Toggling)facets.setTargetLive(Titles.TOGGLED,
+      facets.getTargetState(Titles.TOGGLING)as boolean)
     new Layout(this.test).build(facets);
   }
 }
 export function buildSurface(){
-  new SimpleSurface(Test.All).buildSurface();
+  new SimpleSurface(Test.Toggling).buildSurface();
 }
 
 

@@ -5,16 +5,13 @@ body {
 }
 .caption{
   font-weight: bold;
-  /*font-style: italic;*/
 }
 .captionDisabled{
   font-weight: bold;
   color: darkgray;
-  /*font-style: italic;*/
 }
 .textDisabled{
   color: darkgray;
-  /*font-style: italic;*/
 }
 div.spaced{
   margin-top: 10px;
