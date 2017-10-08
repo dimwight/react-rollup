@@ -18,7 +18,7 @@ export namespace SimpleTitles{
     TOGGLE_START=false,
     NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-namespace SelectingTitles {
+export namespace SelectingTitles {
   export const FRAME='Selecting',
     SELECT='Select Content',
     NEW='New',
@@ -155,7 +155,12 @@ newTargetTree(){
   return this.test===Test.Selecting?newSelectingTest():all();
 }
 buildLayout(){
-  if(true)[SimpleTitles.TEXTUAL_FIRST,SimpleTitles.INDEXING,SimpleTitles.TOGGLING,SimpleTitles.TRIGGER,SimpleTitles.TRIGGEREDS]
+  if(this.test===Test.All)[
+    SimpleTitles.TEXTUAL_FIRST,
+    SimpleTitles.INDEXING,
+    SimpleTitles.TOGGLING,
+    SimpleTitles.TRIGGER,
+    SimpleTitles.TRIGGEREDS]
     .forEach((title)=>{
       facets.setTargetLive(title,false)
     });
@@ -166,7 +171,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-new SurfaceWorks(Test.Selecting).buildSurface();
+  new SurfaceWorks(Test.Textual).buildSurface();
 }
 
 

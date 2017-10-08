@@ -1814,6 +1814,7 @@ class Facets extends Tracer {
         })(indexing);
         p.frame = new Facets.Facets$7(this, p.title, indexing, p);
         this.trace$java_lang_String$java_lang_Object(" > Built frame ", p.frame);
+        return p.frame
     }
     buildTargeterTree(targetTree) {
         this.trace$java_lang_String$java_lang_Object(" > Initial retargeting on ", targetTree);

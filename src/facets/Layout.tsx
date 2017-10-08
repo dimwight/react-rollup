@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Facets,SimpleState} from 'facets-js';
 import {SmartTextField} from '../widget/_exports';
-import {SimpleTitles,Test} from './testReact';
+import {SimpleTitles,SelectingTitles,Test} from './testReact';
 import {traceThing} from '../Util/Bits';
 import './Layout.css';
 export class Layout{
@@ -12,7 +12,9 @@ export class Layout{
     else if(this.test===Test.Indexing) buildIndexing(facets);
     else if(this.test===Test.Toggling) buildToggling(facets);
     else if(this.test===Test.Trigger) buildTrigger(facets);
-    else buildAll(facets);
+    else if(this.test===Test.All)buildAll(facets);
+    else if(false)traceThing('build',{test:Test.Selecting});
+    else buildSelecting(facets)
   }
 }
 interface TargetValues{
@@ -34,7 +36,7 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props,updateWithLive,);
     else this.setState(updateWithLive);
-    traceThing(this.props.title+'.facetUpdated',updateWithLive)
+    if(true)traceThing(this.props.title+'.facetUpdated',updateWithLive)
   };
   componentDidMount(){
     this.didMount=true;
@@ -189,7 +191,7 @@ function PanelRubric (props:LabelValues){
   return <div className={className}>
     {text}&nbsp;</div>
 }
-function Panel(props){
+function RowPanel(props){
   const children=props.children.map((child)=>{
     return <div className={'panelMount'}>{child}</div>
   });
@@ -201,21 +203,21 @@ function Panel(props){
 function buildTextual(facets:Facets){
   const first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(
-    <Panel rubric={Test.Textual}>
+    <RowPanel rubric={Test.Textual}>
       <TextualField title={first} facets={facets}/>
-      <TextualLabel title={first} facets={facets}/>
+      {/*<TextualLabel title={first} facets={facets}/>*/}
       <TextualField title={second} facets={facets} cols={40}/>
-      <TextualLabel title={second} facets={facets}/>
-    </Panel>,
+      {/*<TextualLabel title={second} facets={facets}/>*/}
+    </RowPanel>,
     document.getElementById('root'),
   );
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
-    <Panel>
+    <RowPanel>
       <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
       <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
-    </Panel>,
+    </RowPanel>,
     document.getElementById('root'),
   );
 
@@ -223,23 +225,23 @@ function buildToggling(facets:Facets){
 function buildIndexing(facets:Facets){
   const indexing=SimpleTitles.INDEXING;
   ReactDOM.render(
-    <Panel>
+    <RowPanel>
       <IndexingDropdown
         title={indexing}
         selectables={facets.getIndexingState(indexing).uiSelectables}
         facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
-    </Panel>,
+    </RowPanel>,
     document.getElementById('root'),
   );
 }
 function buildTrigger(facets:Facets){
   ReactDOM.render(
-    <Panel>
+    <RowPanel>
       <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
       <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
-    </Panel>,
+    </RowPanel>,
     document.getElementById('root'),
   )
 }
@@ -247,26 +249,36 @@ function buildAll(facets:Facets){
   const textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND,
     indexing=SimpleTitles.INDEXING;
   ReactDOM.render(<div>
-    <Panel rubric={Test.Textual}>
+    <RowPanel rubric={Test.Textual}>
       <TextualField title={textual1} facets={facets}/>
       <TextualLabel title={textual1} facets={facets}/>
       <TextualField title={textual2} facets={facets} cols={40}/>
       <TextualLabel title={textual2} facets={facets}/>
-    </Panel>
-    <Panel rubric={Test.Indexing}>
+    </RowPanel>
+    <RowPanel rubric={Test.Indexing}>
       <IndexingDropdown title={indexing} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
-    </Panel>
-    <Panel rubric={Test.Toggling}>
+    </RowPanel>
+    <RowPanel rubric={Test.Toggling}>
       <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
       <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
-    </Panel>
-    <Panel rubric={Test.Trigger}>
+    </RowPanel>
+    <RowPanel rubric={Test.Trigger}>
       <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
       <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
-    </Panel>
+    </RowPanel>
     </div>,
+    document.getElementById('root'),
+  );
+}
+function buildSelecting(facets:Facets){
+  ReactDOM.render(<RowPanel rubric={Test.Selecting}>
+      <IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
+      <TextualField title={SelectingTitles.EDIT} facets={facets}/>
+      <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
+    </RowPanel>,
     document.getElementById('root'),
   );
 }
