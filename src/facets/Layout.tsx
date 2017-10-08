@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Facets,SimpleState} from 'facets-js';
 import {SmartTextField} from '../widget/_exports';
-import {Titles,Test} from './testReact';
+import {SimpleTitles,Test} from './testReact';
 import {traceThing} from '../Util/Bits';
 import './Layout.css';
 export class Layout{
@@ -199,7 +199,7 @@ function Panel(props){
   </div>
 }
 function buildTextual(facets:Facets){
-  const first=Titles.TEXTUAL_FIRST,second=Titles.TEXTUAL_SECOND;
+  const first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(
     <Panel rubric={Test.Textual}>
       <TextualField title={first} facets={facets}/>
@@ -213,23 +213,23 @@ function buildTextual(facets:Facets){
 function buildToggling(facets:Facets){
   ReactDOM.render(
     <Panel>
-      <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
-      <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+      <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
+      <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
     </Panel>,
     document.getElementById('root'),
   );
 
 }
 function buildIndexing(facets:Facets){
-  const indexing=Titles.INDEXING;
+  const indexing=SimpleTitles.INDEXING;
   ReactDOM.render(
     <Panel>
       <IndexingDropdown
         title={indexing}
         selectables={facets.getIndexingState(indexing).uiSelectables}
         facets={facets}/>
-      <TextualLabel title={Titles.INDEX} facets={facets}/>
-      <TextualLabel title={Titles.INDEXED} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
     </Panel>,
     document.getElementById('root'),
   );
@@ -237,15 +237,15 @@ function buildIndexing(facets:Facets){
 function buildTrigger(facets:Facets){
   ReactDOM.render(
     <Panel>
-      <TriggerButton title={Titles.TRIGGER} facets={facets}/>
-      <TextualLabel title={Titles.TRIGGEREDS} facets={facets}/>
+      <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
+      <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
     </Panel>,
     document.getElementById('root'),
   )
 }
 function buildAll(facets:Facets){
-  const textual1=Titles.TEXTUAL_FIRST,textual2=Titles.TEXTUAL_SECOND,
-    indexing=Titles.INDEXING;
+  const textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND,
+    indexing=SimpleTitles.INDEXING;
   ReactDOM.render(<div>
     <Panel rubric={Test.Textual}>
       <TextualField title={textual1} facets={facets}/>
@@ -255,16 +255,16 @@ function buildAll(facets:Facets){
     </Panel>
     <Panel rubric={Test.Indexing}>
       <IndexingDropdown title={indexing} facets={facets}/>
-      <TextualLabel title={Titles.INDEX} facets={facets}/>
-      <TextualLabel title={Titles.INDEXED} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
     </Panel>
     <Panel rubric={Test.Toggling}>
-      <TogglingCheckbox title={Titles.TOGGLING} facets={facets}/>
-      <TextualLabel title={Titles.TOGGLED} facets={facets}/>
+      <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
+      <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
     </Panel>
     <Panel rubric={Test.Trigger}>
-      <TriggerButton title={Titles.TRIGGER} facets={facets}/>
-      <TextualLabel title={Titles.TRIGGEREDS} facets={facets}/>
+      <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
+      <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
     </Panel>
     </div>,
     document.getElementById('root'),

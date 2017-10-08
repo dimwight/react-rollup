@@ -3,76 +3,93 @@ import {
   Facets,
   newInstance,
   Target,
-  TogglingCoupler
+  TogglingCoupler,
 } from 'facets-js';
 import {Layout} from './Layout';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
-export namespace Titles{
+export namespace SimpleTitles{
   export const TEXTUAL_FIRST='First',TEXTUAL_SECOND='Second',
-  INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
-  INDEX='Index',INDEXED='Indexed',INDEX_START=0,
-  INDEXABLES=[TEXTUAL_FIRST,TEXTUAL_SECOND],
-  TOGGLING='Click to toggle',TOGGLED='Toggling state',
-  TRIGGER='Click Me!',TRIGGEREDS='Button presses',
-  TOGGLE_START=false,
-  NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
+    INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
+    INDEX='Index',INDEXED='Indexed',INDEX_START=0,
+    INDEXABLES=[TEXTUAL_FIRST,TEXTUAL_SECOND],
+    TOGGLING='Click to toggle',TOGGLED='Toggling state',
+    TRIGGER='Click Me!',TRIGGEREDS='Button presses',
+    TOGGLE_START=false,
+    NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
-export enum Test{Textual='Textual',Toggling='Toggling',Indexing='Indexing',Trigger='Trigger',All='All'}
+namespace SelectingTitles {
+  export const FRAME='Selecting',
+    SELECT='Select Content',
+    NEW='New',
+    UP='Up',
+    DOWN='Down',
+    DELETE='Delete',
+    EDIT='Edit Selection',
+    CHARS='Characters';
+}
+export enum Test{
+  Textual='Textual',
+  Toggling='Toggling',
+  Indexing='Indexing',
+  Trigger='Trigger',
+  All='All',
+  Selecting='Selecting'
+}
 const facets:Facets=newInstance(false);
 function newTextualTree():Target{
-  const first=facets.newTextualTarget(Titles.TEXTUAL_FIRST,{
-      passText:'Some text for '+Titles.TEXTUAL_FIRST,
+  const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
+      passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
-        facets.updateTargetState(Titles.TEXTUAL_SECOND,
-          Titles.TEXTUAL_FIRST+' has changed to: '+state);
+        facets.updateTargetState(SimpleTitles.TEXTUAL_SECOND,
+          SimpleTitles.TEXTUAL_FIRST+' has changed to: '+state);
       },
     }),
-    second=facets.newTextualTarget(Titles.TEXTUAL_SECOND,{
-      passText:'Some text for '+Titles.TEXTUAL_SECOND,
+    second=facets.newTextualTarget(SimpleTitles.TEXTUAL_SECOND,{
+      passText:'Some text for '+SimpleTitles.TEXTUAL_SECOND,
     });
   return facets.newTargetGroup('TextualTest',first,second);
 }
 function newTogglingTest(){
-  const toggling=facets.newTogglingTarget(Titles.TOGGLING,{
-    passSet:Titles.TOGGLE_START,
+  const toggling=facets.newTogglingTarget(SimpleTitles.TOGGLING,{
+    passSet:SimpleTitles.TOGGLE_START,
     targetStateUpdated:(title)=>{
-      facets.setTargetLive(Titles.TOGGLED,facets.getTargetState(title)as boolean)
+      facets.setTargetLive(SimpleTitles.TOGGLED,facets.getTargetState(title)as boolean)
     }
   }as TogglingCoupler),
-  toggled=facets.newTextualTarget(Titles.TOGGLED,{
+  toggled=facets.newTextualTarget(SimpleTitles.TOGGLED,{
     getText:(title)=>{
-      return facets.getTargetState(Titles.TOGGLING)as boolean?'Set':'Not set'
+      return facets.getTargetState(SimpleTitles.TOGGLING)as boolean?'Set':'Not set'
     }
   });
   return facets.newTargetGroup('TogglingTest',toggling,toggled);
 }
 function newIndexingTest(){
-  const indexing=facets.newIndexingTarget(Titles.INDEXING,{
+  const indexing=facets.newIndexingTarget(SimpleTitles.INDEXING,{
       passIndex:0,
-      getUiSelectables:(title)=> Titles.INDEXABLES,
-      getIndexables: (title)=> Titles.INDEXABLES,
+      getUiSelectables:(title)=> SimpleTitles.INDEXABLES,
+      getIndexables: (title)=> SimpleTitles.INDEXABLES,
     }),
-    index=facets.newTextualTarget(Titles.INDEX,{
-      getText:(title)=>''+facets.getTargetState(Titles.INDEXING),
+    index=facets.newTextualTarget(SimpleTitles.INDEX,{
+      getText:(title)=>''+facets.getTargetState(SimpleTitles.INDEXING),
     }),
-    indexed=facets.newTextualTarget(Titles.INDEXED,{
-      getText:(title)=>Titles.INDEXABLES[facets.getTargetState(Titles.INDEXING)as number],
+    indexed=facets.newTextualTarget(SimpleTitles.INDEXED,{
+      getText:(title)=>SimpleTitles.INDEXABLES[facets.getTargetState(SimpleTitles.INDEXING)as number],
     });
   return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
 function newTriggerTest(){
   let triggers:number=0;
-  const trigger=facets.newTriggerTarget(Titles.TRIGGER,{
+  const trigger=facets.newTriggerTarget(SimpleTitles.TRIGGER,{
     targetStateUpdated:(title)=>{
       if(++triggers>4)facets.setTargetLive(title,false);
     }
   }),
-  triggered=facets.newTextualTarget(Titles.TRIGGEREDS,{
+  triggered=facets.newTextualTarget(SimpleTitles.TRIGGEREDS,{
     getText:(title)=>{
       const count=triggers.toString();
-      return !facets.isTargetLive(Titles.TRIGGER)?
+      return !facets.isTargetLive(SimpleTitles.TRIGGER)?
         `No more than ${count}!`:count
     }
   });
@@ -104,13 +121,13 @@ class SimpleSurface extends SurfaceCore{
     return all();
   }
   buildLayout(){
-    if(true)[Titles.TEXTUAL_FIRST,Titles.INDEXING,Titles.TOGGLING,Titles.TRIGGER,Titles.TRIGGEREDS]
+    if(true)[SimpleTitles.TEXTUAL_FIRST,SimpleTitles.INDEXING,SimpleTitles.TOGGLING,SimpleTitles.TRIGGER,SimpleTitles.TRIGGEREDS]
       .forEach((title)=>{
         facets.setTargetLive(title,false)
       });
     if(this.test===Test.Toggling||this.test===Test.All)
-      facets.setTargetLive(Titles.TOGGLED,
-      facets.getTargetState(Titles.TOGGLING)as boolean);
+      facets.setTargetLive(SimpleTitles.TOGGLED,
+      facets.getTargetState(SimpleTitles.TOGGLING)as boolean);
     new Layout(this.test).build(facets);
   }
 }
