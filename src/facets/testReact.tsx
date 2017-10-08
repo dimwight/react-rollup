@@ -2,8 +2,7 @@ import React from 'react';
 import {
   Facets,
   newInstance,
-  Target,
-  TogglingCoupler,
+  Target
 } from 'facets-js';
 import {Layout} from './Layout';
 function trace(text){
@@ -57,7 +56,7 @@ function newTogglingTest(){
     targetStateUpdated:(title)=>{
       facets.setTargetLive(SimpleTitles.TOGGLED,facets.getTargetState(title)as boolean)
     }
-  }as TogglingCoupler),
+  }),
   toggled=facets.newTextualTarget(SimpleTitles.TOGGLED,{
     getText:(title)=>{
       return facets.getTargetState(SimpleTitles.TOGGLING)as boolean?'Set':'Not set'
@@ -95,7 +94,7 @@ function newTriggerTest(){
   });
   return facets.newTargetGroup('TriggerTest',trigger,triggered);
 }
-function newAllTest(){
+function newAllSimplesTest(){
   return facets.newTargetGroup('AllTest',
     newTextualTree(),newIndexingTest(),newTogglingTest(),newTriggerTest());
 }
@@ -111,28 +110,63 @@ abstract class SurfaceCore{
   abstract newTargetTree():Target;
   abstract buildLayout();
 }
-class SimpleSurface extends SurfaceCore{
-  constructor(private test:Test){
-    super();
-  }
-  newTargetTree(){
-    const textual=newTextualTree,indexing=newIndexingTest,
-      toggling=newTogglingTest,trigger=newTriggerTest(),all=newAllTest;
-    return all();
-  }
-  buildLayout(){
-    if(true)[SimpleTitles.TEXTUAL_FIRST,SimpleTitles.INDEXING,SimpleTitles.TOGGLING,SimpleTitles.TRIGGER,SimpleTitles.TRIGGEREDS]
-      .forEach((title)=>{
-        facets.setTargetLive(title,false)
-      });
-    if(this.test===Test.Toggling||this.test===Test.All)
-      facets.setTargetLive(SimpleTitles.TOGGLED,
-      facets.getTargetState(SimpleTitles.TOGGLING)as boolean);
-    new Layout(this.test).build(facets);
-  }
+interface TextContent {
+  text? : string;
+}
+function newSelectingTest():Target{
+  const list : TextContent[]=[
+    {text: 'Hello world!'},
+    {text: 'Hello Dolly!'},
+    {text: 'Hello, good evening and welcome!'},
+  ],
+  frame={
+    title: SelectingTitles.FRAME,
+    indexingTitle: SelectingTitles.SELECT,
+    content: list,
+    getUiSelectables: () => list.map((item)=>item.text)as string[],
+    newEditTargets: (indexed:TextContent) => [
+        facets.newTextualTarget(SelectingTitles.EDIT, {
+          passText: indexed.text,
+          targetStateUpdated: (title, state) => indexed.text = state as string
+        }),
+        facets.newTextualTarget(SelectingTitles.CHARS, {
+          getText: (title) => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
+        })
+      ],
+    newFrameTargets:()=>[
+      facets.newTextualTarget(SimpleTitles.INDEXED,{
+        getText:(titley)=>{
+          let index=facets.getTargetState(SelectingTitles.SELECT)as number;
+          return false&&index===null?"No target yet":list[index].text;
+          }
+        })
+      ]
+    };
+  return facets.buildSelectingFrame(frame);
+}
+class SurfaceWorks extends SurfaceCore{
+constructor(private test:Test){
+  super();
+}
+newTargetTree(){
+  const textual=newTextualTree,indexing=newIndexingTest,
+    toggling=newTogglingTest,trigger=newTriggerTest,
+    all=newAllSimplesTest;
+  return this.test===Test.Selecting?newSelectingTest():all();
+}
+buildLayout(){
+  if(true)[SimpleTitles.TEXTUAL_FIRST,SimpleTitles.INDEXING,SimpleTitles.TOGGLING,SimpleTitles.TRIGGER,SimpleTitles.TRIGGEREDS]
+    .forEach((title)=>{
+      facets.setTargetLive(title,false)
+    });
+  if(this.test===Test.Toggling||this.test===Test.All)
+    facets.setTargetLive(SimpleTitles.TOGGLED,
+    facets.getTargetState(SimpleTitles.TOGGLING)as boolean);
+  new Layout(this.test).build(facets);
+}
 }
 export function buildSurface(){
-  new SimpleSurface(Test.All).buildSurface();
+new SurfaceWorks(Test.Selecting).buildSurface();
 }
 
 
