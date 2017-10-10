@@ -125,7 +125,7 @@ class SearchBar extends React.Component<SearchBarProps> {
       <div>
         <SmartTextField
           hint={'Search...'}
-          getStartText={this.props.filter}
+          startText={this.props.filter}
           onEnter={this.props.onFilterChange}
         />
         <p><input

@@ -13,7 +13,7 @@ export class Layout{
     else if(this.test===Test.Toggling) buildToggling(facets);
     else if(this.test===Test.Trigger) buildTrigger(facets);
     else if(this.test===Test.All)buildAll(facets);
-    else if(false)traceThing('build',{test:Test.Selecting});
+    else if(false)traceThing('build',{test:Test.SelectingBasic});
     else buildSelecting(facets)
   }
 }
@@ -276,7 +276,7 @@ function buildAll(facets:Facets){
   );
 }
 function buildSelecting(facets:Facets){
-  ReactDOM.render(<RowPanel rubric={Test.Selecting}>
+  ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
       <IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets}/>
