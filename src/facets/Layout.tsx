@@ -144,13 +144,13 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   onFieldEnter=(text)=>{
      this.props.facets.updateTargetState(this.props.title,text);
   };
-  getLatestText=()=>this.state.text;
+  getStateText=()=>this.state.text;
   render(){
     traceThing('TextualField.render',this.state);
     return (<div  className={'textualField'}>
         <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
-          startText={this.getLatestText}
+          getStartText={this.getStateText}
           onEnter={this.onFieldEnter}
           cols={this.props.cols}
           disabled={!this.state.live}

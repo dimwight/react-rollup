@@ -3,7 +3,7 @@ import {FnPassString,FnGetString} from './_exports'
 import {traceThing} from '../Util/Bits';
 
 interface TextFieldProps{
-  startText:FnGetString
+  getStartText:FnGetString
   onEnter:FnPassString
   disabled:boolean
   hint?:string
@@ -17,11 +17,11 @@ interface TextFieldState{
 export class SmartTextField extends React.Component<TextFieldProps,TextFieldState> {
   constructor(props){
     super(props);
-    const hint=props.hint;
+    const hint=props.hint,startText=props.getStartText();
     this.state={
-      text:hint?hint:'',
+      text:startText?startText:hint?hint:'',
       disabled:props.disabled,
-      startText:''
+      startText:startText
     }
   }
   setText=(set:string)=>{
@@ -45,15 +45,14 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     }
   };
   onKeyDown=(e)=>{
-    if(e.keyCode!==27)return;
-    traceThing('onKeyDown',this.state);
-    this.setText(this.state.startText)
+    if(e.keyCode===27)this.setText(this.state.startText)
   };
   componentWillReceiveProps(){
-    if(false)this.setState({
-      startText:this.props.startText()
+    const startText=this.props.getStartText();
+    this.setState({
+      startText: startText,
+      text:startText
     });
-    traceThing('componentWillReceiveProps',this.state);
   }
   render() {
     return (
