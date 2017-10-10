@@ -98,7 +98,7 @@ function newAllSimplesTest(){
   return facets.newTargetGroup('AllTest',
     newTextualTree(),newIndexingTest(),newTogglingTest(),newTriggerTest());
 }
-abstract class SurfaceCore{
+abstract class Surface{
   buildSurface(){
     trace('Building surface');
     facets.buildTargeterTree(this.newTargetTree());
@@ -144,7 +144,7 @@ function newSelectingTest():Target{
     };
   return facets.buildSelectingFrame(frame);
 }
-class SurfaceWorks extends SurfaceCore{
+class SurfaceWorks extends Surface{
 constructor(private test:Test){
   super();
 }
