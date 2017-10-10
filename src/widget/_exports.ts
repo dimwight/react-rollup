@@ -1,4 +1,5 @@
-export type BooleanFn=(boolean)=>void
-export type StringFn=(string)=>void
-export * from './TextField';
+export type FnPassBoolean=(boolean)=>void
+export type FnPassString=(string)=>void
+export type FnGetString=()=>string
+export * from './SmartTextField';
 

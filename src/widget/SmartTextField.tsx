@@ -1,10 +1,10 @@
 import React from 'react';
-import {StringFn} from './_exports'
-// import {traceThing} from '../Util/Bits';
+import {FnPassString,FnGetString} from './_exports'
+import {traceThing} from '../Util/Bits';
 
 interface TextFieldProps{
-  startText:string
-  onEnter:StringFn
+  startText:FnGetString
+  onEnter:FnPassString
   disabled:boolean
   hint?:string
   cols?:number
@@ -12,15 +12,16 @@ interface TextFieldProps{
 interface TextFieldState{
   text:string
   disabled:boolean
+  startText?:string
 }
 export class SmartTextField extends React.Component<TextFieldProps,TextFieldState> {
-  private readonly hint:string;
   constructor(props){
     super(props);
-    this.hint=props.hint;
+    const hint=props.hint;
     this.state={
-      text:props.startText||this.hint||'',
-      disabled:props.disabled
+      text:hint?hint:'',
+      disabled:props.disabled,
+      startText:''
     }
   }
   setText=(set:string)=>{
@@ -29,7 +30,8 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     })
   };
   onClick=()=>{
-    if(this.hint&&this.state.text===this.hint)
+    const hint=this.props.hint;
+    if(hint&&this.state.text===hint)
       this.setText('');
   };
   onChange=(e)=>{
@@ -43,8 +45,16 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     }
   };
   onKeyDown=(e)=>{
-    if(e.keyCode===27)this.setText(this.props.startText)
+    if(e.keyCode!==27)return;
+    traceThing('onKeyDown',this.state);
+    this.setText(this.state.startText)
   };
+  componentWillReceiveProps(){
+    if(false)this.setState({
+      startText:this.props.startText()
+    });
+    traceThing('componentWillReceiveProps',this.state);
+  }
   render() {
     return (
       <span>

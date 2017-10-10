@@ -36,7 +36,7 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props,updateWithLive,);
     else this.setState(updateWithLive);
-    if(true)traceThing(this.props.title+'.facetUpdated',updateWithLive)
+    traceThing(this.props.title+'.facetUpdated',updateWithLive)
   };
   componentDidMount(){
     this.didMount=true;
@@ -144,14 +144,17 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   onFieldEnter=(text)=>{
      this.props.facets.updateTargetState(this.props.title,text);
   };
+  getLatestText=()=>this.state.text;
   render(){
+    traceThing('TextualField.render',this.state);
     return (<div  className={'textualField'}>
         <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
-          startText={this.state.text}
+          startText={this.getLatestText}
           onEnter={this.onFieldEnter}
           cols={this.props.cols}
           disabled={!this.state.live}
+          hint={'Hint'}
         />
       </div>
     );

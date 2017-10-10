@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {traceThing} from '../Util/Bits';
 import {
-  StringFn,
-  BooleanFn,
+  FnPassString,
+  FnPassBoolean,
   SmartTextField,
 } from '../widget/_exports'
 
@@ -112,8 +112,8 @@ interface FilterState{
   inStock:boolean
 }
 interface SearchBarProps extends FilterState{
-  onInStockChange:BooleanFn
-  onFilterChange:StringFn
+  onInStockChange:FnPassBoolean
+  onFilterChange:FnPassString
 }
 class SearchBar extends React.Component<SearchBarProps> {
   onCheckBoxChange=(e)=>{
