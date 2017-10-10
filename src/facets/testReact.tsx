@@ -171,7 +171,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.Textual).buildSurface();
+  new SurfaceWorks(Test.Selecting).buildSurface();
 }
 
 
