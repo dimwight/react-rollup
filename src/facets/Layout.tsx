@@ -13,8 +13,8 @@ export class Layout{
     else if(this.test===Test.Toggling) buildToggling(facets);
     else if(this.test===Test.Trigger) buildTrigger(facets);
     else if(this.test===Test.All)buildAll(facets);
-    else if(false)traceThing('build',{test:Test.SelectingBasic});
-    else buildSelecting(facets)
+    else if(this.test===Test.SelectingBasic)buildSelectingBasic(facets);
+    else buildSelectingPlus(facets);
   }
 }
 interface TargetValues{
@@ -126,6 +126,43 @@ class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
       return item===selected?<option selected>{item}</option>
         :<option>{item}</option>
     });
+    const disabled=!this.state.live;
+    return (<span>
+      <LabelRubric text={this.props.title} disabled={disabled}/>
+      <select
+        className={disabled?'textDisabled':''}
+        disabled={disabled}
+        onChange={this.onChange}
+      >{options}</select>
+    </span>);
+  }
+}
+class IndexingList extends Facet<IndexingValues,IndexingValues>{
+  protected readUpdate(update){
+    return {
+      index:update,
+      selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
+    }
+  }
+  onChange=(e)=>{
+    const value=e.target.value,selectables=this.state.selectables;
+    for(let at=0; at<selectables.length; at++){
+      if(selectables[at]===value){
+        this.setState(then=>{
+          this.props.facets.updateTargetState(this.props.title,at);
+          return {index:at};
+        });
+        break;
+      }
+    }
+  };
+  render(){
+    const selectables=this.state.selectables,
+      selected=selectables[(this.state as IndexingValues).index],
+      options=selectables.map((item)=>{
+        return item===selected?<option selected>{item}</option>
+          :<option>{item}</option>
+      });
     const disabled=!this.state.live;
     return (<span>
       <LabelRubric text={this.props.title} disabled={disabled}/>
@@ -275,12 +312,24 @@ function buildAll(facets:Facets){
     document.getElementById('root'),
   );
 }
-function buildSelecting(facets:Facets){
+function buildSelectingBasic(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
       <IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets}/>
       <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  );
+}
+function buildSelectingPlus(facets:Facets){
+  ReactDOM.render(<RowPanel rubric={Test.SelectingPlus}>
+      <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+      <TextualField title={SelectingTitles.EDIT} facets={facets}/>
+      <TriggerButton title={SelectingTitles.UP} facets={facets}/>
+      <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
+      <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
+      <TriggerButton title={SelectingTitles.NEW} facets={facets}/>
     </RowPanel>,
     document.getElementById('root'),
   );

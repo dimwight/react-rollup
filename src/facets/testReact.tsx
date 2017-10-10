@@ -149,9 +149,6 @@ function newSelectingTest(test:Test):Target{
         facets.newTriggerTarget(SelectingTitles.DOWN,{
 
         }),
-        facets.newTriggerTarget(SelectingTitles.EDIT,{
-
-        }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
 
         }),
@@ -189,7 +186,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingBasic).buildSurface();
+  new SurfaceWorks(Test.SelectingPlus).buildSurface();
 }
 
 
