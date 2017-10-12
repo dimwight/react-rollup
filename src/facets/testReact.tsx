@@ -170,7 +170,7 @@ newTargetTree(){
   return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
 }
 buildLayout(){
-  if(this.test===Test.All)[
+  if(false&&this.test===Test.All)[
     SimpleTitles.TEXTUAL_FIRST,
     SimpleTitles.INDEXING,
     SimpleTitles.TOGGLING,
@@ -186,7 +186,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingPlus).buildSurface();
+  new SurfaceWorks(Test.All).buildSurface();
 }
 
 
