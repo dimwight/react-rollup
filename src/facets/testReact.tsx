@@ -38,7 +38,7 @@ export enum Test{
   SelectingPlus='SelectingPlus'
 }
 const facets:Facets=newInstance(false);
-function newTextualTree():Target{
+function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
@@ -97,7 +97,7 @@ function newTriggerTest(){
 }
 function newAllSimplesTest(){
   return facets.newTargetGroup('AllTest',
-    newTextualTree(),newIndexingTest(),newTogglingTest(),newTriggerTest());
+    newTextualTest(),newIndexingTest(),newTogglingTest(),newTriggerTest());
 }
 abstract class Surface{
   buildSurface(){
@@ -164,7 +164,7 @@ constructor(private test:Test){
   super();
 }
 newTargetTree(){
-  const textual=newTextualTree,indexing=newIndexingTest,
+  const textual=newTextualTest,indexing=newIndexingTest,
     toggling=newTogglingTest,trigger=newTriggerTest,
     all=newAllSimplesTest;
   return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
@@ -186,7 +186,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.All).buildSurface();
+  new SurfaceWorks(Test.Textual).buildSurface();
 }
 
 
