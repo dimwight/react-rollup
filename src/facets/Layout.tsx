@@ -194,15 +194,6 @@ function PanelRubric (props:LabelValues){
   return <div className={className}>
     {text}&nbsp;</div>
 }
-function RowPanel(props){
-  const children=props.children.map((child)=>{
-    return <div className={'panelMount'}>{child}</div>
-  });
-  return <div className={'panel'}>
-    <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric'}/>
-    {children}
-  </div>
-}
 function buildTextual(facets:Facets){
   const first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(
@@ -238,6 +229,16 @@ function buildIndexing(facets:Facets){
     </RowPanel>,
     document.getElementById('root'),
   );
+}
+function RowPanel(props){
+  traceThing('RowPanel',props.children)
+  const children=props.children.map((child)=>{
+    return <div className={'panelMount'}>{child}</div>
+  });
+  return <div className={'panel'}>
+    <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric'}/>
+    {children}
+  </div>
 }
 function buildTrigger(facets:Facets){
   ReactDOM.render(

@@ -171,7 +171,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.Trigger).buildSurface();
+  new SurfaceWorks(Test.Indexing).buildSurface();
 }
 
 
