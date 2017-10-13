@@ -36,7 +36,7 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props,updateWithLive,);
     else this.setState(updateWithLive);
-    traceThing(this.props.title+'.facetUpdated',updateWithLive)
+    if(false)traceThing(this.props.title+'.facetUpdated',updateWithLive)
   };
   componentDidMount(){
     this.didMount=true;
@@ -51,10 +51,6 @@ interface TextualValues extends TargetValues{
 }
 interface TogglingValues extends TargetValues{
   set?:boolean
-}
-interface IndexingValues extends TargetValues{
-  selectables?:string[]
-  index?:number
 }
 interface LabelValues{
   text:string
@@ -100,6 +96,16 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
     </span>)
   }
 }
+interface IndexingValues extends TargetValues{
+  selectables?:string[]
+  index?:number
+}
+interface IndexingUiProps{
+  selectables:string[]
+  disabled:boolean
+  selected:string
+  onChange:(e)=>void
+}
 class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
     return {
@@ -119,51 +125,36 @@ class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
       }
     }
   };
-  newIndexingUiProps():IndexingUiProps{
+  newUiProps():IndexingUiProps{
+    let state=this.state;
     return {
-      selectables:this.state.selectables,
-      selected:this.state.selectables[(this.state as IndexingValues).index],
-      disabled:!this.state.live,
+      selectables:state.selectables,
+      selected:state.selectables[(state as IndexingValues).index],
+      disabled:!state.live,
       onChange:this.onChange
     }
   }
   render(){
-    traceThing('IndexingFacet',this.props.children);
-    let selectables=this.state.selectables,
-      selected=selectables[(this.state as IndexingValues).index],
-      options=selectables.map((item)=>{
-      return item===selected?<option selected>{item}</option>
-        :<option>{item}</option>
-    });
-    let disabled=!this.state.live;
     return (<span>
-      <LabelRubric text={this.props.title} disabled={disabled}/>
-      <select
-        className={disabled?'textDisabled':''}
-        disabled={disabled}
-        onChange={this.onChange}
-      >{options}</select>
+      <LabelRubric text={this.props.title} disabled={!this.state.live}/>
+      {this.renderUi(this.newUiProps())}
     </span>);
   }
-}
-interface IndexingUiProps{
-  selectables:string[]
-  disabled:boolean
-  selected:string
-  onChange:(e)=>void
+  protected renderUi(props){
+    return <IndexingDropdown {...props}/>;
+  }
 }
 function IndexingDropdown(props:IndexingUiProps){
-  const options=props.selectables.map((item)=>{
-    return item===props.selected?<option selected>{item}</option>
-      :<option>{item}</option>
-  });
-  return <span>
-      <select
+  traceThing('IndexingDropdown',props);
+  return (<select
         className={props.disabled?'textDisabled':''}
         disabled={props.disabled}
         onChange={props.onChange}
-      >{options}</select>
-  </span>
+      >{props.selectables.map((item)=>
+          item===props.selected?<option selected>{item}</option>
+            :<option>{item}</option>
+        )
+      }</select>)
 }
 function buildIndexing(facets:Facets){
   ReactDOM.render(
