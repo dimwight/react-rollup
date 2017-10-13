@@ -7,7 +7,6 @@
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,72 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-              <folding>
-                <element signature="n#!!block;n#trace#0" expanded="false" />
-                <element signature="n#SimpleTitles#0" expanded="false" />
-                <element signature="n#SelectingTitles#0" expanded="false" />
-                <element signature="n#Test#0" expanded="false" />
-                <element signature="n#!!block;n#newTextualTree#0" expanded="false" />
-                <element signature="e#1142#1387#0" expanded="false" />
-                <element signature="e#1244#1380#0" expanded="false" />
-                <element signature="e#1453#1521#0" expanded="false" />
-                <element signature="n#!!block;n#newTogglingTest#0" expanded="false" />
-                <element signature="e#1678#1850#0" expanded="false" />
-                <element signature="e#1751#1846#0" expanded="false" />
-                <element signature="e#1908#2026#0" expanded="false" />
-                <element signature="e#1931#2022#0" expanded="false" />
-                <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
-                <element signature="e#2188#2328#0" expanded="false" />
-                <element signature="e#2384#2463#0" expanded="false" />
-                <element signature="e#2523#2633#0" expanded="false" />
-                <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
-                <element signature="e#2822#2924#0" expanded="false" />
-                <element signature="e#2856#2920#0" expanded="false" />
-                <element signature="e#2987#3156#0" expanded="false" />
-                <element signature="e#3010#3152#0" expanded="false" />
-                <element signature="n#!!block;n#newAllSimplesTest#0" expanded="false" />
-                <element signature="n#Surface#0" expanded="false" />
-                <element signature="n#!!block;n#buildSurface#0;n#Surface#0" expanded="false" />
-                <element signature="n#!!block;n#TextContent#0" expanded="false" />
-                <element signature="n#!!block;n#newSelectingTest#0" expanded="false" />
-                <element signature="e#3819#3928#0" expanded="false" />
-                <element signature="e#3938#4794#0" expanded="false" />
-                <element signature="e#4149#4502#0" expanded="false" />
-                <element signature="e#4205#4329#0" expanded="false" />
-                <element signature="e#4387#4493#0" expanded="false" />
-                <element signature="e#4528#4788#0" expanded="false" />
-                <element signature="e#4581#4779#0" expanded="false" />
-                <element signature="e#4609#4769#0" expanded="false" />
-                <element signature="n#SurfaceWorks#0" expanded="false" />
-                <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="e#5182#5324#0" expanded="false" />
-                <element signature="e#5347#5394#0" expanded="false" />
-                <element signature="n#!!block;n#buildSurface#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="233" column="22" lean-forward="false" selection-start-line="233" selection-start-column="22" selection-end-line="233" selection-end-column="22" />
+            <state relative-caret-position="60">
+              <caret line="148" column="25" lean-forward="false" selection-start-line="148" selection-start-column="10" selection-end-line="148" selection-end-column="25" />
               <folding>
                 <element signature="n#Layout#0" expanded="false" />
                 <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
                 <element signature="n#!!block;n#TargetValues#0" expanded="false" />
                 <element signature="n#Facet#0" expanded="false" />
                 <element signature="n#!!block;n#constructor#0;n#Facet#0" expanded="false" />
-                <element signature="e#1096#1434#0" expanded="false" />
-                <element signature="e#1167#1234#0" expanded="false" />
+                <element signature="e#1096#1432#0" expanded="false" />
+                <element signature="e#1165#1232#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#Facet#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#Facet#0" expanded="false" />
                 <element signature="n#!!block;n#TextualValues#0" expanded="false" />
@@ -101,62 +47,52 @@
                 <element signature="n#!!block;n#IndexingValues#0" expanded="false" />
                 <element signature="n#!!block;n#LabelValues#0" expanded="false" />
                 <element signature="n#!!block;n#LabelRubric#0" expanded="false" />
-                <element signature="e#2054#2128#0" expanded="false" />
-                <element signature="e#2134#2188#0" expanded="false" />
+                <element signature="e#2050#2124#0" expanded="false" />
+                <element signature="e#2130#2184#0" expanded="false" />
                 <element signature="n#!!block;n#LabelText#0" expanded="false" />
-                <element signature="e#2241#2322#0" expanded="false" />
+                <element signature="e#2237#2318#0" expanded="false" />
                 <element signature="n#TogglingCheckbox#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TogglingCheckbox#0" expanded="false" />
-                <element signature="e#2474#2622#0" expanded="false" />
-                <element signature="e#2596#2617#0" expanded="false" />
+                <element signature="e#2470#2616#0" expanded="false" />
+                <element signature="e#2590#2611#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TogglingCheckbox#0" expanded="false" />
-                <element signature="e#2648#2957#0" expanded="false" />
-                <element signature="e#2762#2945#0" expanded="false" />
-                <element signature="n#IndexingDropdown#0" expanded="false" />
-                <element signature="n#!!block;n#readUpdate#0;n#IndexingDropdown#0" expanded="false" />
-                <element signature="e#3077#3189#0" expanded="false" />
-                <element signature="e#3210#3533#0" expanded="false" />
-                <element signature="e#3325#3529#0" expanded="false" />
-                <element signature="e#3360#3523#0" expanded="false" />
-                <element signature="e#3390#3498#0" expanded="false" />
-                <element signature="n#!!block;n#render#0;n#IndexingDropdown#0" expanded="false" />
-                <element signature="e#3697#3799#0" expanded="false" />
-                <element signature="e#3851#4082#0" expanded="false" />
-                <element signature="e#3929#4070#0" expanded="false" />
+                <element signature="e#2642#2951#0" expanded="false" />
+                <element signature="e#2756#2939#0" expanded="false" />
+                <element signature="n#!!block;n#readUpdate#0;n#IndexingFacet#0" expanded="false" />
+                <element signature="e#3201#3522#0" expanded="false" />
                 <element signature="n#TextualField#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TextualField#0" expanded="false" />
-                <element signature="e#4241#4311#0" expanded="false" />
+                <element signature="e#5653#5723#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TextualField#0" expanded="false" />
-                <element signature="e#4423#4755#0" expanded="false" />
-                <element signature="e#4540#4742#0" expanded="false" />
+                <element signature="e#5835#6167#0" expanded="false" />
+                <element signature="e#5952#6154#0" expanded="false" />
                 <element signature="n#TextualLabel#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TextualLabel#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TextualLabel#0" expanded="false" />
-                <element signature="e#4957#5117#0" expanded="false" />
+                <element signature="e#6367#6527#0" expanded="false" />
                 <element signature="n#TriggerButton#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TriggerButton#0" expanded="false" />
-                <element signature="e#5254#5330#0" expanded="false" />
+                <element signature="e#6664#6740#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
-                <element signature="e#5356#5464#0" expanded="false" />
+                <element signature="e#6766#6874#0" expanded="false" />
                 <element signature="n#!!block;n#PanelRubric#0" expanded="false" />
-                <element signature="e#5624#5674#0" expanded="false" />
+                <element signature="e#7032#7082#0" expanded="false" />
                 <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-                <element signature="e#5815#6095#0" expanded="false" />
-                <element signature="e#5907#5956#0" expanded="false" />
-                <element signature="e#6028#6078#0" expanded="false" />
+                <element signature="e#7221#7501#0" expanded="false" />
+                <element signature="e#7313#7362#0" expanded="false" />
+                <element signature="e#7434#7484#0" expanded="false" />
                 <element signature="n#!!block;n#buildToggling#0" expanded="false" />
-                <element signature="e#6203#6391#0" expanded="false" />
-                <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-                <element signature="e#6540#6866#0" expanded="false" />
-                <element signature="e#6580#6718#0" expanded="false" />
+                <element signature="e#7609#7797#0" expanded="false" />
+                <element signature="n#!!block;n#buildTrigger#0" expanded="false" />
+                <element signature="e#7905#8091#0" expanded="false" />
                 <element signature="n#!!block;n#buildAll#0" expanded="false" />
-                <element signature="e#7689#8617#0" expanded="false" />
-                <element signature="e#7699#7977#0" expanded="false" />
-                <element signature="e#7982#8222#0" expanded="false" />
-                <element signature="e#8227#8415#0" expanded="false" />
-                <element signature="e#8420#8606#0" expanded="false" />
-                <element signature="n#!!block;n#buildSelecting#0" expanded="false" />
-                <element signature="e#8721#9046#0" expanded="false" />
+                <marker date="1507919523614" expanded="false" signature="8304:9229" ph="&lt;div/&gt;" />
+                <marker date="1507919523614" expanded="false" signature="8314:8592" ph="&lt;RowPanel/&gt;" />
+                <marker date="1507919523614" expanded="false" signature="8597:8834" ph="&lt;RowPanel/&gt;" />
+                <marker date="1507919523614" expanded="false" signature="8839:9027" ph="&lt;RowPanel/&gt;" />
+                <marker date="1507919523614" expanded="false" signature="9032:9218" ph="&lt;RowPanel/&gt;" />
+                <marker date="1507919523614" expanded="false" signature="9313:9700" ph="{...}" />
+                <marker date="1507919523614" expanded="false" signature="9333:9655" ph="&lt;RowPanel/&gt;" />
               </folding>
             </state>
           </provider>
@@ -174,7 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TITLE_SECOND</find>
       <find>TITLE_</find>
       <find>:</find>
       <find>updated</find>
@@ -204,9 +139,9 @@
       <find>&quot;</find>
       <find>traceThing</find>
       <find>svg.d.ts</find>
+      <find>const</find>
     </findStrings>
     <replaceStrings>
-      <replace>first</replace>
       <replace>`</replace>
       <replace>data</replace>
       <replace>values</replace>
@@ -236,6 +171,7 @@
       <replace>rubric</replace>
       <replace>rubricDisabled</replace>
       <replace>'</replace>
+      <replace>let</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Me\ts\react-rollup</dir>
@@ -297,8 +233,8 @@
         <option value="$PROJECT_DIR$/src/widget/_exports.ts" />
         <option value="$PROJECT_DIR$/src/widget/SmartTextField.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
         <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
+        <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
       </list>
     </option>
   </component>
@@ -585,7 +521,7 @@
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15054946" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22511312" sideWeight="0.5197802" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22511312" sideWeight="0.5197802" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
@@ -758,8 +694,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="didMount" />
-    <MESSAGE value="members" />
     <MESSAGE value="ready for live?" />
     <MESSAGE value="buildTrigger" />
     <MESSAGE value="traceThing?" />
@@ -783,7 +717,9 @@
     <MESSAGE value="onKeyDown" />
     <MESSAGE value="componentWillReceiveProps" />
     <MESSAGE value="RowPanel rubric" />
-    <option name="LAST_COMMIT_MESSAGE" value="RowPanel rubric" />
+    <MESSAGE value="Indexing" />
+    <MESSAGE value="IndexingFacet" />
+    <option name="LAST_COMMIT_MESSAGE" value="IndexingFacet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -795,7 +731,7 @@
           <properties uncaughtOnly="true" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1156,85 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="233" column="22" lean-forward="false" selection-start-line="233" selection-start-column="22" selection-end-line="233" selection-end-column="22" />
-          <folding>
-            <element signature="n#Layout#0" expanded="false" />
-            <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
-            <element signature="n#!!block;n#TargetValues#0" expanded="false" />
-            <element signature="n#Facet#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#Facet#0" expanded="false" />
-            <element signature="e#1096#1434#0" expanded="false" />
-            <element signature="e#1167#1234#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Facet#0" expanded="false" />
-            <element signature="n#!!block#1;n#readUpdate#0;n#Facet#0" expanded="false" />
-            <element signature="n#!!block;n#TextualValues#0" expanded="false" />
-            <element signature="n#!!block;n#TogglingValues#0" expanded="false" />
-            <element signature="n#!!block;n#IndexingValues#0" expanded="false" />
-            <element signature="n#!!block;n#LabelValues#0" expanded="false" />
-            <element signature="n#!!block;n#LabelRubric#0" expanded="false" />
-            <element signature="e#2054#2128#0" expanded="false" />
-            <element signature="e#2134#2188#0" expanded="false" />
-            <element signature="n#!!block;n#LabelText#0" expanded="false" />
-            <element signature="e#2241#2322#0" expanded="false" />
-            <element signature="n#TogglingCheckbox#0" expanded="false" />
-            <element signature="n#!!block#1;n#readUpdate#0;n#TogglingCheckbox#0" expanded="false" />
-            <element signature="e#2474#2622#0" expanded="false" />
-            <element signature="e#2596#2617#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#TogglingCheckbox#0" expanded="false" />
-            <element signature="e#2648#2957#0" expanded="false" />
-            <element signature="e#2762#2945#0" expanded="false" />
-            <element signature="n#IndexingDropdown#0" expanded="false" />
-            <element signature="n#!!block;n#readUpdate#0;n#IndexingDropdown#0" expanded="false" />
-            <element signature="e#3077#3189#0" expanded="false" />
-            <element signature="e#3210#3533#0" expanded="false" />
-            <element signature="e#3325#3529#0" expanded="false" />
-            <element signature="e#3360#3523#0" expanded="false" />
-            <element signature="e#3390#3498#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#IndexingDropdown#0" expanded="false" />
-            <element signature="e#3697#3799#0" expanded="false" />
-            <element signature="e#3851#4082#0" expanded="false" />
-            <element signature="e#3929#4070#0" expanded="false" />
-            <element signature="n#TextualField#0" expanded="false" />
-            <element signature="n#!!block#1;n#readUpdate#0;n#TextualField#0" expanded="false" />
-            <element signature="e#4241#4311#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#TextualField#0" expanded="false" />
-            <element signature="e#4423#4755#0" expanded="false" />
-            <element signature="e#4540#4742#0" expanded="false" />
-            <element signature="n#TextualLabel#0" expanded="false" />
-            <element signature="n#!!block#1;n#readUpdate#0;n#TextualLabel#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#TextualLabel#0" expanded="false" />
-            <element signature="e#4957#5117#0" expanded="false" />
-            <element signature="n#TriggerButton#0" expanded="false" />
-            <element signature="n#!!block#1;n#readUpdate#0;n#TriggerButton#0" expanded="false" />
-            <element signature="e#5254#5330#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
-            <element signature="e#5356#5464#0" expanded="false" />
-            <element signature="n#!!block;n#PanelRubric#0" expanded="false" />
-            <element signature="e#5624#5674#0" expanded="false" />
-            <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-            <element signature="e#5815#6095#0" expanded="false" />
-            <element signature="e#5907#5956#0" expanded="false" />
-            <element signature="e#6028#6078#0" expanded="false" />
-            <element signature="n#!!block;n#buildToggling#0" expanded="false" />
-            <element signature="e#6203#6391#0" expanded="false" />
-            <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-            <element signature="e#6540#6866#0" expanded="false" />
-            <element signature="e#6580#6718#0" expanded="false" />
-            <element signature="n#!!block;n#buildAll#0" expanded="false" />
-            <element signature="e#7689#8617#0" expanded="false" />
-            <element signature="e#7699#7977#0" expanded="false" />
-            <element signature="e#7982#8222#0" expanded="false" />
-            <element signature="e#8227#8415#0" expanded="false" />
-            <element signature="e#8420#8606#0" expanded="false" />
-            <element signature="n#!!block;n#buildSelecting#0" expanded="false" />
-            <element signature="e#8721#9046#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1282,6 +1139,75 @@
             <element signature="e#5182#5324#0" expanded="false" />
             <element signature="e#5347#5394#0" expanded="false" />
             <element signature="n#!!block;n#buildSurface#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="148" column="25" lean-forward="false" selection-start-line="148" selection-start-column="10" selection-end-line="148" selection-end-column="25" />
+          <folding>
+            <element signature="n#Layout#0" expanded="false" />
+            <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
+            <element signature="n#!!block;n#TargetValues#0" expanded="false" />
+            <element signature="n#Facet#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Facet#0" expanded="false" />
+            <element signature="e#1096#1432#0" expanded="false" />
+            <element signature="e#1165#1232#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Facet#0" expanded="false" />
+            <element signature="n#!!block#1;n#readUpdate#0;n#Facet#0" expanded="false" />
+            <element signature="n#!!block;n#TextualValues#0" expanded="false" />
+            <element signature="n#!!block;n#TogglingValues#0" expanded="false" />
+            <element signature="n#!!block;n#IndexingValues#0" expanded="false" />
+            <element signature="n#!!block;n#LabelValues#0" expanded="false" />
+            <element signature="n#!!block;n#LabelRubric#0" expanded="false" />
+            <element signature="e#2050#2124#0" expanded="false" />
+            <element signature="e#2130#2184#0" expanded="false" />
+            <element signature="n#!!block;n#LabelText#0" expanded="false" />
+            <element signature="e#2237#2318#0" expanded="false" />
+            <element signature="n#TogglingCheckbox#0" expanded="false" />
+            <element signature="n#!!block#1;n#readUpdate#0;n#TogglingCheckbox#0" expanded="false" />
+            <element signature="e#2470#2616#0" expanded="false" />
+            <element signature="e#2590#2611#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#TogglingCheckbox#0" expanded="false" />
+            <element signature="e#2642#2951#0" expanded="false" />
+            <element signature="e#2756#2939#0" expanded="false" />
+            <element signature="n#!!block;n#readUpdate#0;n#IndexingFacet#0" expanded="false" />
+            <element signature="e#3201#3522#0" expanded="false" />
+            <element signature="n#TextualField#0" expanded="false" />
+            <element signature="n#!!block#1;n#readUpdate#0;n#TextualField#0" expanded="false" />
+            <element signature="e#5653#5723#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#TextualField#0" expanded="false" />
+            <element signature="e#5835#6167#0" expanded="false" />
+            <element signature="e#5952#6154#0" expanded="false" />
+            <element signature="n#TextualLabel#0" expanded="false" />
+            <element signature="n#!!block#1;n#readUpdate#0;n#TextualLabel#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#TextualLabel#0" expanded="false" />
+            <element signature="e#6367#6527#0" expanded="false" />
+            <element signature="n#TriggerButton#0" expanded="false" />
+            <element signature="n#!!block#1;n#readUpdate#0;n#TriggerButton#0" expanded="false" />
+            <element signature="e#6664#6740#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
+            <element signature="e#6766#6874#0" expanded="false" />
+            <element signature="n#!!block;n#PanelRubric#0" expanded="false" />
+            <element signature="e#7032#7082#0" expanded="false" />
+            <element signature="n#!!block;n#buildTextual#0" expanded="false" />
+            <element signature="e#7221#7501#0" expanded="false" />
+            <element signature="e#7313#7362#0" expanded="false" />
+            <element signature="e#7434#7484#0" expanded="false" />
+            <element signature="n#!!block;n#buildToggling#0" expanded="false" />
+            <element signature="e#7609#7797#0" expanded="false" />
+            <element signature="n#!!block;n#buildTrigger#0" expanded="false" />
+            <element signature="e#7905#8091#0" expanded="false" />
+            <element signature="n#!!block;n#buildAll#0" expanded="false" />
+            <marker date="1507919523614" expanded="false" signature="8304:9229" ph="&lt;div/&gt;" />
+            <marker date="1507919523614" expanded="false" signature="8314:8592" ph="&lt;RowPanel/&gt;" />
+            <marker date="1507919523614" expanded="false" signature="8597:8834" ph="&lt;RowPanel/&gt;" />
+            <marker date="1507919523614" expanded="false" signature="8839:9027" ph="&lt;RowPanel/&gt;" />
+            <marker date="1507919523614" expanded="false" signature="9032:9218" ph="&lt;RowPanel/&gt;" />
+            <marker date="1507919523614" expanded="false" signature="9313:9700" ph="{...}" />
+            <marker date="1507919523614" expanded="false" signature="9333:9655" ph="&lt;RowPanel/&gt;" />
           </folding>
         </state>
       </provider>

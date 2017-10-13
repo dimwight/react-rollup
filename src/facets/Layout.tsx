@@ -119,7 +119,16 @@ class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
       }
     }
   };
+  newIndexingUiProps():IndexingUiProps{
+    return {
+      selectables:this.state.selectables,
+      selected:this.state.selectables[(this.state as IndexingValues).index],
+      disabled:!this.state.live,
+      onChange:this.onChange
+    }
+  }
   render(){
+    traceThing('IndexingFacet',this.props.children);
     let selectables=this.state.selectables,
       selected=selectables[(this.state as IndexingValues).index],
       options=selectables.map((item)=>{
@@ -136,6 +145,44 @@ class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
       >{options}</select>
     </span>);
   }
+}
+interface IndexingUiProps{
+  selectables:string[]
+  disabled:boolean
+  selected:string
+  onChange:(e)=>void
+}
+function IndexingDropdown(props:IndexingUiProps){
+  const options=props.selectables.map((item)=>{
+    return item===props.selected?<option selected>{item}</option>
+      :<option>{item}</option>
+  });
+  return <span>
+      <select
+        className={props.disabled?'textDisabled':''}
+        disabled={props.disabled}
+        onChange={props.onChange}
+      >{options}</select>
+  </span>
+}
+function buildIndexing(facets:Facets){
+  ReactDOM.render(
+    <RowPanel rubric={Test.Indexing}>
+      <IndexingFacet title={SimpleTitles.INDEXING}facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  );
+}
+function RowPanel(props){
+  let children=props.children.map((child)=>{
+    return <div className={'panelMount'}>{child}</div>
+  });
+  return <div className={'panel'}>
+    <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric'}/>
+    {children}
+  </div>
 }
 class TextualField extends Facet<TextualValues,TextualValues>{
   protected readUpdate(update):{}{
@@ -215,26 +262,6 @@ function buildToggling(facets:Facets){
     document.getElementById('root'),
   );
 
-}
-function RowPanel(props){
-  traceThing('RowPanel',props.children)
-  let children=props.children.map((child)=>{
-    return <div className={'panelMount'}>{child}</div>
-  });
-  return <div className={'panel'}>
-    <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric'}/>
-    {children}
-  </div>
-}
-function buildIndexing(facets:Facets){
-  ReactDOM.render(
-    <RowPanel rubric={Test.Indexing}>
-      <IndexingFacet title={SimpleTitles.INDEXING}facets={facets}/>
-      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
-      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
-    </RowPanel>,
-    document.getElementById('root'),
-  );
 }
 function buildTrigger(facets:Facets){
   ReactDOM.render(
