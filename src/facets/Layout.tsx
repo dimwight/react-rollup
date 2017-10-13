@@ -13,8 +13,8 @@ export class Layout{
     else if(this.test===Test.Toggling) buildToggling(facets);
     else if(this.test===Test.Trigger) buildTrigger(facets);
     else if(this.test===Test.All)buildAll(facets);
-    else if(this.test===Test.SelectingBasic)buildSelectingBasic(facets);
-    else buildSelectingPlus(facets);
+    else if(false)traceThing('build',{test:Test.Selecting});
+    else buildSelecting(facets)
   }
 }
 interface TargetValues{
@@ -30,7 +30,7 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
-    let updateWithLive:{}=Object.assign({},this.readUpdate(update),{
+    const updateWithLive:{}=Object.assign({},this.readUpdate(update),{
       live:this.props.facets.isTargetLive(this.props.title)
     });
     if(!this.didMount)
@@ -52,7 +52,7 @@ interface TextualValues extends TargetValues{
 interface TogglingValues extends TargetValues{
   set?:boolean
 }
-interface IndexingFacetValues extends TargetValues{
+interface IndexingValues extends TargetValues{
   selectables?:string[]
   index?:number
 }
@@ -64,7 +64,7 @@ interface LabelValues{
   classes?:string
 }
 function LabelRubric (props:LabelValues){
-  let htmlFor=props.target,text=props.text,
+  const htmlFor=props.target,text=props.text,
     className=(props.disabled?'rubricDisabled':'rubric');
   return htmlFor?<label htmlFor={htmlFor} className={className}>
       {text}&nbsp;</label>
@@ -80,7 +80,7 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
     return {set:update}
   }
   onChange=(e)=>{
-    let set=e.target.checked;
+    const set=e.target.checked;
     this.props.facets.updateTargetState(this.props.title,
       set);
     this.setState({
@@ -100,7 +100,7 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
     </span>)
   }
 }
-class IndexingFacet extends Facet<IndexingFacetValues,IndexingFacetValues>{
+class IndexingDropdown extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
     return {
       index:update,
@@ -108,77 +108,7 @@ class IndexingFacet extends Facet<IndexingFacetValues,IndexingFacetValues>{
     }
   }
   onChange=(e)=>{
-    let value=e.target.value,selectables=this.state.selectables;
-    for(let at=0; at<selectables.length; at++){
-      if(selectables[at]===value){
-        this.setState(then=>{
-          this.props.facets.updateTargetState(this.props.title,at);
-          return {index:at};
-        });
-        break;
-      }
-    }
-  };
-  newIndexingUiProps():IndexingUiProps{
-    return {
-      selectables:this.state.selectables,
-      selected:this.state.selectables[(this.state as IndexingFacetValues).index],
-      disabled:!this.state.live,
-      onChange:this.onChange
-    }
-  }
-  render(){
-    let props=this.newIndexingUiProps();
-    return (<span>
-      <LabelRubric text={this.props.title} disabled={props.disabled}/>
-      {props}
-    </span>);
-  }
-}
-interface IndexingUiProps{
-  selectables:string[]
-  disabled:boolean
-  selected:string
-  onChange:(e)=>void
-}
-function IndexingDropdown(props:IndexingUiProps){
-  let options=props.selectables.map((item)=>{
-    return item===props.selected?<option selected>{item}</option>
-      :<option>{item}</option>
-  });
-  return <span>
-      <select
-        className={props.disabled?'textDisabled':''}
-        disabled={props.disabled}
-        onChange={props.onChange}
-      >{options}</select>
-  </span>
-}
-function buildIndexing(facets:Facets){
-  let indexing=SimpleTitles.INDEXING;
-  ReactDOM.render(
-    <RowPanel>
-      <IndexingFacet
-        title={indexing}
-        selectables={facets.getIndexingState(indexing).uiSelectables}
-        facets={facets}>
-      <IndexingDropdown {...newIndexingUiProps()}/>
-      </IndexingFacet>
-      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
-      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
-    </RowPanel>,
-    document.getElementById('root'),
-  );
-}
-class IndexingList extends Facet<IndexingFacetValues,IndexingFacetValues>{
-  protected readUpdate(update){
-    return {
-      index:update,
-      selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
-    }
-  }
-  onChange=(e)=>{
-    let value=e.target.value,selectables=this.state.selectables;
+    const value=e.target.value,selectables=this.state.selectables;
     for(let at=0; at<selectables.length; at++){
       if(selectables[at]===value){
         this.setState(then=>{
@@ -190,13 +120,13 @@ class IndexingList extends Facet<IndexingFacetValues,IndexingFacetValues>{
     }
   };
   render(){
-    let selectables=this.state.selectables,
-      selected=selectables[(this.state as IndexingFacetValues).index],
+    const selectables=this.state.selectables,
+      selected=selectables[(this.state as IndexingValues).index],
       options=selectables.map((item)=>{
-        return item===selected?<option selected>{item}</option>
-          :<option>{item}</option>
-      });
-    let disabled=!this.state.live;
+      return item===selected?<option selected>{item}</option>
+        :<option>{item}</option>
+    });
+    const disabled=!this.state.live;
     return (<span>
       <LabelRubric text={this.props.title} disabled={disabled}/>
       <select
@@ -235,7 +165,7 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
     return {text:update}
   }
   render(){
-    let disabled=!this.state.live;
+    const disabled=!this.state.live;
     return (<div>
       <LabelRubric text={this.props.title} disabled={disabled}/>
       &nbsp;
@@ -259,13 +189,13 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
   }
 }
 function PanelRubric (props:LabelValues){
-  let text=props.text,
+  const text=props.text,
     className=props.classes+' '+(props.disabled?'rubricDisabled':'rubric');
   return <div className={className}>
     {text}&nbsp;</div>
 }
 function RowPanel(props){
-  let children=props.children.map((child)=>{
+  const children=props.children.map((child)=>{
     return <div className={'panelMount'}>{child}</div>
   });
   return <div className={'panel'}>
@@ -274,7 +204,7 @@ function RowPanel(props){
   </div>
 }
 function buildTextual(facets:Facets){
-  let first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
+  const first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(
     <RowPanel rubric={Test.Textual}>
       <TextualField title={first} facets={facets}/>
@@ -287,7 +217,7 @@ function buildTextual(facets:Facets){
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
-    <RowPanel>
+    <RowPanel rubric={Test.Toggling}>
       <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
       <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
     </RowPanel>,
@@ -295,9 +225,23 @@ function buildToggling(facets:Facets){
   );
 
 }
+function buildIndexing(facets:Facets){
+  const indexing=SimpleTitles.INDEXING;
+  ReactDOM.render(
+    <RowPanel rubric={Test.Indexing}>
+      <IndexingDropdown
+        title={indexing}
+        selectables={facets.getIndexingState(indexing).uiSelectables}
+        facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
+      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  );
+}
 function buildTrigger(facets:Facets){
   ReactDOM.render(
-    <RowPanel>
+    <RowPanel rubric={Test.Trigger}>
       <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
       <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
     </RowPanel>,
@@ -305,7 +249,7 @@ function buildTrigger(facets:Facets){
   )
 }
 function buildAll(facets:Facets){
-  let textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND,
+  const textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND,
     indexing=SimpleTitles.INDEXING;
   ReactDOM.render(<div>
     <RowPanel rubric={Test.Textual}>
@@ -315,7 +259,7 @@ function buildAll(facets:Facets){
       <TextualLabel title={textual2} facets={facets}/>
     </RowPanel>
     <RowPanel rubric={Test.Indexing}>
-      <IndexingFacet title={indexing} facets={facets}/>
+      <IndexingDropdown title={indexing} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
     </RowPanel>
@@ -331,24 +275,12 @@ function buildAll(facets:Facets){
     document.getElementById('root'),
   );
 }
-function buildSelectingBasic(facets:Facets){
-  ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
-      <IndexingFacet title={SelectingTitles.SELECT} facets={facets}/>
+function buildSelecting(facets:Facets){
+  ReactDOM.render(<RowPanel rubric={Test.Selecting}>
+      <IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets}/>
       <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
-    </RowPanel>,
-    document.getElementById('root'),
-  );
-}
-function buildSelectingPlus(facets:Facets){
-  ReactDOM.render(<RowPanel rubric={Test.SelectingPlus}>
-      <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
-      <TextualField title={SelectingTitles.EDIT} facets={facets}/>
-      <TriggerButton title={SelectingTitles.UP} facets={facets}/>
-      <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
-      <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
-      <TriggerButton title={SelectingTitles.NEW} facets={facets}/>
     </RowPanel>,
     document.getElementById('root'),
   );
