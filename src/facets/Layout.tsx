@@ -105,8 +105,9 @@ interface IndexingUiProps{
   disabled:boolean
   selected:string
   onChange:(e)=>void
+  rubric:string
 }
-class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
+abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
     return {
       index:update,
@@ -125,41 +126,37 @@ class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
       }
     }
   };
-  newUiProps():IndexingUiProps{
+  render(){
     let state=this.state;
-    return {
+    return this.renderUi({
       selectables:state.selectables,
       selected:state.selectables[(state as IndexingValues).index],
       disabled:!state.live,
-      onChange:this.onChange
-    }
+      onChange:this.onChange,
+      rubric:this.props.title
+    });
   }
-  render(){
-    return (<span>
-      <LabelRubric text={this.props.title} disabled={!this.state.live}/>
-      {this.renderUi(this.newUiProps())}
-    </span>);
-  }
-  protected renderUi(props){
-    return <IndexingDropdown {...props}/>;
-  }
+  protected abstract renderUi(props:IndexingUiProps);
 }
-function IndexingDropdown(props:IndexingUiProps){
-  traceThing('IndexingDropdown',props);
-  return (<select
-        className={props.disabled?'textDisabled':''}
-        disabled={props.disabled}
-        onChange={props.onChange}
-      >{props.selectables.map((item)=>
-          item===props.selected?<option selected>{item}</option>
-            :<option>{item}</option>
-        )
-      }</select>)
+class IndexingDropdown extends IndexingFacet{
+  protected renderUi(props:IndexingUiProps){
+    traceThing('IndexingDropdown',props);
+    return (<span>
+      <LabelRubric text={props.rubric} disabled={props.disabled}/><select
+      className={props.disabled?'textDisabled':''}
+      disabled={props.disabled}
+      onChange={props.onChange}
+    >{props.selectables.map((item)=>
+      item===props.selected?<option selected>{item}</option>
+        :<option>{item}</option>
+    )
+    }</select></span>)
+  }
 }
 function buildIndexing(facets:Facets){
   ReactDOM.render(
     <RowPanel rubric={Test.Indexing}>
-      <IndexingFacet title={SimpleTitles.INDEXING}facets={facets}/>
+      <IndexingDropdown title={SimpleTitles.INDEXING}facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
     </RowPanel>,
@@ -174,6 +171,32 @@ function RowPanel(props){
     <PanelRubric text={props.rubric} disabled={false} classes={'panelRubric'}/>
     {children}
   </div>
+}
+function buildAll(facets:Facets){
+  let textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND;
+  ReactDOM.render(<div>
+      <RowPanel rubric={Test.Textual}>
+        <TextualField title={textual1} facets={facets}/>
+        <TextualLabel title={textual1} facets={facets}/>
+        <TextualField title={textual2} facets={facets} cols={40}/>
+        <TextualLabel title={textual2} facets={facets}/>
+      </RowPanel>
+      <RowPanel rubric={Test.Indexing}>
+        <IndexingDropdown title={SimpleTitles.INDEXING} facets={facets}/>
+        <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
+        <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
+      </RowPanel>
+      <RowPanel rubric={Test.Toggling}>
+        <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
+        <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
+      </RowPanel>
+      <RowPanel rubric={Test.Trigger}>
+        <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
+        <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
+      </RowPanel>
+    </div>,
+    document.getElementById('root'),
+  );
 }
 class TextualField extends Facet<TextualValues,TextualValues>{
   protected readUpdate(update):{}{
@@ -262,33 +285,6 @@ function buildTrigger(facets:Facets){
     </RowPanel>,
     document.getElementById('root'),
   )
-}
-function buildAll(facets:Facets){
-  let textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND,
-    indexing=SimpleTitles.INDEXING;
-  ReactDOM.render(<div>
-    <RowPanel rubric={Test.Textual}>
-      <TextualField title={textual1} facets={facets}/>
-      <TextualLabel title={textual1} facets={facets}/>
-      <TextualField title={textual2} facets={facets} cols={40}/>
-      <TextualLabel title={textual2} facets={facets}/>
-    </RowPanel>
-    <RowPanel rubric={Test.Indexing}>
-      <IndexingFacet title={indexing} facets={facets}/>
-      <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
-      <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
-    </RowPanel>
-    <RowPanel rubric={Test.Toggling}>
-      <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
-      <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
-    </RowPanel>
-    <RowPanel rubric={Test.Trigger}>
-      <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
-      <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
-    </RowPanel>
-    </div>,
-    document.getElementById('root'),
-  );
 }
 function buildSelecting(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.Selecting}>
