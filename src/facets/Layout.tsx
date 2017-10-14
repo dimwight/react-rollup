@@ -43,7 +43,7 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     this.didMount=true;
   }
   componentWillUpdate(){
-    traceThing('componentWillUpdate',this.state);
+    // traceThing('componentWillUpdate',this.state);
   }
   protected readUpdate(update):{}{
     return {

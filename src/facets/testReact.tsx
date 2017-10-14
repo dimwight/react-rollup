@@ -39,7 +39,7 @@ export enum Test{
   SelectingBasic='SelectingBasic',
   SelectingPlus='SelectingPlus'
 }
-const facets:Facets=newInstance(false);
+const facets:Facets=newInstance(true);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
@@ -141,10 +141,6 @@ function newSelectingTest(test:Test):Target{
       facets.newTextualTarget(SelectingTitles.CHARS, {
         getText: title => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
       }),
-      facets.newTogglingTarget(SelectingTitles.LIVE,{
-        passSet:false,
-        targetStateUpdated:title=>setSelectingTargetsLive()
-      })
     ],
     newFrameTargets:()=>test===Test.SelectingBasic?[
       facets.newTextualTarget(SimpleTitles.INDEXED,{
@@ -152,6 +148,10 @@ function newSelectingTest(test:Test):Target{
           let index=facets.getTargetState(SelectingTitles.SELECT)as number;
           return false&&index===null?"No target yet":list[index].text;
           }
+        }),
+        facets.newTogglingTarget(SelectingTitles.LIVE,{
+          passSet:false,
+          targetStateUpdated:title=>setSelectingTargetsLive()
         })
       ]
       :[
