@@ -42,8 +42,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="302" column="28" lean-forward="false" selection-start-line="302" selection-start-column="9" selection-end-line="302" selection-end-column="28" />
+            <state relative-caret-position="283">
+              <caret line="305" column="20" lean-forward="false" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="20" />
               <folding>
                 <element signature="n#!!block;n#TargetValues#0" expanded="false" />
                 <element signature="n#Facet#0" expanded="false" />
@@ -723,7 +723,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="disabled" />
     <MESSAGE value="Caption?" />
     <MESSAGE value="LabelText?" />
     <MESSAGE value="textDisabled" />
@@ -748,7 +747,8 @@
     <MESSAGE value="renderUi" />
     <MESSAGE value="IndexingDropdown again" />
     <MESSAGE value="SmartTextField" />
-    <option name="LAST_COMMIT_MESSAGE" value="SmartTextField" />
+    <MESSAGE value="buildSelectingBasic" />
+    <option name="LAST_COMMIT_MESSAGE" value="buildSelectingBasic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,8 +1134,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="302" column="28" lean-forward="false" selection-start-line="302" selection-start-column="9" selection-end-line="302" selection-end-column="28" />
+        <state relative-caret-position="283">
+          <caret line="305" column="20" lean-forward="false" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="20" />
           <folding>
             <element signature="n#!!block;n#TargetValues#0" expanded="false" />
             <element signature="n#Facet#0" expanded="false" />

@@ -302,7 +302,7 @@ function buildTrigger(facets:Facets){
 }
 function buildSelectingBasic(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
-    {true?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
+    {false?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
