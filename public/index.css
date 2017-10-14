@@ -7,11 +7,13 @@ body {
   border-style: inset;
   border-width: 1px;
 }
-.listItem{
-}
 .listSelected{
   color: white;
   background: darkblue;
+}
+.listSelectedDisabled{
+  color: darkgray;
+  background: lightgrey;
 }
 .rubric{
   font-weight: bold;
@@ -20,7 +22,7 @@ body {
   font-weight: bold;
   color: darkgray;
 }
-.textDisabled{
+.textDisabled,.listItemDisabled{
   color: darkgray;
 }
 .textualField{

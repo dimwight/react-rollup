@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.css" afterPath="$PROJECT_DIR$/public/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.css" afterPath="$PROJECT_DIR$/src/facets/Layout.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+            <state relative-caret-position="249">
+              <caret line="295" column="16" lean-forward="false" selection-start-line="295" selection-start-column="8" selection-end-line="295" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#Layout#0" expanded="false" />
@@ -91,9 +93,19 @@
                 <element signature="n#IndexingFacet#0" expanded="false" />
                 <element signature="n#IndexingDropdown#0" expanded="false" />
                 <element signature="n#!!block;n#renderUi#0;n#IndexingDropdown#0" expanded="false" />
-                <marker date="1508000506629" expanded="false" signature="10661:11197" ph="{...}" />
-                <marker date="1508000506629" expanded="false" signature="10681:11152" ph="&lt;RowPanel/&gt;" />
+                <marker date="1508001353815" expanded="false" signature="10781:11317" ph="{...}" />
+                <marker date="1508001353815" expanded="false" signature="10801:11272" ph="&lt;RowPanel/&gt;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Layout.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facets/Layout.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -232,8 +244,8 @@
         <option value="$PROJECT_DIR$/src/widget/SmartTextField.tsx" />
         <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
-        <option value="$PROJECT_DIR$/src/facets/Layout.css" />
         <option value="$PROJECT_DIR$/src/util/Bits.ts" />
+        <option value="$PROJECT_DIR$/src/facets/Layout.css" />
         <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
       </list>
     </option>
@@ -1100,14 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/facets/Layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/Facets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -1124,10 +1128,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/facets/Layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+        <state relative-caret-position="249">
+          <caret line="295" column="16" lean-forward="false" selection-start-line="295" selection-start-column="8" selection-end-line="295" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#Layout#0" expanded="false" />
@@ -1187,8 +1199,8 @@
             <element signature="n#IndexingFacet#0" expanded="false" />
             <element signature="n#IndexingDropdown#0" expanded="false" />
             <element signature="n#!!block;n#renderUi#0;n#IndexingDropdown#0" expanded="false" />
-            <marker date="1508000506629" expanded="false" signature="10661:11197" ph="{...}" />
-            <marker date="1508000506629" expanded="false" signature="10681:11152" ph="&lt;RowPanel/&gt;" />
+            <marker date="1508001353815" expanded="false" signature="10781:11317" ph="{...}" />
+            <marker date="1508001353815" expanded="false" signature="10801:11272" ph="&lt;RowPanel/&gt;" />
           </folding>
         </state>
       </provider>

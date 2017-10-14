@@ -280,6 +280,7 @@ class IndexingDropdown extends IndexingFacet{
   }
 }
 class IndexingList extends IndexingFacet{
+  private boxWidth=0;
   onClick=(e)=>{
     this.indexChanged(e.target.id.substr(0,1));
   };
@@ -291,10 +292,10 @@ class IndexingList extends IndexingFacet{
         &&indexNow<this.state.selectables.length)
       this.indexChanged(indexNow)
   };
-  private boxWidth=0;
   protected renderUi(props:IndexingUiProps){
+    let disabled=true?true:!this.state.live;
     return (<span>
-      <LabelRubric text={props.rubric} disabled={props.disabled}/>
+      <LabelRubric text={props.rubric} disabled={disabled}/>
       <div className={'listBox'}
            style={{
              display:'table',
@@ -305,11 +306,12 @@ class IndexingList extends IndexingFacet{
         let selected=item===props.selected;
         return (<div
             id={index+this.unique}
-            className={selected?'listSelected':'listItem'}
+            className={(selected?'listSelected':'listItem')+
+              (disabled?'Disabled':'')}
             style={{cursor:'default'}}
-            tabIndex={selected?1:null}
-            onClick={this.onClick}
-            onKeyDown={this.onKeyDown}
+            tabIndex={selected&&!disabled?1:null}
+            onClick={disabled?null:this.onClick}
+            onKeyDown={disabled?null:this.onKeyDown}
           >{item}</div>)
         })}</div>
       </span>)
