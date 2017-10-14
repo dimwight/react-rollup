@@ -293,7 +293,7 @@ class IndexingList extends IndexingFacet{
       this.indexChanged(indexNow)
   };
   protected renderUi(props:IndexingUiProps){
-    let disabled=true?true:!this.state.live;
+    let disabled=false?true:!this.state.live;
     return (<span>
       <LabelRubric text={props.rubric} disabled={disabled}/>
       <div className={'listBox'}
@@ -330,6 +330,7 @@ function buildSelectingBasic(facets:Facets){
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
       <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
+      <TogglingCheckbox title={SelectingTitles.LIVE} facets={facets}/>
     </RowPanel>,
     document.getElementById('root'),
   );

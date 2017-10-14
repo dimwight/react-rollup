@@ -5,6 +5,7 @@ import {
   Target
 } from 'facets-js';
 import {Layout} from './Layout';
+import {traceThing} from '../util/Bits';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
@@ -21,6 +22,7 @@ export namespace SimpleTitles{
 export namespace SelectingTitles {
   export const FRAME='SelectingBasic',
     SELECT='Select Content',
+    LIVE='Live',
     NEW='New',
     UP='Up',
     DOWN='Down',
@@ -126,17 +128,25 @@ function newSelectingTest(test:Test):Target{
     content: list,
     getUiSelectables: () => list.map((item)=>item.text)as string[],
     newEditTargets: (indexed:TextContent) => [
-        facets.newTextualTarget(SelectingTitles.EDIT, {
-          passText: indexed.text,
-          targetStateUpdated: (title, state) => indexed.text = state as string
-        }),
-        facets.newTextualTarget(SelectingTitles.CHARS, {
-          getText: (title) => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
-        })
-      ],
+      facets.newTextualTarget(SelectingTitles.EDIT, {
+        passText: indexed.text,
+        targetStateUpdated: (title, state) => indexed.text = state as string
+      }),
+      facets.newTextualTarget(SelectingTitles.CHARS, {
+        getText: title => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
+      }),
+      facets.newTogglingTarget(SelectingTitles.LIVE,{
+        passSet:true,
+        targetStateUpdated:title=>{
+          [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
+            SelectingTitles.CHARS].forEach(titley=>
+            facets.setTargetLive(titley,facets.getTargetState(title)as boolean))
+        }
+      })
+    ],
     newFrameTargets:()=>test===Test.SelectingBasic?[
       facets.newTextualTarget(SimpleTitles.INDEXED,{
-        getText:(titley)=>{
+        getText:titley=>{
           let index=facets.getTargetState(SelectingTitles.SELECT)as number;
           return false&&index===null?"No target yet":list[index].text;
           }
