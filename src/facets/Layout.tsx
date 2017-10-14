@@ -275,29 +275,38 @@ class IndexingDropdown extends IndexingFacet{
 }
 class IndexingList extends IndexingFacet{
   onClick=(e)=>{
+    e.target.focus();
     this.props.facets.updateTargetState(this.props.title,e.target.id);
   };
-  keyUpOrDown=(e)=>{
-    
+  onKeyDown=(e)=>{
+    alert()
   };
+  componentWillMount(){
+    // document.onkeydown=this.onKeyDown;
+    traceThing('componentWillUpdate')
+  }
   protected renderUi(props:IndexingUiProps){
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
-      <div className={'listBox'} style={{display:'table'}}>{
-        props.selectables.map((item,index)=>
-          <div id={index.toString()}
+      <div className={'listBox'}
+           style={{display:'table'}}
+           id={this.props.title}
+      >{props.selectables.map((item,index)=>
+          <div
+            id={index.toString()}
             className={item===props.selected?'listSelected':'listItem'}
             style={{cursor:'default'}}
+            tabIndex={-1}
             onClick={this.onClick}
+            onKeyDown={this.onKeyDown}
           >{item}</div>
-        )
-      }</div>
+        )}</div>
       </span>)
   }
 }
 function buildSelectingBasic(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
-    {true?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
+    {false?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
