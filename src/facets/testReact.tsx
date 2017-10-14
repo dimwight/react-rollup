@@ -19,7 +19,7 @@ export namespace SimpleTitles{
     NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
 export namespace SelectingTitles {
-  export const FRAME='Selecting',
+  export const FRAME='SelectingBasic',
     SELECT='Select Content',
     NEW='New',
     UP='Up',
@@ -34,10 +34,11 @@ export enum Test{
   Indexing='Indexing',
   Trigger='Trigger',
   All='All',
-  Selecting='Selecting'
+  SelectingBasic='SelectingBasic',
+  SelectingPlus='SelectingPlus'
 }
 const facets:Facets=newInstance(false);
-function newTextualTree():Target{
+function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
@@ -96,7 +97,7 @@ function newTriggerTest(){
 }
 function newAllSimplesTest(){
   return facets.newTargetGroup('AllTest',
-    newTextualTree(),newIndexingTest(),newTogglingTest(),newTriggerTest());
+    newTextualTest(),newIndexingTest(),newTogglingTest(),newTriggerTest());
 }
 abstract class Surface{
   buildSurface(){
@@ -113,7 +114,7 @@ abstract class Surface{
 interface TextContent {
   text? : string;
 }
-function newSelectingTest():Target{
+function newSelectingTest(test:Test):Target{
   const list : TextContent[]=[
     {text: 'Hello world!'},
     {text: 'Hello Dolly!'},
@@ -133,12 +134,26 @@ function newSelectingTest():Target{
           getText: (title) => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
         })
       ],
-    newFrameTargets:()=>[
+    newFrameTargets:()=>test===Test.SelectingBasic?[
       facets.newTextualTarget(SimpleTitles.INDEXED,{
         getText:(titley)=>{
           let index=facets.getTargetState(SelectingTitles.SELECT)as number;
           return false&&index===null?"No target yet":list[index].text;
           }
+        })
+      ]
+      :[
+        facets.newTriggerTarget(SelectingTitles.UP,{
+
+        }),
+        facets.newTriggerTarget(SelectingTitles.DOWN,{
+
+        }),
+        facets.newTriggerTarget(SelectingTitles.DELETE,{
+
+        }),
+        facets.newTriggerTarget(SelectingTitles.NEW,{
+
         })
       ]
     };
@@ -149,13 +164,13 @@ constructor(private test:Test){
   super();
 }
 newTargetTree(){
-  const textual=newTextualTree,indexing=newIndexingTest,
+  const textual=newTextualTest,indexing=newIndexingTest,
     toggling=newTogglingTest,trigger=newTriggerTest,
     all=newAllSimplesTest;
-  return this.test===Test.Selecting?newSelectingTest():all();
+  return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
 }
 buildLayout(){
-  if(this.test===Test.All)[
+  if(false&&this.test===Test.All)[
     SimpleTitles.TEXTUAL_FIRST,
     SimpleTitles.INDEXING,
     SimpleTitles.TOGGLING,
@@ -171,7 +186,7 @@ buildLayout(){
 }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.Indexing).buildSurface();
+  new SurfaceWorks(Test.SelectingBasic).buildSurface();
 }
 
 

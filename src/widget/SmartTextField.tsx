@@ -3,9 +3,10 @@ import {FnPassString,FnGetString} from './_exports'
 import {traceThing} from '../Util/Bits';
 
 interface TextFieldProps{
-  getStartText:FnGetString
+  getStartText?:FnGetString
+  startText?:string
   onEnter:FnPassString
-  disabled:boolean
+  disabled?:boolean
   hint?:string
   cols?:number
 }

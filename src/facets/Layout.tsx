@@ -13,8 +13,7 @@ export class Layout{
     else if(this.test===Test.Toggling) buildToggling(facets);
     else if(this.test===Test.Trigger) buildTrigger(facets);
     else if(this.test===Test.All)buildAll(facets);
-    else if(false)traceThing('build',{test:Test.Selecting});
-    else buildSelecting(facets)
+    else buildSelectingBasic(facets)
   }
 }
 interface TargetValues{
@@ -139,6 +138,21 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   protected abstract renderUi(props:IndexingUiProps);
 }
 class IndexingDropdown extends IndexingFacet{
+  protected renderUi(props:IndexingUiProps){
+    traceThing('IndexingDropdown',props);
+    return (<span>
+      <LabelRubric text={props.rubric} disabled={props.disabled}/><select
+      className={props.disabled?'textDisabled':''}
+      disabled={props.disabled}
+      onChange={props.onChange}
+    >{props.selectables.map((item)=>
+      item===props.selected?<option selected>{item}</option>
+        :<option>{item}</option>
+    )
+    }</select></span>)
+  }
+}
+class IndexingList extends IndexingFacet{
   protected renderUi(props:IndexingUiProps){
     traceThing('IndexingDropdown',props);
     return (<span>
@@ -286,12 +300,25 @@ function buildTrigger(facets:Facets){
     document.getElementById('root'),
   )
 }
-function buildSelecting(facets:Facets){
-  ReactDOM.render(<RowPanel rubric={Test.Selecting}>
-      <IndexingFacet title={SelectingTitles.SELECT} facets={facets}/>
+function buildSelectingBasic(facets:Facets){
+  ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
+    {true?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
+      :<IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets}/>
       <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  );
+}
+function buildSelectingPlus(facets:Facets){
+  ReactDOM.render(<RowPanel rubric={Test.SelectingPlus}>
+      <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+      <TextualField title={SelectingTitles.EDIT} facets={facets}/>
+      <TriggerButton title={SelectingTitles.UP} facets={facets}/>
+      <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
+      <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
+      <TriggerButton title={SelectingTitles.NEW} facets={facets}/>
     </RowPanel>,
     document.getElementById('root'),
   );
