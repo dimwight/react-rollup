@@ -305,7 +305,7 @@ function buildSelectingBasic(facets:Facets){
     {true?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
-      <TextualField title={SelectingTitles.EDIT} facets={facets}/>
+      <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
       <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
     </RowPanel>,
     document.getElementById('root'),
@@ -314,7 +314,7 @@ function buildSelectingBasic(facets:Facets){
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.SelectingPlus}>
       <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
-      <TextualField title={SelectingTitles.EDIT} facets={facets}/>
+      <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
       <TriggerButton title={SelectingTitles.UP} facets={facets}/>
       <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
       <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
