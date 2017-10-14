@@ -7,7 +7,6 @@
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Bits.ts" afterPath="$PROJECT_DIR$/src/util/Bits.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="284" column="25" lean-forward="false" selection-start-line="284" selection-start-column="16" selection-end-line="284" selection-end-column="25" />
+            <state relative-caret-position="300">
+              <caret line="280" column="21" lean-forward="false" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="21" />
               <folding>
                 <element signature="n#Layout#0" expanded="false" />
                 <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -89,11 +88,8 @@
                 <element signature="e#6954#7140#0" expanded="false" />
                 <element signature="n#!!block;n#IndexingValues#0" expanded="false" />
                 <element signature="n#!!block;n#IndexingUiProps#0" expanded="false" />
-                <element signature="n#IndexingFacet#0" expanded="false" />
-                <element signature="n#!!block;n#readUpdate#0;n#IndexingFacet#0" expanded="false" />
-                <element signature="n#!!block;n#render#0;n#IndexingFacet#0" expanded="false" />
                 <element signature="n#!!block;n#buildSelectingPlus#0" expanded="false" />
-                <element signature="e#10035#10506#0" expanded="false" />
+                <element signature="e#9931#10402#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -708,7 +704,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Panel" />
     <MESSAGE value="enum Test{Textual='Textual'" />
     <MESSAGE value="function LabelText" />
     <MESSAGE value="htmlFor" />
@@ -733,7 +728,8 @@
     <MESSAGE value="listSelected" />
     <MESSAGE value="onClick" />
     <MESSAGE value="IndexingDropdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="IndexingDropdown" />
+    <MESSAGE value="onkeydown" />
+    <option name="LAST_COMMIT_MESSAGE" value="onkeydown" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1121,8 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="284" column="25" lean-forward="false" selection-start-line="284" selection-start-column="16" selection-end-line="284" selection-end-column="25" />
+        <state relative-caret-position="300">
+          <caret line="280" column="21" lean-forward="false" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="21" />
           <folding>
             <element signature="n#Layout#0" expanded="false" />
             <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -1179,11 +1175,8 @@
             <element signature="e#6954#7140#0" expanded="false" />
             <element signature="n#!!block;n#IndexingValues#0" expanded="false" />
             <element signature="n#!!block;n#IndexingUiProps#0" expanded="false" />
-            <element signature="n#IndexingFacet#0" expanded="false" />
-            <element signature="n#!!block;n#readUpdate#0;n#IndexingFacet#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#IndexingFacet#0" expanded="false" />
             <element signature="n#!!block;n#buildSelectingPlus#0" expanded="false" />
-            <element signature="e#10035#10506#0" expanded="false" />
+            <element signature="e#9931#10402#0" expanded="false" />
           </folding>
         </state>
       </provider>

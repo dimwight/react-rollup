@@ -244,6 +244,9 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
       selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
     }
   }
+  indexChanged(index){
+    this.props.facets.updateTargetState(this.props.title,index);
+  }
   render(){
     let state=this.state;
     return this.renderUi({
@@ -257,7 +260,7 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
 }
 class IndexingDropdown extends IndexingFacet{
   onChange=(e)=>{
-    this.props.facets.updateTargetState(this.props.title,e.target.value);
+    this.indexChanged(e.target.value)
   };
   protected renderUi(props:IndexingUiProps){
     traceThing('IndexingDropdown',props);
@@ -275,16 +278,11 @@ class IndexingDropdown extends IndexingFacet{
 }
 class IndexingList extends IndexingFacet{
   onClick=(e)=>{
-    e.target.focus();
-    this.props.facets.updateTargetState(this.props.title,e.target.id);
+    this.indexChanged(e.target.id);
   };
   onKeyDown=(e)=>{
-    alert()
+    alert(e.key)
   };
-  componentWillMount(){
-    // document.onkeydown=this.onKeyDown;
-    traceThing('componentWillUpdate')
-  }
   protected renderUi(props:IndexingUiProps){
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
