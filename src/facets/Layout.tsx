@@ -38,10 +38,12 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     if(!this.didMount)
       this.state=Object.assign({}as K,this.props,updateWithLive,);
     else this.setState(updateWithLive);
-    if(false)traceThing(this.props.title+'.facetUpdated',updateWithLive)
   };
   componentDidMount(){
     this.didMount=true;
+  }
+  componentWillUpdate(){
+    traceThing('componentWillUpdate',this.state);
   }
   protected readUpdate(update):{}{
     return {
@@ -160,7 +162,6 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   getStateText=()=>this.state.text;
   isDisabled=()=>!this.state.live;
   render(){
-    traceThing('TextualField',this.state);
     return (<div  className={'textualField'}>
         <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
