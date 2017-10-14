@@ -291,11 +291,16 @@ class IndexingList extends IndexingFacet{
         &&indexNow<this.state.selectables.length)
       this.indexChanged(indexNow)
   };
+  private boxWidth=0;
   protected renderUi(props:IndexingUiProps){
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
       <div className={'listBox'}
-           style={{display:'table'}}
+           style={{
+             display:'table',
+             width:this.boxWidth===0?null:this.boxWidth
+           }}
+           id={'listBox'+this.unique}
       >{props.selectables.map((item,index)=>{
         let selected=item===props.selected;
         return (<div
@@ -309,12 +314,11 @@ class IndexingList extends IndexingFacet{
         })}</div>
       </span>)
   }
-  componentWillUpdate(){
-  }
   componentDidUpdate(){
-    let selected=this.state.index+this.unique;
+    let selected=this.state.index+this.unique,
+      listBox='listBox'+this.unique;
     document.getElementById(selected).focus();
-    // traceThing('componentDidUpdate',this.state)
+    this.boxWidth=document.getElementById(listBox).offsetWidth
   }
 }
 function buildSelectingBasic(facets:Facets){
