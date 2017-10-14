@@ -290,15 +290,13 @@ class IndexingList extends IndexingFacet{
     traceThing('IndexingList',props);
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
-      <ListBox {...props}/>
+      <div className={'listBox'} style={{display:'table'}}>{
+        props.selectables.map((item)=>
+          <div className={item===props.selected?'listSelected':''}>{item}</div>
+        )
+      }</div>
       </span>)
   }
-}
-function ListBox(props){
-  let children=props.selectables.map((item)=>
-    <div>{(item===props.selected?'^':'')+item}</div>
-  );
-  return <div className={'listBox'}>{children}</div>
 }
 function buildSelectingBasic(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>

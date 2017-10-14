@@ -3,6 +3,13 @@ body {
   padding: 10px;
   font-family: Calibri,serif;
 }
+.listBox{
+  border-style: inset;
+  border-width: 1px;
+}
+.listSelected{
+  font-style: italic;
+}
 .rubric{
   font-weight: bold;
 }
