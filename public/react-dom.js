@@ -1841,7 +1841,7 @@ var DOMProperty = {
   getPossibleStandardName: "development" !== 'production' ? { autofocus: 'autoFocus' } : null,
 
   /**
-   * All of the isCustomAttribute() functions that have been injected.
+   * AllSimples of the isCustomAttribute() functions that have been injected.
    */
   _isCustomAttributeFunctions: [],
 
@@ -5558,7 +5558,7 @@ function assertValidProps(component, props) {
   if ("development" !== 'production') {
     "development" !== 'production' ? warning(props.innerHTML == null, 'Directly setting property `innerHTML` is not permitted. ' + 'For more information, lookup documentation on `dangerouslySetInnerHTML`.') : void 0;
     "development" !== 'production' ? warning(props.suppressContentEditableWarning || !props.contentEditable || props.children == null, 'A component is `contentEditable` and contains `children` managed by ' + 'React. It is now your responsibility to guarantee that none of ' + 'those nodes are unexpectedly modified or duplicated. This is ' + 'probably not intentional.') : void 0;
-    "development" !== 'production' ? warning(props.onFocusIn == null && props.onFocusOut == null, 'React uses onFocus and onBlur instead of onFocusIn and onFocusOut. ' + 'All React events are normalized to bubble, so onFocusIn and onFocusOut ' + 'are not needed/supported by React.') : void 0;
+    "development" !== 'production' ? warning(props.onFocusIn == null && props.onFocusOut == null, 'React uses onFocus and onBlur instead of onFocusIn and onFocusOut. ' + 'AllSimples React events are normalized to bubble, so onFocusIn and onFocusOut ' + 'are not needed/supported by React.') : void 0;
   }
   !(props.style == null || typeof props.style === 'object') ? "development" !== 'production' ? invariant(false, 'The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + \'em\'}} when using JSX.%s', getDeclarationErrorAddendum(component)) : _prodInvariant('62', getDeclarationErrorAddendum(component)) : void 0;
 }
@@ -10587,7 +10587,7 @@ function isValidOwner(object) {
 /**
  * ReactOwners are capable of storing references to owned components.
  *
- * All components are capable of //being// referenced by owner components, but
+ * AllSimples components are capable of //being// referenced by owner components, but
  * only ReactOwner components are capable of //referencing// owned components.
  * The named reference is known as a "ref".
  *
@@ -12303,7 +12303,7 @@ var ReactTestUtils = {
  * - `ReactTestUtils.Simulate.click(Element/ReactDOMComponent)`
  * - `ReactTestUtils.Simulate.mouseMove(Element/ReactDOMComponent)`
  * - `ReactTestUtils.Simulate.change(Element/ReactDOMComponent)`
- * - ... (All keys from event plugin `eventTypes` objects)
+ * - ... (AllSimples keys from event plugin `eventTypes` objects)
  */
 function makeSimulator(eventType) {
   return function (domComponentOrNode, eventData) {
@@ -12376,7 +12376,7 @@ buildSimulators();
  * - `ReactTestUtils.SimulateNative.mouseMove(Element/ReactDOMComponent)`
  * - `ReactTestUtils.SimulateNative.mouseIn/ReactDOMComponent)`
  * - `ReactTestUtils.SimulateNative.mouseOut(Element/ReactDOMComponent)`
- * - ... (All keys from `EventConstants.topLevelTypes`)
+ * - ... (AllSimples keys from `EventConstants.topLevelTypes`)
  *
  * Note: Top level event types are a subset of the entire set of handler types
  * (which include a broader set of "synthetic" events). For example, onDragDone
@@ -16500,7 +16500,7 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
   var type = typeof children;
 
   if (type === 'undefined' || type === 'boolean') {
-    // All of the above are perceived as null.
+    // AllSimples of the above are perceived as null.
     children = null;
   }
 
@@ -17125,7 +17125,7 @@ module.exports = EventListener;
 },{"144":144}],138:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17163,7 +17163,7 @@ module.exports = ExecutionEnvironment;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17193,7 +17193,7 @@ module.exports = camelize;
 },{}],140:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17235,7 +17235,7 @@ module.exports = camelizeStyleName;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17275,7 +17275,7 @@ module.exports = containsNode;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17402,7 +17402,7 @@ module.exports = createArrayFromMixed;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17486,7 +17486,7 @@ module.exports = createNodesFromMarkup;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17523,7 +17523,7 @@ module.exports = emptyFunction;
 },{}],145:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17543,7 +17543,7 @@ module.exports = emptyObject;
 },{}],146:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17572,7 +17572,7 @@ module.exports = focusNode;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17611,7 +17611,7 @@ module.exports = getActiveElement;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17704,7 +17704,7 @@ module.exports = getMarkupWrap;
 },{"138":138,"152":152}],149:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17745,7 +17745,7 @@ module.exports = getUnboundedScrollPosition;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17776,7 +17776,7 @@ module.exports = hyphenate;
 },{}],151:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17815,7 +17815,7 @@ module.exports = hyphenateStyleName;
 },{"150":150}],152:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17873,7 +17873,7 @@ module.exports = invariant;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17898,7 +17898,7 @@ module.exports = isNode;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17921,7 +17921,7 @@ module.exports = isTextNode;
 },{"153":153}],155:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17951,7 +17951,7 @@ module.exports = memoizeStringOnly;
 },{}],156:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -17976,7 +17976,7 @@ module.exports = performance || {};
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -18008,7 +18008,7 @@ module.exports = performanceNow;
 },{"156":156}],158:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -18076,7 +18076,7 @@ module.exports = shallowEqual;
 },{}],159:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -18235,7 +18235,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 },{}],161:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -18298,7 +18298,7 @@ module.exports = checkPropTypes;
 },{"152":152,"159":159,"164":164}],162:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -18321,7 +18321,7 @@ module.exports = function(isValidElement) {
 },{"163":163}],163:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -18835,7 +18835,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 },{"144":144,"152":152,"159":159,"161":161,"164":164}],164:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant

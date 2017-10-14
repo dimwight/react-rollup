@@ -1627,7 +1627,7 @@ function getCurrentComponentErrorInfo(parentType) {
 /**
  * Warn if the element doesn't have an explicit key assigned to it.
  * This element is in an array. The array could grow and shrink or be
- * reordered. All children that haven't already been validated are required to
+ * reordered. AllSimples children that haven't already been validated are required to
  * have a "key" property assigned to it. Error statuses are cached so a warning
  * will only be shown once.
  *
@@ -2393,7 +2393,7 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
   var type = typeof children;
 
   if (type === 'undefined' || type === 'boolean') {
-    // All of the above are perceived as null.
+    // AllSimples of the above are perceived as null.
     children = null;
   }
 
@@ -2503,7 +2503,7 @@ module.exports = traverseAllChildren;
 },{"1":1,"10":10,"21":21,"25":25,"30":30,"31":31,"7":7}],27:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3379,7 +3379,7 @@ module.exports = factory;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3416,7 +3416,7 @@ module.exports = emptyFunction;
 },{}],29:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3436,7 +3436,7 @@ module.exports = emptyObject;
 },{}],30:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3492,7 +3492,7 @@ module.exports = invariant;
 },{}],31:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3651,7 +3651,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 },{}],33:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3714,7 +3714,7 @@ module.exports = checkPropTypes;
 },{"30":30,"31":31,"36":36}],34:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -3737,7 +3737,7 @@ module.exports = function(isValidElement) {
 },{"35":35}],35:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
@@ -4251,7 +4251,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 },{"28":28,"30":30,"31":31,"33":33,"36":36}],36:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * AllSimples rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant

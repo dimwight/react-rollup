@@ -10,9 +10,9 @@ export class Layout{
   build(facets:Facets){
     if(this.test===Test.Textual) buildTextual(facets);
     else if(this.test===Test.Indexing) buildIndexing(facets);
-    else if(this.test===Test.Toggling) buildToggling(facets);
+    else if(this.test===Test.TogglingLive) buildToggling(facets);
     else if(this.test===Test.Trigger) buildTrigger(facets);
-    else if(this.test===Test.All)buildAll(facets);
+    else if(this.test===Test.AllSimples)buildAll(facets);
     else buildSelectingBasic(facets)
   }
 }
@@ -128,7 +128,7 @@ function buildAll(facets:Facets){
         <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
         <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={Test.Toggling}>
+      <RowPanel rubric={Test.TogglingLive}>
         <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
         <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
       </RowPanel>
@@ -223,7 +223,7 @@ function buildTextual(facets:Facets){
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
-    <RowPanel rubric={Test.Toggling}>
+    <RowPanel rubric={Test.TogglingLive}>
       <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
       <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
     </RowPanel>,
@@ -276,7 +276,7 @@ class IndexingDropdown extends IndexingFacet{
     this.indexChanged(e.target.value)
   };
   protected renderUi(props:IndexingUiProps){
-    traceThing('IndexingDropdown',props);
+    // traceThing('IndexingDropdown',props);
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/><select
       className={props.disabled?'textDisabled':''}

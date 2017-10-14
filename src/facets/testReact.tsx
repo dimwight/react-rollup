@@ -14,7 +14,7 @@ export namespace SimpleTitles{
     INDEXING=TEXTUAL_FIRST+' or '+TEXTUAL_SECOND,
     INDEX='Index',INDEXED='Indexed',INDEX_START=0,
     INDEXABLES=[TEXTUAL_FIRST,TEXTUAL_SECOND],
-    TOGGLING='Click to toggle',TOGGLED='Toggling state',
+    TOGGLING='Click to toggle',TOGGLED='TogglingLive state',
     TRIGGER='Click Me!',TRIGGEREDS='Button presses',
     TOGGLE_START=false,
     NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
@@ -32,14 +32,14 @@ export namespace SelectingTitles {
 }
 export enum Test{
   Textual='Textual',
-  Toggling='Toggling',
+  TogglingLive='TogglingLive',
   Indexing='Indexing',
   Trigger='Trigger',
-  All='All',
+  AllSimples='AllSimples',
   SelectingBasic='SelectingBasic',
   SelectingPlus='SelectingPlus'
 }
-const facets:Facets=newInstance(true);
+const facets:Facets=newInstance(false);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
@@ -56,14 +56,15 @@ function newTextualTest():Target{
 function newTogglingTest(){
   const toggling=facets.newTogglingTarget(SimpleTitles.TOGGLING,{
     passSet:SimpleTitles.TOGGLE_START,
-    targetStateUpdated:(title)=>{
-      facets.setTargetLive(SimpleTitles.TOGGLED,facets.getTargetState(title)as boolean)
-    }
   }),
   toggled=facets.newTextualTarget(SimpleTitles.TOGGLED,{
     getText:(title)=>{
       return facets.getTargetState(SimpleTitles.TOGGLING)as boolean?'Set':'Not set'
     }
+  });
+  facets.attachOnRetargeted(()=>{
+    facets.setTargetLive(SimpleTitles.TOGGLED,
+      facets.getTargetState(SimpleTitles.TOGGLING)as boolean);
   });
   return facets.newTargetGroup('TogglingTest',toggling,toggled);
 }
@@ -116,12 +117,6 @@ abstract class Surface{
 interface TextContent {
   text? : string;
 }
-function setSelectingTargetsLive(){
-  let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
-  [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
-    SelectingTitles.CHARS].forEach(title_=>
-    facets.setTargetLive(title_,live))
-}
 function newSelectingTest(test:Test):Target{
   const list : TextContent[]=[
     {text: 'Hello world!'},
@@ -150,8 +145,7 @@ function newSelectingTest(test:Test):Target{
           }
         }),
         facets.newTogglingTarget(SelectingTitles.LIVE,{
-          passSet:false,
-          targetStateUpdated:title=>setSelectingTargetsLive()
+          passSet:false
         })
       ]
       :[
@@ -169,33 +163,35 @@ function newSelectingTest(test:Test):Target{
         })
       ]
     };
+  facets.attachOnRetargeted(()=>{
+    trace('newSelectingTest')
+    let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
+    [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
+      SelectingTitles.CHARS].forEach(title_=>
+      facets.setTargetLive(title_,live))
+  });
   return facets.buildSelectingFrame(frame);
 }
 class SurfaceWorks extends Surface{
-constructor(private test:Test){
-  super();
-}
-newTargetTree(){
-  const textual=newTextualTest,indexing=newIndexingTest,
-    toggling=newTogglingTest,trigger=newTriggerTest,
-    all=newAllSimplesTest;
-  return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
-}
-buildLayout(){
-  if(true&&this.test===Test.All)[
+  constructor(private test:Test){
+    super();
+  }
+  newTargetTree(){
+    const textual=newTextualTest,indexing=newIndexingTest,
+      toggling=newTogglingTest,trigger=newTriggerTest,
+      all=newAllSimplesTest;
+    return this.test!==Test.SelectingBasic?all():newSelectingTest(this.test);
+  }
+  buildLayout(){
+  if(true&&this.test===Test.AllSimples)[
     SimpleTitles.TEXTUAL_FIRST,
     SimpleTitles.INDEXING,
     SimpleTitles.TOGGLING,
     SimpleTitles.TRIGGER,
     SimpleTitles.TRIGGEREDS]
     .forEach(title=>facets.setTargetLive(title,false));
-  if(this.test===Test.Toggling||this.test===Test.All)
-    facets.setTargetLive(SimpleTitles.TOGGLED,
-    facets.getTargetState(SimpleTitles.TOGGLING)as boolean);
-  else if(this.test===Test.SelectingBasic)
-    setSelectingTargetsLive();
-  new Layout(this.test).build(facets);
-}
+    new Layout(this.test).build(facets);
+  }
 }
 export function buildSurface(){
   new SurfaceWorks(Test.SelectingBasic).buildSurface();

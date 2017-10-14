@@ -1,4 +1,4 @@
-export {Facets};
+// export {Facets};
 
 /**
 * For passing simple target state in and out of a {Facets}.
@@ -199,4 +199,5 @@ export interface Facets{
   getTargetState(title:string):SimpleState;
   setTargetLive(title: string, live: boolean): void;
   isTargetLive(title: string): boolean;
+  attachOnRetargeted(retargeted: ()=>void): void;
 }
