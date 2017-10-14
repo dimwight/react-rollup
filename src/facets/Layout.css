@@ -7,9 +7,11 @@ body {
   border-style: inset;
   border-width: 1px;
 }
+.listItem{
+}
 .listSelected{
-  color: darkgray;
-  background: lightgrey;
+  color: white;
+  background: darkblue;
 }
 .rubric{
   font-weight: bold;

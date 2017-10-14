@@ -95,63 +95,6 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
     </span>)
   }
 }
-interface IndexingValues extends TargetValues{
-  selectables?:string[]
-  index?:number
-}
-interface IndexingUiProps{
-  selectables:string[]
-  disabled:boolean
-  selected:string
-  onChange:(e)=>void
-  rubric:string
-}
-abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
-  protected readUpdate(update){
-    return {
-      index:update,
-      selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
-    }
-  }
-  onChange=(e)=>{
-    let value=e.target.value,selectables=this.state.selectables;
-    for(let at=0; at<selectables.length; at++){
-      if(selectables[at]===value){
-        this.setState(then=>{
-          this.props.facets.updateTargetState(this.props.title,at);
-          return {index:at};
-        });
-        break;
-      }
-    }
-  };
-  render(){
-    let state=this.state;
-    return this.renderUi({
-      selectables:state.selectables,
-      selected:state.selectables[(state as IndexingValues).index],
-      disabled:!state.live,
-      onChange:this.onChange,
-      rubric:this.props.title
-    });
-  }
-  protected abstract renderUi(props:IndexingUiProps);
-}
-class IndexingDropdown extends IndexingFacet{
-  protected renderUi(props:IndexingUiProps){
-    traceThing('IndexingDropdown',props);
-    return (<span>
-      <LabelRubric text={props.rubric} disabled={props.disabled}/><select
-      className={props.disabled?'textDisabled':''}
-      disabled={props.disabled}
-      onChange={props.onChange}
-    >{props.selectables.map((item)=>
-      item===props.selected?<option selected>{item}</option>
-        :<option>{item}</option>
-    )
-    }</select></span>)
-  }
-}
 function buildIndexing(facets:Facets){
   ReactDOM.render(
     <RowPanel rubric={Test.Indexing}>
@@ -206,7 +149,6 @@ class TextualField extends Facet<TextualValues,TextualValues>{
   };
   getStateText=()=>this.state.text;
   render(){
-    traceThing('TextualField.render',this.state);
     return (<div  className={'textualField'}>
         <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
@@ -285,14 +227,81 @@ function buildTrigger(facets:Facets){
     document.getElementById('root'),
   )
 }
-class IndexingList extends IndexingFacet{
+interface IndexingValues extends TargetValues{
+  selectables?:string[]
+  index?:number
+}
+interface IndexingUiProps{
+  selectables:string[]
+  disabled:boolean
+  selected:string
+  onChange:(e)=>void
+  rubric:string
+}
+abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
+  protected readUpdate(update){
+    return {
+      index:update,
+      selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
+    }
+  }
+  onChange=(e)=>{
+    let value=e.target.value,selectables=this.state.selectables;
+    for(let at=0; at<selectables.length; at++){
+      if(selectables[at]===value){
+        this.setState(then=>{
+          this.props.facets.updateTargetState(this.props.title,at);
+          return {index:at};
+        });
+        break;
+      }
+    }
+  };
+  render(){
+    let state=this.state;
+    return this.renderUi({
+      selectables:state.selectables,
+      selected:state.selectables[(state as IndexingValues).index],
+      disabled:!state.live,
+      onChange:this.onChange,
+      rubric:this.props.title
+    });
+  }
+  protected abstract renderUi(props:IndexingUiProps);
+}
+class IndexingDropdown extends IndexingFacet{
   protected renderUi(props:IndexingUiProps){
-    traceThing('IndexingList',props);
+    traceThing('IndexingDropdown',props);
+    return (<span>
+      <LabelRubric text={props.rubric} disabled={props.disabled}/><select
+      className={props.disabled?'textDisabled':''}
+      disabled={props.disabled}
+      onChange={props.onChange}
+    >{props.selectables.map((item)=>
+      item===props.selected?<option selected>{item}</option>
+        :<option>{item}</option>
+    )
+    }</select></span>)
+  }
+}
+class IndexingList extends IndexingFacet{
+  onClick=(e)=>{
+    this.props.facets.updateTargetState(this.props.title,e.target.id);
+  };
+  keyUpOrDown=(e)=>{
+    
+  };
+  protected renderUi(props:IndexingUiProps){
+    if(false)traceThing('IndexingList',props);
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
       <div className={'listBox'} style={{display:'table'}}>{
-        props.selectables.map((item)=>
-          <div className={item===props.selected?'listSelected':''}>{item}</div>
+        props.selectables.map((item,index)=>
+          <div id={index.toString()}
+            className={item===props.selected?'listSelected':'listItem'}
+            style={{cursor:'default'}}
+            onClick={this.onClick}
+          >{item}</div>
         )
       }</div>
       </span>)
