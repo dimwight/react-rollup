@@ -281,14 +281,19 @@ class IndexingList extends IndexingFacet{
     this.indexChanged(e.target.id);
   };
   onKeyDown=(e)=>{
-    alert(e.key)
+    let indexThen=e.target.id,indexNow=indexThen;
+    if(e.key==='ArrowDown')indexNow++;
+    else if(e.key==='ArrowUp')indexNow--;
+    traceThing('onKeyDown',{indexNow:indexNow})
+    if(indexNow!==indexThen&&indexNow>=0
+        &&indexNow<this.state.selectables.length)
+      this.indexChanged(indexNow)
   };
   protected renderUi(props:IndexingUiProps){
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
       <div className={'listBox'}
            style={{display:'table'}}
-           id={this.props.title}
       >{props.selectables.map((item,index)=>
           <div
             id={index.toString()}
