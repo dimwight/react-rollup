@@ -24,8 +24,11 @@ interface TargetValues{
 }
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
+  private static ids=0;
+  protected readonly unique:string;
   constructor(props){
     super(props);
+    this.unique=props.title+Facet.ids++;
     props.facets.attachFacet(props.title,this.facetUpdated);
   }
   facetUpdated=(update)=>{
@@ -296,7 +299,7 @@ class IndexingList extends IndexingFacet{
       >{props.selectables.map((item,index)=>{
         let selected=item===props.selected;
         return (<div
-            id={index.toString()+this.state.title}
+            id={index+this.unique}
             className={selected?'listSelected':'listItem'}
             style={{cursor:'default'}}
             tabIndex={selected?1:null}
@@ -306,9 +309,12 @@ class IndexingList extends IndexingFacet{
         })}</div>
       </span>)
   }
+  componentWillUpdate(){
+  }
   componentDidUpdate(){
-    let id=this.state.index+this.state.title;
-    document.getElementById(id).focus();
+    let selected=this.state.index+this.unique;
+    document.getElementById(selected).focus();
+    // traceThing('componentDidUpdate',this.state)
   }
 }
 function buildSelectingBasic(facets:Facets){
