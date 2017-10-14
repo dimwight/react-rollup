@@ -284,7 +284,6 @@ class IndexingList extends IndexingFacet{
     let indexThen=e.target.id.substr(0,1),indexNow=indexThen;
     if(e.key==='ArrowDown')indexNow++;
     else if(e.key==='ArrowUp')indexNow--;
-    // traceThing('onKeyDown',{indexNow:indexNow})
     if(indexNow!==indexThen&&indexNow>=0
         &&indexNow<this.state.selectables.length)
       this.indexChanged(indexNow)
@@ -294,20 +293,22 @@ class IndexingList extends IndexingFacet{
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
       <div className={'listBox'}
            style={{display:'table'}}
-      >{props.selectables.map((item,index)=>
-          <div
-            id={index.toString()+'className'}
-            className={item===props.selected?'listSelected':'listItem'}
+      >{props.selectables.map((item,index)=>{
+        let selected=item===props.selected;
+        return (<div
+            id={index.toString()+this.state.title}
+            className={selected?'listSelected':'listItem'}
             style={{cursor:'default'}}
-            tabIndex={-1}
+            tabIndex={selected?1:null}
             onClick={this.onClick}
             onKeyDown={this.onKeyDown}
-          >{item}</div>
-        )}</div>
+          >{item}</div>)
+        })}</div>
       </span>)
   }
   componentDidUpdate(){
-    traceThing('componentDidUpdate',this.state)
+    let id=this.state.index+this.state.title;
+    document.getElementById(id).focus();
   }
 }
 function buildSelectingBasic(facets:Facets){
