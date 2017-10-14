@@ -1,12 +1,16 @@
 import React from 'react';
-import {FnPassString,FnGetString} from './_exports'
+import {
+  FnPassString,
+  FnGetString,
+  FnGetBoolean,
+} from './_exports'
 import {traceThing} from '../Util/Bits';
 
 interface TextFieldProps{
   getStartText?:FnGetString
   startText?:string
   onEnter:FnPassString
-  disabled?:boolean
+  isDisabled:FnGetBoolean
   hint?:string
   cols?:number
 }
@@ -18,10 +22,10 @@ interface TextFieldState{
 export class SmartTextField extends React.Component<TextFieldProps,TextFieldState> {
   constructor(props){
     super(props);
-    const hint=props.hint,startText=props.getStartText();
+    let hint=props.hint,startText=props.getStartText();
     this.state={
       text:startText?startText:hint?hint:'',
-      disabled:props.disabled,
+      disabled:props.isDisabled(),
       startText:startText
     }
   }
@@ -31,7 +35,7 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     })
   };
   onClick=()=>{
-    const hint=this.props.hint;
+    let hint=this.props.hint;
     if(hint&&this.state.text===hint)
       this.setText('');
   };
@@ -41,7 +45,7 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
   onKeyPress=(e)=>{
     if(e.key==='Enter'){
       e.preventDefault();
-      const text=this.state.text;
+      let text=this.state.text;
       this.props.onEnter(text);
     }
   };
@@ -49,10 +53,12 @@ export class SmartTextField extends React.Component<TextFieldProps,TextFieldStat
     if(e.keyCode===27)this.setText(this.state.startText)
   };
   componentWillReceiveProps(){
-    const startText=this.props.getStartText();
+    let startText=this.props.getStartText(),
+      disabled=this.props.isDisabled();
     this.setState({
       startText: startText,
-      text:startText
+      text:startText,
+      disabled:disabled,
     });
   }
   render() {

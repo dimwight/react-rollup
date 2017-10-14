@@ -44,7 +44,10 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     this.didMount=true;
   }
   protected readUpdate(update):{}{
-    return {state:update}
+    return {
+      state:update,
+      live:this.props.facets.isTargetLive(this.props.title)
+    }
   }
 }
 interface TextualValues extends TargetValues{
@@ -60,14 +63,6 @@ interface LabelValues{
   target?:string
   style?:any
   classes?:string
-}
-function LabelRubric (props:LabelValues){
-  let htmlFor=props.target,text=props.text,
-    className=(props.disabled?'rubricDisabled':'rubric');
-  return htmlFor?<label htmlFor={htmlFor} className={className}>
-      {text}&nbsp;</label>
-    :<span className={className}>
-      {text}&nbsp;</span>
 }
 function LabelText (props:LabelValues){
   return (<span className={props.disabled?'textDisabled':''}>
@@ -143,22 +138,36 @@ function buildAll(facets:Facets){
     document.getElementById('root'),
   );
 }
+function LabelRubric (props:LabelValues){
+  // traceThing('LabelRubric',props)
+  let htmlFor=props.target,text=props.text,
+    className=(props.disabled?'rubricDisabled':'rubric');
+  return htmlFor?<label htmlFor={htmlFor} className={className}>
+      {text}&nbsp;</label>
+    :<span className={className}>
+      {text}&nbsp;</span>
+}
 class TextualField extends Facet<TextualValues,TextualValues>{
-  protected readUpdate(update):{}{
-    return {text:update}
+  protected readUpdate(update){
+    return {
+      text:update,
+      live:this.props.facets.isTargetLive(this.props.title)
+    }
   }
   onFieldEnter=(text)=>{
      this.props.facets.updateTargetState(this.props.title,text);
   };
   getStateText=()=>this.state.text;
+  isDisabled=()=>!this.state.live;
   render(){
+    traceThing('TextualField',this.state);
     return (<div  className={'textualField'}>
         <LabelRubric text={this.props.title} disabled={!this.state.live}/>
         <SmartTextField
           getStartText={this.getStateText}
           onEnter={this.onFieldEnter}
           cols={this.props.cols}
-          disabled={!this.state.live}
+          isDisabled={this.isDisabled}
           hint={'Hint'}
         />
       </div>
