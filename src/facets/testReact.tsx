@@ -116,6 +116,12 @@ abstract class Surface{
 interface TextContent {
   text? : string;
 }
+function setSelectingTargetsLive(){
+  let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
+  [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
+    SelectingTitles.CHARS].forEach(title_=>
+    facets.setTargetLive(title_,live))
+}
 function newSelectingTest(test:Test):Target{
   const list : TextContent[]=[
     {text: 'Hello world!'},
@@ -136,12 +142,8 @@ function newSelectingTest(test:Test):Target{
         getText: title => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
       }),
       facets.newTogglingTarget(SelectingTitles.LIVE,{
-        passSet:true,
-        targetStateUpdated:title=>{
-          [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
-            SelectingTitles.CHARS].forEach(titley=>
-            facets.setTargetLive(titley,facets.getTargetState(title)as boolean))
-        }
+        passSet:false,
+        targetStateUpdated:title=>setSelectingTargetsLive()
       })
     ],
     newFrameTargets:()=>test===Test.SelectingBasic?[
@@ -180,18 +182,18 @@ newTargetTree(){
   return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
 }
 buildLayout(){
-  if(false&&this.test===Test.All)[
+  if(true&&this.test===Test.All)[
     SimpleTitles.TEXTUAL_FIRST,
     SimpleTitles.INDEXING,
     SimpleTitles.TOGGLING,
     SimpleTitles.TRIGGER,
     SimpleTitles.TRIGGEREDS]
-    .forEach((title)=>{
-      facets.setTargetLive(title,false)
-    });
+    .forEach(title=>facets.setTargetLive(title,false));
   if(this.test===Test.Toggling||this.test===Test.All)
     facets.setTargetLive(SimpleTitles.TOGGLED,
     facets.getTargetState(SimpleTitles.TOGGLING)as boolean);
+  else if(this.test===Test.SelectingBasic)
+    setSelectingTargetsLive();
   new Layout(this.test).build(facets);
 }
 }
