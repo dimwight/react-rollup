@@ -152,21 +152,6 @@ class IndexingDropdown extends IndexingFacet{
     }</select></span>)
   }
 }
-class IndexingList extends IndexingFacet{
-  protected renderUi(props:IndexingUiProps){
-    traceThing('IndexingDropdown',props);
-    return (<span>
-      <LabelRubric text={props.rubric} disabled={props.disabled}/><select
-      className={props.disabled?'textDisabled':''}
-      disabled={props.disabled}
-      onChange={props.onChange}
-    >{props.selectables.map((item)=>
-      item===props.selected?<option selected>{item}</option>
-        :<option>{item}</option>
-    )
-    }</select></span>)
-  }
-}
 function buildIndexing(facets:Facets){
   ReactDOM.render(
     <RowPanel rubric={Test.Indexing}>
@@ -299,6 +284,21 @@ function buildTrigger(facets:Facets){
     </RowPanel>,
     document.getElementById('root'),
   )
+}
+class IndexingList extends IndexingFacet{
+  protected renderUi(props:IndexingUiProps){
+    traceThing('IndexingList',props);
+    return (<span>
+      <LabelRubric text={props.rubric} disabled={props.disabled}/>
+      <ListBox {...props}/>
+      </span>)
+  }
+}
+function ListBox(props){
+  let children=props.selectables.map((item)=>
+    <div>{(item===props.selected?'^':'')+item}</div>
+  );
+  return <div className={'listBox'}>{children}</div>
 }
 function buildSelectingBasic(facets:Facets){
   ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>

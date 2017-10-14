@@ -42,8 +42,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="305" column="20" lean-forward="false" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="20" />
+            <state relative-caret-position="402">
+              <caret line="296" column="16" lean-forward="false" selection-start-line="296" selection-start-column="9" selection-end-line="296" selection-end-column="16" />
               <folding>
                 <element signature="n#!!block;n#TargetValues#0" expanded="false" />
                 <element signature="n#Facet#0" expanded="false" />
@@ -82,46 +82,42 @@
                 <element signature="n#!!block;n#renderUi#0;n#IndexingDropdown#0" expanded="false" />
                 <element signature="e#4082#4436#0" expanded="false" />
                 <element signature="e#4155#4429#0" expanded="false" />
-                <element signature="n#IndexingList#0" expanded="false" />
-                <element signature="n#!!block;n#renderUi#0;n#IndexingList#0" expanded="false" />
-                <element signature="e#4585#4939#0" expanded="false" />
-                <element signature="e#4658#4932#0" expanded="false" />
                 <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-                <element signature="e#5009#5261#0" expanded="false" />
+                <element signature="e#4506#4758#0" expanded="false" />
                 <element signature="n#!!block;n#RowPanel#0" expanded="false" />
-                <element signature="e#5376#5436#0" expanded="false" />
-                <element signature="e#5448#5577#0" expanded="false" />
+                <element signature="e#4873#4933#0" expanded="false" />
+                <element signature="e#4945#5074#0" expanded="false" />
                 <element signature="n#!!block;n#buildAll#0" expanded="false" />
-                <element signature="e#5712#6691#0" expanded="false" />
-                <element signature="e#5724#6012#0" expanded="false" />
-                <element signature="e#6019#6280#0" expanded="false" />
-                <element signature="e#6287#6481#0" expanded="false" />
-                <element signature="e#6488#6680#0" expanded="false" />
+                <element signature="e#5209#6188#0" expanded="false" />
+                <element signature="e#5221#5509#0" expanded="false" />
+                <element signature="e#5516#5777#0" expanded="false" />
+                <element signature="e#5784#5978#0" expanded="false" />
+                <element signature="e#5985#6177#0" expanded="false" />
                 <element signature="n#TextualField#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TextualField#0" expanded="false" />
-                <element signature="e#6887#6957#0" expanded="false" />
+                <element signature="e#6384#6454#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TextualField#0" expanded="false" />
-                <element signature="e#7069#7401#0" expanded="false" />
-                <element signature="e#7186#7388#0" expanded="false" />
+                <element signature="e#6566#6898#0" expanded="false" />
+                <element signature="e#6683#6885#0" expanded="false" />
                 <element signature="n#TextualLabel#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TextualLabel#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TextualLabel#0" expanded="false" />
-                <element signature="e#7601#7761#0" expanded="false" />
+                <element signature="e#7098#7258#0" expanded="false" />
                 <element signature="n#TriggerButton#0" expanded="false" />
                 <element signature="n#!!block#1;n#readUpdate#0;n#TriggerButton#0" expanded="false" />
-                <element signature="e#7898#7974#0" expanded="false" />
+                <element signature="e#7395#7471#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
-                <element signature="e#8000#8108#0" expanded="false" />
+                <element signature="e#7497#7605#0" expanded="false" />
                 <element signature="n#!!block;n#PanelRubric#0" expanded="false" />
-                <element signature="e#8266#8316#0" expanded="false" />
+                <element signature="e#7763#7813#0" expanded="false" />
                 <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-                <element signature="e#8455#8735#0" expanded="false" />
-                <element signature="e#8547#8596#0" expanded="false" />
-                <element signature="e#8668#8718#0" expanded="false" />
+                <element signature="e#7952#8232#0" expanded="false" />
+                <element signature="e#8044#8093#0" expanded="false" />
+                <element signature="e#8165#8215#0" expanded="false" />
                 <element signature="n#!!block;n#buildToggling#0" expanded="false" />
-                <element signature="e#8843#9031#0" expanded="false" />
+                <element signature="e#8340#8528#0" expanded="false" />
                 <element signature="n#!!block;n#buildTrigger#0" expanded="false" />
-                <element signature="e#9139#9325#0" expanded="false" />
+                <element signature="e#8636#8822#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -723,7 +719,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Caption?" />
     <MESSAGE value="LabelText?" />
     <MESSAGE value="textDisabled" />
     <MESSAGE value="newTogglingTest" />
@@ -748,7 +743,8 @@
     <MESSAGE value="IndexingDropdown again" />
     <MESSAGE value="SmartTextField" />
     <MESSAGE value="buildSelectingBasic" />
-    <option name="LAST_COMMIT_MESSAGE" value="buildSelectingBasic" />
+    <MESSAGE value="IndexingList?" />
+    <option name="LAST_COMMIT_MESSAGE" value="IndexingList?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,8 +1130,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="305" column="20" lean-forward="false" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="20" />
+        <state relative-caret-position="402">
+          <caret line="296" column="16" lean-forward="false" selection-start-line="296" selection-start-column="9" selection-end-line="296" selection-end-column="16" />
           <folding>
             <element signature="n#!!block;n#TargetValues#0" expanded="false" />
             <element signature="n#Facet#0" expanded="false" />
@@ -1174,46 +1170,42 @@
             <element signature="n#!!block;n#renderUi#0;n#IndexingDropdown#0" expanded="false" />
             <element signature="e#4082#4436#0" expanded="false" />
             <element signature="e#4155#4429#0" expanded="false" />
-            <element signature="n#IndexingList#0" expanded="false" />
-            <element signature="n#!!block;n#renderUi#0;n#IndexingList#0" expanded="false" />
-            <element signature="e#4585#4939#0" expanded="false" />
-            <element signature="e#4658#4932#0" expanded="false" />
             <element signature="n#!!block;n#buildIndexing#0" expanded="false" />
-            <element signature="e#5009#5261#0" expanded="false" />
+            <element signature="e#4506#4758#0" expanded="false" />
             <element signature="n#!!block;n#RowPanel#0" expanded="false" />
-            <element signature="e#5376#5436#0" expanded="false" />
-            <element signature="e#5448#5577#0" expanded="false" />
+            <element signature="e#4873#4933#0" expanded="false" />
+            <element signature="e#4945#5074#0" expanded="false" />
             <element signature="n#!!block;n#buildAll#0" expanded="false" />
-            <element signature="e#5712#6691#0" expanded="false" />
-            <element signature="e#5724#6012#0" expanded="false" />
-            <element signature="e#6019#6280#0" expanded="false" />
-            <element signature="e#6287#6481#0" expanded="false" />
-            <element signature="e#6488#6680#0" expanded="false" />
+            <element signature="e#5209#6188#0" expanded="false" />
+            <element signature="e#5221#5509#0" expanded="false" />
+            <element signature="e#5516#5777#0" expanded="false" />
+            <element signature="e#5784#5978#0" expanded="false" />
+            <element signature="e#5985#6177#0" expanded="false" />
             <element signature="n#TextualField#0" expanded="false" />
             <element signature="n#!!block#1;n#readUpdate#0;n#TextualField#0" expanded="false" />
-            <element signature="e#6887#6957#0" expanded="false" />
+            <element signature="e#6384#6454#0" expanded="false" />
             <element signature="n#!!block;n#render#0;n#TextualField#0" expanded="false" />
-            <element signature="e#7069#7401#0" expanded="false" />
-            <element signature="e#7186#7388#0" expanded="false" />
+            <element signature="e#6566#6898#0" expanded="false" />
+            <element signature="e#6683#6885#0" expanded="false" />
             <element signature="n#TextualLabel#0" expanded="false" />
             <element signature="n#!!block#1;n#readUpdate#0;n#TextualLabel#0" expanded="false" />
             <element signature="n#!!block;n#render#0;n#TextualLabel#0" expanded="false" />
-            <element signature="e#7601#7761#0" expanded="false" />
+            <element signature="e#7098#7258#0" expanded="false" />
             <element signature="n#TriggerButton#0" expanded="false" />
             <element signature="n#!!block#1;n#readUpdate#0;n#TriggerButton#0" expanded="false" />
-            <element signature="e#7898#7974#0" expanded="false" />
+            <element signature="e#7395#7471#0" expanded="false" />
             <element signature="n#!!block;n#render#0;n#TriggerButton#0" expanded="false" />
-            <element signature="e#8000#8108#0" expanded="false" />
+            <element signature="e#7497#7605#0" expanded="false" />
             <element signature="n#!!block;n#PanelRubric#0" expanded="false" />
-            <element signature="e#8266#8316#0" expanded="false" />
+            <element signature="e#7763#7813#0" expanded="false" />
             <element signature="n#!!block;n#buildTextual#0" expanded="false" />
-            <element signature="e#8455#8735#0" expanded="false" />
-            <element signature="e#8547#8596#0" expanded="false" />
-            <element signature="e#8668#8718#0" expanded="false" />
+            <element signature="e#7952#8232#0" expanded="false" />
+            <element signature="e#8044#8093#0" expanded="false" />
+            <element signature="e#8165#8215#0" expanded="false" />
             <element signature="n#!!block;n#buildToggling#0" expanded="false" />
-            <element signature="e#8843#9031#0" expanded="false" />
+            <element signature="e#8340#8528#0" expanded="false" />
             <element signature="n#!!block;n#buildTrigger#0" expanded="false" />
-            <element signature="e#9139#9325#0" expanded="false" />
+            <element signature="e#8636#8822#0" expanded="false" />
           </folding>
         </state>
       </provider>
