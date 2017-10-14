@@ -278,13 +278,13 @@ class IndexingDropdown extends IndexingFacet{
 }
 class IndexingList extends IndexingFacet{
   onClick=(e)=>{
-    this.indexChanged(e.target.id);
+    this.indexChanged(e.target.id.substr(0,1));
   };
   onKeyDown=(e)=>{
-    let indexThen=e.target.id,indexNow=indexThen;
+    let indexThen=e.target.id.substr(0,1),indexNow=indexThen;
     if(e.key==='ArrowDown')indexNow++;
     else if(e.key==='ArrowUp')indexNow--;
-    traceThing('onKeyDown',{indexNow:indexNow})
+    // traceThing('onKeyDown',{indexNow:indexNow})
     if(indexNow!==indexThen&&indexNow>=0
         &&indexNow<this.state.selectables.length)
       this.indexChanged(indexNow)
@@ -296,7 +296,7 @@ class IndexingList extends IndexingFacet{
            style={{display:'table'}}
       >{props.selectables.map((item,index)=>
           <div
-            id={index.toString()}
+            id={index.toString()+'className'}
             className={item===props.selected?'listSelected':'listItem'}
             style={{cursor:'default'}}
             tabIndex={-1}
@@ -305,6 +305,9 @@ class IndexingList extends IndexingFacet{
           >{item}</div>
         )}</div>
       </span>)
+  }
+  componentDidUpdate(){
+    traceThing('componentDidUpdate',this.state)
   }
 }
 function buildSelectingBasic(facets:Facets){
