@@ -8,7 +8,8 @@ body {
   border-width: 1px;
 }
 .listSelected{
-  font-style: italic;
+  color: darkgray;
+  background: lightgrey;
 }
 .rubric{
   font-weight: bold;
