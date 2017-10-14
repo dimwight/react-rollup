@@ -2,7 +2,7 @@ import fn from 'date-fns/format';
 
 export function traceThing(top,thing?){
   if(!thing)console.log(top);
-  else console.log((true?(top+': '):"")+JSON.stringify(thing,false?null:(key,value)=>{
+  else console.log(top+JSON.stringify(thing,false?null:(key,value)=>{
     return true&&key==='facets'?'[facets]':value;
   },1))
 }
