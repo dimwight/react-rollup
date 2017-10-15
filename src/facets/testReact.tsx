@@ -194,7 +194,7 @@ class SurfaceWorks extends Surface{
     return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
   }
   buildLayout(){
-  if(true&&this.test===Test.AllSimples)[
+  if(false&&this.test===Test.AllSimples)[
     SimpleTitles.TEXTUAL_FIRST,
     SimpleTitles.INDEXING,
     SimpleTitles.TOGGLING,

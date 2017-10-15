@@ -13,7 +13,7 @@ export class Layout{
       case Test.Indexing: buildIndexing(facets);break;
       case Test.TogglingLive: buildToggling(facets);break;
       case Test.Trigger: buildTrigger(facets);break;
-      case Test.AllSimples:buildAll(facets);break;
+      case Test.AllSimples:buildAllSimples(facets);break;
       case Test.SelectingBasic:buildSelectingBasic(facets);break;
       case Test.SelectingPlus:buildSelectingPlus(facets);break;
       default: throw new Error('Not implemented for '+testTitles[Test.Next]);
@@ -109,25 +109,25 @@ function buildIndexing(facets:Facets){
     document.getElementById('root'),
   );
 }
-function buildAll(facets:Facets){
+function buildAllSimples(facets:Facets){
   let textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(<div>
-      <RowPanel rubric={Test.Textual}>
+      <RowPanel rubric={testTitles[Test.Textual]}>
         <TextualField title={textual1} facets={facets}/>
         <TextualLabel title={textual1} facets={facets}/>
         <TextualField title={textual2} facets={facets} cols={40}/>
         <TextualLabel title={textual2} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={Test.Indexing}>
+      <RowPanel rubric={testTitles[Test.Indexing]}>
         <IndexingDropdown title={SimpleTitles.INDEXING} facets={facets}/>
         <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
         <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={Test.TogglingLive}>
+      <RowPanel rubric={testTitles[Test.TogglingLive]}>
         <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
         <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={Test.Trigger}>
+      <RowPanel rubric={testTitles[Test.Trigger]}>
         <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
         <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
       </RowPanel>
@@ -353,6 +353,8 @@ function buildSelectingBasic(facets:Facets){
       </PanelRow>
       <PanelRow>
         <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
+      </PanelRow>
+      <PanelRow>
         <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
         <TogglingCheckbox title={SelectingTitles.LIVE} facets={facets}/>
       </PanelRow>
