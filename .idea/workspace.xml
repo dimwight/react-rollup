@@ -4,9 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="buildAllSimples">
+    <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="207" column="34" lean-forward="false" selection-start-line="207" selection-start-column="34" selection-end-line="207" selection-end-column="34" />
+              <caret line="207" column="37" lean-forward="false" selection-start-line="207" selection-start-column="24" selection-end-line="207" selection-end-column="37" />
               <folding>
                 <element signature="n#!!block;n#trace#0" expanded="false" />
                 <element signature="n#SimpleTitles#0" expanded="false" />
@@ -1231,7 +1230,7 @@
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="207" column="34" lean-forward="false" selection-start-line="207" selection-start-column="34" selection-end-line="207" selection-end-column="34" />
+          <caret line="207" column="37" lean-forward="false" selection-start-line="207" selection-start-column="24" selection-end-line="207" selection-end-column="37" />
           <folding>
             <element signature="n#!!block;n#trace#0" expanded="false" />
             <element signature="n#SimpleTitles#0" expanded="false" />
