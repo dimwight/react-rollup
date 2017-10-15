@@ -329,7 +329,7 @@ class IndexingList extends IndexingFacet{
   }
 }
 function RowPanel(props){
-  let children=props.children.map((child)=>{
+  let children=React.Children.map(props.children,child=>{
     return <div className={'panelMount'}>{child}</div>
   });
   return <div className={'panel'}>
@@ -338,7 +338,7 @@ function RowPanel(props){
   </div>
 }
 function PanelRow(props){
-  let children=React.Children.map(props.children,(child)=>{
+  let children=React.Children.map(props.children,child=>{
     return (<span>{child} </span>)
   });
   return <div className={'panelRow'}>{children}</div>
