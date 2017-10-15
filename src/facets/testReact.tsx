@@ -162,23 +162,23 @@ function newSelectingTest(test:Test):Target{
       ]
       :[facets.newTargetGroup(SelectingTitles.ACTIONS,
       facets.newTriggerTarget(SelectingTitles.UP,{
-          targetStateUpdated:title=>{
-            alert('Not implemented for '+title);
+          targetStateUpdated:(title,state)=>{
+            traceThing('Not implemented for '+title);
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
-          targetStateUpdated:title=>{
-            alert('Not implemented for '+title);
+          targetStateUpdated:(title,state)=>{
+            traceThing('Not implemented for '+title);
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
-          targetStateUpdated:title=>{
-            alert('Not implemented for '+title);
+          targetStateUpdated:(title,state)=>{
+            traceThing('Not implemented for '+title);
           }
         }),
         facets.newTriggerTarget(SelectingTitles.NEW,{
-          targetStateUpdated:title=>{
-            alert('Not implemented for '+title);
+          targetStateUpdated:(title,state)=>{
+            traceThing('Not implemented for '+title);
           }
         })
       )
