@@ -338,9 +338,7 @@ function RowPanel(props){
   </div>
 }
 function PanelRow(props){
-  let input=props.children;
-  traceThing('PanelRow',input);
-  let children=React.Children.map(input,(child)=>{
+  let children=React.Children.map(props.children,(child)=>{
     return (<span>{child} </span>)
   });
   return <div className={'panelRow'}>{children}</div>
@@ -366,14 +364,14 @@ function buildSelectingBasic(facets:Facets){
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
     <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+      <PanelRow>
+        <TriggerButton title={SelectingTitles.UP} facets={facets}/>
+        <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
+        <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
+        <TriggerButton title={SelectingTitles.NEW} facets={facets}/>
+      </PanelRow>
     <PanelRow>
       <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
-    </PanelRow>
-    <PanelRow>
-    <TriggerButton title={SelectingTitles.UP} facets={facets}/>
-    <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
-    <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
-    <TriggerButton title={SelectingTitles.NEW} facets={facets}/>
     </PanelRow>
   </RowPanel>,
     document.getElementById('root'),
