@@ -31,14 +31,23 @@ export namespace SelectingTitles {
     CHARS='Characters';
 }
 export enum Test{
-  Textual='Textual',
-  TogglingLive='TogglingLive',
-  Indexing='Indexing',
-  Trigger='Trigger',
-  AllSimples='AllSimples',
-  SelectingBasic='SelectingBasic',
-  SelectingPlus='SelectingPlus'
+  Textual,
+  TogglingLive,
+  Indexing,
+  Trigger,
+  AllSimples,
+  SelectingBasic,
+  SelectingPlus
 }
+export const TestTitles=[
+  'Textual',
+  'TogglingLive',
+  'Indexing',
+  'Trigger',
+  'AllSimples',
+  'SelectingBasic',
+  'SelectingPlus'
+];
 const facets:Facets=newInstance(false);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
@@ -180,7 +189,7 @@ class SurfaceWorks extends Surface{
     const textual=newTextualTest,indexing=newIndexingTest,
       toggling=newTogglingTest,trigger=newTriggerTest,
       all=newAllSimplesTest;
-    return this.test!==Test.SelectingBasic?all():newSelectingTest(this.test);
+    return this.test<Test.SelectingBasic?all():newSelectingTest(this.test);
   }
   buildLayout(){
   if(true&&this.test===Test.AllSimples)[
@@ -194,7 +203,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingBasic).buildSurface();
+  new SurfaceWorks(Test.TogglingLive).buildSurface();
 }
 
 
