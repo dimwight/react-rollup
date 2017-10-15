@@ -37,16 +37,18 @@ export enum Test{
   Trigger,
   AllSimples,
   SelectingBasic,
-  SelectingPlus
+  SelectingPlus,
+  Next
 }
-export const TestTitles=[
+export const testTitles=[
   'Textual',
   'TogglingLive',
   'Indexing',
   'Trigger',
   'AllSimples',
   'SelectingBasic',
-  'SelectingPlus'
+  'SelectingPlus',
+  'None'
 ];
 const facets:Facets=newInstance(false);
 function newTextualTest():Target{
@@ -173,7 +175,7 @@ function newSelectingTest(test:Test):Target{
       ]
     };
   facets.attachOnRetargeted(()=>{
-    trace('newSelectingTest')
+    if(test!==Test.SelectingBasic)return;
     let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
     [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
       SelectingTitles.CHARS].forEach(title_=>
@@ -203,7 +205,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.TogglingLive).buildSurface();
+  new SurfaceWorks(Test.SelectingPlus).buildSurface();
 }
 
 
