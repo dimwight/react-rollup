@@ -33,7 +33,11 @@ body {
 .panelRubric{
   font-size: larger;
   font-style: italic;
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 div.panel{
-  margin-bottom: 15px;}
+  margin-bottom: 15px;
+}
+div.panelRow{
+  margin-top: 15px;
+}

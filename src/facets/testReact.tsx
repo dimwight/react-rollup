@@ -156,7 +156,7 @@ function newSelectingTest(test:Test):Target{
           }
         }),
         facets.newTogglingTarget(SelectingTitles.LIVE,{
-          passSet:false
+          passSet:true
         })
       ]
       :[
@@ -205,7 +205,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingPlus).buildSurface();
+  new SurfaceWorks(Test.SelectingBasic).buildSurface();
 }
 
 
