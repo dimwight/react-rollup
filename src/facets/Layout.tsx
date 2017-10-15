@@ -92,6 +92,7 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
         <input
           id={this.props.title}
           type="checkbox"
+          style={{verticalAlign: 'middle'}}
           onChange={this.onChange}
           checked={this.state.set}
           disabled={!this.state.live}

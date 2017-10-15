@@ -205,7 +205,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingBasic).buildSurface();
+  new SurfaceWorks(Test.AllSimples).buildSurface();
 }
 
 
