@@ -176,11 +176,11 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
   }
   render(){
     let disabled=!this.state.live;
-    return (<div>
+    return (<span>
       <LabelRubric text={this.props.title} disabled={disabled}/>
       &nbsp;
       <LabelText text={this.state.text} disabled={disabled}/>
-        </div>)
+        </span>)
   }
 }
 class TriggerButton extends Facet<TargetValues,TargetValues>{
