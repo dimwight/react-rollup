@@ -2,18 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Facets,SimpleState} from 'facets-js';
 import {SmartTextField} from '../widget/_exports';
-import {SimpleTitles,SelectingTitles,Test} from './testReact';
+import {SimpleTitles,SelectingTitles,Test,testTitles} from './testReact';
 import {traceThing} from '../Util/Bits';
 import './Layout.css';
 export class Layout{
   constructor(private test:Test){}
   build(facets:Facets){
-    if(this.test===Test.Textual) buildTextual(facets);
-    else if(this.test===Test.Indexing) buildIndexing(facets);
-    else if(this.test===Test.TogglingLive) buildToggling(facets);
-    else if(this.test===Test.Trigger) buildTrigger(facets);
-    else if(this.test===Test.AllSimples)buildAll(facets);
-    else buildSelectingBasic(facets)
+    switch(this.test){
+      case Test.Textual: buildTextual(facets);break;
+      case Test.Indexing: buildIndexing(facets);break;
+      case Test.TogglingLive: buildToggling(facets);break;
+      case Test.Trigger: buildTrigger(facets);break;
+      case Test.AllSimples:buildAll(facets);break;
+      case Test.SelectingBasic:buildSelectingBasic(facets);break;
+      case Test.SelectingPlus:buildSelectingPlus(facets)
+      default: throw new Error('Not implemented for '+testTitles[this.test]);
+    }
   }
 }
 interface TargetValues{
@@ -223,7 +227,7 @@ function buildTextual(facets:Facets){
 }
 function buildToggling(facets:Facets){
   ReactDOM.render(
-    <RowPanel rubric={Test.TogglingLive}>
+    <RowPanel rubric={testTitles[Test.TogglingLive]}>
       <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
       <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
     </RowPanel>,
@@ -334,7 +338,7 @@ class IndexingList extends IndexingFacet{
   }
 }
 function buildSelectingBasic(facets:Facets){
-  ReactDOM.render(<RowPanel rubric={Test.SelectingBasic}>
+  ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingBasic]}>
     {false?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
@@ -346,7 +350,7 @@ function buildSelectingBasic(facets:Facets){
   );
 }
 function buildSelectingPlus(facets:Facets){
-  ReactDOM.render(<RowPanel rubric={Test.SelectingPlus}>
+  ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
       <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
       <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
       <TriggerButton title={SelectingTitles.UP} facets={facets}/>
