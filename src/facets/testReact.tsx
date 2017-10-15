@@ -22,10 +22,11 @@ export namespace SimpleTitles{
 export namespace SelectingTitles {
   export const FRAME='SelectingBasic',
     SELECT='Select Content',
+    ACTIONS='Actions',
     LIVE='Live',
-    NEW='New',
-    UP='Up',
-    DOWN='Down',
+    NEW='Duplicate',
+    UP='Move Up',
+    DOWN='Move Down',
     DELETE='Delete',
     EDIT='Edit Selection',
     CHARS='Characters';
@@ -159,27 +160,43 @@ function newSelectingTest(test:Test):Target{
           passSet:true
         })
       ]
-      :[
-        facets.newTriggerTarget(SelectingTitles.UP,{
-
+      :[facets.newTargetGroup(SelectingTitles.ACTIONS,
+      facets.newTriggerTarget(SelectingTitles.UP,{
+          targetStateUpdated:title=>{
+            alert('Not implemented for '+title);
+          }
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
-
+          targetStateUpdated:title=>{
+            alert('Not implemented for '+title);
+          }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
-
+          targetStateUpdated:title=>{
+            alert('Not implemented for '+title);
+          }
         }),
         facets.newTriggerTarget(SelectingTitles.NEW,{
-
+          targetStateUpdated:title=>{
+            alert('Not implemented for '+title);
+          }
         })
-      ]
+      )
+     ]
     };
   facets.attachOnRetargeted(()=>{
-    if(test!==Test.SelectingBasic)return;
-    let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
-    [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
-      SelectingTitles.CHARS].forEach(title_=>
-      facets.setTargetLive(title_,live))
+    if(test===Test.SelectingPlus){
+      var contentAt=facets.getTargetState(frame.indexingTitle);
+      facets.setTargetLive(SelectingTitles.UP,contentAt>0);
+      facets.setTargetLive(SelectingTitles.DOWN,
+        contentAt<frame.content.length-1);
+    }
+    else{
+      let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
+      [SelectingTitles.SELECT,SimpleTitles.INDEXED,SelectingTitles.EDIT,
+        SelectingTitles.CHARS].forEach(title_=>
+        facets.setTargetLive(title_,live))
+    }
   });
   return facets.buildSelectingFrame(frame);
 }
