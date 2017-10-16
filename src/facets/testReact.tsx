@@ -5,7 +5,7 @@ import {
   Target
 } from 'facets-js';
 import {Layout} from './Layout';
-import {traceThing} from '../util/Bits';
+import {traceThing,swapArrayElement} from '../util/Bits';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
@@ -130,6 +130,9 @@ interface TextContent {
   text? : string;
 }
 function newSelectingTest(test:Test):Target{
+  function listAt():number{
+    return facets.getTargetState(frame.indexingTitle) as number;
+  }
   const list : TextContent[]=[
     {text: 'Hello world!'},
     {text: 'Hello Dolly!'},
@@ -163,12 +166,12 @@ function newSelectingTest(test:Test):Target{
       :[facets.newTargetGroup(SelectingTitles.ACTIONS,
       facets.newTriggerTarget(SelectingTitles.UP,{
           targetStateUpdated:(title,state)=>{
-            traceThing('Not implemented for '+title);
+            swapArrayElement(list,listAt(),false)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
           targetStateUpdated:(title,state)=>{
-            traceThing('Not implemented for '+title);
+            swapArrayElement(list,listAt(),false)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
@@ -186,7 +189,7 @@ function newSelectingTest(test:Test):Target{
     };
   facets.attachOnRetargeted(()=>{
     if(test===Test.SelectingPlus){
-      var contentAt=facets.getTargetState(frame.indexingTitle);
+      var contentAt=listAt();
       facets.setTargetLive(SelectingTitles.UP,contentAt>0);
       facets.setTargetLive(SelectingTitles.DOWN,
         contentAt<frame.content.length-1);
