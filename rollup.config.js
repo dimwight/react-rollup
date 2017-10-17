@@ -16,7 +16,7 @@ const common = {
   ]
 };
 
-const entry = 'src/thinking/main.js';
+const entry = 'src/facets/main.js';
 const main = Object.assign({}, common, {
   entry: entry,
   dest: 'public/index.js',

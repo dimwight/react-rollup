@@ -260,22 +260,40 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   }
   protected abstract renderUi(props:IndexingUiProps);
 }
+interface SelectOptionProps{
+  selected:boolean
+  index
+  text:string
+  key
+}
+function SelectOption(props:SelectOptionProps){
+  traceThing('SelectOption',props)
+  let index=props.index,text=props.text;
+  return props.selected?<option selected value={index}>{text}</option>
+    :<option value={index}>{text}</option>
+}
 class IndexingDropdown extends IndexingFacet{
   onChange=(e)=>{
     this.indexChanged(e.target.value)
   };
   protected renderUi(props:IndexingUiProps){
-    // traceThing('IndexingDropdown',props);
+    traceThing('^IndexingDropdown',props);
     return (<span>
-      <LabelRubric text={props.rubric} disabled={props.disabled}/><select
-      className={props.disabled?'textDisabled':''}
-      disabled={props.disabled}
-      onChange={this.onChange}
-    >{props.selectables.map((item,index)=>
-      item===props.selected?<option selected value={index}>{item}</option>
-        :<option value={index}>{item}</option>
-    )
-    }</select></span>)
+      <LabelRubric text={props.rubric} disabled={props.disabled}/>
+      <select
+        className={props.disabled?'textDisabled':''}
+        disabled={props.disabled}
+        onChange={this.onChange}
+      >{props.selectables.map((item,index)=>
+        SelectOption({
+          selected:item===props.selected,
+          index:index,
+          text:props.selectables[index],
+          key:index
+      })
+      )
+      }</select>
+    </span>)
   }
 }
 class IndexingList extends IndexingFacet{
@@ -357,7 +375,7 @@ function buildSelectingBasic(facets:Facets){
 }
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
-    {true?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+    {false?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
         <TriggerButton title={SelectingTitles.UP} facets={facets}/>
