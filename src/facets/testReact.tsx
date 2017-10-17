@@ -171,7 +171,7 @@ function newSelectingTest(test:Test):Target{
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
           targetStateUpdated:(title,state)=>{
-            swapArrayElement(list,listAt(),false)
+            swapArrayElement(list,listAt(),false )
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
@@ -225,7 +225,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingPlus).buildSurface();
+  new SurfaceWorks(Test.SelectingBasic).buildSurface();
 }
 
 

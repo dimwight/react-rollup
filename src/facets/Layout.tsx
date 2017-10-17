@@ -50,10 +50,7 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
     // traceThing('componentWillUpdate',this.state);
   }
   protected readUpdate(update):{}{
-    return {
-      state:update,
-      live:this.props.facets.isTargetLive(this.props.title)
-    }
+    return {state:update}
   }
 }
 interface TextualValues extends TargetValues{
@@ -76,7 +73,7 @@ function LabelText (props:LabelValues){
 }
 class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   protected readUpdate(update):{}{
-    return {set:update}
+    return {set:Boolean(update)}
   }
   onChange=(e)=>{
     let set=e.target.checked;
@@ -147,10 +144,7 @@ function LabelRubric (props:LabelValues){
 }
 class TextualField extends Facet<TextualValues,TextualValues>{
   protected readUpdate(update){
-    return {
-      text:update,
-      live:this.props.facets.isTargetLive(this.props.title)
-    }
+    return {text:String(update)}
   }
   onFieldEnter=(text)=>{
      this.props.facets.updateTargetState(this.props.title,text);
@@ -173,7 +167,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
 }
 class TextualLabel extends Facet<TextualValues,TextualValues>{
   protected readUpdate(update):{}{
-    return {text:update}
+    return {text:String(update)}
   }
   render(){
     let disabled=!this.state.live;
@@ -185,7 +179,7 @@ class TextualLabel extends Facet<TextualValues,TextualValues>{
   }
 }
 class TriggerButton extends Facet<TargetValues,TargetValues>{
-  protected readUpdate(update):{}{
+  protected readUpdate(update){
     return {}
   }
   onClick=()=>{
@@ -248,7 +242,7 @@ interface IndexingUiProps{
 abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
     return {
-      index:update,
+      index:Number(update),
       selectables:this.props.facets.getIndexingState(this.props.title).uiSelectables
     }
   }
