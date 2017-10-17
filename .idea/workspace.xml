@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/util/SwapArrayElement.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Facets.js" afterPath="$PROJECT_DIR$/public/Facets.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/thinking/table.tsx" afterPath="$PROJECT_DIR$/src/thinking/table.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Bits.ts" afterPath="$PROJECT_DIR$/src/util/Bits.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -137,32 +140,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="168" column="28" lean-forward="false" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="28" />
+            <state relative-caret-position="238">
+              <caret line="173" column="48" lean-forward="false" selection-start-line="173" selection-start-column="48" selection-end-line="173" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#trace#0" expanded="false" />
-                <element signature="e#1131#1256#0" expanded="false" />
+                <element signature="e#1135#1260#0" expanded="false" />
                 <element signature="n#!!block;n#newTextualTest#0" expanded="false" />
-                <element signature="e#1397#1642#0" expanded="false" />
-                <element signature="e#1499#1635#0" expanded="false" />
-                <element signature="e#1708#1776#0" expanded="false" />
-                <element signature="e#1933#1977#0" expanded="false" />
-                <element signature="e#2035#2153#0" expanded="false" />
-                <element signature="e#2058#2149#0" expanded="false" />
-                <element signature="e#2188#2303#0" expanded="false" />
+                <element signature="e#1401#1646#0" expanded="false" />
+                <element signature="e#1503#1639#0" expanded="false" />
+                <element signature="e#1712#1780#0" expanded="false" />
+                <element signature="e#1937#1981#0" expanded="false" />
+                <element signature="e#2039#2157#0" expanded="false" />
+                <element signature="e#2062#2153#0" expanded="false" />
+                <element signature="e#2192#2307#0" expanded="false" />
                 <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
-                <element signature="e#2465#2605#0" expanded="false" />
-                <element signature="e#2661#2740#0" expanded="false" />
-                <element signature="e#2800#2910#0" expanded="false" />
+                <element signature="e#2469#2609#0" expanded="false" />
+                <element signature="e#2665#2744#0" expanded="false" />
+                <element signature="e#2804#2914#0" expanded="false" />
                 <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
-                <element signature="e#3099#3201#0" expanded="false" />
-                <element signature="e#3133#3197#0" expanded="false" />
-                <element signature="e#3264#3433#0" expanded="false" />
-                <element signature="e#3287#3429#0" expanded="false" />
+                <element signature="e#3103#3205#0" expanded="false" />
+                <element signature="e#3137#3201#0" expanded="false" />
+                <element signature="e#3268#3437#0" expanded="false" />
+                <element signature="e#3291#3433#0" expanded="false" />
                 <element signature="n#!!block;n#newAllSimplesTest#0" expanded="false" />
                 <element signature="n#Surface#0" expanded="false" />
                 <element signature="n#!!block;n#buildSurface#0;n#Surface#0" expanded="false" />
@@ -170,9 +173,19 @@
                 <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
                 <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
                 <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="e#6997#7139#0" expanded="false" />
+                <element signature="e#7000#7142#0" expanded="false" />
                 <element signature="n#!!block;n#buildSurface#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SwapArrayElement.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/SwapArrayElement.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,8 +193,8 @@
       <file leaf-file-name="Bits.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/Bits.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,14 +205,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>:</find>
       <find>updated</find>
       <find>Target</find>
       <find>Target_&lt;ReactLike&gt;</find>
@@ -229,9 +241,9 @@
       <find>svg.d.ts</find>
       <find>const</find>
       <find>if\(this\.test===(Test\.\w+)\)</find>
+      <find>To</find>
     </findStrings>
     <replaceStrings>
-      <replace>values</replace>
       <replace>authorComment</replace>
       <replace>props={props}</replace>
       <replace>nature</replace>
@@ -261,6 +273,7 @@
       <replace>let</replace>
       <replace>case %1:</replace>
       <replace>case $1:</replace>
+      <replace>Dest</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Me\ts\react-rollup</dir>
@@ -273,8 +286,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hellos/hello.tsx" />
-        <option value="$PROJECT_DIR$/src/hellos/props.tsx" />
         <option value="$PROJECT_DIR$/src/hellos/clock.js" />
         <option value="$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
         <option value="$PROJECT_DIR$/src/hellos/clock.tsx" />
@@ -314,16 +325,18 @@
         <option value="$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts" />
         <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/src/widget/_exports.ts" />
-        <option value="$PROJECT_DIR$/src/widget/SmartTextField.tsx" />
         <option value="$PROJECT_DIR$/public/Facets.js" />
         <option value="$PROJECT_DIR$/src/facets/Layout.css" />
         <option value="$PROJECT_DIR$/public/index.js" />
         <option value="unpkg.com/react-dom@15.6.2/dist/react-dom.min.js" />
         <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
+        <option value="$PROJECT_DIR$/src/util/_exports.ts" />
+        <option value="$PROJECT_DIR$/src/widget/SmartTextField.tsx" />
+        <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
         <option value="$PROJECT_DIR$/src/util/Bits.ts" />
+        <option value="$PROJECT_DIR$/src/util/SwapArrayElement.ts" />
       </list>
     </option>
   </component>
@@ -480,35 +493,6 @@
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@types" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@types" type="462c0819:PsiDirectoryNode" />
-              <item name="facets-js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="index.js" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -516,13 +500,6 @@
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="facets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facets" type="462c0819:PsiDirectoryNode" />
-              <item name="Layout.tsx" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
@@ -548,21 +525,8 @@
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="_exports.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="SmartTextField.tsx" type="620a8d5e:NestingTreeNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="SwapArrayElement.ts" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -609,19 +573,19 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Me\ts\react-rollup\src\util" />
+      <recent name="C:\Users\Me\ts\react-rollup" />
+      <recent name="C:\Users\Me\ts\react-rollup\src\facets" />
+      <recent name="C:\Users\Me\ts\react-rollup\src\widget" />
+      <recent name="C:\Users\Me\ts\react-rollup\src\welcome" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Me\ts\react-rollup\public" />
       <recent name="C:\Users\Me\ts\react-rollup\src\facets" />
       <recent name="C:\Users\Me\ts\react-rollup\src\thinking" />
       <recent name="C:\Users\Me\ts\react-rollup\src" />
       <recent name="C:\Users\Me\ts\react-rollup\src\hello" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Me\ts\react-rollup" />
-      <recent name="C:\Users\Me\ts\react-rollup\src\facets" />
-      <recent name="C:\Users\Me\ts\react-rollup\src\widget" />
-      <recent name="C:\Users\Me\ts\react-rollup\src\welcome" />
-      <recent name="C:\Users\Me\ts\react-rollup\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -656,10 +620,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="469" y="0" width="922" height="1043" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15054946" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22511312" sideWeight="0.5197802" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22511312" sideWeight="0.50708663" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
@@ -667,7 +630,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18131869" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22624435" sideWeight="0.48021978" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22511312" sideWeight="0.4929134" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3021978" sideWeight="0.49501246" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -770,6 +733,10 @@
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/select/IndexingFrame.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Globals.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/globals/Globals.js" />
+        <option value="$PROJECT_DIR$/src/util/SwapArrayElement.js" />
+        <option value="$PROJECT_DIR$/src/util/SwapArrayElement.js.map" />
+        <option value="$PROJECT_DIR$/src/util/_exports.js" />
+        <option value="$PROJECT_DIR$/src/util/_exports.js.map" />
       </list>
     </option>
   </component>
@@ -805,7 +772,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ListBox" />
     <MESSAGE value="listBox" />
     <MESSAGE value="listSelected" />
     <MESSAGE value="onClick" />
@@ -830,7 +796,8 @@
     <MESSAGE value="PanelRow" />
     <MESSAGE value="RowPanel" />
     <MESSAGE value="attachOnRetargeted" />
-    <option name="LAST_COMMIT_MESSAGE" value="attachOnRetargeted" />
+    <MESSAGE value="swapArrayElement" />
+    <option name="LAST_COMMIT_MESSAGE" value="swapArrayElement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -847,27 +814,13 @@
       </default-breakpoints>
       <option name="time" value="21" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="Exception" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hellos/clock.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/hellos/clock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Issues.md" />
     <entry file="file://$PROJECT_DIR$/node_modules/@types/react-dom/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1096,27 +1049,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="127" column="11" lean-forward="false" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widget/_exports.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/SmartTextField.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1296,44 +1232,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="https://unpkg.com/react-dom@15.6.2/dist/react-dom.min.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/util/Bits.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/_exports.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widget/SmartTextField.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thinking/table.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="128" column="45" lean-forward="true" selection-start-line="128" selection-start-column="45" selection-end-line="128" selection-end-column="45" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/Bits.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="168" column="28" lean-forward="false" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="28" />
+        <state relative-caret-position="238">
+          <caret line="173" column="48" lean-forward="false" selection-start-line="173" selection-start-column="48" selection-end-line="173" selection-end-column="48" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#trace#0" expanded="false" />
-            <element signature="e#1131#1256#0" expanded="false" />
+            <element signature="e#1135#1260#0" expanded="false" />
             <element signature="n#!!block;n#newTextualTest#0" expanded="false" />
-            <element signature="e#1397#1642#0" expanded="false" />
-            <element signature="e#1499#1635#0" expanded="false" />
-            <element signature="e#1708#1776#0" expanded="false" />
-            <element signature="e#1933#1977#0" expanded="false" />
-            <element signature="e#2035#2153#0" expanded="false" />
-            <element signature="e#2058#2149#0" expanded="false" />
-            <element signature="e#2188#2303#0" expanded="false" />
+            <element signature="e#1401#1646#0" expanded="false" />
+            <element signature="e#1503#1639#0" expanded="false" />
+            <element signature="e#1712#1780#0" expanded="false" />
+            <element signature="e#1937#1981#0" expanded="false" />
+            <element signature="e#2039#2157#0" expanded="false" />
+            <element signature="e#2062#2153#0" expanded="false" />
+            <element signature="e#2192#2307#0" expanded="false" />
             <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
-            <element signature="e#2465#2605#0" expanded="false" />
-            <element signature="e#2661#2740#0" expanded="false" />
-            <element signature="e#2800#2910#0" expanded="false" />
+            <element signature="e#2469#2609#0" expanded="false" />
+            <element signature="e#2665#2744#0" expanded="false" />
+            <element signature="e#2804#2914#0" expanded="false" />
             <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
-            <element signature="e#3099#3201#0" expanded="false" />
-            <element signature="e#3133#3197#0" expanded="false" />
-            <element signature="e#3264#3433#0" expanded="false" />
-            <element signature="e#3287#3429#0" expanded="false" />
+            <element signature="e#3103#3205#0" expanded="false" />
+            <element signature="e#3137#3201#0" expanded="false" />
+            <element signature="e#3268#3437#0" expanded="false" />
+            <element signature="e#3291#3433#0" expanded="false" />
             <element signature="n#!!block;n#newAllSimplesTest#0" expanded="false" />
             <element signature="n#Surface#0" expanded="false" />
             <element signature="n#!!block;n#buildSurface#0;n#Surface#0" expanded="false" />
@@ -1341,9 +1304,22 @@
             <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
             <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
             <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-            <element signature="e#6997#7139#0" expanded="false" />
+            <element signature="e#7000#7142#0" expanded="false" />
             <element signature="n#!!block;n#buildSurface#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://unpkg.com/react-dom@15.6.2/dist/react-dom.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/SwapArrayElement.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

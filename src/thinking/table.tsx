@@ -127,6 +127,7 @@ class SearchBar extends React.Component<SearchBarProps> {
           hint={'Search...'}
           startText={this.props.filter}
           onEnter={this.props.onFilterChange}
+          isDisabled={()=>true}
         />
         <p><input
           type="checkbox"

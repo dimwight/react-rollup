@@ -5,7 +5,7 @@ import {
   Target
 } from 'facets-js';
 import {Layout} from './Layout';
-import {traceThing,swapArrayElement} from '../util/Bits';
+import {traceThing,swapArrayElement} from '../util/_exports';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
@@ -166,7 +166,7 @@ function newSelectingTest(test:Test):Target{
       :[facets.newTargetGroup(SelectingTitles.ACTIONS,
       facets.newTriggerTarget(SelectingTitles.UP,{
           targetStateUpdated:(title,state)=>{
-            swapArrayElement(list,listAt(),false)
+            swapArrayElement(list,listAt(),true)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
