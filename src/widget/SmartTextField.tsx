@@ -22,7 +22,7 @@ interface TextFieldState{
 export class SmartTextField extends React.Component<TextFieldProps,TextFieldState> {
   constructor(props){
     super(props);
-    let hint=props.hint,startText=props.getStartText();
+    let hint=props.hint,startText=props.startText;
     this.state={
       text:startText?startText:hint?hint:'',
       disabled:props.isDisabled(),

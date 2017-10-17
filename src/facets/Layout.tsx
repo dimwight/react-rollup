@@ -247,7 +247,7 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
     }
   }
   indexChanged(index){
-    this.props.facets.updateTargetState(this.props.title,index);
+    this.props.facets.updateTargetState(this.props.title,Number(index));
   }
   render(){
     let state=this.state;
@@ -357,7 +357,8 @@ function buildSelectingBasic(facets:Facets){
 }
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
-    <IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+    {true?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+      :<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
         <TriggerButton title={SelectingTitles.UP} facets={facets}/>
         <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>

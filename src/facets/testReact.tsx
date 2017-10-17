@@ -142,14 +142,18 @@ function newSelectingTest(test:Test):Target{
     title: SelectingTitles.FRAME,
     indexingTitle: SelectingTitles.SELECT,
     content: list,
-    getUiSelectables: () => list.map((item)=>item.text)as string[],
+    getUiSelectables: () => list.map((item)=>{
+      traceThing('getUiSelectables',item);
+      return item.text
+    }),
     newEditTargets: (indexed:TextContent) => [
       facets.newTextualTarget(SelectingTitles.EDIT, {
         passText: indexed.text,
         targetStateUpdated: (title, state) => indexed.text = state as string
       }),
       facets.newTextualTarget(SelectingTitles.CHARS, {
-        getText: title => ''+(facets.getTargetState(SelectingTitles.EDIT)as string).length
+        getText: title => ''+(facets.getTargetState(SelectingTitles.EDIT)as string
+          ).length
       }),
     ],
     newFrameTargets:()=>test===Test.SelectingBasic?[
@@ -225,7 +229,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingBasic).buildSurface();
+  new SurfaceWorks(Test.SelectingPlus).buildSurface();
 }
 
 
