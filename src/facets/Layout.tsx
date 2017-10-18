@@ -275,11 +275,11 @@ class IndexingDropdown extends IndexingFacet{
   };
   protected renderUi(props:IndexingUiProps){
     traceThing('^IndexingDropdown',props);
-    let options=props.selectables.map((selectable,index)=>
+    let options=props.selectables.map((s,at)=>
       <SelectOption
-        text={selectable}
-        key={selectable}
-        value={index}
+        text={s}
+        key={s}
+        value={at}
       />
     );
     return (<span>
@@ -292,6 +292,16 @@ class IndexingDropdown extends IndexingFacet{
       >{options}</select>
     </span>)
   }
+}
+interface ListItemProps{
+  at:number
+  selected:boolean
+  disabled:boolean
+  text:string
+  id
+  onClick
+  onKeyDown
+  key
 }
 class IndexingList extends IndexingFacet{
   private boxWidth=0;
@@ -308,6 +318,17 @@ class IndexingList extends IndexingFacet{
   };
   protected renderUi(props:IndexingUiProps){
     let disabled=false?true:!this.state.live;
+    let items=props.selectables.map((s,at)=>
+      <ListItem
+        at={at}
+        selected={s===props.selected}
+        disabled={disabled}
+        text={s}
+        id={at+this.unique}
+        onClick={this.onClick}
+        onKeyDown={this.onKeyDown}
+        key={s}
+      />);
     return (<span>
       <LabelRubric text={props.rubric} disabled={disabled}/>
       <div className={'listBox'}
@@ -316,18 +337,7 @@ class IndexingList extends IndexingFacet{
              width:this.boxWidth===0?null:this.boxWidth
            }}
            id={'listBox'+this.unique}
-      >{props.selectables.map((item,index)=>{
-        let selected=item===props.selected;
-        return (<div
-            id={index+this.unique}
-            className={(selected?'listSelected':'listItem')+
-              (disabled?'Disabled':'')}
-            style={{cursor:'default'}}
-            tabIndex={selected&&!disabled?1:null}
-            onClick={disabled?null:this.onClick}
-            onKeyDown={disabled?null:this.onKeyDown}
-          >{item}</div>)
-        })}</div>
+      >{items})}</div>
       </span>)
   }
   componentDidUpdate(){
@@ -336,6 +346,17 @@ class IndexingList extends IndexingFacet{
     document.getElementById(selected).focus();
     this.boxWidth=document.getElementById(listBox).offsetWidth
   }
+}
+function ListItem(p:ListItemProps){
+  return <div
+    id={p.id}
+    className={(p.selected?'listSelected':'listItem')+
+    (p.disabled?'Disabled':'')}
+    style={{cursor:'default'}}
+    tabIndex={p.selected&& !p.disabled?1:null}
+    onClick={p.disabled?null:p.onClick}
+    onKeyDown={p.disabled?null:p.onKeyDown}
+  >{p.text}</div>;
 }
 function RowPanel(props){
   let children=React.Children.map(props.children,child=>{
@@ -372,7 +393,7 @@ function buildSelectingBasic(facets:Facets){
 }
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
-    {false?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+    {true?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
         <TriggerButton title={SelectingTitles.UP} facets={facets}/>
