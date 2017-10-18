@@ -294,14 +294,23 @@ class IndexingDropdown extends IndexingFacet{
   }
 }
 interface ListItemProps{
-  at:number
   className:string
   tabIndex:number
   text:string
-  id
-  onClick
-  onKeyDown
-  key
+  id:string
+  onClick:(e)=>void
+  onKeyDown:(e)=>void
+  key:string
+}
+function ListItem(p:ListItemProps){
+  return <div
+    id={p.id}
+    className={p.className}
+    style={{cursor:'default'}}
+    tabIndex={p.tabIndex}
+    onClick={p.onClick}
+    onKeyDown={p.onKeyDown}
+  >{p.text}</div>;
 }
 class IndexingList extends IndexingFacet{
   private boxWidth=0;
@@ -321,13 +330,12 @@ class IndexingList extends IndexingFacet{
     let items=props.selectables.map((s,at)=>{
       let selected=s===props.selected;
       return (<ListItem
-        at={at}
         className={(selected?'listSelected':'listItem')+(disabled?'Disabled':'')}
         tabIndex={selected&&!disabled?1:null}
-        text={s}
-        id={at+this.unique}
         onClick={disabled?null:this.onClick}
         onKeyDown={disabled?null:this.onKeyDown}
+        id={at+this.unique}
+        text={s}
         key={s}
       />)});
     return (<span>
@@ -347,16 +355,6 @@ class IndexingList extends IndexingFacet{
     document.getElementById(selected).focus();
     this.boxWidth=document.getElementById(listBox).offsetWidth
   }
-}
-function ListItem(p:ListItemProps){
-  return <div
-    id={p.id}
-    className={p.className}
-    style={{cursor:'default'}}
-    tabIndex={p.tabIndex}
-    onClick={p.onClick}
-    onKeyDown={p.onKeyDown}
-  >{p.text}</div>;
 }
 function RowPanel(props){
   let children=React.Children.map(props.children,child=>{
