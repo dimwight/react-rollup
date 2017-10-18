@@ -30,8 +30,8 @@
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="295" column="23" lean-forward="false" selection-start-line="295" selection-start-column="10" selection-end-line="295" selection-end-column="23" />
+            <state relative-caret-position="537">
+              <caret line="339" column="14" lean-forward="false" selection-start-line="339" selection-start-column="14" selection-end-line="339" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -648,7 +648,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="className?" />
     <MESSAGE value="componentDidUpdate" />
     <MESSAGE value="tabIndex={selected?1:null}" />
     <MESSAGE value="unique" />
@@ -673,7 +672,8 @@
     <MESSAGE value="getStartText" />
     <MESSAGE value="keys?" />
     <MESSAGE value="SelectOption" />
-    <option name="LAST_COMMIT_MESSAGE" value="SelectOption" />
+    <MESSAGE value="ListItemProps" />
+    <option name="LAST_COMMIT_MESSAGE" value="ListItemProps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1132,8 +1132,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="295" column="23" lean-forward="false" selection-start-line="295" selection-start-column="10" selection-end-line="295" selection-end-column="23" />
+        <state relative-caret-position="537">
+          <caret line="339" column="14" lean-forward="false" selection-start-line="339" selection-start-column="14" selection-end-line="339" selection-end-column="14" />
           <folding />
         </state>
       </provider>

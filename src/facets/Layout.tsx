@@ -325,8 +325,8 @@ class IndexingList extends IndexingFacet{
         disabled={disabled}
         text={s}
         id={at+this.unique}
-        onClick={this.onClick}
-        onKeyDown={this.onKeyDown}
+        onClick={disabled?null:this.onClick}
+        onKeyDown={disabled?null:this.onKeyDown}
         key={s}
       />);
     return (<span>
@@ -337,7 +337,7 @@ class IndexingList extends IndexingFacet{
              width:this.boxWidth===0?null:this.boxWidth
            }}
            id={'listBox'+this.unique}
-      >{items})}</div>
+      >{items}</div>
       </span>)
   }
   componentDidUpdate(){
