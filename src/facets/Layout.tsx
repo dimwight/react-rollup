@@ -233,12 +233,6 @@ interface IndexingValues extends TargetValues{
   selectables?:string[]
   index?:number
 }
-interface IndexingUiProps{
-  selectables:string[]
-  disabled:boolean
-  selected:string
-  rubric:string
-}
 abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   protected readUpdate(update){
     return {
@@ -260,17 +254,20 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
   }
   protected abstract renderUi(props:IndexingUiProps);
 }
+interface IndexingUiProps{
+  selectables:string[]
+  disabled:boolean
+  selected:string
+  rubric:string
+}
 interface SelectOptionProps{
-  selected:boolean
-  index
+  value:number
   text:string
-  key
+  key:string
 }
 function SelectOption(props:SelectOptionProps){
-  traceThing('SelectOption',props)
-  let index=props.index,text=props.text;
-  return props.selected?<option selected value={index}>{text}</option>
-    :<option value={index}>{text}</option>
+  traceThing('SelectOption',props);
+  return <option value={props.value}>{props.text}</option>
 }
 class IndexingDropdown extends IndexingFacet{
   onChange=(e)=>{
@@ -278,21 +275,21 @@ class IndexingDropdown extends IndexingFacet{
   };
   protected renderUi(props:IndexingUiProps){
     traceThing('^IndexingDropdown',props);
+    let options=props.selectables.map((selectable,index)=>
+      <SelectOption
+        text={selectable}
+        key={selectable}
+        value={index}
+      />
+    );
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
       <select
+        defaultValue={props.selected}
         className={props.disabled?'textDisabled':''}
         disabled={props.disabled}
         onChange={this.onChange}
-      >{props.selectables.map((item,index)=>
-        SelectOption({
-          selected:item===props.selected,
-          index:index,
-          text:props.selectables[index],
-          key:index
-      })
-      )
-      }</select>
+      >{options}</select>
     </span>)
   }
 }
