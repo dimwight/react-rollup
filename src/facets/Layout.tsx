@@ -295,8 +295,8 @@ class IndexingDropdown extends IndexingFacet{
 }
 interface ListItemProps{
   at:number
-  selected:boolean
-  disabled:boolean
+  className:string
+  tabIndex:number
   text:string
   id
   onClick
@@ -318,17 +318,18 @@ class IndexingList extends IndexingFacet{
   };
   protected renderUi(props:IndexingUiProps){
     let disabled=false?true:!this.state.live;
-    let items=props.selectables.map((s,at)=>
-      <ListItem
+    let items=props.selectables.map((s,at)=>{
+      let selected=s===props.selected;
+      return (<ListItem
         at={at}
-        selected={s===props.selected}
-        disabled={disabled}
+        className={(selected?'listSelected':'listItem')+(disabled?'Disabled':'')}
+        tabIndex={selected&&!disabled?1:null}
         text={s}
         id={at+this.unique}
         onClick={disabled?null:this.onClick}
         onKeyDown={disabled?null:this.onKeyDown}
         key={s}
-      />);
+      />)});
     return (<span>
       <LabelRubric text={props.rubric} disabled={disabled}/>
       <div className={'listBox'}
@@ -350,12 +351,11 @@ class IndexingList extends IndexingFacet{
 function ListItem(p:ListItemProps){
   return <div
     id={p.id}
-    className={(p.selected?'listSelected':'listItem')+
-    (p.disabled?'Disabled':'')}
+    className={p.className}
     style={{cursor:'default'}}
-    tabIndex={p.selected&& !p.disabled?1:null}
-    onClick={p.disabled?null:p.onClick}
-    onKeyDown={p.disabled?null:p.onKeyDown}
+    tabIndex={p.tabIndex}
+    onClick={p.onClick}
+    onKeyDown={p.onKeyDown}
   >{p.text}</div>;
 }
 function RowPanel(props){
