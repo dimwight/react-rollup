@@ -51,7 +51,7 @@ export const testTitles=[
   'SelectingPlus',
   'None'
 ];
-const facets:Facets=newInstance(false);
+const facets:Facets=newInstance(true);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
