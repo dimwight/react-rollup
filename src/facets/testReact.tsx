@@ -51,7 +51,7 @@ export const testTitles=[
   'SelectingPlus',
   'None'
 ];
-const facets:Facets=newInstance(false);
+const facets:Facets=newInstance(true);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
@@ -168,12 +168,16 @@ function newSelectingTest(test:Test):Target{
       :[facets.newTargetGroup(SelectingTitles.ACTIONS,
       facets.newTriggerTarget(SelectingTitles.UP,{
           targetStateUpdated:(title,state)=>{
-            swapArrayElement(list,listAt(),true)
+            let at=listAt();
+            swapArrayElement(list,at,true);
+            facets.updateTargetState(frame.indexingTitle,at-1)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
           targetStateUpdated:(title,state)=>{
-            swapArrayElement(list,listAt(),false );
+            let at=listAt();
+            swapArrayElement(list,at,false );
+            facets.updateTargetState(frame.indexingTitle,at+1)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
