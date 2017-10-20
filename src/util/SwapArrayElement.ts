@@ -13,7 +13,7 @@ export function swapArrayElement(src: any[],index,down) {
    */
 
   //  Debug?
-  traceThing('swapArrayElement', { index: index, down: down });
+  traceThing('^swapArrayElement', { index: index, down: down,src:src });
 
   //  Guard against string!
   const indexNum=Number(index);
@@ -33,7 +33,7 @@ export function swapArrayElement(src: any[],index,down) {
   });
 
   //  Debug?
-  traceThing('swapArrayElement', { lowerSrc: lowerSrc, upperSrc: upperSrc,
+  traceThing('^swapArrayElement', { lowerSrc: lowerSrc, upperSrc: upperSrc,
     lowerDest: lowerDest, upperDest:upperDest });
 
   //  Define unaffected regions
@@ -43,11 +43,11 @@ export function swapArrayElement(src: any[],index,down) {
   const dest = top.concat(src[lowerSrc],src[upperSrc],tail);
 
   //  Debug?
-  traceThing('swapArrayElement~', true?{top:top,tail:tail}:dest);
+  traceThing('^swapArrayElement~', false?{top:top,tail:tail}:{dest:dest});
 
   // Rebuild source
-  src.splice(0,src.length,dest);
+  src.splice(0,src.length,...dest);
 
   // Final check?
-  traceThing('swapArrayElement~~', src);
+  traceThing('^swapArrayElement~~', {src:src});
 }

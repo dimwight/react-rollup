@@ -20,7 +20,7 @@ export namespace SimpleTitles{
     NUMERIC_FIELD='Number',NUMERIC_LABEL='Value',NUMERIC_START=123;
 }
 export namespace SelectingTitles {
-  export const FRAME='SelectingBasic',
+  export const FRAME='Selecting',
     SELECT='Select Content',
     ACTIONS='Actions',
     LIVE='Live',
@@ -51,7 +51,7 @@ export const testTitles=[
   'SelectingPlus',
   'None'
 ];
-const facets:Facets=newInstance(true);
+const facets:Facets=newInstance(false);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
@@ -142,10 +142,7 @@ function newSelectingTest(test:Test):Target{
     title: SelectingTitles.FRAME,
     indexingTitle: SelectingTitles.SELECT,
     content: list,
-    getUiSelectables: () => list.map((item)=>{
-      traceThing('getUiSelectables',item);
-      return item.text
-    }),
+    getUiSelectables: () => list.map((item)=>item.text),
     newEditTargets: (indexed:TextContent) => [
       facets.newTextualTarget(SelectingTitles.EDIT, {
         passText: indexed.text,
@@ -153,9 +150,10 @@ function newSelectingTest(test:Test):Target{
       }),
       facets.newTextualTarget(SelectingTitles.CHARS, {
         getText: title => ''+(facets.getTargetState(SelectingTitles.EDIT)as string
-          ).length
+        ).length
       }),
-    ],
+    ]
+    ,
     newFrameTargets:()=>test===Test.SelectingBasic?[
       facets.newTextualTarget(SimpleTitles.INDEXED,{
         getText:titley=>{
@@ -175,7 +173,7 @@ function newSelectingTest(test:Test):Target{
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
           targetStateUpdated:(title,state)=>{
-            swapArrayElement(list,listAt(),false )
+            swapArrayElement(list,listAt(),false );
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
@@ -197,6 +195,8 @@ function newSelectingTest(test:Test):Target{
       facets.setTargetLive(SelectingTitles.UP,contentAt>0);
       facets.setTargetLive(SelectingTitles.DOWN,
         contentAt<frame.content.length-1);
+      traceThing('^onRetargeted',list);
+      // facets.updateTargetState(SelectingTitles.DOWN,'')
     }
     else{
       let live=facets.getTargetState(SelectingTitles.LIVE)as boolean;
