@@ -196,10 +196,11 @@ function newSelectingTest(test:Test):Target{
     };
   facets.attachOnRetargeted(()=>{
     if(test===Test.SelectingPlus){
-      var contentAt=listAt();
-      facets.setTargetLive(SelectingTitles.UP,contentAt>0);
+      let at=listAt();
+      facets.setTargetLive(SelectingTitles.DELETE,list.length>1);
+      facets.setTargetLive(SelectingTitles.UP,at>0);
       facets.setTargetLive(SelectingTitles.DOWN,
-        contentAt<frame.content.length-1);
+        at<frame.content.length-1);
       traceThing('^onRetargeted',list);
       // facets.updateTargetState(SelectingTitles.DOWN,'')
     }
