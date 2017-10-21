@@ -247,7 +247,7 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
     let state=this.state;
     return this.renderUi({
       selectables:state.selectables,
-      selected:state.selectables[(state as IndexingValues).index],
+      selectedAt:(state as IndexingValues).index,
       disabled:!state.live,
       rubric:this.props.title
     });
@@ -257,7 +257,7 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
 interface IndexingUiProps{
   selectables:string[]
   disabled:boolean
-  selected:string
+  selectedAt:number
   rubric:string
 }
 interface SelectOptionProps{
@@ -266,7 +266,7 @@ interface SelectOptionProps{
   key:string
 }
 function SelectOption(props:SelectOptionProps){
-  traceThing('SelectOption',props);
+  traceThing('^SelectOption',props);
   return <option value={props.value}>{props.text}</option>
 }
 class IndexingDropdown extends IndexingFacet{
@@ -278,14 +278,14 @@ class IndexingDropdown extends IndexingFacet{
     let options=props.selectables.map((s,at)=>
       <SelectOption
         text={s}
-        key={s}
+        key={s+(++Facet.ids)}
         value={at}
       />
     );
     return (<span>
       <LabelRubric text={props.rubric} disabled={props.disabled}/>
       <select
-        defaultValue={props.selected}
+        value={props.selectedAt}
         className={props.disabled?'textDisabled':''}
         disabled={props.disabled}
         onChange={this.onChange}
@@ -326,9 +326,11 @@ class IndexingList extends IndexingFacet{
       this.indexChanged(indexNow)
   };
   protected renderUi(props:IndexingUiProps){
-    let disabled=false?true:!this.state.live;
-    let items=props.selectables.map((s,at)=>{
-      let selected=s===props.selected;
+    traceThing('^IndexingList',props);
+    let disabled=false?true:!this.state.live,selectables=props.selectables;
+    let items=selectables.map((s, at)=>{
+      let selected=at===props.selectedAt;
+      traceThing('^IndexingList',{at:at,s:s,selected:selected});
       return (<ListItem
         className={(selected?'listSelected':'listItem')+(disabled?'Disabled':'')}
         tabIndex={selected&&!disabled?1:null}
@@ -397,7 +399,7 @@ function buildSelectingBasic(facets:Facets){
 }
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
-    {true?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
+    {false?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
         <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>

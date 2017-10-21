@@ -206,7 +206,7 @@ function newSelectingTest(test:Test):Target{
             if(!atEnd)
               list.splice(0,length,...top,add,...tail);
             else list.push(add);
-            traceThing('targetStateUpdated',{
+            traceThing('^targetStateUpdated',{
               at:at,
               list:list
             });

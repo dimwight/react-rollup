@@ -1,9 +1,10 @@
 import fn from 'date-fns/format';
 
 export function traceThing(top,thing?){
+  if(top.charAt(0)==='^')return;
   if(!thing)console.log(top);
-  else if(top.charAt(0)!='^')
-    console.info((true?'':'Facets') + top, JSON.stringify(thing, true ? null : (key, value) => {
+  else console.info((true?'':'Facets') + top,
+    JSON.stringify(thing, true ? null : (key, value) => {
       console.log(key)
       return value
     }, 1))
