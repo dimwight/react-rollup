@@ -183,7 +183,16 @@ function newSelectingTest(test:Test):Target{
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
           targetStateUpdated:(title,state)=>{
-            traceThing('Not implemented for '+title);
+            let at=listAt(),length=list.length,atEnd=at===length-1;
+            let top=list.slice(0,at),tail=atEnd?[]:list.slice(at+1);
+            list.splice(0,length,...top,...tail);
+            traceThing('^targetStateUpdated',{
+              at:at,
+              atEnd:atEnd,
+              list:list
+            });
+            if(atEnd)
+              facets.updateTargetState(frame.indexingTitle,at-1)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.NEW,{
@@ -196,6 +205,7 @@ function newSelectingTest(test:Test):Target{
     };
   facets.attachOnRetargeted(()=>{
     if(test===Test.SelectingPlus){
+      // facets.updateTargetState(frame.indexingTitle,list.length-1);
       let at=listAt();
       facets.setTargetLive(SelectingTitles.DELETE,list.length>1);
       facets.setTargetLive(SelectingTitles.UP,at>0);

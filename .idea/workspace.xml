@@ -30,8 +30,8 @@
       <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="198" column="19" lean-forward="false" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="19" />
+            <state relative-caret-position="302">
+              <caret line="183" column="54" lean-forward="false" selection-start-line="183" selection-start-column="48" selection-end-line="183" selection-end-column="54" />
               <folding>
                 <element signature="n#!!block;n#trace#0" expanded="false" />
                 <element signature="n#SimpleTitles#0" expanded="false" />
@@ -64,7 +64,7 @@
                 <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
                 <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
                 <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="e#7405#7547#0" expanded="false" />
+                <element signature="e#7830#7972#0" expanded="false" />
                 <element signature="n#!!block;n#buildSurface#0" expanded="false" />
               </folding>
             </state>
@@ -765,7 +765,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="setSelectingTargetsLive" />
     <MESSAGE value="setSelectingTargetsLive?" />
     <MESSAGE value="traceThing" />
     <MESSAGE value="newFrameTargets!" />
@@ -790,7 +789,8 @@
     <MESSAGE value="SelectingTitles.DOWN" />
     <MESSAGE value="Times 1.52" />
     <MESSAGE value="offsetWidth" />
-    <option name="LAST_COMMIT_MESSAGE" value="offsetWidth" />
+    <MESSAGE value="listAt" />
+    <option name="LAST_COMMIT_MESSAGE" value="listAt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1284,8 +1284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="198" column="19" lean-forward="false" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="19" />
+        <state relative-caret-position="302">
+          <caret line="183" column="54" lean-forward="false" selection-start-line="183" selection-start-column="48" selection-end-line="183" selection-end-column="54" />
           <folding>
             <element signature="n#!!block;n#trace#0" expanded="false" />
             <element signature="n#SimpleTitles#0" expanded="false" />
@@ -1318,7 +1318,7 @@
             <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
             <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
             <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-            <element signature="e#7405#7547#0" expanded="false" />
+            <element signature="e#7830#7972#0" expanded="false" />
             <element signature="n#!!block;n#buildSurface#0" expanded="false" />
           </folding>
         </state>
