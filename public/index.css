@@ -6,7 +6,6 @@ body {
 .listBox{
   border-style: inset;
   border-width: 2px;
-  overflow-x: hidden;
 }
 .listSelected{
   color: white;

@@ -51,7 +51,7 @@ export const testTitles=[
   'SelectingPlus',
   'None'
 ];
-const facets:Facets=newInstance(true);
+const facets:Facets=newInstance(false);
 function newTextualTest():Target{
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
@@ -116,7 +116,7 @@ function newAllSimplesTest(){
 }
 abstract class Surface{
   buildSurface(){
-    facets.times.setResetWait(5000);
+    // facets.times.setResetWait(5000);
     trace('Building surface '+facets.times.elapsed());
     facets.buildTargeterTree(this.newTargetTree());
     trace('Built targets, created targeters');

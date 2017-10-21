@@ -344,7 +344,6 @@ class IndexingList extends IndexingFacet{
            style={{
              display:'table',
              width:this.boxWidth===0?null:this.boxWidth,
-             // maxWidth:this.boxWidth===0?null:this.boxWidth
            }}
            id={'listBox'+this.unique}
       >{items}</div>
@@ -356,7 +355,7 @@ class IndexingList extends IndexingFacet{
     document.getElementById(selected).focus();
     let box=document.getElementById(listBox);
     let renderWidth=Number(box.offsetWidth),borderWidth=Number(box.style.borderWidth);
-    traceThing('componentDidUpdate',{
+    traceThing('^componentDidUpdate',{
       renderWidth:renderWidth,
       borderWidth:borderWidth,
       boxWidth:this.boxWidth});
