@@ -134,6 +134,9 @@ function newSelectingTest(test:Test):Target{
   function listAt():number{
     return facets.getTargetState(frame.indexingTitle) as number;
   }
+  function newDuplicate(src:TextContent):TextContent{
+    return {text: src.text}
+  }
   const list : TextContent[]=[
     {text: 'Hello world!'},
     {text: 'Hello Dolly!'},
@@ -197,7 +200,17 @@ function newSelectingTest(test:Test):Target{
         }),
         facets.newTriggerTarget(SelectingTitles.NEW,{
           targetStateUpdated:(title,state)=>{
-            traceThing('Not implemented for '+title);
+            let at=listAt(),length=list.length,atEnd=at===length-1;
+            let top=list.slice(0,at),tail=atEnd?[]:list.slice(at),
+              add=newDuplicate(list[at]);
+            if(!atEnd)
+              list.splice(0,length,...top,add,...tail);
+            else list.push(add);
+            traceThing('targetStateUpdated',{
+              at:at,
+              list:list
+            });
+            facets.updateTargetState(frame.indexingTitle,at+1)
           }
         })
       )

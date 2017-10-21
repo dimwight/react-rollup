@@ -28,7 +28,7 @@ interface TargetValues{
 }
 class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
-  private static ids=0;
+  public static ids=0;
   protected readonly unique:string;
   constructor(props){
     super(props);
@@ -336,7 +336,7 @@ class IndexingList extends IndexingFacet{
         onKeyDown={disabled?null:this.onKeyDown}
         id={at+this.unique}
         text={s}
-        key={s}
+        key={s+(++Facet.ids)}
       />)});
     return (<span>
       <LabelRubric text={props.rubric} disabled={disabled}/>
