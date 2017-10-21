@@ -5,7 +5,7 @@ import {
   Target
 } from 'facets-js';
 import {Layout} from './Layout';
-import {traceThing,swapArrayElement} from '../util/_exports';
+import {traceThing,swapElement,removeElement,duplicateElement} from '../util/_exports';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }
@@ -134,9 +134,6 @@ function newSelectingTest(test:Test):Target{
   function listAt():number{
     return facets.getTargetState(frame.indexingTitle) as number;
   }
-  function newDuplicate(src:TextContent):TextContent{
-    return {text: src.text}
-  }
   const list : TextContent[]=[
     {text: 'Hello world!'},
     {text: 'Hello Dolly!'},
@@ -173,43 +170,28 @@ function newSelectingTest(test:Test):Target{
       facets.newTriggerTarget(SelectingTitles.UP,{
           targetStateUpdated:(title,state)=>{
             let at=listAt();
-            swapArrayElement(list,at,true);
+            swapElement(list,at,true);
             facets.updateTargetState(frame.indexingTitle,at-1)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DOWN,{
           targetStateUpdated:(title,state)=>{
             let at=listAt();
-            swapArrayElement(list,at,false );
+            swapElement(list,at,false );
             facets.updateTargetState(frame.indexingTitle,at+1)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.DELETE,{
           targetStateUpdated:(title,state)=>{
-            let at=listAt(),length=list.length,atEnd=at===length-1;
-            let top=list.slice(0,at),tail=atEnd?[]:list.slice(at+1);
-            list.splice(0,length,...top,...tail);
-            traceThing('^targetStateUpdated',{
-              at:at,
-              atEnd:atEnd,
-              list:list
-            });
+            let at=listAt(),atEnd=removeElement(list,at);
             if(atEnd)
               facets.updateTargetState(frame.indexingTitle,at-1)
           }
         }),
         facets.newTriggerTarget(SelectingTitles.NEW,{
           targetStateUpdated:(title,state)=>{
-            let at=listAt(),length=list.length,atEnd=at===length-1;
-            let top=list.slice(0,at),tail=atEnd?[]:list.slice(at),
-              add=newDuplicate(list[at]);
-            if(!atEnd)
-              list.splice(0,length,...top,add,...tail);
-            else list.push(add);
-            traceThing('^targetStateUpdated',{
-              at:at,
-              list:list
-            });
+            let at=listAt();
+            duplicateElement(list,at,src=>({text: (src as TextContent).text}));
             facets.updateTargetState(frame.indexingTitle,at+1)
           }
         })

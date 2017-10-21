@@ -399,8 +399,8 @@ function buildSelectingBasic(facets:Facets){
 }
 function buildSelectingPlus(facets:Facets){
   ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
-    {false?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
-      :<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>}
+      {false?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>:
+        <IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
         <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
       </PanelRow>
