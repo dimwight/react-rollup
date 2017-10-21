@@ -343,7 +343,8 @@ class IndexingList extends IndexingFacet{
       <div className={'listBox'}
            style={{
              display:'table',
-             width:this.boxWidth===0?null:this.boxWidth
+             width:this.boxWidth===0?null:this.boxWidth,
+             // maxWidth:this.boxWidth===0?null:this.boxWidth
            }}
            id={'listBox'+this.unique}
       >{items}</div>
@@ -353,7 +354,13 @@ class IndexingList extends IndexingFacet{
     let selected=this.state.index+this.unique,
       listBox='listBox'+this.unique;
     document.getElementById(selected).focus();
-    this.boxWidth=document.getElementById(listBox).offsetWidth
+    let box=document.getElementById(listBox);
+    let renderWidth=Number(box.offsetWidth),borderWidth=Number(box.style.borderWidth);
+    traceThing('componentDidUpdate',{
+      renderWidth:renderWidth,
+      borderWidth:borderWidth,
+      boxWidth:this.boxWidth});
+    if(this.boxWidth===0)this.boxWidth=renderWidth
   }
 }
 function RowPanel(props){
@@ -394,14 +401,14 @@ function buildSelectingPlus(facets:Facets){
     {true?<IndexingList title={SelectingTitles.SELECT} facets={facets}/>
       :<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
+        <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
+      </PanelRow>
+      <PanelRow>
         <TriggerButton title={SelectingTitles.UP} facets={facets}/>
         <TriggerButton title={SelectingTitles.DOWN} facets={facets}/>
         <TriggerButton title={SelectingTitles.DELETE} facets={facets}/>
         <TriggerButton title={SelectingTitles.NEW} facets={facets}/>
       </PanelRow>
-    <PanelRow>
-      <TextualField title={SelectingTitles.EDIT} facets={facets} cols={30}/>
-    </PanelRow>
   </RowPanel>,
     document.getElementById('root'),
   );

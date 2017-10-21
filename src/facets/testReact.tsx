@@ -116,12 +116,13 @@ function newAllSimplesTest(){
 }
 abstract class Surface{
   buildSurface(){
-    trace('Building surface');
+    facets.times.setResetWait(5000);
+    trace('Building surface '+facets.times.elapsed());
     facets.buildTargeterTree(this.newTargetTree());
     trace('Built targets, created targeters');
     this.buildLayout();
     trace('Attached and laid out facets');
-    trace('Surface built');
+    trace('Surface built '+facets.times.elapsed());
   }
   abstract newTargetTree():Target;
   abstract buildLayout();

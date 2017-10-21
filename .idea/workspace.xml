@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="99d905c3-048e-49d0-86a4-7c17a2b9bd90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.d.ts" afterPath="$PROJECT_DIR$/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Facets.js" afterPath="$PROJECT_DIR$/public/Facets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.css" afterPath="$PROJECT_DIR$/public/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.css" afterPath="$PROJECT_DIR$/src/facets/Layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/Layout.tsx" afterPath="$PROJECT_DIR$/src/facets/Layout.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/facets/testReact.tsx" afterPath="$PROJECT_DIR$/src/facets/testReact.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/SwapArrayElement.ts" afterPath="$PROJECT_DIR$/src/util/SwapArrayElement.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,11 +32,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="118" column="14" lean-forward="false" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+              <folding>
+                <element signature="n#!!block;n#trace#0" expanded="false" />
+                <element signature="n#SimpleTitles#0" expanded="false" />
+                <element signature="n#SelectingTitles#0" expanded="false" />
+                <element signature="n#Test#0" expanded="false" />
+                <element signature="e#1130#1255#0" expanded="false" />
+                <element signature="n#!!block;n#newTextualTest#0" expanded="false" />
+                <element signature="e#1395#1640#0" expanded="false" />
+                <element signature="e#1497#1633#0" expanded="false" />
+                <element signature="e#1706#1774#0" expanded="false" />
+                <element signature="n#!!block;n#newTogglingTest#0" expanded="false" />
+                <element signature="e#1931#1975#0" expanded="false" />
+                <element signature="e#2033#2151#0" expanded="false" />
+                <element signature="e#2056#2147#0" expanded="false" />
+                <element signature="e#2186#2301#0" expanded="false" />
+                <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
+                <element signature="e#2463#2603#0" expanded="false" />
+                <element signature="e#2659#2738#0" expanded="false" />
+                <element signature="e#2798#2908#0" expanded="false" />
+                <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
+                <element signature="e#3097#3199#0" expanded="false" />
+                <element signature="e#3131#3195#0" expanded="false" />
+                <element signature="e#3262#3431#0" expanded="false" />
+                <element signature="e#3285#3427#0" expanded="false" />
+                <element signature="n#!!block;n#newAllSimplesTest#0" expanded="false" />
+                <element signature="n#!!block;n#TextContent#0" expanded="false" />
+                <element signature="n#!!block;n#newSelectingTest#0" expanded="false" />
+                <element signature="n#!!block;n#listAt#0;n#!!block;n#newSelectingTest#0" expanded="false" />
+                <element signature="e#4285#4394#0" expanded="false" />
+                <element signature="e#4404#6310#0" expanded="false" />
+                <element signature="e#4604#4949#0" expanded="false" />
+                <element signature="e#4658#4776#0" expanded="false" />
+                <element signature="e#4832#4941#0" expanded="false" />
+                <element signature="e#5007#5356#0" expanded="false" />
+                <element signature="e#5060#5256#0" expanded="false" />
+                <element signature="e#5086#5246#0" expanded="false" />
+                <element signature="e#5313#5347#0" expanded="false" />
+                <element signature="e#5364#6304#0" expanded="false" />
+                <element signature="e#5461#5666#0" expanded="false" />
+                <element signature="e#5507#5656#0" expanded="false" />
+                <element signature="e#5722#5929#0" expanded="false" />
+                <element signature="e#5768#5919#0" expanded="false" />
+                <element signature="e#5987#6110#0" expanded="false" />
+                <element signature="e#6033#6100#0" expanded="false" />
+                <element signature="e#6165#6288#0" expanded="false" />
+                <element signature="e#6211#6278#0" expanded="false" />
+                <element signature="e#6344#6921#0" expanded="false" />
+                <element signature="e#6379#6667#0" expanded="false" />
+                <element signature="e#6676#6917#0" expanded="false" />
+                <element signature="e#6754#6851#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
+                <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
+                <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
+                <element signature="e#7356#7498#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="159" column="14" lean-forward="false" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="14" />
+              <folding>
+                <element signature="n#!!doc;n#Target#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Layout.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="391" column="14" lean-forward="false" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
+            <state relative-caret-position="192">
+              <caret line="345" column="56" lean-forward="false" selection-start-line="345" selection-start-column="56" selection-end-line="345" selection-end-column="56" />
               <folding>
                 <element signature="n#Layout#0" expanded="false" />
                 <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -116,81 +196,26 @@
                 <element signature="e#8901#9092#0" expanded="false" />
                 <element signature="n#!!block;n#ListItemProps#0" expanded="false" />
                 <element signature="n#!!block;n#ListItem#0" expanded="false" />
-                <element signature="n#IndexingList#0" expanded="false" />
-                <element signature="e#9558#9611#0" expanded="false" />
-                <element signature="e#9630#9903#0" expanded="false" />
-                <element signature="n#!!block;n#renderUi#0;n#IndexingList#0" expanded="false" />
-                <element signature="e#10040#10398#0" expanded="false" />
-                <element signature="e#10095#10396#0" expanded="false" />
-                <element signature="e#10413#10706#0" expanded="false" />
-                <element signature="e#10487#10692#0" expanded="false" />
-                <element signature="e#10532#10632#0" expanded="false" />
-                <element signature="n#!!block;n#componentDidUpdate#0;n#IndexingList#0" expanded="false" />
                 <element signature="n#!!block;n#RowPanel#0" expanded="false" />
-                <element signature="e#11018#11078#0" expanded="false" />
-                <element signature="e#11090#11219#0" expanded="false" />
+                <element signature="e#11334#11394#0" expanded="false" />
+                <element signature="e#11406#11535#0" expanded="false" />
                 <element signature="n#!!block;n#PanelRow#0" expanded="false" />
-                <element signature="e#11304#11344#0" expanded="false" />
+                <element signature="e#11620#11660#0" expanded="false" />
                 <element signature="n#!!block;n#buildSelectingBasic#0" expanded="false" />
-                <element signature="e#11466#12078#0" expanded="false" />
-                <element signature="e#11673#11780#0" expanded="false" />
-                <element signature="e#11787#11884#0" expanded="false" />
-                <element signature="e#11891#12062#0" expanded="false" />
-                <element signature="n#!!block;n#buildSelectingPlus#0" expanded="false" />
-                <element signature="e#12186#12820#0" expanded="false" />
-                <element signature="e#12391#12698#0" expanded="false" />
-                <element signature="e#12703#12806#0" expanded="false" />
+                <element signature="e#11782#12394#0" expanded="false" />
+                <element signature="e#11989#12096#0" expanded="false" />
+                <element signature="e#12103#12200#0" expanded="false" />
+                <element signature="e#12207#12378#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testReact.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
+      <file leaf-file-name="Layout.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facets/Layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="175" column="44" lean-forward="false" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="52" />
-              <folding>
-                <element signature="n#!!block;n#trace#0" expanded="false" />
-                <element signature="n#SelectingTitles#0" expanded="false" />
-                <element signature="e#1130#1255#0" expanded="false" />
-                <element signature="n#!!block;n#newTextualTest#0" expanded="false" />
-                <element signature="e#1395#1640#0" expanded="false" />
-                <element signature="e#1497#1633#0" expanded="false" />
-                <element signature="e#1706#1774#0" expanded="false" />
-                <element signature="n#!!block;n#newTogglingTest#0" expanded="false" />
-                <element signature="e#1931#1975#0" expanded="false" />
-                <element signature="e#2033#2151#0" expanded="false" />
-                <element signature="e#2056#2147#0" expanded="false" />
-                <element signature="e#2186#2301#0" expanded="false" />
-                <element signature="n#!!block;n#newIndexingTest#0" expanded="false" />
-                <element signature="e#2463#2603#0" expanded="false" />
-                <element signature="e#2659#2738#0" expanded="false" />
-                <element signature="e#2798#2908#0" expanded="false" />
-                <element signature="n#!!block;n#newTriggerTest#0" expanded="false" />
-                <element signature="e#3097#3199#0" expanded="false" />
-                <element signature="e#3131#3195#0" expanded="false" />
-                <element signature="e#3262#3431#0" expanded="false" />
-                <element signature="e#3285#3427#0" expanded="false" />
-                <element signature="n#!!block;n#newAllSimplesTest#0" expanded="false" />
-                <element signature="n#Surface#0" expanded="false" />
-                <element signature="n#!!block;n#buildSurface#0;n#Surface#0" expanded="false" />
-                <element signature="n#SurfaceWorks#0" expanded="false" />
-                <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-                <element signature="e#7271#7413#0" expanded="false" />
-                <element signature="n#!!block;n#buildSurface#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SwapArrayElement.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/SwapArrayElement.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="102">
+              <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -208,10 +233,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Dated</find>
-      <find>ilterText</find>
-      <find>handle</find>
-      <find>inStockOnly</find>
       <find>', s</find>
       <find>libDateFormat</find>
       <find>layout\.\w+</find>
@@ -238,6 +259,10 @@
       <find>:</find>
       <find>,</find>
       <find>throw</find>
+      <find>swapArrayElement()</find>
+      <find>swapArrayElement(</find>
+      <find>function swapArray</find>
+      <find>.lazyElements:</find>
     </findStrings>
     <replaceStrings>
       <replace>nature</replace>
@@ -320,8 +345,6 @@
         <option value="$PROJECT_DIR$/src/widget/TextField.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/widget/_exports.ts" />
-        <option value="$PROJECT_DIR$/public/Facets.js" />
-        <option value="$PROJECT_DIR$/src/facets/Layout.css" />
         <option value="$PROJECT_DIR$/public/index.js" />
         <option value="unpkg.com/react-dom@15.6.2/dist/react-dom.min.js" />
         <option value="$PROJECT_DIR$/src/util/_exports.ts" />
@@ -330,8 +353,10 @@
         <option value="$PROJECT_DIR$/src/widget/SmartTextField.tsx" />
         <option value="$PROJECT_DIR$/src/thinking/table.tsx" />
         <option value="$PROJECT_DIR$/rollup.config.js" />
-        <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
         <option value="$PROJECT_DIR$/src/util/SwapArrayElement.ts" />
+        <option value="$PROJECT_DIR$/src/facets/Layout.css" />
+        <option value="$PROJECT_DIR$/src/facets/Layout.tsx" />
+        <option value="$PROJECT_DIR$/public/Facets.js" />
         <option value="$PROJECT_DIR$/src/facets/testReact.tsx" />
       </list>
     </option>
@@ -485,6 +510,24 @@
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-rollup" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+              <item name="facets-js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-rollup" type="b2602c69:ProjectViewProjectNode" />
@@ -666,10 +709,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5053476" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49465242" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.22617681" sideWeight="0.3213703" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18032786" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18002196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637364" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15038419" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22013274" sideWeight="0.5087912" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15038419" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22013274" sideWeight="0.5087912" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24941996" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -723,7 +766,6 @@
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Util.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Tracer.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Identified.js.map" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Times.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Util.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Titled.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Tracer.js.map" />
@@ -731,7 +773,6 @@
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Titled.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Debug.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Identified.js" />
-        <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Times.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/NumberPolicy.js" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/util/Debug.js.map" />
         <option value="$PROJECT_DIR$/../facets-js/in/fjs/core/STarget.js.map" />
@@ -813,7 +854,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="boxWidth" />
     <MESSAGE value="disabled" />
     <MESSAGE value="LIVE" />
     <MESSAGE value="setSelectingTargetsLive" />
@@ -838,7 +878,8 @@
     <MESSAGE value="ListItem" />
     <MESSAGE value="1.51" />
     <MESSAGE value="swapArrayElement!" />
-    <option name="LAST_COMMIT_MESSAGE" value="swapArrayElement!" />
+    <MESSAGE value="SelectingTitles.DOWN" />
+    <option name="LAST_COMMIT_MESSAGE" value="SelectingTitles.DOWN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -862,13 +903,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react-dom/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/thinking/main.js.map">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1082,59 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/facets/Layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="201" column="2" lean-forward="false" selection-start-line="201" selection-start-column="2" selection-end-line="201" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc;n#Target#0" expanded="false" />
-            <element signature="n#!!doc;n#targetStateUpdated#0;n#!!block;n#TargetCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#TextualCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#passText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#getText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#isValidText#0;n#!!block;n#TextualCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#TogglingCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#passSet#0;n#!!block;n#TogglingCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#NumericCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#passValue#0;n#!!block;n#NumericCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#min#0;n#!!block;n#NumericCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#max#0;n#!!block;n#NumericCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#IndexingCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#passIndex#0;n#!!block;n#IndexingCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#getIndexables#0;n#!!block;n#IndexingCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#getUiSelectables#0;n#!!block;n#IndexingCoupler#0" expanded="false" />
-            <element signature="n#!!doc;n#IndexingState#0" expanded="false" />
-            <element signature="n#!!doc;n#uiSelectables#0;n#!!block;n#IndexingState#0" expanded="false" />
-            <element signature="n#!!doc;n#indexed#0;n#!!block;n#IndexingState#0" expanded="false" />
-            <element signature="n#!!doc;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#title#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#indexingTitle#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#content#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#getUiSelectables#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#newEditTargets#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#newFrameTargets#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#frame#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#getIndexedContent#0;n#!!block;n#SelectingFramePolicy#0" expanded="false" />
-            <element signature="n#!!doc;n#newInstance#0" expanded="false" />
-            <element signature="n#!!doc;n#Facets#0" expanded="false" />
-            <element signature="n#!!doc;n#newTextualTarget#0;n#!!block;n#Facets#0" expanded="false" />
-            <element signature="n#!!doc;n#newTargetGroup#0;n#!!block;n#Facets#0" expanded="false" />
-            <element signature="n#!!doc;n#buildTargeterTree#0;n#!!block;n#Facets#0" expanded="false" />
-            <element signature="n#!!doc;n#attachFacet#0;n#!!block;n#Facets#0" expanded="false" />
-            <element signature="n#!!doc;n#updateTargetState#0;n#!!block;n#Facets#0" expanded="false" />
-            <element signature="n#!!doc;n#getTargetState#0;n#!!block;n#Facets#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/Bits.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1160,14 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="77" lean-forward="false" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Facets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="1958" column="16" lean-forward="false" selection-start-line="1958" selection-start-column="16" selection-end-line="1958" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1237,10 +1210,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/facets/testReact.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1989">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/SwapArrayElement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="644" column="14" lean-forward="true" selection-start-line="644" selection-start-column="14" selection-end-line="644" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/SwapArrayElement.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facets/Layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Facets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="2156" column="38" lean-forward="false" selection-start-line="2156" selection-start-column="38" selection-end-line="2156" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/Layout.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="391" column="14" lean-forward="false" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
+        <state relative-caret-position="192">
+          <caret line="345" column="56" lean-forward="false" selection-start-line="345" selection-start-column="56" selection-end-line="345" selection-end-column="56" />
           <folding>
             <element signature="n#Layout#0" expanded="false" />
             <element signature="n#!!block;n#build#0;n#Layout#0" expanded="false" />
@@ -1324,67 +1347,29 @@
             <element signature="e#8901#9092#0" expanded="false" />
             <element signature="n#!!block;n#ListItemProps#0" expanded="false" />
             <element signature="n#!!block;n#ListItem#0" expanded="false" />
-            <element signature="n#IndexingList#0" expanded="false" />
-            <element signature="e#9558#9611#0" expanded="false" />
-            <element signature="e#9630#9903#0" expanded="false" />
-            <element signature="n#!!block;n#renderUi#0;n#IndexingList#0" expanded="false" />
-            <element signature="e#10040#10398#0" expanded="false" />
-            <element signature="e#10095#10396#0" expanded="false" />
-            <element signature="e#10413#10706#0" expanded="false" />
-            <element signature="e#10487#10692#0" expanded="false" />
-            <element signature="e#10532#10632#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidUpdate#0;n#IndexingList#0" expanded="false" />
             <element signature="n#!!block;n#RowPanel#0" expanded="false" />
-            <element signature="e#11018#11078#0" expanded="false" />
-            <element signature="e#11090#11219#0" expanded="false" />
+            <element signature="e#11334#11394#0" expanded="false" />
+            <element signature="e#11406#11535#0" expanded="false" />
             <element signature="n#!!block;n#PanelRow#0" expanded="false" />
-            <element signature="e#11304#11344#0" expanded="false" />
+            <element signature="e#11620#11660#0" expanded="false" />
             <element signature="n#!!block;n#buildSelectingBasic#0" expanded="false" />
-            <element signature="e#11466#12078#0" expanded="false" />
-            <element signature="e#11673#11780#0" expanded="false" />
-            <element signature="e#11787#11884#0" expanded="false" />
-            <element signature="e#11891#12062#0" expanded="false" />
-            <element signature="n#!!block;n#buildSelectingPlus#0" expanded="false" />
-            <element signature="e#12186#12820#0" expanded="false" />
-            <element signature="e#12391#12698#0" expanded="false" />
-            <element signature="e#12703#12806#0" expanded="false" />
+            <element signature="e#11782#12394#0" expanded="false" />
+            <element signature="e#11989#12096#0" expanded="false" />
+            <element signature="e#12103#12200#0" expanded="false" />
+            <element signature="e#12207#12378#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facets/testReact.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1989">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="802" column="36" lean-forward="true" selection-start-line="802" selection-start-column="36" selection-end-line="802" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/SwapArrayElement.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/facets/testReact.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="175" column="44" lean-forward="false" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="52" />
+        <state relative-caret-position="221">
+          <caret line="118" column="14" lean-forward="false" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
           <folding>
             <element signature="n#!!block;n#trace#0" expanded="false" />
+            <element signature="n#SimpleTitles#0" expanded="false" />
             <element signature="n#SelectingTitles#0" expanded="false" />
+            <element signature="n#Test#0" expanded="false" />
             <element signature="e#1130#1255#0" expanded="false" />
             <element signature="n#!!block;n#newTextualTest#0" expanded="false" />
             <element signature="e#1395#1640#0" expanded="false" />
@@ -1405,14 +1390,45 @@
             <element signature="e#3262#3431#0" expanded="false" />
             <element signature="e#3285#3427#0" expanded="false" />
             <element signature="n#!!block;n#newAllSimplesTest#0" expanded="false" />
-            <element signature="n#Surface#0" expanded="false" />
-            <element signature="n#!!block;n#buildSurface#0;n#Surface#0" expanded="false" />
-            <element signature="n#SurfaceWorks#0" expanded="false" />
+            <element signature="n#!!block;n#TextContent#0" expanded="false" />
+            <element signature="n#!!block;n#newSelectingTest#0" expanded="false" />
+            <element signature="n#!!block;n#listAt#0;n#!!block;n#newSelectingTest#0" expanded="false" />
+            <element signature="e#4285#4394#0" expanded="false" />
+            <element signature="e#4404#6310#0" expanded="false" />
+            <element signature="e#4604#4949#0" expanded="false" />
+            <element signature="e#4658#4776#0" expanded="false" />
+            <element signature="e#4832#4941#0" expanded="false" />
+            <element signature="e#5007#5356#0" expanded="false" />
+            <element signature="e#5060#5256#0" expanded="false" />
+            <element signature="e#5086#5246#0" expanded="false" />
+            <element signature="e#5313#5347#0" expanded="false" />
+            <element signature="e#5364#6304#0" expanded="false" />
+            <element signature="e#5461#5666#0" expanded="false" />
+            <element signature="e#5507#5656#0" expanded="false" />
+            <element signature="e#5722#5929#0" expanded="false" />
+            <element signature="e#5768#5919#0" expanded="false" />
+            <element signature="e#5987#6110#0" expanded="false" />
+            <element signature="e#6033#6100#0" expanded="false" />
+            <element signature="e#6165#6288#0" expanded="false" />
+            <element signature="e#6211#6278#0" expanded="false" />
+            <element signature="e#6344#6921#0" expanded="false" />
+            <element signature="e#6379#6667#0" expanded="false" />
+            <element signature="e#6676#6917#0" expanded="false" />
+            <element signature="e#6754#6851#0" expanded="false" />
             <element signature="n#!!block;n#constructor#0;n#SurfaceWorks#0" expanded="false" />
             <element signature="n#!!block;n#newTargetTree#0;n#SurfaceWorks#0" expanded="false" />
             <element signature="n#!!block;n#buildLayout#0;n#SurfaceWorks#0" expanded="false" />
-            <element signature="e#7271#7413#0" expanded="false" />
-            <element signature="n#!!block;n#buildSurface#0" expanded="false" />
+            <element signature="e#7356#7498#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/facets-js/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="159" column="14" lean-forward="false" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="14" />
+          <folding>
+            <element signature="n#!!doc;n#Target#0" expanded="false" />
           </folding>
         </state>
       </provider>
