@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Facets,
   newInstance,
-  Target
+  Target,
+  SelectingFramePolicy
 } from 'facets-js';
 import {Layout} from './Layout';
 import {traceThing,swapElement,removeElement,duplicateElement} from '../util/_exports';
@@ -116,7 +117,6 @@ function newAllSimplesTest(){
 }
 abstract class Surface{
   buildSurface(){
-    // facets.times.setResetWait(5000);
     trace('Building surface '+facets.times.elapsed());
     facets.buildTargeterTree(this.newTargetTree());
     trace('Built targets, created targeters');
@@ -138,13 +138,14 @@ function newSelectingTest(test:Test):Target{
     {text: 'Hello world!'},
     {text: 'Hello Dolly!'},
     {text: 'Hello, good evening and welcome!'},
-  ],
-  frame={
+  ];
+  const frame:SelectingFramePolicy={
     title: SelectingTitles.FRAME,
     indexingTitle: SelectingTitles.SELECT,
+    newIndexedTitle:indexed=>SelectingTitles.FRAME,
     content: list,
     getUiSelectables: () => list.map((item)=>item.text),
-    newEditTargets: (indexed:TextContent) => [
+    newEditTargets: (indexed:TextContent,title:string) => [
       facets.newTextualTarget(SelectingTitles.EDIT, {
         passText: indexed.text,
         targetStateUpdated: (title, state) => indexed.text = state as string
