@@ -3,7 +3,7 @@ import {
   Facets,
   newInstance,
   Target,
-  IndexingFramePolicy
+  IndexingFramePolicy,
 } from 'facets-js';
 import {Layout} from './Layout';
 import {traceThing,swapElement,removeElement,duplicateElement} from '../util/_exports';
@@ -50,7 +50,7 @@ export const testTitles=[
   'AllSimples',
   'SelectingBasic',
   'SelectingPlus',
-  'None'
+  'None',
 ];
 const facets:Facets=newInstance(true);
 function newTextualTest():Target{
@@ -73,7 +73,7 @@ function newTogglingTest(){
   toggled=facets.newTextualTarget(SimpleTitles.TOGGLED,{
     getText:(title)=>{
       return facets.getTargetState(SimpleTitles.TOGGLING)as boolean?'Set':'Not set'
-    }
+    },
   });
   facets.attachOnRetargeted(()=>{
     facets.setTargetLive(SimpleTitles.TOGGLED,
