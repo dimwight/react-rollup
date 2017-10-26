@@ -43,11 +43,13 @@ class Facet<I extends TargetValues,K extends TargetValues> extends React.Compone
       this.state=Object.assign({}as K,this.props,updateWithLive,);
     else this.setState(updateWithLive);
   };
+  protected stateChanged(state:SimpleState){
+    let facets=this.props.facets,title=this.props.title;
+    facets.updateTargetState(title,state);
+    facets.notifyTargetUpdated(title);
+  }
   componentDidMount(){
     this.didMount=true;
-  }
-  componentWillUpdate(){
-    // traceThing('componentWillUpdate',this.state);
   }
   protected readUpdate(update):{}{
     return {state:update}
@@ -77,8 +79,7 @@ class TogglingCheckbox extends Facet<TogglingValues,TogglingValues>{
   }
   onChange=(e)=>{
     let set=e.target.checked;
-    this.props.facets.updateTargetState(this.props.title,
-      set);
+    this.stateChanged(set);
     this.setState({
       set:set
     })
@@ -147,7 +148,7 @@ class TextualField extends Facet<TextualValues,TextualValues>{
     return {text:String(update)}
   }
   onFieldEnter=(text)=>{
-     this.props.facets.updateTargetState(this.props.title,text);
+     this.stateChanged(text);
   };
   getStateText=()=>this.state.text;
   isDisabled=()=>!this.state.live;
@@ -183,7 +184,7 @@ class TriggerButton extends Facet<TargetValues,TargetValues>{
     return {}
   }
   onClick=()=>{
-    this.props.facets.updateTargetState(this.props.title,'No state!');
+    this.stateChanged('No state!');
   };
   render(){
     return (<button
@@ -241,7 +242,7 @@ abstract class IndexingFacet extends Facet<IndexingValues,IndexingValues>{
     }
   }
   indexChanged(index){
-    this.props.facets.updateTargetState(this.props.title,Number(index));
+    this.stateChanged(Number(index));
   }
   render(){
     let state=this.state;
