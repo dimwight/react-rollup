@@ -3,7 +3,7 @@ import {
   Facets,
   newInstance,
   Target,
-  SelectingFramePolicy
+  IndexingFramePolicy
 } from 'facets-js';
 import {Layout} from './Layout';
 import {traceThing,swapElement,removeElement,duplicateElement} from '../util/_exports';
@@ -139,13 +139,13 @@ function newSelectingTest(test:Test):Target{
     {text: 'Hello Dolly!'},
     {text: 'Hello, good evening and welcome!'},
   ];
-  const frame:SelectingFramePolicy={
+  const frame:IndexingFramePolicy={
     title: SelectingTitles.FRAME,
     indexingTitle: SelectingTitles.SELECT,
     newIndexedTitle:indexed=>SelectingTitles.FRAME,
     content: list,
     getUiSelectables: () => list.map((item)=>item.text),
-    newEditTargets: (indexed:TextContent,title:string) => [
+    newIndexedTargets: (indexed:TextContent,title:string) => [
       facets.newTextualTarget(SelectingTitles.EDIT, {
         passText: indexed.text,
         targetStateUpdated: (title, state) => indexed.text = state as string
@@ -156,7 +156,7 @@ function newSelectingTest(test:Test):Target{
       }),
     ]
     ,
-    newFrameTargets:()=>test===Test.SelectingBasic?[
+    newIndexingTargets:()=>test===Test.SelectingBasic?[
       facets.newTextualTarget(SimpleTitles.INDEXED,{
         getText:titley=>{
           let index=facets.getTargetState(SelectingTitles.SELECT)as number;
@@ -241,7 +241,7 @@ class SurfaceWorks extends Surface{
   }
 }
 export function buildSurface(){
-  new SurfaceWorks(Test.SelectingPlus).buildSurface();
+  new SurfaceWorks(Test.AllSimples).buildSurface();
 }
 
 
