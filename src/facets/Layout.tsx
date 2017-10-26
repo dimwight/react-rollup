@@ -392,6 +392,8 @@ function buildSelectingBasic(facets:Facets){
       </PanelRow>
       <PanelRow>
         <TextualLabel title={SelectingTitles.CHARS} facets={facets}/>
+      </PanelRow>
+      <PanelRow>
         <TogglingCheckbox title={SelectingTitles.LIVE} facets={facets}/>
       </PanelRow>
     </RowPanel>,
