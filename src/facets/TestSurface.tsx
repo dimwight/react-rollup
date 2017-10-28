@@ -117,20 +117,6 @@ function newTogglingTree(facets){
   });
   return facets.newTargetGroup('TogglingTest',toggling,toggled);
 }
-function newIndexingTree(facets){
-  const indexing=facets.newIndexingTarget(SimpleTitles.INDEXING,{
-      passIndex:0,
-      getUiSelectables:(title)=> SimpleTitles.INDEXABLES,
-      getIndexables: (title)=> SimpleTitles.INDEXABLES,
-    }),
-    index=facets.newTextualTarget(SimpleTitles.INDEX,{
-      getText:(title)=>''+facets.getTargetState(SimpleTitles.INDEXING),
-    }),
-    indexed=facets.newTextualTarget(SimpleTitles.INDEXED,{
-      getText:(title)=>SimpleTitles.INDEXABLES[facets.getTargetState(SimpleTitles.INDEXING)as number],
-    });
-  return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
-}
 function newTriggerTree(facets){
   let triggers:number=0;
   const trigger=facets.newTriggerTarget(SimpleTitles.TRIGGER,{
@@ -146,6 +132,20 @@ function newTriggerTree(facets){
       }
     });
   return facets.newTargetGroup('TriggerTest',trigger,triggered);
+}
+function newIndexingTree(facets){
+  const indexing=facets.newIndexingTarget(SimpleTitles.INDEXING,{
+      passIndex:0,
+      getUiSelectables:(title)=> SimpleTitles.INDEXABLES,
+      getIndexables: (title)=> SimpleTitles.INDEXABLES,
+    }),
+    index=facets.newTextualTarget(SimpleTitles.INDEX,{
+      getText:(title)=>''+facets.getTargetState(SimpleTitles.INDEXING),
+    }),
+    indexed=facets.newTextualTarget(SimpleTitles.INDEXED,{
+      getText:(title)=>SimpleTitles.INDEXABLES[facets.getTargetState(SimpleTitles.INDEXING)as number],
+    });
+  return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
 function newAllSimplesTree(facets){
   return facets.newTargetGroup('AllTest',
@@ -243,9 +243,40 @@ function newSelectingTree(facets:Facets,test){
   });
   return facets.buildSelectingFrame(frame);
 }
+function buildTextual(facets){
+  let first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
+  ReactDOM.render(
+    <RowPanel rubric={Tests.Textual.name}>
+      <TextualField title={first} facets={facets}/>
+      <TextualLabel title={first} facets={facets}/>
+      <TextualField title={second} facets={facets} cols={40}/>
+      <TextualLabel title={second} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  );
+}
+function buildToggling(facets){
+  ReactDOM.render(
+    <RowPanel rubric={Tests.TogglingLive.name}>
+      <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
+      <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  );
+
+}
+function buildTrigger(facets){
+  ReactDOM.render(
+    <RowPanel rubric={Tests.Trigger.name}>
+      <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
+      <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
+    </RowPanel>,
+    document.getElementById('root'),
+  )
+}
 function buildIndexing(facets){
   ReactDOM.render(
-    <RowPanel rubric={Tests.Indexing}>
+    <RowPanel rubric={Tests.Indexing.name}>
       <IndexingDropdown title={SimpleTitles.INDEXING} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
@@ -278,37 +309,6 @@ function buildAllSimples(facets){
     </div>,
     document.getElementById('root'),
   );
-}
-function buildTextual(facets){
-  let first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
-  ReactDOM.render(
-    <RowPanel rubric={Tests.Textual}>
-      <TextualField title={first} facets={facets}/>
-      <TextualLabel title={first} facets={facets}/>
-      <TextualField title={second} facets={facets} cols={40}/>
-      <TextualLabel title={second} facets={facets}/>
-    </RowPanel>,
-    document.getElementById('root'),
-  );
-}
-function buildToggling(facets){
-  ReactDOM.render(
-    <RowPanel rubric={Tests.TogglingLive.name}>
-      <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
-      <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
-    </RowPanel>,
-    document.getElementById('root'),
-  );
-
-}
-function buildTrigger(facets){
-  ReactDOM.render(
-    <RowPanel rubric={Tests.Trigger}>
-      <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
-      <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
-    </RowPanel>,
-    document.getElementById('root'),
-  )
 }
 function buildSelectingBasic(facets){
   ReactDOM.render(<RowPanel rubric={Tests.SelectingBasic.name}>
@@ -348,5 +348,5 @@ function buildSelectingPlus(facets){
   );
 }
 export function buildSurface(){
-  new SurfaceWorks(Tests.Textual).buildSurface();
+  new SurfaceWorks(Tests.AllSimples).buildSurface();
 }
