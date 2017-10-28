@@ -3,7 +3,7 @@
     "src/**/*"
   ],
   "compilerOptions": {
-    "baseUrl": "./src",
+//    "baseUrl": "./src",
     "lib": [
       "dom",
       "es2015",

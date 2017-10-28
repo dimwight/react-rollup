@@ -11,4 +11,4 @@ Now explored:
 -  [react/.../hello-world](https://facebook.github.io/react/docs/hello-world.html)
 - __exports.ts_
 -  [react/.../thinking-in-react.html](https://facebook.github.io/react/docs/thinking-in-react.html)
-- _facets-js_ with _Surface, Layout, SmartTextField_
+- _facets-js_ with _Surface, TestLayout, SmartTextField_
