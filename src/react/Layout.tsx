@@ -9,7 +9,7 @@ interface TargetValues{
   state?:SimpleState
   live?:boolean
 }
-export class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
+class Facet<I extends TargetValues,K extends TargetValues> extends React.Component<I,K>{
   private didMount:boolean;
   public static ids=0;
   protected readonly unique:string;
