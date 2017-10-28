@@ -11,7 +11,7 @@ export abstract class Surface{
     if(this.facets.doTrace)console.info('App > '+text);
   }
   constructor(readonly facets:Facets){
-    traceThing('Surface',facets.identity())
+    facets.attachOnRetargeted(this.onRetargeted);
   }
   protected times=this.facets.times;
   buildSurface(){
@@ -24,4 +24,5 @@ export abstract class Surface{
   }
   abstract newTargetTree():Target;
   abstract buildLayout();
+  protected onRetargeted(){}
 }
