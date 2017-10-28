@@ -49,22 +49,24 @@ export class Test{
   constructor(
     readonly name,
     readonly id,
-    readonly newTree?: (Facets,Test?)=>Target){}
+    readonly newTree?: (Facets,Test?)=>Target,
+    readonly buildTest?:(Facets)=>void
+  ){}
 }
 export const Tests={
-  Textual:new Test('Textual',0,newTextualTree),
-  TogglingLive:new Test('TogglingLive',1,newTogglingTree),
-  Indexing:new Test('Indexing',2,newIndexingTree),
-  Trigger:new Test('Trigger',3,newTriggerTree),
-  AllSimples:new Test('AllSimples',4,newAllSimplesTree),
-  SelectingBasic:new Test('SelectingBasic',5,newSelectingTree),
-  SelectingPlus:new Test('SelectingPlus',6,newSelectingTree),
+  Textual:new Test('Textual',0,newTextualTree,buildTextual),
+  TogglingLive:new Test('TogglingLive',1,newTogglingTree,buildToggling),
+  Indexing:new Test('Indexing',2,newIndexingTree,buildIndexing),
+  Trigger:new Test('Trigger',3,newTriggerTree,buildTrigger),
+  AllSimples:new Test('AllSimples',4,newAllSimplesTree,buildAllSimples),
+  SelectingBasic:new Test('SelectingBasic',5,newSelectingTree,buildSelectingBasic),
+  SelectingPlus:new Test('SelectingPlus',6,newSelectingTree,buildSelectingPlus),
   Next:new Test('Next',7)
 };
 interface TextContent {
   text? : string;
 }
-class SimpleSurface extends Surface{
+class SurfaceWorks extends Surface{
   constructor(private test:Test){
     super(newInstance(true));
   }
@@ -85,18 +87,7 @@ class SimpleSurface extends Surface{
 }
 class TestLayout implements Layout{
   constructor(private test:Test){}
-  build(facets){
-    switch(this.test){
-      case Tests.Textual: buildTextual(facets);break;
-      case Tests.Indexing: buildIndexing(facets);break;
-      case Tests.TogglingLive: buildToggling(facets);break;
-      case Tests.Trigger: buildTrigger(facets);break;
-      case Tests.AllSimples:buildAllSimples(facets);break;
-      case Tests.SelectingBasic:buildSelectingBasic(facets);break;
-      case Tests.SelectingPlus:buildSelectingPlus(facets);break;
-      default: throw new Error('Not implemented for '+this.test.name);
-    }
-  }
+  build=facets=>this.test.buildTest(facets);
 }
 function newTextualTree(facets){
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
@@ -357,5 +348,5 @@ function buildSelectingPlus(facets){
   );
 }
 export function buildSurface(){
-  new SimpleSurface(Tests.SelectingPlus).buildSurface();
+  new SurfaceWorks(Tests.Textual).buildSurface();
 }
