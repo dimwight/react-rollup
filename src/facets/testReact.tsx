@@ -5,7 +5,7 @@ import {
   Target,
   IndexingFramePolicy,
 } from 'facets-js';
-import {Layout} from './Layout';
+import {Layout} from '../react/_exports';
 import {traceThing,swapElement,removeElement,duplicateElement} from '../util/_exports';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
@@ -115,7 +115,7 @@ function newAllSimplesTest(){
   return facets.newTargetGroup('AllTest',
     newTextualTest(),newIndexingTest(),newTogglingTest(),newTriggerTest());
 }
-abstract class Surface{
+export abstract class Surface{
   buildSurface(){
     trace('Building surface '+facets.times.elapsed());
     facets.buildTargeterTree(this.newTargetTree());
