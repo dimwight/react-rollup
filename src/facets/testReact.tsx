@@ -15,8 +15,13 @@ import {
   TextualField,
   TogglingCheckbox,
   TriggerButton,
-} from '../react/exports';
-import {traceThing,swapElement,removeElement,duplicateElement} from '../util/_exports';
+} from 'react/export';
+import {
+  traceThing,
+  swapElement,
+  removeElement,
+  duplicateElement
+} from 'util/export';
 function trace(text){
   if(facets.doTrace)console.info('App > '+text);
 }

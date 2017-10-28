@@ -3,7 +3,7 @@ import {
   FnPassString,
   FnGetString,
   FnGetBoolean,
-} from './_exports'
+} from './local'
 import {traceThing} from '../Util/Bits';
 
 interface TextFieldProps{
