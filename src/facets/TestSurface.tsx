@@ -45,26 +45,19 @@ export namespace SelectingTitles {
     EDIT='Edit Selection',
     CHARS='Characters';
 }
-export enum Test{
-  Textual,
-  TogglingLive,
-  Indexing,
-  Trigger,
-  AllSimples,
-  SelectingBasic,
-  SelectingPlus,
-  Next
+export class Test{
+  constructor(readonly name,readonly id){}
 }
-export const testTitles=[
-  'Textual',
-  'TogglingLive',
-  'Indexing',
-  'Trigger',
-  'AllSimples',
-  'SelectingBasic',
-  'SelectingPlus',
-  'None',
-];
+export const Tests={
+  Textual:new Test('Textual',0),
+  TogglingLive:new Test('TogglingLive',1),
+  Indexing:new Test('Indexing',2),
+  Trigger:new Test('Trigger',3),
+  AllSimples:new Test('AllSimples',4),
+  SelectingBasic:new Test('SelectingBasic',5),
+  SelectingPlus:new Test('SelectingPlus',6),
+  Next:new Test('Next',7)
+};
 interface TextContent {
   text? : string;
 }
@@ -76,12 +69,12 @@ class TestSurface extends Surface{
     const textual=newTextualTest,indexing=newIndexingTest,
       toggling=newTogglingTest,trigger=newTriggerTest,
       all=newAllSimplesTest;
-    return this.test<Test.SelectingBasic?all(this.facets)
+    return this.test<Tests.SelectingBasic?all(this.facets)
       :newSelectingTest(this.test,this.facets);
   }
   buildLayout(){
     this.facets.getTargetState(SelectingTitles.SELECT);
-    if(false&&this.test===Test.AllSimples)[
+    if(false&&this.test===Tests.AllSimples)[
       SimpleTitles.TEXTUAL_FIRST,
       SimpleTitles.INDEXING,
       SimpleTitles.TOGGLING,
@@ -95,14 +88,14 @@ class TestLayout implements Layout{
   constructor(private test:Test){}
   build(facets){
     switch(this.test){
-      case Test.Textual: buildTextual(facets);break;
-      case Test.Indexing: buildIndexing(facets);break;
-      case Test.TogglingLive: buildToggling(facets);break;
-      case Test.Trigger: buildTrigger(facets);break;
-      case Test.AllSimples:buildAllSimples(facets);break;
-      case Test.SelectingBasic:buildSelectingBasic(facets);break;
-      case Test.SelectingPlus:buildSelectingPlus(facets);break;
-      default: throw new Error('Not implemented for '+testTitles[Test.Next]);
+      case Tests.Textual: buildTextual(facets);break;
+      case Tests.Indexing: buildIndexing(facets);break;
+      case Tests.TogglingLive: buildToggling(facets);break;
+      case Tests.Trigger: buildTrigger(facets);break;
+      case Tests.AllSimples:buildAllSimples(facets);break;
+      case Tests.SelectingBasic:buildSelectingBasic(facets);break;
+      case Tests.SelectingPlus:buildSelectingPlus(facets);break;
+      default: throw new Error('Not implemented for '+this.test.name);
     }
   }
 }
@@ -197,7 +190,7 @@ function newSelectingTest(test,facets:Facets){
       }),
     ]
     ,
-    newIndexingTargets:()=>test===Test.SelectingBasic?[
+    newIndexingTargets:()=>test===Tests.SelectingBasic?[
         facets.newTextualTarget(SimpleTitles.INDEXED,{
           getText:titley=>{
             let index=facets.getTargetState(SelectingTitles.SELECT)as number;
@@ -241,7 +234,7 @@ function newSelectingTest(test,facets:Facets){
       ]
   };
   facets.attachOnRetargeted(()=>{
-    if(test===Test.SelectingPlus){
+    if(test===Tests.SelectingPlus){
       if(false)facets.updateTargetState(frame.indexingTitle,list.length-1);
       let at=listAt();
       facets.setTargetLive(SelectingTitles.DELETE,list.length>1);
@@ -262,7 +255,7 @@ function newSelectingTest(test,facets:Facets){
 }
 function buildIndexing(facets){
   ReactDOM.render(
-    <RowPanel rubric={Test.Indexing}>
+    <RowPanel rubric={Tests.Indexing}>
       <IndexingDropdown title={SimpleTitles.INDEXING} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
       <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
@@ -273,22 +266,22 @@ function buildIndexing(facets){
 function buildAllSimples(facets){
   let textual1=SimpleTitles.TEXTUAL_FIRST,textual2=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(<div>
-      <RowPanel rubric={testTitles[Test.Textual]}>
+      <RowPanel rubric={Tests.Textual.name}>
         <TextualField title={textual1} facets={facets}/>
         <TextualLabel title={textual1} facets={facets}/>
         <TextualField title={textual2} facets={facets} cols={40}/>
         <TextualLabel title={textual2} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={testTitles[Test.Indexing]}>
+      <RowPanel rubric={Tests.Indexing.name}>
         <IndexingDropdown title={SimpleTitles.INDEXING} facets={facets}/>
         <TextualLabel title={SimpleTitles.INDEX} facets={facets}/>
         <TextualLabel title={SimpleTitles.INDEXED} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={testTitles[Test.TogglingLive]}>
+      <RowPanel rubric={Tests.TogglingLive.name}>
         <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
         <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
       </RowPanel>
-      <RowPanel rubric={testTitles[Test.Trigger]}>
+      <RowPanel rubric={Tests.Trigger.name}>
         <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
         <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
       </RowPanel>
@@ -299,7 +292,7 @@ function buildAllSimples(facets){
 function buildTextual(facets){
   let first=SimpleTitles.TEXTUAL_FIRST,second=SimpleTitles.TEXTUAL_SECOND;
   ReactDOM.render(
-    <RowPanel rubric={Test.Textual}>
+    <RowPanel rubric={Tests.Textual}>
       <TextualField title={first} facets={facets}/>
       <TextualLabel title={first} facets={facets}/>
       <TextualField title={second} facets={facets} cols={40}/>
@@ -310,7 +303,7 @@ function buildTextual(facets){
 }
 function buildToggling(facets){
   ReactDOM.render(
-    <RowPanel rubric={testTitles[Test.TogglingLive]}>
+    <RowPanel rubric={Tests.TogglingLive.name}>
       <TogglingCheckbox title={SimpleTitles.TOGGLING} facets={facets}/>
       <TextualLabel title={SimpleTitles.TOGGLED} facets={facets}/>
     </RowPanel>,
@@ -320,7 +313,7 @@ function buildToggling(facets){
 }
 function buildTrigger(facets){
   ReactDOM.render(
-    <RowPanel rubric={Test.Trigger}>
+    <RowPanel rubric={Tests.Trigger}>
       <TriggerButton title={SimpleTitles.TRIGGER} facets={facets}/>
       <TextualLabel title={SimpleTitles.TRIGGEREDS} facets={facets}/>
     </RowPanel>,
@@ -328,7 +321,7 @@ function buildTrigger(facets){
   )
 }
 function buildSelectingBasic(facets){
-  ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingBasic]}>
+  ReactDOM.render(<RowPanel rubric={Tests.SelectingBasic.name}>
       {false?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>
         :<IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
@@ -348,7 +341,7 @@ function buildSelectingBasic(facets){
   );
 }
 function buildSelectingPlus(facets){
-  ReactDOM.render(<RowPanel rubric={testTitles[Test.SelectingPlus]}>
+  ReactDOM.render(<RowPanel rubric={Tests.SelectingPlus.name}>
       {false?<IndexingDropdown title={SelectingTitles.SELECT} facets={facets}/>:
         <IndexingList title={SelectingTitles.SELECT} facets={facets}/>}
       <PanelRow>
@@ -365,5 +358,5 @@ function buildSelectingPlus(facets){
   );
 }
 export function buildSurface(){
-  new TestSurface(Test.SelectingPlus).buildSurface();
+  new TestSurface(Tests.SelectingPlus).buildSurface();
 }
