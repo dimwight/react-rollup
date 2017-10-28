@@ -2,6 +2,7 @@ import {
   Facets,
   Target,
 } from 'facets-js';
+import {traceThing} from '../util/export';
 export interface Layout{
   build(facets:Facets);
 }
@@ -9,7 +10,9 @@ export abstract class Surface{
   trace(text){
     if(this.facets.doTrace)console.info('App > '+text);
   }
-  constructor(readonly facets:Facets){}
+  constructor(readonly facets:Facets){
+    traceThing('Surface',facets.identity())
+  }
   protected times=this.facets.times;
   buildSurface(){
     this.trace('Building surface '+this.times.elapsed());
