@@ -46,31 +46,30 @@ export namespace SelectingTitles {
     CHARS='Characters';
 }
 export class Test{
-  constructor(readonly name,readonly id){}
+  constructor(
+    readonly name,
+    readonly id,
+    readonly newTree?: (Facets,Test?)=>Target){}
 }
 export const Tests={
-  Textual:new Test('Textual',0),
-  TogglingLive:new Test('TogglingLive',1),
-  Indexing:new Test('Indexing',2),
-  Trigger:new Test('Trigger',3),
-  AllSimples:new Test('AllSimples',4),
-  SelectingBasic:new Test('SelectingBasic',5),
-  SelectingPlus:new Test('SelectingPlus',6),
+  Textual:new Test('Textual',0,newTextualTree),
+  TogglingLive:new Test('TogglingLive',1,newTogglingTree),
+  Indexing:new Test('Indexing',2,newIndexingTree),
+  Trigger:new Test('Trigger',3,newTriggerTree),
+  AllSimples:new Test('AllSimples',4,newAllSimplesTree),
+  SelectingBasic:new Test('SelectingBasic',5,newSelectingTree),
+  SelectingPlus:new Test('SelectingPlus',6,newSelectingTree),
   Next:new Test('Next',7)
 };
 interface TextContent {
   text? : string;
 }
-class TestSurface extends Surface{
+class SimpleSurface extends Surface{
   constructor(private test:Test){
     super(newInstance(true));
   }
   newTargetTree(){
-    const textual=newTextualTest,indexing=newIndexingTest,
-      toggling=newTogglingTest,trigger=newTriggerTest,
-      all=newAllSimplesTest;
-    return this.test<Tests.SelectingBasic?all(this.facets)
-      :newSelectingTest(this.test,this.facets);
+    return this.test.newTree(this.facets,this.test);
   }
   buildLayout(){
     this.facets.getTargetState(SelectingTitles.SELECT);
@@ -99,7 +98,7 @@ class TestLayout implements Layout{
     }
   }
 }
-function newTextualTest(facets){
+function newTextualTree(facets){
   const first=facets.newTextualTarget(SimpleTitles.TEXTUAL_FIRST,{
       passText:'Some text for '+SimpleTitles.TEXTUAL_FIRST,
       targetStateUpdated:(title,state)=>{
@@ -112,7 +111,7 @@ function newTextualTest(facets){
     });
   return facets.newTargetGroup('TextualTest',first,second);
 }
-function newTogglingTest(facets){
+function newTogglingTree(facets){
   const toggling=facets.newTogglingTarget(SimpleTitles.TOGGLING,{
       passSet:SimpleTitles.TOGGLE_START,
     }),
@@ -127,7 +126,7 @@ function newTogglingTest(facets){
   });
   return facets.newTargetGroup('TogglingTest',toggling,toggled);
 }
-function newIndexingTest(facets){
+function newIndexingTree(facets){
   const indexing=facets.newIndexingTarget(SimpleTitles.INDEXING,{
       passIndex:0,
       getUiSelectables:(title)=> SimpleTitles.INDEXABLES,
@@ -141,7 +140,7 @@ function newIndexingTest(facets){
     });
   return facets.newTargetGroup('IndexingTest',indexing,index,indexed);
 }
-function newTriggerTest(facets){
+function newTriggerTree(facets){
   let triggers:number=0;
   const trigger=facets.newTriggerTarget(SimpleTitles.TRIGGER,{
       targetStateUpdated:(title)=>{
@@ -157,14 +156,14 @@ function newTriggerTest(facets){
     });
   return facets.newTargetGroup('TriggerTest',trigger,triggered);
 }
-function newAllSimplesTest(facets){
+function newAllSimplesTree(facets){
   return facets.newTargetGroup('AllTest',
-    newTextualTest(facets),
-    newIndexingTest(facets),
-    newTogglingTest(facets),
-    newTriggerTest(facets));
+    newTextualTree(facets),
+    newIndexingTree(facets),
+    newTogglingTree(facets),
+    newTriggerTree(facets));
 }
-function newSelectingTest(test,facets:Facets){
+function newSelectingTree(facets:Facets,test){
   function listAt():number{
     return facets.getTargetState(frame.indexingTitle) as number;
   }
@@ -358,5 +357,5 @@ function buildSelectingPlus(facets){
   );
 }
 export function buildSurface(){
-  new TestSurface(Tests.SelectingPlus).buildSurface();
+  new SimpleSurface(Tests.SelectingPlus).buildSurface();
 }
