@@ -15,13 +15,13 @@ import {
   TextualField,
   TogglingCheckbox,
   TriggerButton,
-} from 'react/export';
+} from '../react/export';
 import {
   traceThing,
   swapElement,
   removeElement,
   duplicateElement
-} from 'util/export';
+} from '../util/export';
 export const facets=newInstance(true);
 import {Surface,Layout}from './local';
 export namespace SimpleTitles{

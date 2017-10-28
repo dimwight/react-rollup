@@ -1,7 +1,7 @@
 import React from 'react';
 import {Facets,SimpleState} from 'facets-js';
 import {SmartTextField} from './SmartTextField';
-import {traceThing} from 'util/Bits';
+import {traceThing} from '../util/Bits';
 import './Layout.css';
 interface TargetValues{
   title:string

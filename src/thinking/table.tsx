@@ -5,7 +5,7 @@ import {
   FnPassString,
   FnPassBoolean,
   SmartTextField,
-} from '../widget/_exports'
+} from '../react/local'
 
 interface Product{
   category
