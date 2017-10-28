@@ -1,3 +1,3 @@
 export * from './Surface'
-export * from './testReact'
+export * from './TestSurface'
 
