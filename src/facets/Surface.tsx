@@ -12,7 +12,6 @@ export abstract class Surface{
     if(this.facets.doTrace)console.info('Surface > '+text);
   }
   buildSurface(){
-    this.facets.attachOnRetargeted(this.onRetargeted);
     let times=this.facets.times;
     this.trace('Building surface '+times.elapsed());
     this.facets.buildTargeterTree(this.newTargetTree());
@@ -23,5 +22,4 @@ export abstract class Surface{
   }
   abstract newTargetTree():Target;
   abstract buildLayout();
-  protected onRetargeted?
 }
