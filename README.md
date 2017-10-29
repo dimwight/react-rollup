@@ -7,8 +7,7 @@ Even the goodies from `create-react-app` work a treat:
 - CSS with `rollup-plugin-postcss > extract`
 - SVG with `svg.d.ts` and `rollup-plugin-svg`
 
-Now explored:
+Explored:
 -  [react/.../hello-world](https://facebook.github.io/react/docs/hello-world.html)
-- __exports.ts_
+- _exports.ts_ etc
 -  [react/.../thinking-in-react.html](https://facebook.github.io/react/docs/thinking-in-react.html)
-- _facets-js_ with _Surface, TestLayout, SmartTextField_

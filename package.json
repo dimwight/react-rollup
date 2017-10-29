@@ -16,7 +16,6 @@
     "rollup-watch": "^4.0.0"
   },
   "scripts": {
-    "build": "rollup -c",
     "watch": "rollup -c -w"
   }
 }
